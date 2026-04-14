@@ -4,68 +4,68 @@
       {
         "label": "primary",
         "color": {
-          "red": 74,
-          "green": 122,
-          "blue": 155,
+          "red": 48,
+          "green": 134,
+          "blue": 134,
           "alpha": 1
         },
-        "hex": "#4a7a9b",
+        "hex": "#308686",
         "accessibility": {
-          "luminance": 0.17,
-          "luminancePercent": "17%",
-          "recommendedTextColor": "#ffffff",
-          "contrastRatio": 4.6,
+          "luminance": 0.19,
+          "luminancePercent": "19%",
+          "recommendedTextColor": "#000000",
+          "contrastRatio": 4.88,
           "wcagRating": "AA"
         }
       },
       {
         "label": "secondary",
         "color": {
-          "red": 61,
-          "green": 100,
-          "blue": 128,
+          "red": 0,
+          "green": 123,
+          "blue": 255,
           "alpha": 1
         },
-        "hex": "#3d6480",
+        "hex": "#007BFF",
         "accessibility": {
-          "luminance": 0.12,
-          "luminancePercent": "12%",
-          "recommendedTextColor": "#ffffff",
-          "contrastRatio": 5.9,
+          "luminance": 0.21,
+          "luminancePercent": "21%",
+          "recommendedTextColor": "#000000",
+          "contrastRatio": 5.28,
           "wcagRating": "AA"
         }
       },
       {
         "label": "accent",
         "color": {
-          "red": 34,
-          "green": 77,
-          "blue": 131,
+          "red": 66,
+          "green": 162,
+          "blue": 109,
           "alpha": 1
         },
-        "hex": "#224D83",
+        "hex": "#42a26d",
         "accessibility": {
-          "luminance": 0.07,
-          "luminancePercent": "7%",
-          "recommendedTextColor": "#ffffff",
-          "contrastRatio": 8.55,
-          "wcagRating": "AAA"
+          "luminance": 0.28,
+          "luminancePercent": "28%",
+          "recommendedTextColor": "#000000",
+          "contrastRatio": 6.62,
+          "wcagRating": "AA"
         }
       },
       {
         "label": "text",
         "color": {
-          "red": 34,
-          "green": 77,
-          "blue": 131,
+          "red": 0,
+          "green": 0,
+          "blue": 0,
           "alpha": 1
         },
-        "hex": "#224D83",
+        "hex": "#000000",
         "accessibility": {
-          "luminance": 0.07,
-          "luminancePercent": "7%",
+          "luminance": 0,
+          "luminancePercent": "0%",
           "recommendedTextColor": "#ffffff",
-          "contrastRatio": 8.55,
+          "contrastRatio": 21,
           "wcagRating": "AAA"
         }
       },
@@ -123,17 +123,17 @@
       {
         "label": "topbar-dark",
         "color": {
-          "red": 61,
-          "green": 100,
-          "blue": 128,
+          "red": 48,
+          "green": 134,
+          "blue": 134,
           "alpha": 1
         },
-        "hex": "#3d6480",
+        "hex": "#308686",
         "accessibility": {
-          "luminance": 0.12,
-          "luminancePercent": "12%",
-          "recommendedTextColor": "#ffffff",
-          "contrastRatio": 5.9,
+          "luminance": 0.19,
+          "luminancePercent": "19%",
+          "recommendedTextColor": "#000000",
+          "contrastRatio": 4.88,
           "wcagRating": "AA"
         }
       }
@@ -141,76 +141,76 @@
     "typography": [
       {
         "label": "font",
-        "font": "'Verdana', helvetica, arial, sans-serif"
+        "font": "'Roboto', helvetica, arial, sans-serif"
       },
       {
         "label": "font-title",
-        "font": "'Montserrat', sans-serif"
+        "font": "'futura-book', sans-serif"
       }
     ],
-    "logo_url": "https://www.taortho.com/assets/images/logo.png",
+    "logo_url": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/logo.webp",
     "logo_config": {
       "type": "url",
       "variant": "light",
-      "url": "https://www.taortho.com/assets/images/logo.png"
+      "url": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/logo.webp"
     },
     "logo_colors": {
       "colors": [
         {
-          "hex": "#3f9ff4",
-          "luminosity_percent": 32,
+          "hex": "#308884",
+          "luminosity_percent": 20,
           "count": 3
         },
         {
-          "hex": "#3c9bf0",
-          "luminosity_percent": 31,
+          "hex": "#42a26d",
+          "luminosity_percent": 28,
           "count": 3
         },
         {
-          "hex": "#3c9bf1",
-          "luminosity_percent": 31,
-          "count": 3
-        },
-        {
-          "hex": "#3e9bf0",
-          "luminosity_percent": 31,
+          "hex": "#318984",
+          "luminosity_percent": 20,
           "count": 2
         },
         {
-          "hex": "#3d9df3",
-          "luminosity_percent": 32,
+          "hex": "#3a977a",
+          "luminosity_percent": 24,
           "count": 2
         },
         {
-          "hex": "#090707",
-          "luminosity_percent": 0,
+          "hex": "#308784",
+          "luminosity_percent": 20,
           "count": 2
         },
         {
-          "hex": "#070507",
-          "luminosity_percent": 0,
+          "hex": "#3d9d74",
+          "luminosity_percent": 26,
           "count": 2
         },
         {
-          "hex": "#3da1f8",
-          "luminosity_percent": 33,
+          "hex": "#308786",
+          "luminosity_percent": 20,
           "count": 2
         },
         {
-          "hex": "#3d9ff2",
-          "luminosity_percent": 32,
+          "hex": "#3e9d73",
+          "luminosity_percent": 26,
           "count": 1
         },
         {
-          "hex": "#3e9ef5",
-          "luminosity_percent": 32,
+          "hex": "#409e71",
+          "luminosity_percent": 27,
+          "count": 1
+        },
+        {
+          "hex": "#41a06f",
+          "luminosity_percent": 27,
           "count": 1
         }
       ],
-      "dominant_color": "#3f9ff4",
-      "avg_luminosity": 25.6,
+      "dominant_color": "#308884",
+      "avg_luminosity": 23.4,
       "is_light": false
     },
-    "favicon_url": "https://www.taortho.com/assets/images/icons/favicon.png"
+    "favicon_url": "https://www.valleyorthodontics.net/wp-content/uploads/2026/01/cropped-logo-fav-32x32.png"
   }
 }

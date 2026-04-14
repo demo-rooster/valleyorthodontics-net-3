@@ -1,0 +1,159 @@
+import axios from 'axios'
+import { api } from '../resources/api'
+import { setData } from '../resources/utils'
+import { siteHead } from './head.config.js'
+import buildConfig from './build.config.js'
+import { siteMap, setRobots } from './seo.config'
+import 'core-js/features/array/at'
+const path = require('path')
+const fs = require('fs')
+
+// Load theme.json using absolute path from project root
+const themeFile = path.join(process.cwd(), 'data', 'theme.json')
+const theme = JSON.parse(fs.readFileSync(themeFile, 'utf8'))
+
+// Extract Google Fonts from theme.json typography
+const systemFonts = ['helvetica', 'arial', 'sans-serif', 'serif', 'monospace', 'georgia']
+const typography = (theme.default && theme.default.typography) || []
+const googleFonts = typography
+  .flatMap(entry => (entry.font.match(/'([^']+)'/g) || []))
+  .map(font => font.replace(/'/g, ''))
+  .filter(font => !systemFonts.includes(font.toLowerCase()))
+  .map(font => `${font.replace(/\s+/g, '+')}:400,600,700`)
+
+// Add display=swap to last font for better loading performance
+if (googleFonts.length > 0) {
+  googleFonts[googleFonts.length - 1] += '&display=swap'
+}
+
+// Debug: Log extracted fonts
+console.log('Theme typography:', typography)
+console.log('Google Fonts to load:', googleFonts)
+
+export default async () => {
+  const meta = await setData('home')
+  return {
+    server: {
+      port: 8080,
+      host: '0.0.0.0'
+    },
+    target: 'static',
+    generate: {
+      async routes () {
+        const dyRoutes = []
+
+        await axios.get(`${api}/wp/v2/posts?per_page=100`).then(async (response) => {
+          const dataPages = response.headers['x-wp-totalpages']
+          let postsArray = response.data
+          dyRoutes.push('/blog/page/1')
+          for (let i = 2; i <= dataPages; i++) {
+            const nextPage = await axios.get(
+              `${api}/wp/v2/posts?per_page=100&page=${i}`
+            )
+            postsArray = [...postsArray, ...nextPage.data]
+            dyRoutes.push('/blog/page/' + i)
+          }
+          return postsArray.map((post) => {
+            dyRoutes.push('/blog/' + post.slug)
+          })
+        })
+
+        return dyRoutes
+      }
+    },
+    head: siteHead(meta, theme),
+    globalName: 'globalContent',
+    loading: { color: '#fff' },
+    components: {
+      dirs: [
+        '~/components',
+        '~/components/custom',
+        '~/components/block'
+      ]
+    },
+    polyfill: {
+      features: [
+        {
+          require: 'intersection-observer',
+          detect: () => 'IntersectionObserver' in window
+        }
+      ]
+    },
+    plugins: [
+      '~/resources/components',
+      '~/resources/mixins',
+      '~/resources/vendors.js',
+      {
+        src: '~/resources/vendors.client.js',
+        mode: 'client'
+      },
+      {
+        src: '~/resources/userway.js',
+        mode: 'client'
+      }
+    ],
+    modules: [
+      '@nuxtjs/axios',
+      '@nuxtjs/style-resources',
+      ...(googleFonts.length > 0 ? ['nuxt-webfontloader'] : []),
+      '@nuxtjs/robots',
+      '@nuxtjs/sitemap',
+      'nuxt-polyfill',
+      '@nuxtjs/gtm'
+    ],
+    // gtm: {
+    //   id: 'GTM-MQ6QNRZ'
+    // },
+    robots: setRobots,
+    sitemap: siteMap,
+    css: [
+      { src: '~/styles/static/normalize.sass', lang: 'sass' },
+      { src: '~/styles/index.sass', lang: 'sass' }
+    ],
+    styleResources: {
+      sass: [
+        '~/styles/base/*.sass',
+        '~/styles/utilities/*.sass',
+        '~/styles/grid/*.sass'
+      ]
+    },
+    stylelint: {
+      files: [
+        'styles/*.sass',
+        'styles/**/*.sass',
+        'components/**/*.sass',
+        'components/**/**/*.sass'
+      ]
+    },
+    ...(googleFonts.length > 0 && {
+      webfontloader: {
+        google: {
+          families: googleFonts
+        }
+      }
+    }),
+    buildModules: [
+      '@nuxtjs/eslint-module',
+      '@nuxtjs/stylelint-module',
+      'nuxt-gsap-module'
+    ],
+    gsap: {
+      extraPlugins: {
+        scrollTrigger: true
+      },
+      clubPlugins: {
+        customEase: true,
+        splitText: true
+      },
+      extraEases: {
+        customEase: true
+      }
+    },
+    vue: {
+      config: {
+        productionTip: false
+      }
+    },
+    build: buildConfig
+  }
+}

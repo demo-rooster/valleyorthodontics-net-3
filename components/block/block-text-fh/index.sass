@@ -1,0 +1,61 @@
+.block-text-fh
+  @extend %section-padding
+  position: relative
+  overflow: hidden
+
+  @supports (object-fit: cover)
+    overflow: unset
+
+  &__texture
+    @extend %absolute
+    opacity: .04
+    height: auto
+
+    @supports (object-fit: cover)
+      height: 100%
+      object-fit: cover
+
+  &__container
+    @include container
+
+  &__col
+    @include col (5)
+    @include col--offset (1)
+    @include tablet-lg
+      margin-left: 0
+      width: calc((5/12) * 100%)
+    @include tablet
+      width: 100%
+
+    &--text
+      align-self: flex-end
+      margin-left: 0
+      @include tablet-lg
+        width: calc((7/12) * 100%)
+      @include tablet
+        margin-top: 3.5rem
+        width: 100%
+
+  &__title
+    --barWidth: 50%
+    @extend %h1
+    position: relative
+    line-height: 1
+
+    &:after
+      position: absolute
+      bottom: -2rem
+      left: 0
+      border-bottom: 4px solid var(--primary)
+      width: var(--barWidth)
+      max-width: rem-calc(220)
+      content: ''
+      @include tablet
+        bottom: -1.5rem
+      @include phone-lg
+        width: 33%
+        max-width: 100%
+
+  &__text
+    &:not(:last-child)
+      margin-bottom: rem-calc(20)

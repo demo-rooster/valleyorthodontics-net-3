@@ -1,0 +1,65 @@
+.block-text-simple
+  @extend %section-padding
+  position: relative
+
+  &--bg1
+    background: var(--bg-1)
+
+  &--bg2
+    background: var(--bg-2)
+
+  &[data-texture]
+    overflow: hidden
+
+    @supports (object-fit: cover)
+      overflow: unset
+
+  &__container
+    @include container
+
+  &__gradient
+    @extend %absolute
+
+  &__title, &__row
+    @include col (10)
+    @include col--offset (1)
+    @include tablet-lg
+      margin-left: 0
+      width: 100%
+
+  &__title
+    margin-bottom: 1.5rem
+
+    &--large
+      @extend %h1
+      margin-bottom: 3rem
+      @include tablet
+        margin-bottom: 1.5rem
+
+    &--center
+      text-align: center
+
+  &__row
+    column-gap: 2rem
+    column-count: 2
+    height: 100%
+    @include tablet
+      column-gap: 0
+      column-count: 1
+
+    &--center
+      @include col (10)
+      @include col--offset (1)
+      column-count: 1
+      text-align: center
+
+    &--one-column
+      @include col (10)
+      @include col--offset (1)
+      column-count: 1
+
+  &__paragraph
+    break-inside: avoid
+
+    &:not(:last-child)
+      margin-bottom: rem-calc(20)

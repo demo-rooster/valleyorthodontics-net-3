@@ -1,0 +1,71 @@
+article.block-image-text(:class="props.background && props.has_background ? 'block-image-text--' + props.background : null", :id='props.section_id ? props.section_id.toLowerCase() : null', :data-texture='props.add_texture', :data-large-image='props.large_image')
+  BaseTexture(v-if='props.add_texture && props.has_background')
+  .block-image-text__gradient(v-if='props.linear_gradient', :style="{ background: props.linear_gradient }")
+  .block-image-text__large-image-container(v-if='props.large_image', :class="{ 'block-image-text__large-image-container--reverse': props.reverse}")
+    BaseImage.block-image-text__image(
+      v-if='!props.is_dynamic',
+      :src='props.image.src',
+      :webp='props.image.webp',
+      :alt='props.image.alt ? props.image.alt : ""',
+      :aria-hidden=' props.image.aria_hidden ? "true" : null '
+      imageBackground,
+      :bgColor='props.image.loading_mask ? props.image.loading_mask : null '
+    )
+    .block-image-text__dynamic-images(v-if='props.is_dynamic')
+      BaseImage.block-image-text__image(
+        v-for='(accordion, i) in props.accordion',
+        :key='`acc-image-${i}`',
+        :src='accordion.image.src',
+        :webp='accordion.image.webp',
+        :alt='accordion.image.alt',
+        :aria-hidden=' accordion.image.aria_hidden ? "true" : null',
+        imageBackground, :object-position="'center top'",
+        :bgColor='accordion.image.loading_mask ? accordion.image.loading_mask : null',
+        :class='{ "block-image-text__image--active" : active === i }'
+      )
+    Button.block-image-text__video-button(v-if='props.use_video', @click='openModal', aria-label='play video')
+      BaseIcon.block-image-text__video-button-icon(name='play-button')
+  .block-image-text__container(:class="{ 'block-image-text__container--reverse': props.reverse }")
+    .block-image-text__left(v-if='!props.large_image')
+      .block-image-text__image-container(:style="{ height: contentHeight }")
+        BaseImage.block-image-text__image(
+          v-if='!props.is_dynamic',
+          :src='props.image.src',
+          :webp='props.image.webp',
+          :alt='props.image.alt',
+          :aria-hidden=' props.image.aria_hidden ? "true" : null',
+          imageBackground, :object-position="'center top'",
+          :bgColor='props.image.loading_mask ? props.image.loading_mask : null'
+        )
+        .block-image-text__dynamic-images(v-if='props.is_dynamic')
+          BaseImage.block-image-text__image(
+            v-for='(accordion, i) in props.accordion',
+            :key='`acc-image-${i}`',
+            :src='accordion.image.src',
+            :webp='accordion.image.webp',
+            :alt='accordion.image.alt',
+            :aria-hidden=' accordion.image.aria_hidden ? "true" : null',
+            imageBackground, :object-position="'center top'",
+            :bgColor='accordion.image.loading_mask ? accordion.image.loading_mask : null',
+            :class='{ "block-image-text__image--active" : active === i }'
+          )
+        Button.block-image-text__video-button(v-if='props.use_video', @click='openModal', aria-label='play video')
+          BaseIcon.block-image-text__video-button-icon(name='play-button')
+    .block-image-text__right(:class="{ 'block-image-text__right--large-image': props.large_image }")
+      .block-image-text__content(ref='contentHeight')
+        .block-image-text__title-container
+          h2.block-image-text__title(v-html='props.title', v-if='!props.large_title && props.title', ref='itTitle', :class='`block-image-text__title--${props.title_color}`')
+          h2.block-image-text__title.block-image-text__title--large(v-html='props.title', v-else-if='props.large_title && props.title' ref='itTitle', :class='`block-image-text__title--${props.title_color}`')
+          .block-image-text__title-underline(v-if='props.title_underline_color !== "none"', :class='`block-image-text__title-underline--${props.title_underline_color}`')
+        .block-image-text__paragraph(v-for='(paragraph, i) in props.paragraphs', :key='`image-text-paragraph-${i}`' ref='itParagraphs')
+          h3.block-image-text__paragraph-heading(v-if='paragraph.heading && paragraph.has_heading' v-html='paragraph.heading')
+          p.block-image-text__paragraph-text(v-html='paragraph.text')
+        BlockAccordion.block-image-text__accordion(v-if='props.has_accordion', :props='props', @open-tab='getActive', ref='accordion')
+        .block-image-text__buttons(v-if='props.has_buttons' ref='itBtns')
+          BlockButton.block-image-text__button(v-for='(item, i) in props.buttons', :key='`main-btn-${i}`', :props='item.button')
+
+  transition(name='fade')
+    BaseModal.block-image-text__modal(v-if='modalOpen', :modalOpen='modalOpen', @closemodal='modalOpen = $event', role='dialog', aria-modal='true')
+      .block-image-text__modal-container
+        iframe.block-image-text__video(v-if='props.video.type === "embedded"', :src='props.video.src', title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen)
+        video.block-image-text__video(v-else :src='props.video.src' controls type='video/mp4' ref='video')

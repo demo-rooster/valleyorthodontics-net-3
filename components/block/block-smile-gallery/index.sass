@@ -1,0 +1,322 @@
+.block-smile-gallery
+  position: relative
+  padding-bottom: 4rem
+
+  +phone
+    padding-bottom: 2rem
+
+  &--bg1
+    background: var(--bg-1)
+
+  &--bg2
+    background: var(--bg-2)
+
+  &__header
+    margin-bottom: 2rem
+    text-align: center
+
+    +phone
+      margin-bottom: 1.5rem
+
+  &__title
+    margin-bottom: 1rem
+
+  &__text
+    margin: 0 auto
+    max-width: 800px
+
+  // Categories
+  &__categories
+    display: flex
+    flex-direction: column
+    gap: 3rem
+
+    +phone
+      gap: 2rem
+
+  &__category
+    &-title
+      margin-bottom: 0.5rem
+      text-align: center
+      font-size: 1.5rem
+
+      +tablet
+        font-size: 1.25rem
+
+      +phone
+        font-size: 1.125rem
+
+    &-description
+      margin: 0 auto 1.5rem
+      max-width: 700px
+      text-align: center
+      color: var(--text-secondary)
+
+      +phone
+        margin-bottom: 1rem
+        font-size: 0.875rem
+
+  // Card Grid
+  &__grid
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    justify-content: center
+    gap: 2rem
+    margin: 0 auto
+    max-width: 1000px
+
+    +tablet
+      grid-template-columns: repeat(2, 1fr)
+      gap: 1.5rem
+
+    +phone
+      grid-template-columns: 1fr
+      gap: 1rem
+      max-width: 400px
+
+  // Individual Card
+  &__card
+    transition: all 0.2s ease
+    border: 3px solid transparent
+    border-radius: 0.75rem
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08)
+    background: $white
+    cursor: pointer
+    padding: 0
+    overflow: hidden
+    text-align: left
+
+    &:hover
+      transform: translateY(-4px)
+      border-color: rgba(var(--primary-rgb), 0.3)
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12)
+
+    +phone
+      &:hover
+        transform: none
+
+  &__card-images
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 2px
+    background: var(--border-color)
+
+  &__card-image
+    position: relative
+    aspect-ratio: 4/3
+    overflow: hidden
+
+    .base-image,
+    .base-image__image
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &__card-label
+    position: absolute
+    top: 0.5rem
+    left: 0.5rem
+    z-index: 1
+    border-radius: 0.25rem
+    padding: 0.25rem 0.5rem
+    text-transform: uppercase
+    letter-spacing: 0.05em
+    font-size: 0.625rem
+    font-weight: 700
+
+    .block-smile-gallery__card-image--before &
+      background: rgba(0, 0, 0, 0.6)
+      color: $white
+
+    .block-smile-gallery__card-image--after &
+      background: var(--primary)
+      color: $white
+
+  &__card-info
+    padding: 1rem
+    text-align: center
+
+    +phone
+      padding: 0.75rem
+
+  &__card-title
+    margin: 0
+    font-size: 1rem
+    font-weight: 600
+
+    +phone
+      font-size: 0.875rem
+
+  // Modal
+  &__modal
+    display: flex
+    position: fixed
+    top: 0
+    left: 0
+    align-items: center
+    justify-content: center
+    z-index: 1000
+    background: rgba(0, 0, 0, 0.85)
+    padding: 1rem
+    width: 100%
+    height: 100%
+
+    +phone
+      align-items: flex-start
+      padding: 0
+
+  &__modal-content
+    position: relative
+    border-radius: 1rem
+    background: $white
+    padding: 2rem
+    width: 100%
+    max-width: 800px
+    max-height: 90vh
+    overflow-y: auto
+
+    +phone
+      border-radius: 0
+      padding: 1rem
+      padding-top: 3.5rem
+      max-height: 100vh
+      height: 100%
+
+  &__modal-close
+    display: flex
+    position: absolute
+    top: 1rem
+    right: 1rem
+    align-items: center
+    justify-content: center
+    transition: all 0.2s ease
+    z-index: 100
+    border: 2px solid var(--text-primary)
+    border-radius: 50%
+    background: $white
+    cursor: pointer
+    width: 2.5rem
+    height: 2.5rem
+
+    +phone
+      top: 0.75rem
+      right: 0.75rem
+      width: 2.25rem
+      height: 2.25rem
+
+    &:hover
+      border-color: var(--primary)
+      background: var(--primary)
+
+      .block-smile-gallery__modal-close-x
+        color: $white
+
+  &__modal-close-x
+    transition: color 0.2s ease
+    line-height: 1
+    color: var(--text-primary)
+    font-size: 1.5rem
+    font-weight: 400
+
+  &__modal-header
+    margin-bottom: 1.5rem
+    padding-right: 3rem
+    text-align: center
+
+    +phone
+      margin-bottom: 1rem
+      padding-right: 0
+
+  &__modal-title
+    margin: 0 0 0.5rem
+    font-size: 1.5rem
+
+    +phone
+      font-size: 1.125rem
+
+  &__modal-treatment
+    display: inline-block
+    border-radius: 1rem
+    background: var(--primary)
+    padding: 0.25rem 0.75rem
+    color: $white
+    font-size: 0.75rem
+    font-weight: 600
+
+  &__modal-hint
+    margin-top: 1rem
+    text-align: center
+    color: var(--text-secondary)
+    font-size: 0.875rem
+
+    +phone
+      margin-top: 0.75rem
+      font-size: 0.75rem
+
+  &__modal-nav
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-top: 1.5rem
+    gap: 1rem
+
+    +phone
+      margin-top: 1rem
+      gap: 0.75rem
+
+  &__modal-arrow
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all 0.2s ease
+    border: 2px solid var(--primary)
+    border-radius: 50%
+    background: transparent
+    cursor: pointer
+    width: 3rem
+    height: 3rem
+
+    +phone
+      width: 2.5rem
+      height: 2.5rem
+
+    &:hover
+      background: var(--primary)
+
+      .base-icon
+        stroke: $white
+
+    .base-icon
+      width: 0.75rem
+      height: 0.75rem
+      stroke: var(--primary)
+      stroke-width: 0.4rem
+
+      +phone
+        width: 0.625rem
+        height: 0.625rem
+
+    &--prev .base-icon
+      transform: rotate(90deg)
+
+    &--next .base-icon
+      transform: rotate(-90deg)
+
+  &__modal-counter
+    min-width: 4rem
+    text-align: center
+    color: var(--text-secondary)
+    font-size: 0.875rem
+
+    +phone
+      min-width: 3rem
+      font-size: 0.75rem
+
+  // Fade transition
+  .fade-enter-active,
+  .fade-leave-active
+    transition: opacity 0.3s ease
+
+  .fade-enter,
+  .fade-leave-to
+    opacity: 0

@@ -1,0 +1,7 @@
+aside.base-modal(ref='modal')
+  .base-modal__overlay(@click='closeModal()' aria-hidden='true')
+  .base-modal__container
+    .base-modal__main(ref='main')
+      button.base-modal__close(@click='closeModal()' @keyup.enter='closeModal()' :tabindex='modalOpen ? 0 : -1' aria-label='close modal')
+      .base-modal__content(ref='content')
+        slot

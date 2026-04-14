@@ -1,0 +1,35 @@
+.pages-accessibility
+  @include phone-lg
+    padding: rem-calc(150) 1rem 4rem
+  position: relative
+  padding: rem-calc(200) 2rem 6rem
+  min-height: 80vh
+
+  &__container
+    @include container
+
+  &__title
+    @include col (8)
+    @include col--offset (2)
+    @extend %h2
+    margin-bottom: 1rem
+
+  &__col
+    @include col (8)
+    @include col--offset (2)
+
+    p
+      &:not(:last-child)
+        margin-bottom: 1rem
+
+    a
+      @include hover-supported
+        text-decoration: underline
+        color: var(--primary)
+      transition: color .2s ease
+      color: var(--text)
+      font-weight: 600
+      &:focus
+        outline: none
+        text-decoration: underline
+        color: var(--primary)

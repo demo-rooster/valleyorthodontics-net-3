@@ -1,0 +1,52 @@
+.block-contact-form
+  @extend %section-padding
+  position: relative
+
+  &__container
+    @include container
+
+    &--stacked
+      flex-direction: column
+      gap: 2rem
+
+  &__content
+    @include col (4)
+    @include col--offset (1)
+    @include tablet-lg
+      margin-left: 0
+      width: calc((5/12)*100%)
+    @include tablet
+      width: 100%
+
+    .block-contact-form__container--stacked &
+      @include col (8)
+      @include col--offset (2)
+
+  &__form-container
+    @include col (5)
+    @include col--offset (1)
+    @include tablet-lg
+      width: 50%
+    @include tablet
+      margin-top: 4rem
+      width: 100%
+
+    .block-contact-form__container--stacked &
+      @include col (8)
+      @include col--offset (2)
+
+  &__title
+    position: relative
+    margin-bottom: 2.5rem
+    padding-bottom: 1.5rem
+    @include tablet
+      margin-bottom: 1.5rem
+      padding-bottom: 1rem
+
+    &:after
+      position: absolute
+      bottom: 0
+      left: 0
+      border-bottom: 4px solid var(--primary)
+      width: 33%
+      content: ''

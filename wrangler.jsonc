@@ -1,0 +1,10 @@
+{
+  "name": "ai-template-stinson",
+  "compatibility_date": "2026-01-22",
+  "build": {
+    "command": "npm run generate"
+  },
+  "assets": {
+    "directory": "./dist"
+  }
+}

@@ -1,0 +1,45 @@
+.base-button-simple
+  display: block
+  position: relative
+  width: fit-content
+
+  &__button
+    @include hover-supported
+      span
+        &:after
+          transform: translateY(0)
+      .base-button-simple__caret
+        transform: translateX(-6px)
+    display: flex
+    align-items: center
+    cursor: pointer
+    overflow: hidden
+    line-height: 1.5
+    color: var(--text)
+
+    span
+      display: block
+      position: relative
+      transition: color .2s ease
+      font-weight: 600
+
+      &:after
+        position: absolute
+        bottom: rem-calc(2)
+        left: 0
+        transform: translateY(4px)
+        transition: transform .2s ease
+        border-bottom: 1px solid var(--simpleBtnClr)
+        width: 100%
+        content: ''
+
+  &__caret
+    transition: transform .2s ease
+    margin-left: .5rem
+    width: rem-calc(15)
+    height: rem-calc(15)
+    line-height: 1
+    stroke-width: .5rem
+
+    svg
+      transform: rotate(-90deg)

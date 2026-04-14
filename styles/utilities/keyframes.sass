@@ -1,0 +1,75 @@
+// --------------------------------------------------------
+// Fades
+// --------------------------------------------------------
+
+@keyframes fade-in
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes fade-in-up
+  0%
+    transform: translateY(1.5rem)
+    opacity: 0
+  100%
+    transform: translateY(0)
+    opacity: 1
+
+@keyframes fade-bounce-in
+  0%
+    transform: translateY(12%) scale(.75)
+    opacity: 0
+  75%
+    transform: scale(1.05)
+  85%
+    opacity: 1
+  100%
+    transform: translateY(0) scale(1)
+    opacity: 1
+
+// --------------------------------------------------------
+// Images
+// --------------------------------------------------------
+
+@keyframes slide-right-reveal
+  0%
+    transform: translateX(-2rem)
+    opacity: 0
+    clip-path: polygon(0 0, 20% 0, 20% 100%, 0 100%)
+  60%
+    opacity: 1
+  100%
+    transform: translateX(0)
+    opacity: 1
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+
+// --------------------------------------------------------
+// Modal Effects in addition to transitions
+// --------------------------------------------------------
+
+@keyframes shutters-effect
+  from
+    transform: scaleX(0) scaleY(.005)
+    opacity: 0
+  25%
+    transform: scaleX(0) scaleY(.005)
+    opacity: 1
+  50%
+    transform: scaleX(1) scaleY(.005)
+    opacity: 1
+  100%
+    transform: scaleX(1) scaleY(1)
+    opacity: 1
+
+@keyframes bounce
+  0%
+    transform: translate3d(0, 0, 0)
+  35%
+    transform: translate3d(0, -12px, 0)
+  50%
+    transform: translate3d(0, 0, 0)
+  75%
+    transform: translate3d(0, -8px, 0)
+  100%
+    transform: translate3d(0, 0, 0)

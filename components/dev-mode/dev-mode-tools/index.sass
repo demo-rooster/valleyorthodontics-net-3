@@ -1,0 +1,23 @@
+.dev-mode-tools
+  position: fixed
+  top: rem-calc(24)
+  left: rem-calc(24)
+  z-index: 999
+  border-radius: rem-calc(24)
+  background-color: $roosterPurple
+  cursor: move
+  padding: rem-calc(2) rem-calc(24) rem-calc(2) rem-calc(2)
+  width: fit-content
+  user-select: none
+
+  &__button
+    @include hover-focus
+      background: $chartreuse
+      color: $roosterPurple
+    border: rem-calc(2) solid $chartreuse
+    border-radius: rem-calc(24)
+    background: $roosterPurple
+    cursor: pointer
+    padding: rem-calc(4) rem-calc(12)
+    color: $chartreuse
+    user-select: none

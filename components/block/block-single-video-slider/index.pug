@@ -1,0 +1,29 @@
+.block-single-video-slider(:class="props.background ? 'block-single-video-slider--' + props.background : null", :data-texture='props.add_texture', :style="{ '--siSliderTextColor': props.primary_color ? '#1c79a0' : '#272727'}")
+  BaseTexture(v-if='props.add_texture')
+  .block-single-video-slider__gradient(v-if='props.linear_gradient', :style="{ background: props.linear_gradient }")  
+  .block-single-video-slider__container
+    .block-single-video-slider__row
+      h2.block-single-video-slider__title(v-html='props.title')
+      .block-single-video-slider__pagination(v-if='props.slides.length > 1') {{ currIndex + 1 }} / {{ props.slides.length }}
+    .block-single-video-slider__video-title(v-if='currentTitle') {{ currentTitle }}
+    .block-single-video-slider__carousel(:aria-label='`${props.carousel_aria}`')
+      button.block-single-video-slider__control-btn(v-if='props.slides.length > 1', aria-label='Previous Slide' tabindex='0' @click='handleSlide("prev")')
+        BaseIcon.block-single-video-slider__icon.block-single-video-slider__icon--prev(name='caret')
+      
+      .block-single-video-slider__slider(role='region' aria-live='polite')
+        .block-single-video-slider__slide(
+          v-for='(slide, i) in props.slides'
+          :key='`single-video-slider-${i}`'
+          :aria-label='`slide ${ i + 1 } of ${ props.slides.length }`'
+          role='group'
+          :class="{ 'block-single-video-slider__slide--current': currIndex === i }"
+          )
+          iframe.block-single-video-slider__youtube(v-if='slide.type === "iframe"' :src='slide.src', :title='slide.title', frameborder='0', allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share', allowfullscreen)
+          .block-single-video-slider__video-container(v-else-if='slide.type === "video"', @click='playVideo(); videoPlaying = !videoPlaying')
+            .block-single-video-slider__video-overlay(v-show='!videoActive')
+            BaseIcon.block-single-video-slider__video-icon(name='play', v-show='!videoPlaying')
+            video.block-single-video-slider__video(ref='videoPlayer', :title='slide.title', :poster='slide.poster')
+              source(:src='slide.src + "?&rel=0&mute=1&modestbranding=1&autohide=1&showinfo=0"', type='video/mp4')
+
+      button.block-single-video-slider__control-btn(v-if='props.slides.length > 1', aria-label='Next Slide' tabindex='0' @click='handleSlide("next")')
+        BaseIcon.block-single-video-slider__icon.block-single-video-slider__icon--next(name='caret')      

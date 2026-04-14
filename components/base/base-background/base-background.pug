@@ -1,0 +1,3 @@
+.base-background(v-if='loaded', :style="{ backgroundImage: currentImg ? 'url(' + currentImg + ')' : '' }" v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }")
+  transition(name='fade-src-bg-img')
+    .base-background__overlay(:style="{ backgroundColor: bgColor }" v-if='loading')

@@ -1,0 +1,161 @@
+.block-multi-testimonial
+  @extend %section-padding
+  position: relative
+
+  &--bg1
+    background: var(--bg-1)
+
+  &--bg2
+    background: var(--bg-2)
+
+  &__container
+    @include container
+
+  &__gradient
+    @extend %absolute
+
+  &__left
+    @include col (4)
+    @include col--offset (1)
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    border-right: 1px solid var(--text)
+    @include tablet-lg
+      margin-left: 0
+      width: calc((5/12)*100%)
+    @include tablet
+      margin-bottom: 2rem
+      border-right: none
+      width: 100%
+
+  &__right
+    @include col (5)
+    @include col--offset (1)
+    @include tablet-lg
+      width: 50%
+    @include tablet
+      width: 100%
+
+  &__title
+    margin-bottom: 1.5rem
+    @include tablet-lg
+      padding-right: 1rem
+    @include tablet
+      margin-bottom: .5rem
+      padding-right: 0
+
+  &__stars, &__review-container, &__links
+    display: flex
+
+  &__star
+    width: 1.5rem
+    height: 1.5rem
+    &:not(:last-child)
+      margin-right: rem-calc(6)
+
+  &__review-container
+    flex-wrap: wrap
+    align-items: flex-end
+    @include tablet
+      margin-top: 2rem
+
+  &__review-text
+    margin-right: 2rem
+    line-height: 1
+    font-size: rem-calc(18)
+    @include desktop
+      font-size: rem-calc(20)
+    @include phone-lg
+      width: 100%
+
+  &__links
+    padding-top: 1rem
+
+  &__review-link
+    display: block
+    &:not(:last-child)
+      margin-right: 2rem
+
+  &__review-icon
+    width: 1.5rem
+    height: 1.5rem
+
+    svg
+      @include hover-supported
+        fill: var(--primary)
+      transition: fill 200ms ease
+
+  &__slider
+    position: relative
+    max-height: rem-calc(320)
+    overflow: auto
+
+  &__slide
+    @extend %absolute
+    transition: opacity .3s ease-in
+    opacity: 0
+    pointer-events: none
+
+    &--current
+      opacity: 1
+      pointer-events: auto
+
+  &__author
+    position: relative
+    margin-top: 1rem
+    margin-left: auto
+    padding-right: 3rem
+    width: fit-content
+    text-align: right
+    font-style: italic
+
+    &:before
+      position: absolute
+      top: 50%
+      left: -2.25rem
+      background: var(--text)
+      width: 1.5rem
+      height: rem-calc(1)
+      content: ''
+
+  &__lower, &__controls
+    display: flex
+
+  &__lower
+    align-items: flex-end
+    margin-top: 2.5rem
+    @include phone-lg
+      justify-content: space-between
+
+  &__control-btn
+    @include hover-supported
+      background: var(--text)
+      .block-multi-testimonial__icon
+        stroke: $white
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: background .2s ease
+    margin-right: rem-calc(20)
+    border: 1px solid var(--text)
+    cursor: pointer
+    width: 3rem
+    height: 3rem
+
+  &__icon
+    transition: stroke .2s ease
+    width: 1.2rem
+    height: 1.2rem
+    stroke: var(--text)
+    stroke-width: .5rem
+
+    &--prev
+      transform: rotate(90deg)
+
+    &--next
+      transform: rotate(-90deg)
+
+  &__pagination
+    margin-left: 1rem
+    line-height: 1

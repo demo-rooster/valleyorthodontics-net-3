@@ -1,0 +1,6 @@
+.dev-mode-tools
+  .dev-mode-tools__button-container
+    button.dev-mode-tools__button(
+      @click='toggleDevInspector',
+      v-html=`($store.state.devInspector ? 'Disable' : 'Enable') + ' Dev Inspector'`
+    )

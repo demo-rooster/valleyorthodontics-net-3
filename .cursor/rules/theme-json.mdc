@@ -1,0 +1,35 @@
+---
+description: 
+globs: theme.json
+alwaysApply: false
+---
+Please implement a complete color palette overhaul for my theme with these requirements:
+
+**Color Inspiration:** [Attach image/specify colors OR describe aesthetic like "warm autumn", "cool ocean", "earthy forest", etc.]
+
+**Aesthetic Goal:** [Specify mood - e.g., "tranquil and calming", "energetic and modern", "professional and trustworthy"]
+
+**Color Theory:** [Choose one - "analogous colors", "complementary colors", "monochromatic", "triadic"]
+
+**Grayscale:** when updating the theme colors they have a grayscale value associated with them. If you can't think of something try to match the grayscale value to the new color.
+
+**Specific Requirements:**
+- Update ALL colors in the theme (primary, accents, backgrounds, text)
+- **CRITICAL: Ensure every single color is completely unique** - no duplicates allowed
+- **NO PURE WHITE ALLOWED** - use off-whites, creams, or very light tints instead
+- Ensure ADA/WCAG AA compliance (4.5:1 contrast minimum)
+- Use off-whites/pure whites/cream tones for light backgrounds
+- Test accessibility with Playwright browser tools
+- Maintain consistent color relationships across all elements
+
+**Verification Steps (MUST DO):**
+1. Check that all 10 colors have different RGB values
+2. Verify no pure white (#FFFFFF or RGB(255,255,255)) is used
+3. Test contrast ratios for all text/background combinations
+4. Verify no two colors are identical or too similar
+
+**Don't preserve:** Any existing colors - make everything fresh and new
+
+**Do preserve:** The overall professional appearance and readability
+
+Please show me the contrast ratios and test the final result for accessibility compliance AND uniqueness verification.

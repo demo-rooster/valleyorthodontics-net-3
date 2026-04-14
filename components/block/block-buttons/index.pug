@@ -1,0 +1,4 @@
+.block-buttons
+  .block-buttons__buttons(ref='itBtns')
+    BaseButtonCta.block-buttons__button(v-for='(btn, i) in props', :key='`item-text-btn-${i}`', :props='btn')
+    

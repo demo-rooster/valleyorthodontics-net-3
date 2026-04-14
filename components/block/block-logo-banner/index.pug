@@ -1,0 +1,8 @@
+section.block-logo-banner(:class="props.background && props.has_background ? 'block-logo-banner--' + props.background : null", :data-texture='props.add_texture')
+  BaseTexture(v-if='props.add_texture')
+  .block-logo-banner__container
+    h2.block-logo-banner__title(v-if='props.title' v-html='props.title' :class="{ 'block-logo-banner__title--large': props.large_title, 'block-logo-banner__title--centered': props.center_title, 'block-logo-banner__title--primary': props.title_alt }")
+    .block-logo-banner__logo-container(:class="{ 'block-logo-banner__logo-container--scrolling': props.scrolling }")
+      .block-logo-banner__logos(v-for='setIndex in props.scrolling ? [1, 2, 3, 4, 5] : [1]')
+        .block-logo-banner__logo(v-for='(logo, i) in props.logos', :key='`logo-${i}`', :name='logo.name' aria-hidden='true')
+          BaseIcon.block-logo-banner__icon(:name='logo.name')

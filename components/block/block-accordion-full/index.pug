@@ -1,0 +1,8 @@
+section.block-accordion-full(ref='main', :class="[props.component_options?.component_padding ? 'component-padding--' + props.component_options.component_padding : null]")
+  .block-accordion-full__container(ref='container')
+    .block-accordion-full__content
+      h2.block-accordion-full__header(v-html='props.title', v-if='props.title' ref='itTitle')
+      .block-accordion-full__paragraph(v-if='props.paragraphs' v-for='(paragraph, i) in props.paragraphs', :key='`image-text-paragraph-${i}`' ref='itParagraphs')
+        h3.block-accordion-full__paragraph-heading(v-if='paragraph.has_heading && paragraph.has_heading' v-html='paragraph.heading')
+        p.block-accordion-full__paragraph-text(v-html='paragraph.text')
+    BlockAccordion.block-accordion-full__accordion(v-if='props.accordion' :props='props')

@@ -1,0 +1,259 @@
+/* stylelint-disable */
+  
+.block-faqs
+  @extend %section-padding
+  position: relative
+  overflow: hidden
+
+  &__container
+    @include container
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+  &__title
+    position: relative
+    margin: 0 auto 2rem
+    width: fit-content
+    text-align: center
+    color: var(--primary)
+
+  &__body
+    @extend %h4
+    // @include col--offset(2)
+    margin-bottom: 2rem
+    max-width: rem-calc(768)
+    text-align: center
+
+  &__accordion
+    display: flex
+    flex-direction: column
+    margin-bottom: 4rem
+    border: 1px solid var(--accent)
+    // background: var(--bg-1)
+    padding: rem-calc(72)
+    width: 100%
+    max-width: rem-calc(992)
+    height: fit-content
+    @include nexus
+      padding: 2rem
+    @include phone-land-lg
+      padding: 1rem
+    @include phone-lg
+      padding: 1rem
+
+  &__bg
+    @include container
+    @include tablet-lg
+      display: none
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    z-index: -1
+    margin: auto
+    padding-top: 10%
+    width: 100%
+
+    .base-icon
+      width: 100%
+      height: auto
+
+    .blob
+      fill: var(--accent) !important
+
+  &__row
+    @include focus
+    display: flex
+    flex-direction: column
+    transition: max-height .75s ease
+    cursor: pointer
+    padding: 1rem 0
+    width: 100%
+    max-height: 100vh
+    overflow: hidden
+
+    &:not(:last-child)
+      border-bottom: 2px solid rgba(var(--accent-rgb), 0.5)
+    
+    &-title
+      width: calc(100% - 16px)
+      font-size: 1.125rem
+      @include tablet
+        font-size: 1.25rem
+
+    &:first-of-type
+      padding: 0 0 1rem
+
+    &:last-of-type
+      padding: 1rem 0 0
+    
+    // &--active
+    //   padding-bottom: 1rem
+  &__top
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    transition: all 2s ease
+    // padding: 1rem 0
+    // .block-faqs__row:first-of-type &
+    //   padding: 0 0 1rem
+    // .block-faqs__row--active:first-of-type &
+    //   padding: 0 0 rem-calc(10)
+    // .block-faqs__row--active &
+    //   padding: 1rem 0 rem-calc(10)
+  &__button
+    @include hover-supported
+      span
+        background: $black
+    position: relative
+    transition: transform .5s ease, color .3s ease
+    margin-left: 0.5rem
+    cursor: pointer
+    width: 1.5rem
+    height: 1.5rem
+    @include nexus
+      width: 1rem
+      height: 1rem
+
+    span
+      @include nexus
+        width: 1.5px
+        height: 1rem
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      transition: transform .5s ease, background .35s ease
+      margin: auto
+      background: var(--primary)
+      width: 3px
+      height: 1.5rem 
+
+      &:first-child
+        transform: rotate(90deg)
+
+    .block-faqs__row--active &
+      span:last-child
+        transform: rotate(-90deg)
+
+  &__bottom
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    transition: max-height .25s ease, visibility 0s ease .25s, margin-top .5s ease .35s
+    visibility: hidden
+    width: 100%
+    max-height: 0
+
+    .block-faqs__row--active &
+      @include phone-land-lg
+        overflow: scroll
+      transition: max-height .75s ease, visibility 0s ease, margin-top 0s ease
+      visibility: visible
+      margin-top: rem-calc(10)
+      max-height: 100vh
+
+  &__media
+    @include nexus
+      width: 100%
+    margin-bottom: 1rem
+    width: 30%
+
+    &--full
+      width: 60%
+      @include phone-land-lg
+        width: 30%
+      @include nexus
+        width: 100%
+
+  &__image
+    position: relative
+    transition: opacity .4s ease .3s
+    opacity: 0
+    z-index: 2
+    width: 100%
+    height: 100%
+
+    .block-faqs__container--active &
+      opacity: 1
+
+    .base-image__image
+      position: relative
+      // aspect-ratio: 736 / 489
+      width: 100%
+      height: auto
+
+  &__video
+    position: relative
+    z-index: 2
+    aspect-ratio: 736 / 489
+    width: 100%
+    height: 100%
+    &-init
+      // @extend %absolute
+      @include focus
+      @include hover-supported
+      margin: 0
+      border: none
+      background: $white
+      padding: 0
+      width: 100%
+      height: 100%
+
+    &-thumbnail
+      @extend %absolute
+
+      &.base-image__image
+        position: absolute
+        aspect-ratio: 736 / 489
+    
+    &-overlay
+      position: absolute
+      top: 0
+      right: 0
+      left: 0
+      transition: opacity .3s ease
+      opacity: .1
+      margin: auto
+      background: var(--bg-1)
+      cursor: pointer
+      // padding: 0 4rem 4rem
+      width: 100%
+      height: 100%
+    
+    &-play
+      @extend %centered
+      z-index: 2
+      cursor: pointer
+      width: 20%
+      
+      svg
+        width: 100%
+        fill: $white
+  
+    &-iframe
+      position: relative
+      width: 100%
+      height: 100%
+
+  &__text
+    @extend %body
+    width: 100%
+
+    &--small
+      width: 65%
+      @include phone-land-lg
+        width: 65%
+      @include nexus
+        width: 100%
+
+    a
+      transition: color .5s ease
+      color: var(--primary)
+      font-weight: 600
+
+      &:hover
+        color: var(--accent)

@@ -1,0 +1,13 @@
+.block-post-pagination(v-if='pageCount > 1')
+  .block-post-pagination__container
+    nuxt-link.block-post-pagination__ctrl(:class='{ "block-post-pagination__ctrl--show": $route.params.page > 1 }' :to='{ name: $route.name, params: { page: "1" } }' tabindex='0')
+      BaseIcon.block-post-pagination__back(name='caret')
+    nuxt-link.block-post-pagination__number(
+        v-for='(num, i) in pageCount'
+        :key='"page " + i'
+        :to='{ name: $route.name , params: { page: String(i + 1) } }'
+        :class='{ "block-post-pagination__number--active":  $route.params.page === String(i + 1) }'
+        tabindex='0'
+        v-html='i + 1')
+    nuxt-link.block-post-pagination__ctrl(:class='{ "block-post-pagination__ctrl--show": $route.params.page < pageCount }' :to='{ name: $route.name, params: { page: String(pageCount) } }' tabindex='0')
+      BaseIcon.block-post-pagination__forward(name='caret')

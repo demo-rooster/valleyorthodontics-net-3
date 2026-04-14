@@ -1,0 +1,162 @@
+.block-item-row
+  @extend %section-padding
+  position: relative
+  background: #f5f5f5
+
+  &[data-no-title]
+    padding: 5rem 0 7rem
+    @include desktop
+      padding: 6rem 0 8rem
+    @include tablet-lg
+      padding: 2rem 0 4rem
+    @include tablet
+      padding: 1rem 0 3rem
+
+  &__container
+    @include container
+
+  &__title, &__row, &__button-container
+    @include col (10)
+    @include col--offset (1)
+    @include tablet-lg
+      margin-left: 0
+      width: 100%
+
+  &__title
+    margin-bottom: 1rem
+    text-align: center
+
+    &--large
+      @extend %h1
+      margin-bottom: 3rem
+      @include desktop
+        margin-bottom: 3.5rem
+
+    &:after
+      position: absolute
+      bottom: -1.5rem
+      left: 50%
+      transform: translateX(-50%)
+      border-bottom: 6px solid var(--accent)
+      width: 50%
+      max-width: rem-calc(250)
+      content: ''
+      @include tablet
+        bottom: -1.5rem
+      @include phone-lg
+        width: 33%
+        max-width: 100%
+
+    &--left
+      text-align: left
+
+    &--primary
+      color: var(--primary)
+
+  &__row
+    display: flex
+    flex-wrap: wrap
+    align-items: stretch
+    justify-content: space-evenly
+    row-gap: 2rem
+    @include tablet
+      justify-content: space-around
+
+    &--large
+      @include col (12)
+      margin-left: 0
+      @include tablet-lg
+        justify-content: space-around
+
+  &__item
+    @include col (4)
+    margin-top: 2rem
+    text-align: center
+
+    &--left
+      text-align: left
+
+  &__item[data-items='3']
+    width: 30%
+    @include tablet
+      width: 45%
+    @include phone-lg
+      width: 100%
+
+  &__item[data-items='4']
+    width: 22%
+    @include tablet-lg
+      width: 45%
+    @include nexus
+      width: 100%
+
+  &__item[data-items='5']
+    width: 18%
+    @include tablet-lg
+      width: 30%
+    @include tablet
+      width: 45%
+    @include phone-lg
+      width: 100%
+
+  &__icon
+    display: block
+    margin: 0 auto 1.5rem
+    width: rem-calc(120)
+    height: rem-calc(120)
+    @include desktop
+      width: rem-calc(130)
+      height: rem-calc(130)
+    @include tablet-lg
+      width: 6rem
+      height: 6rem
+
+    svg path
+      fill: var(--primary) !important
+
+  &__image
+    display: block
+    margin: 1rem auto 1.5rem
+    width: 100%
+    height: 12rem
+    @include desktop
+      height: 15rem
+    @include tablet-lg
+      height: 15rem
+
+    .base-image__image
+      object-fit: cover
+
+  &__item-title
+    @extend %h4
+    padding-bottom: 1rem
+    @include desktop
+      padding-bottom: 1.1rem
+
+  &__content
+    position: relative
+    padding-top: 1.3rem
+    @include desktop
+      padding-top: 1.5rem
+
+    &:before
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+      border-top: 1px solid rgba(var(--text-rgb), .3)
+      width: 100%
+      content: ''
+      @include phone-lg
+        width: 66%
+
+  &__item-btn
+    margin: 1.5rem auto 0
+
+    .block-item-row__item--left
+      margin-left: auto
+
+  &__button-container
+    display: flex
+    justify-content: center
+    margin-top: 5rem

@@ -1,0 +1,132 @@
+.topbar
+
+  &__bar
+    padding: .5rem 0
+    width: 100%
+    font-size: 1rem
+
+    &--light
+      background: var(--topbar-light)
+
+      .topbar__link
+        color: var(--primary)
+
+      .topbar__link-icon
+        svg
+          fill: var(--primary)
+
+      &.topbar__bar--announcement
+        @include hover-supported
+          background: rgba(var(--primary-rgb), 1)
+          .topbar__announcement-text
+            color: $white
+
+          .topbar__announcement-icon svg
+            fill: $white
+
+        transition: background .2s ease
+        cursor: pointer
+    
+    &--dark
+      background: var(--topbar-dark)
+
+      .topbar__link
+        color: $white
+
+      .topbar__link-icon
+        svg
+          fill: $white
+
+      .topbar__announcement-text
+        color: $white
+
+      .topbar__announcement-icon svg
+        fill: $white
+    
+      &.topbar__bar--announcement
+          @include hover-supported
+            background: rgba(var(--topbar-light-rgb), .7)
+            .topbar__announcement-text
+              color: var(--primary)
+
+            .topbar__announcement-icon svg
+              fill: var(--primary)
+          transition: background .2s ease
+          cursor: pointer
+  
+  &__container
+    @include container--large
+
+    &--right
+      justify-content: flex-end
+    
+    &--center
+      justify-content: center
+    
+  &__links
+    display: flex
+    
+  &__link
+    @include focus
+    @include hover-supported
+      .topbar__link-text
+        color: var(--accent)
+        .topbar--dark &
+          color: var(--text)
+      .topbar__link-icon svg
+        fill: var(--accent)
+        .topbar--dark &
+          fill: var(--text)
+    display: flex
+    align-items: center
+
+    &:not(:last-of-type)
+      margin-right: rem-calc(24)
+
+    &-icon
+      display: flex
+      justify-content: center
+      margin-right: rem-calc(3)
+      width: rem-calc(18)
+      height: rem-calc(18)
+      @include tablet-lg
+        width: rem-calc(22)
+        height: rem-calc(22)
+
+      svg
+        transition: fill .2s ease
+  
+    &-text
+      transition: color .2s ease
+      @include tablet-lg
+        display: none
+
+  &__announcement
+    display: flex
+    align-items: center
+
+    &-icon
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-right: rem-calc(8)
+      width: rem-calc(18)
+      height: rem-calc(18)
+
+      svg
+        transition: fill .3s ease
+        fill: $black
+
+    &-text
+      transition: color .3s ease
+      font-weight: 600
+
+  &__modal
+    &-title
+      margin-bottom: 2rem
+      color: var(--primary)
+    
+    &-text
+
+      p:not(:last-of-type)
+        margin-bottom: 1rem

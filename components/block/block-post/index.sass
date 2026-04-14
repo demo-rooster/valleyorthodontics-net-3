@@ -1,0 +1,182 @@
+.block-post
+  position: relative
+
+  &__loading
+    text-align: center
+
+  &__container
+    @include container
+    @include col(8)
+    flex-direction: column
+    margin: rem-calc(150) auto 2rem
+    padding: 0 1rem !important
+    @include tablet
+      margin: rem-calc(100) auto 2rem
+    @include phone-land-lg
+      margin: rem-calc(100) auto 2rem
+
+  &__image
+    margin: 0 auto 1rem
+    width: 100%
+    aspect-ratio: 16/9
+    overflow: hidden
+
+    .base-image__image
+      @extend %absolute
+      object-fit: cover
+
+  &__text
+    display: flex
+    flex-direction: column
+    // align-items: center
+    text-align: left
+
+    &:not(:last-of-type)
+      margin-bottom: 2rem
+
+  &__title
+    position: relative
+    margin-top: 1rem
+    text-align: center
+    color: var(--primary)
+
+  &__date
+    @extend %h6
+    margin-bottom: .25rem
+    text-align: left
+    letter-spacing: 1px
+    color: var(--text)
+    font-family: var(--font-title)
+    font-weight: 500
+
+  &__social-group
+    display: flex
+    @include nexus
+      margin-top: .5rem
+
+  &__social-circle
+
+    &:not(:first-of-type)
+      margin-left: 1rem
+  
+  &__social-icon
+    @include hover-supported
+      fill: var(--accent)
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: fill .2s ease
+    fill: var(--accent)
+    height: 1rem
+
+    svg
+      height: 100%
+
+  &__text
+    @extend %body
+
+    strong,
+    b
+      font-weight: 600
+
+    iframe
+      width: 90%
+      max-width: 800px
+      height: 500px
+      @include tablet
+        height: 60vw
+
+    a
+      transition: all .25s ease
+      overflow-wrap: break-word
+      word-wrap: break-word
+      color: var(--primary)
+      font-weight: 500
+
+      &:hover
+        color: var(--accent)
+
+  &__paragraph
+
+    &--header
+      margin-top: 2rem
+      margin-bottom: 1rem
+      @include tablet
+        margin-top: 1rem
+
+    &--body
+      &:not(:last-of-type)
+        margin-bottom: 1rem
+      margin-bottom: 1rem
+
+      h4
+        margin: 2rem 0 1rem
+
+      ul
+        margin: 1rem 0
+
+      video
+        width: 70%
+        max-width: 750px
+        @include laptop
+          width: 80%
+        @include tablet-lg
+          width: 100%
+        @include tablet
+          width: 70%
+        @include nexus
+          width: 100%
+
+  &__links
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-top: rem-calc(52)
+    width: 100%
+    
+    a
+      border-bottom: none
+      color: var(--text)
+
+  &__link
+    @include hover-supported
+      color: $black
+      
+      .block-post__link-icon
+        stroke: $black
+
+    display: flex
+    align-items: center
+    transition: color .2s ease
+
+    &-text
+      font-family: var(--font-title)
+      font-weight: 600
+
+      &--prev
+        @include nexus
+          text-align: left
+          
+      &--next
+        @include nexus
+          text-align: right
+
+  &__link-icon
+    display: flex
+    align-items: center
+    transition: stroke .2s ease, stroke-width .2s ease
+    width: 1rem
+    height: 1rem
+    stroke: var(--primary)
+
+    svg
+      stroke-width: .5rem
+
+    &--prev
+      transform: rotate(90deg)
+      margin: 0 1rem 0 0
+
+    &--next
+      transform: rotate(-90deg)
+      margin: 0 0 0 1rem
+

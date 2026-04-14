@@ -1,0 +1,28 @@
+.block-image
+  position: relative
+
+  &__container
+    @include container
+    align-items: center
+    justify-content: center
+
+  &__title
+    margin-bottom: 3rem
+    width: 100%
+    text-align: center
+
+  &__image-container
+    @include col (8)
+    position: relative
+    @include tablet
+      @include col (12)
+
+  &__image
+    position: relative
+    width: 100%
+    height: auto
+
+    .base-image__image
+      position: relative
+      width: 100%
+      height: auto

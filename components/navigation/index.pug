@@ -1,0 +1,62 @@
+header.navigation(:class="{ 'navigation--floating': !isDarkVariant && !isScrolling && props.nav.floating && !$store.state.noFloatTop && !$route.path.includes('/blog') && !$route.path.includes('/privacy-policy') && !$route.path.includes('/404') && !$route.path.includes('/accessibility'), 'navigation--dark': isDarkVariant, 'navigation--loaded': $store.state.siteLoaded, 'navigation--text-logo': !hasLogo }" ref='theNav')
+  
+  Topbar.navigation__topbar(v-if='props.top_bar.enable_top_bar', :props='props.top_bar')
+
+  .navigation__container
+    
+    .navigation__navbar(ref='navBar')
+      nuxt-link.navigation__home(to='/' @click.native='closeDropdown' aria-label='Home')
+        img.navigation__logo(v-if='hasLogo && useUrlLogo' :src='logoUrl' :alt='companyName + " - Home"' :class="{ 'navigation__logo--light-variant': !isDarkVariant }")
+        BaseIcon.navigation__logo(v-else-if='hasLogo' :name='logoName')
+        span.navigation__logo-text(v-else) {{ companyName }}
+      
+      nav.navigation__nav-primary(v-if='windowWidth > 1280')
+
+        .navigation__links
+          .navigation__link-container(v-for='(link, i) in links',
+            :key='`nav-link-${i}`',
+            :tabindex="link.children ? false : '0'",
+            @mouseenter='link.children ? currentDropdown = i : null' @mouseleave='closeDropdown()')
+            nuxt-link.navigation__link(:class='{ "navigation__link--active": $route.path == link.path }',
+              :to='link.path',
+              @click.native='closeDropdown',
+              @key.enter='closeDropdown') {{ link.name }}
+            BaseIcon.navigation__caret(v-if='link.children' name='caret', :class="{ 'navigation__caret--active': currentDropdown === i }")
+            .navigation__subnav(v-if='link.children' :class='{ "navigation__subnav--active": i === currentDropdown }')
+              nuxt-link.navigation__subnav-link(v-for='(sublink, j) in link.children', :key='`nav-sublink-${j}`', tabindex='0', :to='link.path + sublink.path' v-html='sublink.name' @click.native='closeDropdown')
+
+    .navigation__nav-secondary(v-if='props.nav.cta_buttons && windowWidth > 1280' ref='navSecondary')
+      .navigation__cta-container(v-for='(cta, i) in props.nav.buttons', :key='`nav-cta-${i}`')
+        BlockButton.navigation__cta(:props='cta.button')
+      
+
+    nav.navigation__mobile(v-if='windowWidth <= 1280')
+      button.navigation__hamburger(aria-haspopup='true' tabindex='0' ref='hamburger' aria-label='Open main menu' @click='openDrawer')
+        span(v-for='(span, i) in 3', :key='`hamburger-span-${i}`')
+            
+  transition(name='fade')
+    .navigation__overlay(v-if='drawerOpen && windowWidth <= 1280' @click='closeDrawer') 
+    
+  .navigation__drawer(v-if='windowWidth <= 1280', :class="{ 'navigation__drawer--active': drawerOpen, 'navigation__drawer--dark': isDarkVariant }")
+    transition(name='fade-delay')
+      .navigation__drawer-container(ref='drawer' v-if='drawerOpen')
+        .navigation__header
+          nuxt-link.navigation__home--mobile(to='/' @click.native='closeDrawer' aria-label='Home')
+            img.navigation__logo-mobile(v-if='hasLogo && useUrlLogo' :src='logoUrl' :alt='companyName + " - Home"')
+            BaseIcon.navigation__logo-mobile(v-else-if='hasLogo' :name='mobileLogoName')
+            span.navigation__logo-text-mobile(v-else) {{ companyName }}
+          button.navigation__drawer-close(@click='closeDrawer' tabindex='0') Close
+        .navigation__content-container
+          .navigation__drawer-main-menu
+
+            .navigation__drawer-menu-item(v-for='(link, i) in mobileLinks', :key='`mobile-nav-link-${i}`', tabindex='-1')
+              .navigation__drawer-row
+                nuxt-link.navigation__mobile-link(:class='{ "navigation__link--active": $route.path == link.path }', tabindex='0', :to='link.path' @click.native='closeDrawer' @key.enter='closeDrawer') {{ link.name }}
+                button.navigation__mobile-link-button(v-if='link.children', :aria-expanded="currentDropdown === i ? 'true' : 'false'" @click='toggleDropdown(i, $event)')
+                  BaseIcon.navigation__mobile-caret(name='caret', :class="{ 'navigation__mobile-caret--active': currentDropdown === i }")
+              .navigation__mobile-dropdown(v-if='link.children && currentDropdown === i', :class="{ 'navigation__mobile-dropdown--active': currentDropdown === i }", :aria-expanded="currentDropdown === i ? 'true' : 'false'")
+                nuxt-link.navigation__mobile-sublink(v-for='(sublink, j) in link.children', :key='`nav-sublink-${j}`', :to='link.path + sublink.path' v-html='sublink.name' @click.native='closeDrawer')
+
+          .navigation__drawer-cta
+            .navigation__mobile-cta-container(v-for='(cta, j) in props.nav.buttons', :key='`mobile-cta-${j}`')
+              BlockButton.navigation__cta(:props='cta.button' @click.native='closeDrawer')

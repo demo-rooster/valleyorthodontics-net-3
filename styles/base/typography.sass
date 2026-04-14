@@ -1,0 +1,120 @@
+%all
+  box-sizing: border-box
+
+%body
+  text-rendering: optimizeLegibility
+  line-height: 1.67
+  letter-spacing: .0225em
+  color: var(--text)
+  font-family: var(--font)
+  font-size: 1rem
+  font-feature-settings: 'lnum'
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  @include desktop
+    font-size: rem-calc(18)
+  @include phone
+    font-size: rem-calc(14)
+
+%small-text
+  font-size: rem-calc(15)
+  @include desktop
+    font-size: 1rem
+  @include phone
+    font-size: rem-calc(14)
+
+%h1
+  line-height: 1.15
+  font-family: var(--font-title)
+  font-size: rem-calc(70)
+  font-weight: 800
+  @include desktop
+    font-size: rem-calc(76)
+  @include laptop
+    font-size: rem-calc(60)
+  @include tablet-lg
+    font-size: rem-calc(50)
+  @include nexus
+    font-size: rem-calc(45)
+  @include max-width(360px)
+    font-size: 13vw
+
+%h1-alt
+  line-height: 1.15
+  font-family: var(--font-title)
+  font-size: rem-calc(55)
+  font-weight: 600
+  @include desktop
+    font-size: rem-calc(70)
+  @include laptop
+    font-size: rem-calc(45)
+  @include nexus
+    font-size: 2.2rem
+
+%hero-text
+  line-height: 1.42
+  font-size: rem-calc(22)
+  @include desktop
+    font-size: rem-calc(28)
+  @include laptop
+    font-size: rem-calc(20)
+  @include nexus
+    font-size: rem-calc(18)
+
+%h2
+  line-height: 1.1
+  font-family: var(--font-title)
+  font-size: rem-calc(46)
+  font-weight: 600
+  @include desktop
+    font-size: rem-calc(52)
+  @include tablet-lg
+    font-size: rem-calc(40)
+  @include phone-lg
+    font-size: rem-calc(36)
+
+%h3
+  line-height: 1.1
+  font-family: var(--font-title)
+  font-size: 30px
+  font-weight: 500
+
+%h4
+  line-height: 1.36
+  letter-spacing: .0285em
+  font-family: var(--font-title)
+  font-size: rem-calc(20)
+  font-weight: 700
+  @include desktop
+    font-size: rem-calc(22)
+  @include tablet-lg
+    font-size: rem-calc(19)
+  @include phone-lg
+    font-size: rem-calc(18)
+
+%h5
+  font-family: var(--font-title)
+  font-size: 20px
+
+%h6
+  font-family: var(--font-title)
+  font-size: 18px
+
+%body-small
+  line-height: 1.5
+  font-size: rem-calc(15)
+  @include desktop
+    font-size: 1rem
+  @include phone
+    font-size: rem-calc(14)
+
+%button-text
+  line-height: 1
+  font-size: rem-calca(16)
+
+%a
+  text-decoration: none
+  color: var(--text)
+
+%no-margin
+  margin: 0

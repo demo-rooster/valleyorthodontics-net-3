@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158.85 187.02">
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <circle cx="113.52" cy="45.33" r="42.33" transform="translate(1.2 93.55) rotate(-45)" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 6px;"/>
+      <path d="M127.45,126.2v43.89c0,7.69-6.24,13.93-13.93,13.93h0c-7.69,0-13.93-6.24-13.93-13.93v-43.89c0-7.69,6.24-13.93,13.93-13.93h0c7.69,0,13.93,6.24,13.93,13.93Z" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 6px;"/>
+      <line x1="113.27" y1="112.28" x2="113.27" y2="87.65" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 6px;"/>
+      <path d="M30.86,126.2v43.89c0,7.69-6.24,13.93-13.93,13.93h0c-7.69,0-13.93-6.24-13.93-13.93v-43.89c0-7.69,6.24-13.93,13.93-13.93h0c7.69,0,13.93,6.24,13.93,13.93Z" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 6px;"/>
+      <path d="M16.67,112.28v-35.44c0-4.18,1.66-8.19,4.62-11.15l9.08-9.08c6.16-6.16,6.16-16.14,0-22.3l-13.95-13.95" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 6px;"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+section.block-text-simple(v-if='props.paragraphs.length !== 0', :class="props.background ? 'block-text-simple--' + props.background : null", :data-texture='props.add_texture')
+  BaseTexture(v-if='props.add_texture')
+  .block-text-simple__gradient(v-if='props.linear_gradient', :style="{ background: props.linear_gradient }")  
+  .block-text-simple__container
+    h2.block-text-simple__title(v-if='props.title' v-html='props.title', :class="{ 'block-text-simple__title--large': props.large_title, 'block-text-simple__title--center': props.center_title }" ref='tsTitle')
+    .block-text-simple__row(v-if='props.paragraphs' :class="{ 'block-text-simple__row--one-column': props.paragraphs.length <= 1 || props.one_column, 'block-text-simple__row--center': props.center_title }")
+      p.block-text-simple__paragraph(v-for='(paragraph, i) in props.paragraphs', :key='`text-simple-${i}`' v-html='paragraph.text' ref='tsParagraphs')
+      

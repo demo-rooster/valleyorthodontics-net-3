@@ -1,0 +1,69 @@
+$array: 177
+
+.base-image
+  position: relative
+
+  &--bg
+    position: absolute
+
+  &__image
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: auto
+
+    @supports (object-fit: cover)
+      height: 100%
+      object-fit: contain
+      object-position: center
+
+      &--bg
+        object-fit: cover
+
+  &__overlay
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+  &__spinner
+    position: absolute
+    top: 50%
+    left: 50%
+    animation: imageRotator 1.4s linear infinite
+
+    @keyframes imageRotator
+      0%
+        transform: translate(-50%, -50%) rotate(0deg)
+      100%
+        transform: translate(-50%, -50%) rotate(270deg)
+
+  &__ring
+    animation: spinning 1.4s ease-in-out infinite
+    transform-origin: center
+    fill: transparent
+    stroke-width: 2
+    stroke: $black
+    stroke-dasharray: $array
+    stroke-dashoffset: 0
+
+    @keyframes spinning
+      0%
+        stroke-dashoffset: $array
+      50%
+        transform: rotate(135deg)
+        stroke-dashoffset: ($array / 4)
+      100%
+        transform: rotate(450deg)
+        stroke-dashoffset: $array
+
+.fade-src-img
+  &-enter-active,
+  &-leave-active
+    transition: opacity .2s ease
+
+  &-enter,
+  &-leave-to
+    opacity: 0

@@ -1,0 +1,66 @@
+.dev-mode-overlay
+  @extend %absolute
+  display: flex
+  flex-direction: column
+  gap: #{$gutter}
+  z-index: 88
+  pointer-events: none
+  outline: black solid rem-calc(2)
+  border: .5rem solid $roosterPurple
+  //background: linear-gradient(0deg, rgba(#4d4ec1,0.4) 0%, rgba(#4d4ec1,0.8) 100%)
+
+  &--expanded
+    z-index: 98
+    pointer-events: auto
+
+  &__content
+    position: relative
+    padding: 1rem
+
+  &__label
+    @extend %h1
+    width: 100%
+    text-align: center
+    text-shadow: 1px 1px 2px $roosterPurple, 0 0 1em $chartreuse, 0 0 .2em $chartreuse
+    color: $roosterPurple
+
+  &__button-container
+    display: flex
+    position: relative
+    justify-content: center
+    width: 100%
+
+  &__button
+    @include hover-focus
+      background: $chartreuse
+      color: $roosterPurple
+    border: rem-calc(2) solid $chartreuse
+    border-radius: rem-calc(24)
+    background: $roosterPurple
+    cursor: pointer
+    padding: rem-calc(6) rem-calc(12)
+    width: max-content
+    text-decoration: none
+    color: $chartreuse
+    user-select: none
+    pointer-events: auto
+
+  &__details-container
+    position: relative
+    flex-shrink: 0
+    transition: height .3s ease
+    margin-top: #{$gutter / 2}
+    overflow: hidden
+
+  &__details
+    margin: 0 1rem
+    border-radius: rem-calc(2rem)
+    background: rgba($white, .9)
+    padding: 1rem
+    max-height: rem-calc(600)
+    overflow: auto
+    font-family: monospace
+
+    &--active
+      z-index: 99
+      pointer-events: auto

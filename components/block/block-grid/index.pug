@@ -1,0 +1,18 @@
+section.block-grid(:class="[props.background ? 'block-grid--' + props.background : null, props.component_options?.component_padding ? 'component-padding--' + props.component_options.component_padding : null]", :data-texture='props.add_texture')
+  .block-grid__gradient(v-if='props.linear_gradient', :style="{ background: props.linear_gradient }")
+  BaseTexture(v-if='props.add_texture')  
+  .block-grid__container
+    h2.block-grid__title(v-if='props.title' v-html='props.title', :class="{ 'block-grid__title--large': props.large_title, 'block-grid__title--centered': props.center_title }")
+    .block-grid__grid
+      button.block-grid__item(v-for='(item, i) in props.items', :key='`grid-item-${i}`', v-if="!item.name || !item.name.startsWith('Team')", :class="{ 'block-grid__item--hover': currHover === i }" @click='item.bio ? openBio(i) : null'  tabindex='0', :aria-expanded='currIndex === i ? "true" : "false"' @mouseover='handleHover(i)' @mouseleave='removeHover' @focus='handleHover(i)')
+        BaseImage.block-grid__image(v-bind='item.image' imageBackground)
+        .block-grid__content.block-grid__content--bio(v-if='props.has_bio', :class="{ 'block-grid__content--active': currIndex === i }")
+          .block-grid__header
+            p.block-grid__name(v-html='item.name')
+            p.block-grid__position(v-html='item.position' v-if='item.position')
+          .block-grid__bio-container(aria-live='polite')
+            p.block-grid__bio(v-html='item.bio')
+        .block-grid__content(v-else-if='!props.has_bio')
+          .block-grid__header
+            p.block-grid__name(v-html='item.name')
+            p.block-grid__position(v-html='item.position' v-if='item.position')                  

@@ -1,0 +1,573 @@
+/* stylelint-disable */
+
+.navigation
+  @extend %fixed
+  transition: background .2s ease, transform .2s ease, opacity .2s ease-in .3s, box-shadow .2s ease
+  opacity: 0
+  z-index: 99
+  box-shadow: $bs2
+  background: $white
+  height: auto
+  @include nexus
+    height: rem-calc(65)
+  @include phone-land-lg
+    height: rem-calc(65)
+
+  // Global protection for logo SVG colors - prevent any CSS variables from interfering
+  .navigation__logo svg, .navigation__logo-mobile svg
+    // Reset CSS variables that might affect logo fill colors
+    --accent: initial !important
+    --primary: initial !important
+    --text: initial !important
+    --secondary: initial !important
+
+  &--floating
+    box-shadow: none
+    background: none
+
+    .base-button__cta
+      @include hover-supported
+        color: $white
+
+  &--loaded
+    opacity: 1
+
+  &--hide
+    transform: translateY(-105%)
+
+  &--hide-topbar
+    transform: translateY(-150%)
+
+  &--text-logo
+    .navigation__container
+      padding-top: 0.75rem
+      padding-bottom: 0.75rem
+      @include phone-sm
+        padding-top: 0.5rem
+        padding-bottom: 0.5rem
+
+  &--dark
+    background: var(--topbar-dark)
+    .navigation__link
+      color: $white
+    .navigation__caret
+      stroke: $white
+      svg path
+        fill: $white
+    .navigation__hamburger
+      span
+        background: $white
+      &:hover span, &:focus span
+        background: var(--accent)
+
+  &__container
+    @include container--large
+    align-items: center
+    justify-content: space-between
+    height: 100%
+    @include phone-xs
+      padding: 0 0.5rem
+
+  &__navbar
+    display: flex
+    align-items: center
+    height: 100%
+
+  &__home
+    margin-right: 5vw
+    padding: 0.5rem
+    @include phone-sm
+      margin-right: 3vw
+      padding: 0.4rem
+    @include phone-xs
+      margin-right: 2vw
+      padding: 0.3rem
+
+    &--mobile
+      padding: 0.5rem
+      height: 100%
+      display: flex
+      align-items: center
+
+  &__logo
+    display: inline-block
+    position: relative
+    height: rem-calc(65)
+    object-fit: contain
+    @include phone-land-lg
+      height: rem-calc(45)
+    @include phone-land
+      height: rem-calc(45)
+    @include nexus
+      height: rem-calc(45)
+    @include phone-xs
+      height: rem-calc(35)
+    @include max-width(350px)
+      height: rem-calc(30)
+
+    svg
+      height: 100%
+
+    // When navigation is floating, it uses the white logo version
+    .navigation--floating &
+      // For URL-based logos with dark variant, use filter to make them white
+      // Light variant logos are already light, so no filter needed
+      &:not(.navigation__logo--light-variant)
+        filter: brightness(0) invert(1)
+      svg
+        path.cls-1
+          fill: #fff !important
+        path.cls-2
+          fill: #fff !important
+
+  &__logo-mobile
+    margin-left: 1rem
+    width: rem-calc(220)
+    height: rem-calc(70)
+    object-fit: contain
+    @include phone-sm
+      width: rem-calc(160)
+      height: rem-calc(50)
+      margin-left: 0.5rem
+    @include phone-xs
+      width: rem-calc(140)
+      height: rem-calc(45)
+      margin-left: 0.25rem
+
+  &__logo-text
+    font-family: var(--font-title)
+    font-size: rem-calc(32)
+    font-weight: 700
+    color: var(--primary)
+    line-height: 1.2
+    white-space: nowrap
+    padding: 0.75rem 0
+    @include phone-land-lg
+      font-size: rem-calc(26)
+      padding: 0.5rem 0
+    @include phone-sm
+      font-size: rem-calc(22)
+      padding: 0.4rem 0
+    @include phone-xs
+      font-size: rem-calc(18)
+      padding: 0.3rem 0
+
+    .navigation--floating &
+      color: $white
+
+  &__logo-text-mobile
+    font-family: var(--font-title)
+    font-size: rem-calc(28)
+    font-weight: 700
+    color: var(--primary)
+    line-height: 1.2
+    margin-left: 1rem
+    padding: 0.75rem 0
+    @include phone-sm
+      font-size: rem-calc(22)
+      margin-left: 0.5rem
+      padding: 0.5rem 0
+    @include phone-xs
+      font-size: rem-calc(18)
+      margin-left: 0.25rem
+      padding: 0.4rem 0
+
+    .navigation__drawer--dark &
+      color: $white
+
+  &__links, &__menu-list
+    margin: 0
+    padding: 0
+
+  &__links
+    display: flex
+    flex-direction: row
+    align-items: center
+
+  &__link-container
+    // &:focus-within
+    //   .navigation__subnav
+    //     visibility: visible
+    //     opacity: 1
+    //     z-index: 100
+    //     pointer-events: all
+    @include hover-focus
+      // .navigation__subnav
+      //   visibility: visible
+      //   opacity: 1
+      //   z-index: 100
+      //   pointer-events: all
+      .navigation__link:after
+        transform: translateY(0)
+        transition: opacity .2s ease, transform .2s ease
+        opacity: 1
+      .navigation__caret
+        transform: scaleY(-1)
+    display: flex
+    position: relative
+    align-items: center
+    height: 100%
+    list-style: none
+    pointer-events: auto
+    &:not(:last-child)
+      margin-right: 3vw
+
+  &__link
+    @include focus
+      outline: none
+      &:after
+        transform: translateY(0)
+        opacity: 1
+    display: block
+    transition: color .2s ease
+    overflow: hidden
+    letter-spacing: .0325em
+    font-size: 1rem
+    font-weight: 600
+    pointer-events: auto
+    @include desktop
+      font-size: rem-calc(17)
+
+    .navigation--floating &
+      color: $white
+
+    &:after
+      position: absolute
+      bottom: -.25rem
+      left: 0
+      transform: translateY(.25rem)
+      transition: opacity .2s ease, transform .2s ease
+      opacity: 0
+      background: var(--text)
+      width: 100%
+      height: rem-calc(2)
+      content: ''
+
+      .navigation--floating &
+        background: $white
+
+    &.nuxt-link-exact-active,
+    &--focus
+      &:after
+        transform: translateY(0)
+        opacity: 1
+
+  &__caret
+    transition: transform .25s ease
+    margin-left: .5rem
+    width: 1rem
+    height: 1rem
+    line-height: 1.1
+    stroke: var(--text)
+    stroke-width: .45rem
+
+    &--active
+      transform: translateY(0)
+      visibility: visible
+      opacity: 1
+      z-index: 100
+
+    .navigation--floating &
+      stroke: $white
+
+  &__subnav
+    position: absolute
+    top: calc(100%)
+    left: 0
+    transform: translateY(1.5rem)
+    transition: opacity .2s ease, transform .2s ease
+    opacity: 0
+    box-shadow: $bs1
+    background: $white
+    padding: .9rem 1.75rem
+    width: max-content
+    pointer-events: none
+
+    &:before
+      position: absolute
+      top: -1.5rem
+      left: 0
+      background: transparent
+      width: 100%
+      height: 2.5rem
+      content: ''
+      pointer-events: none
+
+    &--active
+      transform: translateY(0)
+      opacity: 1
+      pointer-events: all
+
+  &__subnav-link
+    @include hover-focus
+      background: rgba(var(--text-rgb), .1)
+    @include focus
+      background: rgba(var(--text-rgb), .1)
+    display: block
+    transition: background .2s ease
+    padding: .6rem 1rem .6rem .75rem
+    font-size: rem-calc(15)
+    font-weight: 600
+    @include desktop
+      font-size: 1rem
+
+  &__nav-secondary
+    display: flex
+    width: fit-content
+    height: 100%
+
+  &__cta-container
+    width: 100%
+    height: 100%
+
+  &__hamburger
+    @include focus
+    cursor: pointer
+    padding: .5rem
+    width: rem-calc(50)
+    height: rem-calc(50)
+    @include phone-sm
+      width: rem-calc(40)
+      height: rem-calc(40)
+      padding: .3rem
+    @include phone-xs
+      width: rem-calc(36)
+      height: rem-calc(36)
+      padding: .25rem
+
+    span
+      display: block
+      transition: background .2s ease, transform .2s ease
+      background: var(--text)
+      width: 100%
+      height: rem-calc(3)
+      &:not(:last-child)
+        margin-bottom: rem-calc(6)
+        @include phone-sm
+          margin-bottom: rem-calc(4)
+        @include phone-xs
+          margin-bottom: rem-calc(3)
+
+      .navigation--floating &
+        @include hover-focus
+          span
+            background: rgba(var(--bg-2-rgb), .9)
+        background: $white
+
+    @include hover-focus
+      span
+        background: var(--primary)
+        &:first-child
+          transform: translateY(-3px)
+        &:last-child
+          transform: translateY(3px)
+
+  &__overlay
+    @extend %fixed
+    background: rgba($black, .4)
+    height: 100vh
+
+  &__drawer
+    position: fixed
+    top: 0
+    right: 0
+    transform: translateX(100%)
+    transition: transform .225s cubic-bezier(.65, .025, .67, .36)
+    z-index: 3
+    background: $white
+    width: 100%
+    max-width: #{$screen-phone-lg}
+    height: 100vh
+    @include phone-sm
+      max-width: 100%
+
+    &--active
+      transform: translateX(0)
+
+    &--dark
+      background: var(--topbar-dark)
+      .navigation__header
+        background: var(--topbar-dark)
+        box-shadow: none
+      .navigation__drawer-close
+        background: transparent
+        color: $white
+        &:hover, &:focus
+          background: rgba(255, 255, 255, 0.15)
+          color: $white
+      .navigation__content-container
+        background: var(--topbar-dark)
+      .navigation__mobile-link
+        color: $white
+        &:hover, &:focus
+          background: rgba(255, 255, 255, 0.1)
+      .navigation__drawer-main-menu
+        border-color: rgba(255, 255, 255, 0.2)
+      .navigation__drawer-menu-item
+        border-color: rgba(255, 255, 255, 0.2)
+      .navigation__mobile-caret
+        stroke: $white
+        svg path
+          fill: $white
+      .navigation__mobile-link-button
+        &:hover .navigation__mobile-caret, &:focus .navigation__mobile-caret
+          stroke: var(--accent)
+      .navigation__mobile-sublink
+        background: rgba(255, 255, 255, 0.1)
+        color: $white
+        &:hover, &:focus
+          background: rgba(255, 255, 255, 0.2)
+
+  &__drawer-container
+    height: 100%
+
+  &__header
+    @extend %fixed
+    display: flex
+    align-items: center
+    justify-content: space-between
+    z-index: 2
+    box-shadow: 0 2px 0 rgba(var(--primary-rgb), .2)
+    background: var(--bg-2)
+    height: rem-calc(85)
+    padding: 0 1rem
+    @include phone-sm
+      height: rem-calc(70)
+      padding: 0 0.5rem
+    @include phone-xs
+      height: rem-calc(65)
+      padding: 0 0.25rem
+
+  &__drawer-close
+    @include hover-focus
+      background: var(--secondary)
+      color: $white
+    display: block
+    transition: background .2s ease, color .2s ease
+    background: $white
+    cursor: pointer
+    padding: 1.5rem
+    height: 100%
+    letter-spacing: .035em
+    color: var(--text)
+    font-weight: 600
+    @include phone-sm
+      padding: 1rem 0.5rem
+      font-size: rem-calc(14)
+    @include phone-xs
+      padding: 0.75rem 0.25rem
+      font-size: rem-calc(12)
+
+  &__drawer-cta
+    display: flex
+    margin-bottom: 2rem
+    padding: 1rem 2rem
+    gap: 1rem
+    @include nexus
+      flex-direction: column
+      padding: 1rem 1rem 0
+
+  &__primary-cta--drawer
+    @include hover-supported
+      color: $black
+
+  &__content-container
+    background: var(--bg-1)
+    padding-top: rem-calc(85)
+    height: inherit
+    overflow: scroll
+    @include phone-sm
+      padding-top: rem-calc(70)
+    @include phone-xs
+      padding-top: rem-calc(65)
+
+  &__drawer-main-menu
+    margin: 0
+    border-bottom: 1px solid rgba(var(--text-rgb), .2)
+    padding: 0
+
+  &__drawer-menu-item
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    width: 100%
+    list-style: none
+    &:not(:last-child)
+      border-bottom: 1px solid rgba(var(--text-rgb), .2)
+
+  &__drawer-row
+    display: flex
+    justify-content: space-between
+    width: 100%
+
+  &__mobile-link
+    @include hover-supported
+      background: rgba(var(--text-rgb), .2)
+    &:focus-visible
+      outline: none
+      background: rgba(var(--text-rgb), .2)
+    display: flex
+    transition: background .3s ease
+    padding: 1.5rem 2rem
+    width: 100%
+    line-height: 1.5
+    font-size: rem-calc(20)
+    font-weight: 600
+    @include phone-sm
+      padding: 1.25rem 1.5rem
+      font-size: rem-calc(18)
+    @include phone-xs
+      padding: 1rem 1rem
+      font-size: rem-calc(16)
+
+  &__mobile-link-button
+    @include hover-supported
+      background: rgba(var(--text-rgb), .2)
+    &:focus-visible
+      outline: none
+      background: rgba(var(--text-rgb), .2)
+    transition: background .3s ease
+    cursor: pointer
+    padding: 0 2rem
+    @include phone-sm
+      padding: 0 1.5rem
+    @include phone-xs
+      padding: 0 1rem
+
+  &__mobile-caret
+    transition: transform .25s ease
+    width: rem-calc(20)
+    height: rem-calc(20)
+    stroke: var(--text)
+    stroke-width: .5rem
+
+    &--active
+      transform: scaleY(-1)
+
+  &__mobile-dropdown
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: inherit
+
+  &__mobile-sublink
+    @include hover-supported
+      background: rgba(var(--primary-rgb), .2)
+    &:focus-visible
+      outline: none
+      background: rgba(var(--primary-rgb), .2)
+    position: relative
+    transition: background .3s ease
+    background: var(--bg-2)
+    padding: .75rem 2rem
+    @include phone-sm
+      padding: .75rem 1.5rem
+    @include phone-xs
+      padding: .5rem 1rem
+
+  // Add mobile navigation specific styles
+  &__mobile
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    width: auto

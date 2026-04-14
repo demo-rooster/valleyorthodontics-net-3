@@ -1,0 +1,28 @@
+footer.footer(:class="{ 'footer--light': $store.state.global.footer.light, 'footer--border-top': $store.state.global.footer.add_border }", :data-color='$store.state.global.footer.light ? "light" : "dark"', :style="{ '--textColor': $store.state.global.footer.light ? '#272727' : '#fff' }")
+  .footer__container
+    .footer__content
+      
+      .footer__row
+        ul.footer__menu
+          li.footer__menu-item(v-for='(link, i) in links', :key='`footer-item-${i}`')
+            nuxt-link.footer__link(:to='link.path', v-html='link.name' @click.native='$_removeFocus')
+          li.footer__menu-item(v-for='(link, i) in $store.state.global.footer.addl_links', :key='`footer-addl-link-${i}`')
+            nuxt-link.footer__link(v-if='!link.ext_link', :to='link.path + (link.hash ? link.hash : "")' v-html='link.label' @click.native='$_removeFocus')  
+            a.footer__link(v-else-if='link.ext_link' :href='link.path' v-html='link.label' target='_blank' rel='noopener' @click='$_removeFocus')
+      
+      .footer__row
+        .footer__items
+          .footer__item
+            .footer__copyright-item © {{ new Date().getFullYear() }} {{ $store.state.global.company_name }}
+          .footer__item
+            .footer__brand-item Online Advantage by #[a(href='https://www.roostergrin.com' class='footer__brand-item-link' target='_blank' rel='noopener noreferrer' @click='$_removeFocus') Rooster Grin Media]
+          .footer__item
+            nuxt-link.footer__link(to='/accessibility' @click.native='$_removeFocus') Accessibility Statement
+          .footer__item
+            .footer__link#accessibilityWidget(tabindex='0' aria-label='Accessibility Menu') Accessibility Menu
+    
+    .footer__social-media
+      ul.footer__social-links
+        li.footer__social-item(v-for='(social, i) in $store.state.global.footer.social_media', :key='`social-link-${i}`')
+          a.footer__social-link(:href='social.href' target='_blank' rel='noopener noreferrer', :aria-label='`Follow us on ${social.icon}`' @click='$_removeFocus')
+            BaseIcon.footer__social-icon(:name='social.icon')                        

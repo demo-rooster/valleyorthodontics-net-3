@@ -1,0 +1,93 @@
+.block-logo-banner
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+
+  &--bg1
+    background: var(--bg-1)
+
+  &--bg2
+    background: var(--bg-2)
+
+  &__container
+    @include container
+
+  &__title
+    @include col (10)
+    @include col--offset (1)
+    margin-bottom: 3rem
+
+    &--large
+      @extend %h1
+      margin-bottom: 4rem
+      @include tablet-md
+        margin-bottom: 3rem
+
+    &--centered
+      text-align: center
+
+    &--primary
+      color: rgba(var(--primary-rgb), .85)
+
+  &__logo-container
+    @include col (10)
+    @include col--offset (1)
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    align-items: center
+    gap: 1rem
+    justify-content: space-evenly
+    @include nexus
+      flex-direction: column
+
+    &--scrolling
+      display: flex
+      flex-direction: column
+      height: rem-calc(80)
+      overflow: hidden
+      @include tablet-lg
+        height: rem-calc(75)
+
+  &__logos
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    gap: 1rem
+    justify-content: space-around
+    width: 100%
+
+    .block-logo-banner__logo-container--scrolling &
+      flex-wrap: nowrap
+      animation: scroll 30s linear infinite
+      width: max-content
+
+  &__logo
+    .block-logo-banner__logo-container--scrolling &
+      display: block
+      flex: 1 0 auto
+      margin-right: 8rem
+      @include tablet-lg
+        margin-right: 6rem
+      @include tablet
+        margin-right: 4rem
+
+  &__icon
+    width: auto
+    height: 5rem
+    @include nexus
+      max-width: 80%
+      height: 5rem
+
+    svg
+      width: 100%
+      height: 100%
+
+    
+      
+@keyframes scroll
+  0%
+    transform: translateX(0%)
+  100%
+    transform: translateX(-100%)

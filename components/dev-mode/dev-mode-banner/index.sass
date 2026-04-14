@@ -1,0 +1,52 @@
+.dev-mode-banner
+  @extend %component-padding--half
+  position: relative
+  z-index: 999
+  background-color: $roosterPurple
+  color: $white
+
+  &__container
+    @include container
+    align-items: center
+    justify-content: center
+    gap: #{$gutter}
+
+  &__button
+    @include hover-focus
+      background: $chartreuse
+      color: $roosterPurple
+    border: rem-calc(2) solid $chartreuse
+    border-radius: rem-calc(24)
+    background: $roosterPurple
+    cursor: pointer
+    padding: rem-calc(12) rem-calc(24)
+    text-decoration: none
+    color: $chartreuse
+    user-select: none
+
+  &__store-container
+    position: relative
+    flex-shrink: 0
+    transition: height .3s ease
+    margin-top: 2rem
+    width: 100%
+    overflow: hidden
+
+  &__store
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 999
+    margin: 0 1rem
+    border-radius: rem-calc(2rem)
+    background: rgba($white, .9)
+    padding: 1rem
+    width: 95%
+    max-height: 80vh
+    overflow: auto
+    color: $black
+    font-family: monospace
+
+    &--active
+      z-index: 99
+      pointer-events: auto

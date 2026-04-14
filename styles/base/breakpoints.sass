@@ -1,0 +1,71 @@
+@mixin desktop
+  @media screen and (min-width: $screen-desktop)
+    @content
+
+@mixin laptop-lg
+  @media screen and (min-width: $screen-laptop-lg)
+    @content
+
+@mixin laptop
+  @media screen and (max-width: $screen-laptop)
+    @content
+
+@mixin laptop-sm
+  @media screen and (max-width: $screen-laptop-sm)
+    @content
+
+@mixin ipad-pro
+  @media screen and (max-width: $screen-tablet-lg) and (min-height: 1366px)
+    @content
+
+@mixin tablet-lg
+  @media screen and (max-width: $screen-tablet-lg)
+    @content
+
+@mixin tablet-md
+  @media screen and (max-width: $screen-tablet-md)
+    @content
+
+@mixin tablet
+  @media screen and (max-width: $screen-tablet)
+    @content
+
+@mixin nexus
+  @media screen and (max-width: $screen-nexus)
+    @content
+
+@mixin phone-lg
+  @media screen and (max-width: $screen-phone-lg)
+    @content
+
+@mixin phone-land-lg
+  @media screen and (max-width: 900px) and (max-height: $screen-phone-lg)
+    @content
+
+@mixin phone
+  @media screen and (max-width: $screen-phone)
+    @content
+
+@mixin phone-sm
+  @media screen and (max-width: 414px)
+    @content
+
+@mixin phone-xs
+  @media screen and (max-width: 373px)
+    @content
+
+@mixin phone-land
+  @media screen and (max-width: 750px) and (max-height: $screen-phone)
+    @content
+
+@mixin max-width($max-width)
+  @media screen and (max-width: $max-width)
+    @content
+
+@mixin min-width($min-width)
+  @media screen and (min-width: $min-width)
+    @content
+
+@mixin max-height($max-height)
+  @media screen and (max-height: $max-height)
+    @content

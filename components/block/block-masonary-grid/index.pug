@@ -1,0 +1,22 @@
+section.block-masonary-grid
+  .block-masonary-grid__container(:class="{ 'block-masonary-grid__container--reverse': props.reverse_row}")
+    
+    .block-masonary-grid__col-left(:class="{ 'block-masonary-grid__col-left--small': props.items.length > 4 }")
+      .block-masonary-grid__content
+        h2.block-masonary-grid__title(v-html='props.title' v-if='props.title' ref='theTitle')
+        p.block-masonary-grid__paragraph(v-for='(paragraph, i) in props.paragraphs', :key='`masonary-grid-text-${i}`' v-html='paragraph.text' ref='paragraphs')
+        BlockButton.block-masonary-grid__cta(v-if='props.button.label', :props='props.button' @click='handleCtaClick')  
+    
+    .block-masonary-grid__col-right(:class="{ 'block-masonary-grid__col-right--large': props.items.length > 4 }")  
+      .block-masonary-grid__grid(v-if='props.links', :class="`block-masonary-grid__grid--${props.items.length}`")
+        nuxt-link.block-masonary-grid__item(v-for='(item, i) in props.items', :key='`masonary-grid-item-link-${i}`', :to='item.path + (item.hash ? item.hash : "")', :aria-label='item.title')
+          .block-masonary-grid__overlay
+          .block-masonary-grid__overlay--hover
+          BaseImage.block-masonary-grid__image(v-bind='item.image' imageBackground)
+          h3.block-masonary-grid__grid-title(v-html='item.title')
+            
+      .block-masonary-grid__grid(v-else-if='!item.links')
+        .block-masonary-grid__item(v-for='(item, i) in props.items', :key='`masonary-grid-item-${i}`')
+          .block-masonary-grid__overlay
+          BaseImage.block-masonary-grid__image(v-bind='item.image')
+          h3.block-masonary-grid__grid-title(v-html='item.title')                   

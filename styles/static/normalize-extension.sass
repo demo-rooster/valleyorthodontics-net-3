@@ -1,0 +1,51 @@
+.body-stop
+  overflow: hidden
+
+.sr-only
+  position: absolute
+  margin: -1px
+  border: none
+  padding: 0
+  width: 1px
+  height: 1px
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+
+.danger
+  color: $danger
+
+*
+  @extend %all
+
+body
+  @extend %body
+
+h1
+  @extend %h1 !optional
+
+h2
+  @extend %h2 !optional
+
+h3
+  @extend %h3 !optional
+
+h4
+  @extend %h4 !optional
+
+h5
+  @extend %h5 !optional
+
+h6
+  @extend %h6 !optional
+
+a
+  @extend %a !optional
+
+p, li, h2, h3, h4, h5
+  @extend %no-margin !optional
+
+button
+  border: none
+  background: none
+  padding: 0
+  color: var(--text)

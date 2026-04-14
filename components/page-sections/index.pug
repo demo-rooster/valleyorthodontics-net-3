@@ -1,0 +1,78 @@
+.page-sections
+  .page-sections__section-container(
+    v-for='(section, i) in props',
+    :key='`section-${i}`',
+    :class='[(section.has_background || section.background_type === "has_background") && section.background ? `bg--${section.background}` : null]'
+  )
+    .page-sections__section(:id='section.component_options && section.component_options.hash ? section.component_options.hash : `${section.acf_fc_layout}-${i}`')
+      div(v-if='section.acf_fc_layout === null')
+      BlockAccordionFull(v-else-if='section.acf_fc_layout === "accordion" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockBanner(v-else-if='section.acf_fc_layout === "multi_use_banner" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockBeforeAfterSlider(v-else-if='section.acf_fc_layout === "before_after_slider" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockContact(v-else-if='section.acf_fc_layout === "map" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section' :global='$store.state.global')
+      BlockContactForm(v-else-if='section.acf_fc_layout === "form" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockGrid(v-else-if='section.acf_fc_layout === "block_grid" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockImage(v-else-if='section.acf_fc_layout === "image_only" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockImageText(v-else-if='section.acf_fc_layout === "image_text" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockItemRow(v-else-if='section.acf_fc_layout === "multi_item_row" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockLogoBanner(v-else-if='section.acf_fc_layout === "logo_banner" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')  
+      BlockMasonaryGrid(v-else-if='section.acf_fc_layout === "block_masonary_grid" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockMultiTestimonial(v-else-if='section.acf_fc_layout === "multi_item_testimonial" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockSingleImageSlider(v-else-if='section.acf_fc_layout === "single_image_slider" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockSingleTestimonial(v-else-if='section.acf_fc_layout === "single_testimonial" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockSingleVideoSlider(v-else-if='section.acf_fc_layout === "single_video_slider" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockSmileGallery(v-else-if='section.acf_fc_layout === "smile_gallery" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockTabs(v-else-if='section.acf_fc_layout === "tabs" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockTextFH(v-else-if='section.acf_fc_layout === "block_text_fh" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlockTextSimple(v-if='section.acf_fc_layout === "block_text_simple" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      BlogPosts(v-if='section.acf_fc_layout === "blog_posts" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      TheHero(v-else-if='section.acf_fc_layout === "hero" && !section.hide_component',
+        :class='`component-padding--` + section.component_padding',
+        :props='section')
+      // devMode is toggled in the global custom-post in the API and is only effective when the site is run locally.
+      DevModeOverlay(
+        v-if='$store.state.devInspector'
+        :pageSectionSlug='section.acf_fc_layout'
+        :props='section'
+      )
+  DevModeTools(v-if='$store.state.devTools')

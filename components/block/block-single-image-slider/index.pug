@@ -1,0 +1,25 @@
+.block-single-image-slider(:class="props.background ? 'block-single-image-slider--' + props.background : null", :data-texture='props.add_texture', :style="{ '--siSliderTextColor': props.primary_color ? 'var(--primary)' : 'var(--secondary)'}")
+  BaseTexture(v-if='props.add_texture')
+  .block-single-image-slider__gradient(v-if='props.linear_gradient', :style="{ background: props.linear_gradient }")  
+  .block-single-image-slider__container
+    .block-single-image-slider__row
+      h2.block-single-image-slider__title(v-html='props.title')
+      .block-single-image-slider__pagination(v-if='props.slides.length > 1') {{ currIndex + 1 }} / {{ props.slides.length }}
+    .block-single-image-slider__carousel(:aria-label='`${props.carousel_aria}`')
+      button.block-single-image-slider__control-btn(v-if='props.slides.length > 1', aria-label='Previous Slide' tabindex='0' @click='handleSlide("prev")')
+        BaseIcon.block-single-image-slider__icon.block-single-image-slider__icon--prev(name='caret')
+      
+      .block-single-image-slider__slider(role='region' aria-live='polite')
+        .block-single-image-slider__slide(
+          v-for='(slide, i) in props.slides'
+          :key='`single-image-slider-${i}`'
+          :aria-label='`slide ${ i + 1 } of ${ props.slides.length }`'
+          role='group'
+          :class="{ 'block-single-image-slider__slide--current': currIndex === i }"
+          )
+          BaseImage.block-single-image-slider__image(v-bind='slide' imageBackground :aria-hidden=' currIndex === i ? null : true')
+
+      button.block-single-image-slider__control-btn(v-if='props.slides.length > 1', aria-label='Next Slide' tabindex='0' @click='handleSlide("next")')
+        BaseIcon.block-single-image-slider__icon.block-single-image-slider__icon--next(name='caret')
+
+    .block-single-image-slider__pagination(v-if='props.slides.length > 1') {{ currIndex + 1 }} / {{ props.slides.length }}      

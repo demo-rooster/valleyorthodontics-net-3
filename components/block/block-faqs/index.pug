@@ -1,0 +1,27 @@
+section.block-faqs(:id='props.accordion.hash ? props.accordion.hash : null')
+  .block-faqs__container(v-waypoint='{ active: true, callback: onWaypoint, options: intersectionOptions }')
+    h2.block-faqs__title(v-if='props.accordion.title' v-html='props.accordion.title')
+    p.block-faqs__body(v-if='props.accordion.body' v-html='props.accordion.body')
+    .block-faqs__accordion
+      .block-faqs__row(v-for='row, i in props.accordion.row'
+        :key='"row" + i'
+        :class='{ "block-faqs__row--active" : i === active }'
+        @click='i !== active ? toggleSection(i) : active = null'
+        @keyup.enter='i !== active ? toggleSection(i) : active = null'
+        :aria-label='`open accordion row ${i + 1}`'
+        tabindex='0')
+        .block-faqs__top
+          h3.block-faqs__row-title(v-html='row.title')
+          button.block-faqs__button
+            span
+            span
+        .block-faqs__bottom
+          .block-faqs__media(v-if='row.has_media' :class='{ "block-faqs__media--full": row.media_type === "video" || row.image.size === "large" }')
+            .block-faqs__video(v-if='row.media_type === "video"')
+              button.block-faqs__video-init(v-if='!videoActive' @click='playVideo(row.video.src)')
+                BaseImage.block-faqs__video-thumbnail(:src='row.video.thumbnail.src' :webp='row.video.thumbnail.webp' imageBackground :bgColor='"#fff"' :alt='`image for ${row.video.title}`')
+                .block-faqs__video-overlay
+                BaseIcon.block-faqs__video-play(name='play')
+              iframe.block-faqs__video-iframe(v-else='videoActive && i === active' :src="`${videoActive}?&autoplay=1&rel=0`" :title='row.video.title' frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; autoplay; gyroscope; picture-in-picture" allowfullscreen)       
+            BaseImage.block-faqs__image(v-if='row.media_type === "image"' :src='row.image.src', :webp='row.image.webp', alt='row.image.alt')
+          .block-faqs__text(v-html='row.body' :class='{ "block-faqs__text--small": row.media_type === "image" && row.image.size === "small" }')

@@ -1,0 +1,177 @@
+{
+  "enable_development_mode": false,
+  "company_name": "Tyska Alexander Orthodontics",
+  "domain": "taortho.com",
+  "email": "info@mandtortho.com",
+  "phone": {
+    "number": "(716) 759-8323",
+    "href": "tel:+17167598323",
+    "aria": "7 1 6, 7 5 9, 8 3 2 3"
+  },
+  "location": [
+    {
+      "title": "Clarence Office",
+      "address": {
+        "street": "9650 Main Street",
+        "suite": "",
+        "city_state": "Clarence, NY 14031",
+        "coordinates": {
+          "longitude": "-78.6314355",
+          "latitude": "42.9736638"
+        }
+      },
+      "phone": {
+        "number": "(716) 759-8323",
+        "href": "tel:+17167598323"
+      },
+      "email": "info@mandtortho.com",
+      "hours": [
+        {
+          "day": "Monday",
+          "time": "8:30 am \t6:30 pm"
+        },
+        {
+          "day": "Tuesday",
+          "time": "8:30 am \t6:30 pm"
+        },
+        {
+          "day": "Wednesday",
+          "time": "8:00 am \t11:30 am"
+        },
+        {
+          "day": "Thursday",
+          "time": "8:00 am \t6:00 pm"
+        },
+        {
+          "day": "Friday",
+          "time": "8:00 am \t11:30 am"
+        }
+      ],
+      "directions_link": {
+        "href": "https://www.google.com/maps/search/?api=1&query=9650+Main+St+Clarence+NY+14031",
+        "label": "Get Directions"
+      },
+      "special_note": ""
+    },
+    {
+      "title": "Tonawanda Office",
+      "address": {
+        "street": "1077 Delaware Rd",
+        "suite": "",
+        "city_state": "Tonawanda, NY 14223",
+        "coordinates": {
+          "longitude": "-78.8730228",
+          "latitude": "42.9901241"
+        }
+      },
+      "phone": {
+        "number": "(716) 875-0405",
+        "href": "tel:+17168750405"
+      },
+      "email": "info@mandtortho.com",
+      "hours": [],
+      "directions_link": {
+        "href": "https://www.google.com/maps/search/?api=1&query=1077+Delaware+Rd+Tonawanda+NY+14223",
+        "label": "Get Directions"
+      },
+      "special_note": ""
+    }
+  ],
+  "typography": [
+    {
+      "label": "font",
+      "font": "'Open Sans', helvetica, arial, sans-serif"
+    },
+    {
+      "label": "font-title",
+      "font": "'Archivo', sans-serif"
+    }
+  ],
+  "top_bar": {
+    "enable_top_bar": false,
+    "type": "links",
+    "theme": "dark",
+    "content_alignment": "right",
+    "links": [
+      {
+        "icon": "tooth-two-v1",
+        "text": "9650 Main Street, Clarence, NY 14031",
+        "href": "https://www.google.com/maps/search/?api=1&query=9650+Main+St+Clarence+NY+14031",
+        "label": "View 9650 Main Street, Clarence, NY 14031 on google maps",
+        "new_window": true
+      },
+      {
+        "icon": "phone",
+        "text": "(716) 759-8323",
+        "href": "tel:+17167598323",
+        "label": "Call 7 1 6. 7 5 9. 8 3 2 3.",
+        "new_window": false
+      }
+    ],
+    "announcement": {
+      "icon": "tooth-two-v2",
+      "label": "",
+      "text": "",
+      "mobile_text": "",
+      "modal": {
+        "title": "",
+        "text": ""
+      }
+    }
+  },
+  "nav": {
+    "cta_buttons": true,
+    "buttons": [
+      {
+        "button": {
+          "type": "nuxt",
+          "style": "primary",
+          "label": "Schedule Consultation",
+          "aria_label": "Schedule a consultation",
+          "href": "",
+          "path": "/contact",
+          "hash": "#form",
+          "external": false,
+          "include_icon": true,
+          "icon": "tooth-two-v2",
+          "color": "primary"
+        }
+      }
+    ],
+    "floating": false
+  },
+  "primary_cta": {
+    "label": "Schedule Consultation",
+    "path": "/contact",
+    "hash": "#form",
+    "external": false,
+    "href": ""
+  },
+  "footer": {
+    "social_media": [
+      {
+        "href": "https://www.youtube.com/channel/UC1pgQhnbNQ7Mf0xFm_2KF-g",
+        "icon": "youtube"
+      }
+    ],
+    "add_border": false
+  },
+  "enable_popup": false,
+  "popup": {
+    "title": "",
+    "text": "",
+    "image": {
+      "src": "",
+      "webp": "",
+      "alt": "",
+      "aria_hidden": false,
+      "bgColor": "",
+      "imageBackground": false,
+      "addLoader": false,
+      "objectPosition": "",
+      "forceAlt": "",
+      "loading_mask": "",
+      "image_selection_hints": null
+    }
+  }
+}

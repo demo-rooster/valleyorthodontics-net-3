@@ -1,0 +1,59 @@
+section.block-smile-gallery(:class="props.background ? 'block-smile-gallery--' + props.background : null")
+  .block-smile-gallery__container
+    //- Header
+    .block-smile-gallery__header
+      h2.block-smile-gallery__title(v-if='props.title' v-html='props.title' ref='title')
+      p.block-smile-gallery__text(v-if='props.text') {{ props.text }}
+
+    //- Categories with Cases
+    .block-smile-gallery__categories
+      .block-smile-gallery__category(
+        v-for='(category, catIndex) in categories'
+        :key='`category-${catIndex}`'
+      )
+        h3.block-smile-gallery__category-title {{ category.name }}
+        p.block-smile-gallery__category-description(v-if='category.description') {{ category.description }}
+
+        //- Case Cards Grid
+        .block-smile-gallery__grid
+          button.block-smile-gallery__card(
+            v-for='(caseItem, caseIndex) in category.cases'
+            :key='`case-${catIndex}-${caseIndex}`'
+            @click='openModal(caseItem, catIndex, caseIndex)'
+            :aria-label='`View ${caseItem.caption || "case"} before and after comparison`'
+          )
+            .block-smile-gallery__card-images
+              .block-smile-gallery__card-image.block-smile-gallery__card-image--before
+                span.block-smile-gallery__card-label Before
+                BaseImage(v-bind='caseItem.before_image')
+              .block-smile-gallery__card-image.block-smile-gallery__card-image--after
+                span.block-smile-gallery__card-label After
+                BaseImage(v-bind='caseItem.after_image')
+            .block-smile-gallery__card-info
+              h4.block-smile-gallery__card-title(v-if='caseItem.caption') {{ caseItem.caption }}
+
+  //- Modal Overlay
+  transition(name='fade')
+    .block-smile-gallery__modal(v-if='selectedCase' @click.self='closeModal')
+      .block-smile-gallery__modal-content
+        //- Close Button
+        button.block-smile-gallery__modal-close(@click='closeModal' aria-label='Close')
+          span.block-smile-gallery__modal-close-x &times;
+
+        //- Case Info
+        .block-smile-gallery__modal-header
+          h3.block-smile-gallery__modal-title(v-if='selectedCase.caption') {{ selectedCase.caption }}
+          span.block-smile-gallery__modal-treatment(v-if='selectedCase.treatment') {{ selectedCase.treatment }}
+
+        //- Comparison Slider
+        BlockComparisonSlider(:props='selectedCase' :key='`modal-slider-${selectedCase.caption}`')
+
+        .block-smile-gallery__modal-hint Drag the slider to compare before &amp; after
+
+        //- Navigation
+        .block-smile-gallery__modal-nav(v-if='allCases.length > 1')
+          button.block-smile-gallery__modal-arrow.block-smile-gallery__modal-arrow--prev(@click='prevCase' aria-label='Previous case')
+            BaseIcon(name='caret')
+          span.block-smile-gallery__modal-counter {{ currentIndex + 1 }} / {{ allCases.length }}
+          button.block-smile-gallery__modal-arrow.block-smile-gallery__modal-arrow--next(@click='nextCase' aria-label='Next case')
+            BaseIcon(name='caret')

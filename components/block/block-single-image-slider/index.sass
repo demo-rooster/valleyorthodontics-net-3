@@ -1,0 +1,125 @@
+.block-single-image-slider
+  @extend %section-padding
+  position: relative
+
+  &--bg1
+    background: var(--bg-1)
+
+  &--bg2
+    background: var(--bg-2)
+
+  &[data-texture]
+    overflow: hidden
+
+    @supports (object-fit: cover)
+      overflow: unset
+
+  &__container
+    @include container
+
+  &__gradient
+    @extend %absolute
+
+  &__row
+    @include col (10)
+    @include col--offset (1)
+    position: relative
+    margin-bottom: 4rem
+    text-align: center
+    @include tablet-lg
+      margin-left: 0
+      width: 100%
+    @include tablet
+      margin-bottom: 2rem
+    @include phone-land-lg
+      margin-bottom: 1rem
+    @include nexus
+      margin-bottom: 1rem
+
+    .block-single-image-slider__pagination
+      display: block
+      @include tablet
+        display: none
+
+  &__title
+    color: var(--siSliderTextColor)
+
+  &__pagination
+    display: none
+    right: calc(10% + ((#{$gutter} - 4px) / 2))
+    bottom: 0
+    color: var(--siSliderTextColor)
+    @include tablet
+      display: block
+      position: relative
+      top: -2rem
+      left: 0
+      margin-top: 0
+      width: 100%
+      height: 0
+      text-align: center
+    @include phone-land-lg
+      position: relative
+
+  &__carousel
+    @include col (10)
+    @include col--offset (1)
+    display: flex
+    align-items: center
+    justify-content: space-around
+    @include tablet-lg
+      margin-left: 0
+      width: 100%
+    @include tablet
+      flex-wrap: wrap
+      justify-content: space-between
+
+  &__slider
+    position: relative
+    width: 80%
+    aspect-ratio: 16/9
+    @include tablet
+      order: -1
+      width: 100%
+
+  &__slide, &__image
+    @extend %absolute
+
+  &__slide
+    transition: opacity .2s ease
+    opacity: 0
+    pointer-events: none
+
+    &--current
+      opacity: 1
+      pointer-events: all
+
+  &__control-btn
+    @include hover-supported
+      background: var(--siSliderTextColor)
+      .block-single-image-slider__icon
+        stroke: $white
+    display: flex
+    align-items: center
+    justify-content: center
+    @include tablet
+      margin-top: 1.5rem
+    transition: background .2s ease
+    // margin-right: rem-calc(20)
+    border: 1px solid var(--siSliderTextColor)
+    cursor: pointer
+    width: 3rem
+    height: 3rem
+
+  &__icon
+    transition: stroke .2s ease
+    width: 1.2rem
+    height: 1.2rem
+    stroke: var(--siSliderTextColor)
+    stroke-width: .5rem
+
+    &--prev
+      transform: rotate(90deg)
+
+    &--next
+      transform: rotate(-90deg)

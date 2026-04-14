@@ -1,0 +1,5 @@
+section.block-contact(:class="props.background ? 'block-contact--' + props.background : null")
+  .block-contact__gradient(v-if='props.linear_gradient', :style="{ background: props.linear_gradient }")
+  .block-contact__container
+    h2.block-contact__title(v-html='props.title')
+    BlockContactLocation.block-contact__location(v-for='(location, i) in global.location' :key='`location-${i}`' :props='location')

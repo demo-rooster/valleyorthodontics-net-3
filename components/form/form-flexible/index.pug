@@ -1,0 +1,113 @@
+.form-flexible
+  form.form-flexible__form(v-if='inputFields.length', @submit.prevent='validate')
+    .form-flexible__container
+      .form-flexible__group(
+        v-for='(field, i) in inputFields',
+        :key='`field-${i}`',
+        :class=`{ 'form-flexible__group--half': field.width === 'half' }`
+      )
+
+        // text, phone, email //////////////////////////////////////////////
+        .form-flexible__input-container(
+          v-if=`['name', 'email', 'phone', 'text'].includes(field.acf_fc_layout) && !field.text_area`
+        )
+          input.form-flexible__input(
+            :aria-invalid=`errors.has(formModels[field._id].model) ? 'true' : 'false'`,
+            :autocomplete=`field.autocomplete ? field.acf_fc_layout === 'phone' ? 'tel' : field.acf_fc_layout : 'off'`,
+            :class=`{ 'form-flexible__input--error': errors.has(field.label) }`,
+            :id='field._id',
+            :name='field.label',
+            :type=`field.acf_fc_layout === 'phone' ? 'tel' : field.acf_fc_layout === 'name' ? 'text' : field.acf_fc_layout`,
+            v-model='formModels[field._id].model',
+            v-validate='field.vValidate'
+          )
+          label.form-flexible__label(
+            :class=`{ 'form-flexible__label--active': formModels[field._id].model }`,
+            :for='field._id',
+            v-html='field.label && field.required ? `${field.label} *` : `${field.label}`'
+          )
+          .form-flexible__error-message(v-html='field.error_message', v-show='errors.has(field.label)')
+
+        // textarea //////////////////////////////////////////////
+        .form-flexible__input-container(v-else-if=`field.acf_fc_layout === 'text' && field.text_area`)
+          textarea.form-flexible__input(
+            :aria-invalid=`errors.has(formModels[field._id].model) ? 'true' : 'false'`,
+            :class=`{ 'form-flexible__input--error': errors.has(field.label) }`,
+            :id='field._id',
+            :name='field.label',
+            v-model='formModels[field._id].model',
+            v-validate='field.vValidate'
+            rows='5'
+          )
+          label.form-flexible__label.form-flexible__label--textarea(
+            :class=`{ 'form-flexible__label--active': formModels[field._id].model }`,
+            :for='field._id',
+            v-html='field.label && field.required ? `${field.label} *` : `${field.label}`'
+          )
+          .form-flexible__error-message(v-html='field.error_message', v-show='errors.has(field.label)')
+
+        // captcha //////////////////////////////////////////////
+        .form-flexible__input-container(v-else-if=`field.acf_fc_layout === 'captcha'`)
+          label.form-flexible__label(
+            :class=`{ 'form-flexible__label--active': formModels[field._id].model }`,
+            :for='field._id',
+            v-html='captchaLabel'
+          )
+          input.form-flexible__input(
+            :aria-invalid=`errors.has(formModels[field._id].model) ? 'true' : 'false'`,
+            :class=`{ 'form-flexible__input--error': errors.has(captchaLabel) }`,
+            :id='field._id',
+            :name='captchaLabel',
+            v-model='formModels[field._id].model',
+            v-validate='field.vValidate'
+          )
+          .form-flexible__error-message(v-html='field.error_message', v-show='errors.has(captchaLabel)')
+
+        // radio, checkbox //////////////////////////////////////////////
+        fieldset.form-flexible__group.form-flexible__group--radio(
+          v-if=`['radio', 'checkbox'].includes(field.acf_fc_layout)`
+        )
+          .form-flexible__radio-title-container
+            legend.form-flexible__radio-title(v-html='field.label')
+          .form-flexible__radio--alt
+            .form-flexible__radio-group.form-flexible__radio-group--alt(
+              v-for='(subfield, e) in field.inputs',
+              :key='`subfield-${i}-${e}`'
+            )
+              .form-flexible__radio-group.form-flexible__radio-group--alt
+                input.form-flexible__radio-input(
+                  :id='subfield._id',
+                  :name=`field.acf_fc_layout === 'radio' ? field.label : subfield.label`,
+                  :type='field.acf_fc_layout',
+                  :value='subfield.label',
+                  v-model='formModels[field._id].model'
+                )
+                span.form-flexible__radio-overlay
+                label.form-flexible__radio-label(:for='subfield._id', v-html='subfield.label')
+
+      .form-flexible__group.form-flexible__group--button
+        button.form-flexible__submit-button(
+          :class=`{
+            'form-flexible__submit-button--success': formSuccess,
+            'form-flexible__submit-button--sending': formSubmitted && !formSuccess
+          }`,
+          type='submit'
+        )
+          span.form-flexible__submit-label(
+            :class=`{ 'form-flexible__submit-label--hidden': formSuccess }`,
+            v-html='selectedForm.submit_button_label'
+          )
+          span.form-flexible__submit-check(:class=`{ 'form-flexible__submit-check--showing': formSuccess }`) &#10003
+
+  .form-flexible__modal(
+    :aria-hidden=`modalOpen ? 'false' : 'true'`,
+    aria-modal='true',
+    :class=`{ 'form-flexible__modal--open': modalOpen }`,
+    role='dialog'
+  )
+    .form-flexible__modal-overlay
+    .form-flexible__modal-container(ref='formModal')
+      button.form-flexible__modal-close(@click='closeModal()', tabindex='0') close
+      .form-flexible__modal-title Thank you!
+      .form-flexible__modal-text We will be in touch shortly!
+      slot

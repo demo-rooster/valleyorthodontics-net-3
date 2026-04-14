@@ -1,0 +1,61 @@
+.block-button(:class=`'block-button--' + props.color` :style="buttonStyles" ref='button')
+  //- Nuxt Link ============================================
+  nuxt-link.block-button__button(
+    v-if='props.type === `nuxt`',
+    :class=`'block-button__button--' + props.style`,
+    :to=`{ path: props.path, hash: props.hash }`,
+    :aria-label='props.aria_label',
+  )
+    BaseIcon.block-button__button-icon(
+      v-if='props.include_icon',
+      :name='props.icon'
+    )
+    span(v-html='props.label')
+
+  //- Anchor Link ============================================
+  a.block-button__button(
+    v-else-if='props.type === `anchor`',
+    :class=`'block-button__button--' + props.style`,
+    :href='props.href',
+    :aria-label='props.aria_label',
+    :target='props.external ? `_blank` : null'
+  )
+    BaseIcon.block-button__button-icon(
+      v-if='props.include_icon',
+      :name='props.icon'
+    )
+    span(v-html='props.label')
+  
+  //- Open Chair ============================================
+  a.block-button__button.openchair-widget(
+    v-else-if='props.type === `openchair`',
+    :class=`'block-button__button--' + props.style`,
+    :aria-label='props.aria_label'
+  )
+    BaseIcon.block-button__button-icon(
+      v-if='props.include_icon',
+      :name='props.icon'
+    )
+    span(v-html='props.label')
+
+  //- Custom Link ============================================
+  button.block-button__button(
+    v-else-if='props.type === `custom`',
+    :class=`'block-button__button--' + props.style`,
+    @click='handleClick',
+    :aria-label='props.aria_label'
+  )
+    BaseIcon.block-button__button-icon(
+      v-if='props.include_icon',
+      :name='props.icon'
+    )
+    span(v-html='props.label')
+
+  //- Phone Link ============================================
+  a.block-button__button(
+    v-else-if='props.type === `phone`',
+    :class=`'block-button__button--' + props.type`,
+    :href='global.phone.href',
+    :aria-label='global.phone.aria_label'
+  )
+    span(v-html='global.phone.number')

@@ -1,0 +1,19 @@
+article.block-tabs(:class="[props.background ? 'block-tabs--' + props.background : null, props.component_options?.component_padding ? 'component-padding--' + props.component_options.component_padding : null]", :id='props.section_id ? props.section_id.toLowerCase() : null', :data-texture='props.add_texture')
+  BaseTexture(v-if='props.add_texture && props.has_background')
+  .block-tabs__container(:class="{ 'block-tabs__container--reverse': props.reverse }")
+    .block-tabs__left
+      .block-tabs__image-container
+        BaseImage.block-tabs__image(v-if='!props.is_dynamic' v-bind='props.image' forceVisible)
+        BaseImage.block-tabs__image.block-tabs__image--dynamic(v-else v-for='(tab, i ) in props.tabs',
+          v-bind='tab.image.image'
+          :key='`image-${i}`'
+          :class='{ "block-tabs__image--active": i === active }')
+    .block-tabs__right
+      .block-tabs__content(ref='contentHeight')
+        h2.block-tabs__title(v-html='props.title', v-if='!props.large_title && props.title' ref='itTitle', :class="{ 'block-tabs__title--primary': props.title_alt }")
+        h2.block-tabs__title.block-tabs__title--large(v-html='props.title', v-else-if='props.large_title && props.title' ref='itTitle', :class="{ 'block-tabs__title--primary': props.title_alt }")
+        .block-tabs__paragraph(v-if='props.intro' :key='`tabs-paragraph-${i}`' ref='intro' v-html='props.intro')
+        BlockAccordion.block-tabs__accordion(:props=`Object.assign({}, props, { accordion: props.tabs })`
+          :makeActive='makeActive'
+          :buttons='props.has_buttons ? props.buttons : null'
+          ref='accordion')

@@ -1,0 +1,156 @@
+.block-repeater-post
+  background: $white
+  padding: 1rem
+
+  &__loading
+    text-align: center
+
+  &__container
+    @include container
+    flex-direction: column
+    justify-content: center
+
+  &__title
+    position: relative
+    margin-bottom: rem-calc(64)
+    color: var(--primary)
+
+  &__body
+    @extend %body
+
+    @include col (10)
+    margin-bottom: 4rem
+    text-align: center
+    @include tablet
+      margin-bottom: 2rem
+
+  &__posts
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 2rem
+    width: 100%
+
+  &__posts--top
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    margin-bottom: 2rem
+    width: 100%
+
+  &__post
+    display: inline-flex
+    flex-direction: column
+    width: 100%
+    @include nexus
+      padding: 0
+
+    &--square
+      border: 1px solid $gray
+      width: calc(50% - 1rem)
+      @include tablet
+        width: 100%
+
+      &--thirds
+        width: calc((100% / 3) - 1rem)
+        @include tablet
+          width: 100%
+
+      &:not(:last-child)
+        margin-right: 1rem
+        @include tablet
+          margin-right: unset
+          margin-bottom: 1rem
+
+    &--row
+      display: flex
+      flex-direction: unset
+      flex-wrap: wrap
+      // align-items: center
+      column-gap: 2rem
+      padding: 2rem 0
+      @include tablet
+        border-right: 1px solid $gray
+        border-left: 1px solid $gray
+        padding: 0
+
+      &:not(:last-of-type)
+        //   margin-bottom: 1rem
+        border-bottom: 1px solid $gray
+
+    &-image-container
+      width: 100%
+      max-width: rem-calc(325)
+      height: auto
+      @include tablet
+        max-width: unset
+
+    &-image
+      padding-top: 70%
+      width: 100%
+      overflow: hidden
+
+      .base-image__image
+        @extend %absolute
+        object-fit: cover
+
+    &-text
+      display: flex
+      flex: 1
+      flex-direction: column
+      justify-content: space-between
+      padding: 1rem
+
+      // .block-repeater-post__post--row &
+      //   @include tablet-lg
+      //     max-width: unset
+      //   max-width: 50%
+
+    &-title
+      @extend %h3
+      margin-bottom: 1rem
+      text-align: left
+      font-family: var(--font-title)
+      font-weight: 600
+
+    &-excerpt
+      @extend %body
+      flex: 1
+      margin-bottom: 1rem
+      text-align: left
+
+    &-button
+      display: flex
+      align-items: center
+      align-self: flex-end
+      width: fit-content
+
+      .block-repeater-post__post--row &
+        align-self: flex-start
+        @include tablet
+          align-self: flex-start
+
+  &__load-more
+    @include hover-supported
+      border: 2px solid var(--accent)
+      background: var(--accent)
+      color: $white
+    display: block
+    transition: color .2s ease, background .2s ease, border .2s ease
+    margin: 0 auto
+    border: 2px solid var(--accent)
+    background: $white
+    cursor: pointer
+    padding: rem-calc(10) rem-calc(20)
+    width: fit-content
+    text-align: center
+    text-transform: uppercase
+    color: var(--accent)
+    font-family: var(--font-title)
+    font-size: rem-calc(15)
+    font-weight: 600
+    -webkit-tap-highlight-color: transparent
+    @include desktop
+      padding: rem-calc(12) rem-calc(24)
+    @include max-width (300px)
+      padding: rem-calc(10) 0
+      font-size: rem-calc(14)

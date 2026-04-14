@@ -1,0 +1,28 @@
+.block-multi-testimonial(:class="props.background ? 'block-multi-testimonial--' + props.background : null")
+  .block-multi-testimonial__gradient(v-if='props.linear_gradient', :style="{ background: props.linear_gradient }")
+  .block-multi-testimonial__container
+    .block-multi-testimonial__left
+      .block-multi-testimonial__title-container
+        h2.block-multi-testimonial__title(v-html='props.title')
+        .block-multi-testimonial__stars(aria-label='5 stars', role='img')
+          BaseIcon.block-multi-testimonial__star(v-for='(star, i) in 5', :key='`testimonial-star-${i}`' name='star')
+      .block-multi-testimonial__review-container(v-if='reviewLinks.length')
+        .block-multi-testimonial__review-text(v-html='props.review_text')
+        .block-multi-testimonial__links
+          a.block-multi-testimonial__review-link(v-for='(link, i) in reviewLinks', :key='`review-link-${i}`', :href='link.href' target='_blank' rel='noopener', :aria-label='`Review on ${link.icon}`')
+            BaseIcon.block-multi-testimonial__review-icon(:name='link.icon')
+            
+    .block-multi-testimonial__right
+      .block-multi-testimonial__carousel(aria-label='testimonial carousel' )
+        .block-multi-testimonial__slider(role='region' aria-live='polite', :style=" { height: maxHeight }")
+          .block-multi-testimonial__slide(v-for='(slide, i) in props.testimonials', :key='`testimonial-slide-${i}`', :aria-hidden=' currIndex === i ? null : "true"', :aria-label='`slide ${ i + 1 } of ${ props.testimonials.length }`' role='group', :class="{ 'block-multi-testimonial__slide--current': currIndex === i }")
+            .block-multi-testimonial__slide-content(ref='slideContent')
+              p.block-multi-testimonial__testimonial(v-html='slide.testimonial')
+              p.block-multi-testimonial__author(v-html='slide.author' v-if='slide.author')  
+        .block-multi-testimonial__lower
+          .block-multi-testimonial__controls
+            button.block-multi-testimonial__control-btn(aria-label='Previous Slide' tabindex='0' @click='handleSlide("prev")')
+              BaseIcon.block-multi-testimonial__icon.block-multi-testimonial__icon--prev(name='caret')
+            button.block-multi-testimonial__control-btn(aria-label='Next Slide' tabindex='0' @click='handleSlide("next")')
+              BaseIcon.block-multi-testimonial__icon.block-multi-testimonial__icon--next(name='caret')
+          .block-multi-testimonial__pagination {{ currIndex + 1 }} / {{ props.testimonials.length }}        

@@ -1,0 +1,392 @@
+.form-flexible
+  width: 100%
+
+  &__form
+    display: flex
+    position: relative
+    flex-wrap: wrap
+    align-items: center
+    justify-content: space-between
+
+  &__container
+    display: flex
+    position: relative
+    flex-wrap: wrap
+    width: 100%
+    gap: 2rem
+
+  &__group
+    position: relative
+    flex-basis: 100%
+    flex-grow: 1
+    flex-shrink: 0
+
+    &:has(> .form-flexible__group--radio)
+      margin-bottom: 0
+
+    &--half
+      flex-basis: 46%
+      @include tablet-lg
+        flex-basis: 100%
+
+    &--radio
+      display: flex
+      flex-direction: column
+      border: none
+      padding: 0
+      @include phone-lg
+        flex-wrap: wrap
+
+    &--checkbox
+      border: none
+      padding: 0
+
+    &--button
+      display: flex
+      margin-bottom: 0
+      width: 100%
+
+  &__label
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+    transition: transform .2s ease, top .2s ease
+    padding-left: 1rem
+    transform-origin: left top
+    pointer-events: none
+
+    &--textarea
+      top: 20%
+
+    &--active
+      top: -.15rem
+      transform: translateY(0) scale(.7)
+
+    &--checkbox
+      display: block
+      position: static
+      transform: none
+      padding-bottom: .5rem
+
+  &__input
+    border: rem-calc(1) solid $gray
+    border-radius: 0
+    padding: .75rem
+    width: 100%
+    -webkit-appearance: none
+    appearance: none
+
+    &:focus
+      outline: transparent
+      border: rem-calc(2) solid blue
+    &:active
+      outline: transparent
+
+    &:focus + .form-flexible__label
+      top: -1.25rem
+      transform: translateY(0) scale(.7)
+
+    &--error
+      border-color: $danger
+      &:focus
+        border-color: $danger
+
+    &--error,
+    &--error + .form-flexible__label
+      color: $danger
+
+    &--select
+      position: relative
+      border: none
+      border-bottom: rem-calc(2) solid var(--primary)
+      cursor: pointer
+
+    &--textarea
+      // border: rem-calc(2) solid var(--primary)
+
+      &--captcha
+        min-height: rem-calc(30)
+
+  .caret
+    z-index: 99
+    color: red
+
+  &__arrow
+    position: absolute
+    top: .5rem
+    right: 1rem
+    z-index: 2
+
+    &:after
+      display: inline-block
+      vertical-align: bottom
+      color: var(--primary)
+      content: '▾'
+
+  &__error-message
+    position: absolute
+    bottom: -1.5rem
+    left: 0
+    padding: .25rem .75rem
+    color: $danger
+    font-size: rem-calc(13)
+
+    .form-flexible__group-message &
+      bottom: .75rem
+
+  &__radio
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 1rem 0
+
+    &--alt
+      display: flex
+      flex-grow: 1
+      flex-wrap: wrap
+      gap: 2rem
+      @include phone-lg
+        width: 100%
+
+    &-title
+      margin-bottom: .25rem
+      text-align: left
+
+      &-container
+        flex-basis: 0
+        flex-grow: 1
+        max-width: max-content
+
+    &-group
+      position: relative
+
+    //&--alt
+    //  margin-right: 2rem
+
+    &-overlay,
+    &-input
+      position: absolute
+      top: 50%
+      left: 0
+      transform: translateY(-50%)
+      width: 1.5rem
+      height: 1.5rem
+
+    &-input
+      opacity: 0
+      z-index: 1
+      cursor: pointer
+
+      &:hover ~ .form-flexible__radio-overlay,
+      &:focus-visible ~ .form-flexible__radio-overlay
+        border: rem-calc(3) solid var(--primary)
+
+        &:after
+          transition: opacity .3s ease
+          opacity: 1
+
+      &:checked ~ .form-flexible__radio-overlay
+        background: var(--primary)
+
+      &:checked.form-flexible__radio-input:hover ~ .form-flexible__radio-overlay,
+      &:checked.form-flexible__radio-input:focus-visible ~ .form-flexible__radio-overlay
+        border-color: var(--primary)
+
+    &-overlay
+      //transition: border .2s ease
+      border: rem-calc(1) solid $gray
+      background: none
+
+      &:after
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        transition: opacity .2s ease
+        opacity: 0
+        background: var(--primary)
+
+    &-label
+      padding-left: 2.25rem
+      text-transform: capitalize
+
+  &__checkbox
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    gap: #{$gutter /2}
+
+    &-title
+      margin-bottom: .25rem
+      width: 100%
+      text-align: left
+
+    &-group
+      position: relative
+      width: rem-calc(90)
+      height: rem-calc(36)
+
+    &-overlay,
+    &-input
+      position: absolute
+      top: 0
+      left: 0
+      width: rem-calc(90)
+      height: rem-calc(36)
+
+    &-input
+      opacity: 0
+      z-index: 1
+      cursor: pointer
+
+      &:hover ~ .form-flexible__checkbox-overlay,
+      &:focus-visible ~ .form-flexible__checkbox-overlay
+        border-color: var(--primary)
+
+        &:after
+          transition: opacity .3s ease
+          opacity: 1
+
+      &:checked ~ .form-flexible__checkbox-overlay
+        border-color: var(--primary)
+        background: var(--primary)
+
+        .form-flexible__checkbox-label
+          color: $white
+
+      &:checked.form-flexible__checkbox-input:hover ~ .form-flexible__checkbox-overlay,
+      &:checked.form-flexible__checkbox-input:focus-visible ~ .form-flexible__checkbox-overlay
+        border-color: var(--bg-2)
+
+    &-overlay
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: border-color .25s ease
+      border: rem-calc(2) solid var(--bg-2)
+      background-color: var(--bg-2)
+      padding: 0 rem-calc(10)
+      width: 100%
+
+    &-label
+      //@extend %button-font
+      text-transform: capitalize
+
+  &__submit-button
+    @include focus
+    position: relative
+    transition: background .2s ease, color .2s ease
+    border: solid rem-calc(2) var(--primary)
+    background: var(--primary)
+    cursor: pointer
+    padding: 0
+    overflow: hidden
+    color: $white
+
+    &:active
+      outline: transparent
+
+    &:hover
+      background: transparent
+      color: var(--primary)
+
+    &--sending
+      background: $gray
+      pointer-events: none
+
+    &--success
+      transition: background .2s ease .4s
+      background: $success
+      pointer-events: none
+
+      &:hover
+        opacity: 1
+        background: $success
+
+  &__submit-label
+    display: block
+    position: relative
+    transition: transform .25s ease .25s
+    z-index: 9
+    padding: .5rem 1.75rem
+
+    &--hidden
+      transform: scale(0)
+      transition-delay: 0
+
+  &__submit-check
+    display: flex
+    position: absolute
+    top: 0
+    left: 0
+    align-items: center
+    justify-content: center
+    transform: translateY(.5rem) scale(0)
+    transition: transform .25s ease
+    z-index: 9
+    width: 100%
+    height: 100%
+
+    &--showing
+      transform: translateY(0) scale(1)
+      transition-delay: .4s
+
+  &__modal
+    position: fixed
+    top: 0
+    left: 0
+    transition: opacity .25s ease-in
+    opacity: 0
+    z-index: 99999
+    width: 100%
+    height: 100vh
+    pointer-events: none
+
+    &--open
+      opacity: 1
+      pointer-events: all
+
+    &-overlay
+      @extend %absolute
+      background: rgba($black, .15)
+
+    &-container
+      @extend %centered
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      background: $white
+      padding: 5rem
+      text-align: center
+
+    &-text
+      font-size: rem-calc(18)
+
+    &-close
+      @include hover-supported
+        color: var(--primary)
+      position: absolute
+      top: 1rem
+      right: 2rem
+      border: none
+      background: transparent
+      cursor: pointer
+      padding: 0
+      @include phone-lg
+        right: 1rem
+
+    &-title
+      color: var(--primary)
+
+    // Place styles below here for slotted content
+    &-body
+      padding-top: 1rem
+
+    &-button
+      padding-top: 1rem
+
+  // Hide the "Text" option (second checkbox) in contact form
+  .form-flexible__radio--alt .form-flexible__radio-group:nth-child(2)
+    display: none

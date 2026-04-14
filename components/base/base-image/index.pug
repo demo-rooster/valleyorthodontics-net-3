@@ -1,0 +1,24 @@
+.base-image(v-if='loaded', :class=`{ 'base-image--bg': imageType === 'cover' }`)
+  picture(v-waypoint=`{ active: true, callback: onWaypoint, options: intersectionOptions }`)
+    source(:srcset='currWebP' type='image/webp')
+    source(:srcset='currJp2' type='image/jp2')
+    img.base-image__image(
+      :alt='alt',
+      :aria-hidden=`imageBackground && !forceAlt ? 'true' : 'false'`,
+      :class=`{ 'base-image__image--bg': imageType === 'cover' }`,
+      :src='currentImg',
+      :style=`{ objectPosition: objectPosition }`
+    )
+  transition(name='fade-src-img')
+    .base-image__overlay(v-if='loading', :style=`{ backgroundColor: bgColor }`)
+      svg.base-image__spinner(
+        width='30px',
+        height='30px',
+        viewBox='0 0 66 66',
+        v-if='addLoader'
+      )
+        circle.base-image__ring(
+          cx='33',
+          cy='33',
+          r='30'
+        )

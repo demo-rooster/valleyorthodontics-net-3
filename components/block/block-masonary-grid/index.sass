@@ -1,0 +1,228 @@
+.block-masonary-grid
+  @extend %section-padding
+  position: relative
+
+  &__container
+    @include container
+    align-items: center
+
+  &__col-left
+    @include col (4)
+    @include col--offset (1)
+    @include tablet-lg
+      margin-left: 0
+      width: calc((5/12) * 100%)
+    @include tablet
+      margin-bottom: 3rem
+      width: 100%
+
+    &--small
+      @include col (3)
+      @include col--offset (1)
+      @include laptop-sm
+        width: calc((4/12) * 100%)
+        .block-masonary-grid__container--reverse &
+          margin-left: 0
+      @include tablet-lg
+        margin-left: 0
+        width: calc((5/12) * 100%)
+
+  &__col-right
+    @include col (5)
+    @include col--offset (1)
+    @include tablet-lg
+      width: 50%
+    @include tablet-md
+      margin-left: 0
+      width: calc((7/12) * 100%)
+    @include tablet
+      width: 100%
+
+    &--large
+      @include col (6)
+      @include col--offset (1)
+      @include laptop-sm
+        margin-left: 0
+        .block-masonary-grid__container--reverse &
+          margin-left: calc((1/12) * 100%)
+      @include tablet-lg
+        width: calc((7/12) * 100%)
+        .block-masonary-grid__container--reverse &
+          margin-left: 0
+      @include tablet
+        .block-masonary-grid__container--reverse &
+          width: 100%
+        // width: 100%
+
+    .block-masonary-grid__container--reverse &
+      order: -1
+      @include tablet
+        order: 2
+
+  &__title
+    margin-bottom: 1.5rem
+    @include tablet
+      max-width: rem-calc(480px)
+
+  &__paragraph
+    &:not(:last-of-type)
+      margin-bottom: rem-calc(20)
+
+  &__cta
+    margin-top: 2.5rem
+    @include desktop
+      margin-top: 3rem
+
+  &__grid
+    display: grid
+    grid-template-rows: repeat(5, 110px)
+    grid-template-columns: repeat(2, 1fr)
+    grid-gap: 1rem
+    @include desktop
+      grid-template-rows: repeat(5, 130px)
+      grid-gap: 1.25rem
+    @include laptop
+      grid-template-rows: repeat(5, 10vw)
+    @include tablet
+      grid-template-rows: repeat(5, 20vw)
+    @include phone-lg
+      display: flex
+      flex-wrap: wrap
+
+    &--3
+      grid-template-rows: repeat(2, 250px)
+      @include desktop
+        grid-template-rows: repeat(2, 280px)
+      @include laptop-sm
+        grid-template-rows: repeat(2, 22vw)
+      @include tablet
+        grid-template-rows: repeat(2, 36vw)
+
+    &--5
+      grid-template-rows: repeat(4, 200px)
+      @include desktop
+        grid-template-rows: repeat(4, 220px)
+      @include laptop-sm
+        grid-template-rows: repeat(4, 20vw)
+      @include tablet
+        grid-template-rows: repeat(4, 30vw)
+      @include phone-lg
+        display: flex
+        flex-wrap: wrap
+
+  &__item
+    display: flex
+    position: relative
+    align-items: flex-end
+    padding: 1rem
+    height: 100%
+    overflow: hidden
+    @include hover-supported
+      .block-masonary-grid__image
+        transform: scale(1.1)
+      .block-masonary-grid__grid-title
+        &:after
+          transform: translateY(0)
+      .block-masonary-grid__overlay
+        opacity: 0
+      .block-masonary-grid__overlay--hover
+        opacity: 1
+    @include phone-lg
+      width: 100%
+      height: 80vw
+
+    .block-masonary-grid__grid--3 &
+      &:first-child, &:last-child
+        grid-column: 1 / 2
+
+      &:first-child
+        grid-row: 1 / 2
+
+      &:last-child
+        grid-row: 2 / 2
+
+      &:nth-child(2)
+        grid-row: 1 / 3
+        grid-column: 2 / 2
+
+    .block-masonary-grid__grid--4 &
+
+      &:first-child
+        grid-row: 1 / 4
+        grid-column: 1 / 2
+
+      &:nth-child(2)
+        grid-row: 1 / 3
+        grid-column: 2 / 2
+
+      &:nth-child(3)
+        grid-row: 4 / 6
+        grid-column: 1 / 2
+
+      &:last-child
+        grid-row: 3 / 6
+        grid-column: 2 / 2
+
+    .block-masonary-grid__grid--5 &
+
+      &:first-child
+        grid-row: 1 / 3
+
+      &:nth-child(2)
+        grid-row: 1 / 2
+        grid-column: 2 / 2
+
+      &:nth-child(3)
+        grid-row: 3 / 5
+        grid-column: 1 / 2
+
+      &:nth-child(4)
+        grid-row: 2 / 4
+        grid-column: 2 / 2
+
+      &:last-child
+        grid-row: 4 / 5
+        grid-column: 2 / 2
+
+  &__overlay, &__overlay--hover
+    @extend %absolute
+    transition: opacity .2s ease
+
+  &__overlay
+    z-index: 1
+    background: linear-gradient(to top, rgba($black, .9), rgba($black, .3) 40%, rgba($black, 0) 80%)
+
+    &--hover
+      opacity: 0
+      z-index: 2
+      background: linear-gradient(to top, rgba(var(--secondary-rgb), .92), rgba(var(--secondary-rgb), .47))
+
+  &__image
+    @extend %absolute
+    transition: transform .5s cubic-bezier(0, 0, 0.2, 1)
+    transform-origin: center top
+
+  &__grid-title
+    position: relative
+    transition: color .2s ease
+    z-index: 3
+    line-height: 1.28
+    color: $white
+    font-size: rem-calc(24)
+    @include desktop
+      font-size: rem-calc(28)
+    @include phone-lg
+      font-size: rem-calc(30)
+
+    &--display-block
+      display: block
+
+    &:after
+      position: absolute
+      bottom: -.25rem
+      left: 0
+      transform: translateY(1rem)
+      transition: transform .2s ease
+      border-bottom: 2px solid $white
+      width: 100%
+      content: ''

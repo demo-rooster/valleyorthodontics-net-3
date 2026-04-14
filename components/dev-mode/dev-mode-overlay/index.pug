@@ -1,0 +1,16 @@
+.dev-mode-overlay(:class=`{ 'dev-mode-overlay--expanded': expandedDetails }`)
+  Matrix
+  .dev-mode-overlay__content
+    .dev-mode-overlay__label(v-html='pageSectionSlug')
+    .dev-mode-overlay__button-container
+      button.dev-mode-overlay__button(
+        aria-label='toggle details'
+        :class=`{ 'dev-mode-overlay__button--active': expandedDetails }`,
+        @click='toggleDetails()'
+      ) View Props
+    .dev-mode-overlay__details-container(:style=`{ height: expandedDetails ? detailsHeight + 'px' : '0px' }`)
+      .dev-mode-overlay__details(
+        :class=`{ 'dev-mode-overlay__details--active': expandedDetails }`
+        ref='details'
+      )
+        pre {{ props }}

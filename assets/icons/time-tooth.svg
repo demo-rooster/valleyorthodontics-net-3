@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.13 198.08">
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g>
+        <circle cx="150.03" cy="42.09" r="39.09" transform="translate(73.15 177.63) rotate(-76.11)" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 6px;"/>
+        <polyline points="146.73 19.41 146.73 45.4 161.85 45.4" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 6px;"/>
+      </g>
+      <path d="M100.78,17.1c-12.5,2.68-21,8.03-21,8.03,0,0-17.57-9.51-34.66-9.51C21.86,15.61,3,39.54,3,69.07c0,10.37,2.32,20.04,6.35,28.23,6.48,13.19,10.05,27.64,10.19,42.33.01.42.01.82.01,1.23,0,29.95,11.31,54.23,25.27,54.23s15.53-19.33,20.48-45.24c.42-2.2.91-4.34,1.47-6.4,1.79-6.63,7.42-9.94,13.02-9.94s11.23,3.31,13.02,9.94c.56,2.05,1.05,4.19,1.47,6.4,4.95,25.9,6.52,45.24,20.48,45.24s25.27-24.28,25.27-54.23c0-.41,0-.81.01-1.23.14-14.69,3.7-29.14,10.19-42.33" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 6px;"/>
+      <path d="M79.78,25.12s-12.68,7.21-25.36,7.21" style="fill: none; stroke: #000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 6px;"/>
+    </g>
+  </g>
+</svg>

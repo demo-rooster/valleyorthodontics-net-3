@@ -1,0 +1,57 @@
+@import 'styles/static/transitions.sass'
+@import 'styles/static/normalize-extension.sass'
+@import 'styles/static/normalize-extension.sass'
+
+.component-padding
+  &--full
+    @extend %component-padding
+
+  &--full-top-half-bottom
+    @extend %component-padding--top
+    @extend %component-padding--half-bottom
+
+  &--half
+    @extend %component-padding--half
+
+  &--half-top-full-bottom
+    @extend %component-padding--half-top
+    @extend %component-padding--bottom
+
+  &--top-only-full
+    @extend %component-padding--top
+
+  &--top-only-half
+    @extend %component-padding--half-top
+
+  &--bottom-only-full
+    @extend %component-padding--bottom
+
+  &--bottom-only-half
+    @extend %component-padding--half-bottom
+
+.component-margins
+  &--full
+    @extend %component-margins
+
+  &--full-top-half-bottom
+    @extend %component-margins--top
+    @extend %component-margins--half-bottom
+
+  &--half
+    @extend %component-margins--half
+
+  &--half-top-full-bottom
+    @extend %component-margins--half-top
+    @extend %component-margins--bottom
+
+  &--top-only-full
+    @extend %component-margins--top
+
+  &--top-only-half
+    @extend %component-margins--half-top
+
+  &--bottom-only-full
+    @extend %component-margins--bottom
+
+  &--bottom-only-half
+    @extend %component-margins--half-bottom

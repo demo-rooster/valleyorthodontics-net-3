@@ -1,0 +1,13 @@
+.block-single-testimonial(:class="props.background ? 'block-single-testimonial--' + props.background : null", :data-texture='props.add_texture')
+  BaseTexture(v-if='props.add_texture')
+  .block-single-testimonial__gradient(v-if='props.linear_gradient', :style="{ background: props.linear_gradient }")
+  .block-single-testimonial__container
+    .block-single-testimonial__content
+      h2.block-single-testimonial__title(v-if='props.title' v-html='props.title')
+      .block-single-testimonial__review-container(v-if='props.links')
+        .block-single-testimonial__review-text(v-html='props.review_text')
+        .block-single-testimonial__links
+          a.block-single-testimonial__review-link(v-for='(link, i) in props.links', :key='`review-link-${i}`', :href='link.href' target='_blank' rel='noopener', :aria-label='`Review on ${link.icon}`')
+            BaseIcon.block-single-testimonial__review-icon(:name='link.icon')
+      p.block-single-testimonial__testimonial(v-html='props.testimonial')
+      p.block-single-testimonial__author(v-html='props.author' v-if='props.author')  

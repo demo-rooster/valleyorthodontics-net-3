@@ -1,0 +1,25 @@
+.block-contact
+  @extend %section-padding
+  position: relative
+
+  &--bg1
+    background: var(--bg-1)
+
+  &--bg2
+    background: var(--bg-2)
+
+  &__gradient
+    @extend %absolute
+
+  &__container
+    @include container
+    align-items: center
+
+  &__title
+    @include col(4)
+    @include col--offset (1)
+    margin-bottom: 2rem
+
+  &__location
+    &:not(:last-of-type)
+      margin-bottom: 2rem

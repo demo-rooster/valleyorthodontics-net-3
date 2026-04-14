@@ -1,0 +1,92 @@
+.block-single-testimonial
+  position: relative
+
+  &--bg1
+    background: var(--bg-1)
+
+  &--bg2
+    background: var(--bg-2)
+
+  &[data-texture]
+    overflow: hidden
+
+    @supports (object-fit: cover)
+      overflow: unset
+
+  &__container
+    @include container
+    text-align: center
+
+  &__content
+    @include col (8)
+    @include col--offset (2)
+    position: relative
+
+  &__title
+    margin-bottom: .5rem
+
+  &__review-container
+    display: flex
+    flex-wrap: wrap
+    align-items: flex-end
+    justify-content: center
+    gap: 2rem
+
+  &__review-text
+    line-height: 1
+    font-size: rem-calc(18)
+    @include desktop
+      font-size: rem-calc(20)
+
+  &__links
+    display: flex
+    padding-top: 1rem
+
+  &__review-link
+    display: block
+    &:not(:last-child)
+      margin-right: 2rem
+
+  &__review-icon
+    width: 1.5rem
+    height: 1.5rem
+
+    svg
+      @include hover-supported
+        fill: var(--primary)
+      transition: fill 200ms ease
+
+  &__testimonial
+    position: relative
+    z-index: 2
+    margin-top: 2rem
+    text-align: center
+    line-height: 1.375
+    font-size: rem-calc(20)
+    @include desktop
+      font-size: rem-calc(24)
+    @include nexus
+      font-size: rem-calc(16)
+
+  &__author
+    position: relative
+    z-index: 2
+    margin: 2rem auto 0
+    width: fit-content
+    text-align: center
+    font-size: rem-calc(20)
+    font-style: italic
+    @include desktop
+      margin: 3rem auto 0
+      font-size: rem-calc(24)
+    @include tablet-lg
+      font-size: rem-calc(18)
+
+    &:before
+      position: absolute
+      top: 50%
+      left: -2.25rem
+      background: var(--text)
+      width: 1.5rem
+      height: rem-calc(1)
+      content: ''

@@ -1,0 +1,5 @@
+article.block-image(:class="props.background ? 'block-image--' + props.background : null", :id='props.section_id ? props.section_id.toLowerCase() : null')
+  .block-image__container
+    h2.block-image__title(v-html='props.title', v-if='props.title' ref='itTitle', :class="{ 'block-image-text__title--primary': props.title_alt }")
+    .block-image__image-container(ref='image')
+      BaseImage.block-image__image(v-bind='props.image')

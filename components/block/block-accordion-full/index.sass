@@ -1,0 +1,53 @@
+.block-accordion-full
+
+  &__container
+    @include container
+    justify-content: center
+
+  &__content
+    @include col(10)
+
+  &__header
+    @include focus
+    @extend %h2
+    @include hover-supported
+      .block-accordion-full__header-text
+        color: var(--primary)
+      .block-accordion-full__header-icon
+        stroke: var(--primary)
+    display: flex
+    align-items: center
+    justify-content: space-between
+    // cursor: pointer
+    padding: rem-calc(20) 0
+    width: 100%
+
+    &-text
+      transition: color .25s ease
+      letter-spacing: .0125em
+      font-size: rem-calc(18)
+      font-weight: 700
+      @include desktop
+        font-size: rem-calc(20)
+
+    &-icon
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: transform .25s ease, stroke .25s ease
+      margin-left: 0.5rem
+      width: 1rem
+      height: 1rem
+      line-height: 1.1
+      stroke: var(--text)
+      stroke-width: 0.45rem
+
+      &--active
+        transform: scaleY(-1)
+
+  &__paragraph
+    padding-bottom: rem-calc(20)
+
+  &__accordion
+    @include col(10)
+    margin: 0 auto

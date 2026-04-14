@@ -1,0 +1,152 @@
+.footer
+  background: var(--secondary)
+  padding: 4rem 0
+
+  &[data-color='light']
+    background: $white
+
+  &--border-top
+    padding-top: 0
+
+  &__container
+    @include container
+    justify-content: space-between
+
+    .footer__border-top &
+      padding-top: 3rem
+
+  &__content
+    @include col (10)
+
+  &__social-media
+    @include col (2)
+    align-self: flex-end
+    @include tablet
+      align-self: flex-start
+      margin-top: 2rem
+      background-image: none !important
+
+  &__row
+    align-items: baseline
+    &:not(:last-child)
+      margin-bottom: rem-calc(20)
+      @include nexus
+        margin-bottom: 2rem
+
+  &__menu, &__items, &__social-links
+    display: flex
+    margin: 0
+    padding: 0
+
+  &__menu-item, &__social-item
+    list-style: none
+
+  &__menu
+    flex-wrap: wrap
+    @include nexus
+      display: block
+
+  &__menu-item
+    &:not(:last-child)
+      margin-right: 2vw
+      @include nexus
+        margin-right: 0
+        margin-bottom: 1.5rem
+      @include phone-lg
+        margin-right: 0
+        margin-bottom: 1rem
+
+  &__copyright-item, &__brand-item
+    @extend %small-text
+    color: var(--textColor)
+
+  &__link
+    @include hover-supported
+      text-decoration: underline
+      text-underline-offset: 4px
+    @include focus
+      outline: transparent
+      text-decoration: underline
+      text-underline-offset: 4px
+    color: var(--textColor)
+    font-weight: 600
+
+    .footer__item &
+      @extend %small-text
+      font-weight: 400
+
+  &__brand-item-link
+    @include hover-supported
+      text-decoration: underline
+      text-underline-offset: 4px
+    @include focus
+      outline: transparent
+      text-decoration: underline
+      text-underline-offset: 4px
+    display: inline-block
+    color: var(--textColor)
+
+  &__items
+    flex-wrap: wrap
+    padding-top: 1.5rem
+    @include nexus
+      flex-direction: column-reverse
+
+  &__item
+    position: relative
+    margin: 1rem 1vw 0 0
+    line-height: 1
+    @include nexus
+      margin: 1rem 0 0
+    @include phone-lg
+      margin: 0.75rem 0 0
+    &:not(:last-child)
+      border-right: 1px solid var(--textColor)
+      padding-right: 1vw
+      @include nexus
+        border: none
+        padding-right: 0
+    &:last-child
+      margin-right: 0
+
+  &__social-links
+    justify-content: flex-end
+    @include tablet
+      justify-content: flex-start
+
+  &__social-item
+    &:not(:last-child)
+      margin-right: .5rem
+
+  &__social-link
+    @include hover-supported
+      .footer__social-icon
+        fill: var(--accent)
+    @include focus
+      outline: transparent
+      .footer__social-icon
+        outline: 1px dashed var(--textColor)
+        outline-offset: rem-calc(6)
+        fill: var(--accent)
+    display: flex
+    align-items: flex-end
+    justify-content: flex-end
+    width: rem-calc(44)
+    height: rem-calc(44)
+    @include tablet
+      justify-content: flex-start
+
+    &:active
+      .footer__social-icon
+        outline: transparent
+
+  &__social-icon
+    display: block
+    transition: fill .2s ease
+    width: 1.5rem
+    height: 1.5rem
+    line-height: 1
+    fill: var(--textColor)
+
+#accessibilityWidget
+  cursor: pointer

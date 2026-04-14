@@ -1,0 +1,11 @@
+section.block-text-fh(:style="{ background: props.linear_gradient ? props.linear_gradient : null }")
+  img.block-text-fh__texture(src='/geometric.webp' loading='lazy' alt='' aria-hidden='true' v-if='props.add_texture')
+  .block-text-fh__container(:style="{ minHeight: contentHeight }")
+    .block-text-fh__col(v-if='props.title')
+      h2.block-text-fh__title(v-html='props.title' ref='fhTitle')
+    .block-text-fh__col.block-text-fh__col--text(v-if='props.paragraphs')
+      .block-text-fh__content(ref='fhContent')
+        p.block-text-fh__text(v-for='(paragraph, i) in props.paragraphs', :key='`fh-text-${i}`' v-html='paragraph.text' ref='fhParagraphs')    
+          
+        
+    

@@ -1,0 +1,128 @@
+.block-grid
+  position: relative
+
+  &--bg1
+    background: var(--bg-1)
+
+  &--bg2
+    background: var(--bg-2)
+
+  &__container
+    @include container
+
+  &__title, &__grid
+    @include col (10)
+    @include col--offset (1)
+    @include tablet-lg
+      margin-left: 0
+      width: 100%
+
+  &__title
+    margin-bottom: 3rem
+
+    &--large
+      @extend %h1
+      margin-bottom: 4rem
+      @include tablet-md
+        margin-bottom: 3rem
+
+    &--centered
+      text-align: center
+
+  &__grid
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(245px, 1fr))
+    grid-gap: 2rem
+    @include desktop
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+    @include nexus
+      display: flex
+      flex-wrap: wrap
+
+  &__item
+    position: relative
+    cursor: pointer
+    height: rem-calc(400)
+    overflow: hidden
+    @include desktop
+      height: rem-calc(450)
+    @include nexus
+      width: 100%
+      height: 85vw
+    @include phone-lg
+      height: 80vw
+
+  &__image
+    @extend %absolute
+    transition: transform .5s cubic-bezier(0, 0, 0.2, 1)
+
+    .base-image__image
+      object-position: top
+
+    .block-grid__item--hover &
+      transform: scale(1.1)
+
+  &__content
+    transform: translateY(78%)
+    transition: transform .325s cubic-bezier(.34, .615, .4, .985), background .3s ease
+    z-index: 2
+    background: rgba(var(--secondary-rgb), .7)
+    padding: 1rem 2rem
+    width: 100%
+    height: 100%
+    @include desktop
+      transform: translateY(79%)
+    @include tablet-lg
+      padding: 1rem
+    @include nexus
+      transform: translateY(80%)
+
+    .block-grid__item--hover &
+      background: rgba(var(--secondary-rgb), .9)
+
+    &--active
+      transform: translateY(0)
+      background: rgba(var(--secondary-rgb), .9)
+      pointer-events: none
+
+  &__header
+    display: block
+    margin-bottom: 1rem
+    width: 100%
+    text-align: left
+    line-height: 1
+    color: $white
+
+    &:focus
+      outline: none
+
+    .block-grid__content--bio &
+      cursor: pointer
+
+  &__name
+    margin-bottom: .5rem
+    font-weight: 700
+
+  &__bio-container
+    position: relative
+    height: 90%
+    overflow: hidden
+    text-align: left
+    scrollbar-width: none
+    -ms-overflow-style: none
+
+    ::-webkit-scrollbar
+      display: none
+
+  &__bio
+    transform: translateY(2.5rem)
+    transition: opacity .15s ease, transform 0s ease .2s
+    opacity: 0
+    height: inherit
+    overflow: scroll
+    color: $white
+
+    .block-grid__content--active &
+      transform: translateY(0)
+      transition: opacity .3s ease .175s, transform .35s cubic-bezier(.34, .615, .4, .985) .175s
+      opacity: 1

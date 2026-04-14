@@ -1,0 +1,21 @@
+.skip-link
+  position: fixed
+  top: 1rem
+  left: 2rem
+  z-index: 9999
+  pointer-events: none
+
+  &__button
+    display: block
+    transform: translateY(-150%)
+    transition: transform .2s ease
+    opacity: .1
+    border: none
+    background: $black
+    padding: rem-calc(10) 2rem
+    color: $white
+
+    &:focus
+      transform: translateY(0)
+      opacity: 1
+      outline: none

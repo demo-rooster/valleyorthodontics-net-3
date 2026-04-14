@@ -1,0 +1,27 @@
+.block-before-after-slider(:class="props.background ? 'block-before-after-slider--' + props.background : null", :data-texture='props.add_texture', :style="{ '--siSliderTextColor': props.primary_color ? '#1c79a0' : '#272727'}")
+  BaseTexture(v-if='props.add_texture')
+  .block-before-after-slider__gradient(v-if='props.linear_gradient', :style="{ background: props.linear_gradient }")  
+  .block-before-after-slider__container
+    .block-before-after-slider__col
+      h2.block-before-after-slider__title(v-html='props.title')
+      p.block-before-after-slider__text(v-if='props.text') {{ props.text }}
+      .block-before-after-slider__pagination {{ currIndex + 1 }} / {{ props.slides.length }}
+    .block-before-after-slider__carousel(:aria-label='`${props.carousel_aria}`')
+      button.block-before-after-slider__control-btn(aria-label='Previous Slide' tabindex='0' @click='handleSlide("prev")')
+        BaseIcon.block-before-after-slider__icon.block-before-after-slider__icon--prev(name='caret')
+      
+      .block-before-after-slider__slider(role='region' aria-live='polite')
+        .block-before-after-slider__slide(
+          v-for='(slide, i) in props.slides'
+          :key='`before-after-slider-${i}`'
+          :aria-label='`slide ${ i + 1 } of ${ props.slides.length }`'
+          role='group'
+          :class="{ 'block-before-after-slider__slide--current': currIndex === i }"
+          )
+          h4.block-before-after-slider__caption(v-if='slide.caption') {{ slide.caption }}
+          .block-before-after-slider__images
+            BaseImage.block-before-after-slider__image(v-bind='slide.before_image' :aria-hidden=' currIndex === i ? null : true')
+            BaseImage.block-before-after-slider__image(v-bind='slide.after_image' :aria-hidden=' currIndex === i ? null : true')
+
+      button.block-before-after-slider__control-btn(aria-label='Next Slide' tabindex='0' @click='handleSlide("next")')
+        BaseIcon.block-before-after-slider__icon.block-before-after-slider__icon--next(name='caret')      

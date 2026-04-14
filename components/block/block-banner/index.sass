@@ -1,0 +1,208 @@
+.block-banner
+  @extend %section-padding
+  position: relative
+  overflow: hidden
+
+  &--bg1
+    background: var(--bg-1)
+
+  &--bg2
+    background: var(--bg-2)
+
+  &[data-image]
+    min-height: rem-calc(480)
+    @include desktop
+      min-height: rem-calc(580)
+    @include laptop
+      min-height: rem-calc(400)
+    @include tablet
+      min-height: 0
+
+    .base-button__cta:hover
+      color: $white
+
+  &__overlay, &__background-image
+    @extend %absolute
+
+  &__overlay
+    background: linear-gradient(45deg, rgba($black, .26), rgba($black, .06))
+    @include tablet
+      z-index: 1
+      background: linear-gradient(45deg, rgba($black, .46), rgba($black, .26)), linear-gradient(0deg, rgba(var(--primary-rgb), .76), rgba(var(--primary-rgb), .36))
+
+  &__background-image-container
+    @extend %centered
+    top: 40%
+    width: 100%
+    height: 150%
+
+  &__background-image
+    position: absolute
+    top: 0
+    left: 0
+    transition: opacity .2s ease-in
+    width: 100%
+    height: auto
+    @include tablet
+      opacity: .48
+      object-position: right center !important
+    @include phone-lg
+      display: none
+
+    @supports (object-fit: cover)
+      height: 100%
+      object-fit: cover
+      object-position: center
+
+    &--hide
+      opacity: 0
+
+  &__container
+    @include container
+    z-index: 3
+
+    &--reversed
+      justify-content: flex-end
+
+  &__content
+    @include col (6)
+    @include col--offset (1)
+    color: $white
+    @include tablet-lg
+      margin-left: 0
+
+    &[data-color='white']
+      color: $white
+
+    &[data-color='dark']
+      color: var(--text)
+
+    &[data-color='primary']
+      color: var(--primary)
+
+    &--centered
+      @include col (8)
+      @include col--offset (2)
+      text-align: center
+      @include tablet-lg
+        margin-left: 0
+        width: 100%
+
+  &__title
+    margin-bottom: 1.5rem
+    @include max-width (320px)
+      text-align: center
+
+    &--large
+      @extend %h1
+      margin-bottom: 1rem
+      line-height: 1.05
+
+  &__text-block
+    max-width: rem-calc(333)
+    @include desktop
+      max-width: rem-calc(375)
+    @include tablet
+      max-width: 100%
+    @include phone-lg
+      font-weight: 600
+
+    .block-banner__content--centered &
+      margin: 0 auto
+
+  &__text-link
+    @include hover-supported
+      text-decoration: underline
+    cursor: pointer
+    color: $white
+    @include phone-lg
+      font-weight: 600
+
+    .block-banner__content[data-color='dark'] &
+      color: var(--text)
+
+    .block-banner__content[data-color='primary'] &
+      color: var(--primary)
+
+  &__button
+    margin-top: 3rem
+    @include nexus
+      margin-top: 2rem
+
+    .block-banner__content--centered &
+      margin: 3rem auto 0
+      text-align: center
+      @include nexus
+        margin: 2rem auto 0
+
+  &__social-block
+    --blockWidth: 33%
+    display: flex
+    position: relative
+    margin: 2rem 0 0
+    padding: 3rem 0 0
+    @include max-width (320px)
+      flex-wrap: wrap
+      justify-content: space-around
+
+    .block-banner__content--centered &
+      justify-content: center
+
+    &:before
+      position: absolute
+      top: 0
+      left: 0
+      border-top: 2px solid $white
+      width: var(--blockWidth)
+      content: ''
+      @include max-width (320px)
+        left: 50%
+        transform: translateX(-50%)
+        width: 33%
+
+      .block-banner__content--centered &
+        left: 50%
+        transform: translateX(-50%)
+        width: 25%
+
+      .block-banner__content[data-color='dark'] &
+        border-color: var(--text)
+
+      .block-banner__content[data-color='primary'] &
+        border-color: var(--primary)
+
+  &__social-block-item
+    list-style: none
+    &:not(:last-child)
+      margin-right: 4rem
+      @include max-width (320px)
+        margin-right: 0
+
+  &__social-link
+    @include hover-supported
+      .block-banner__social-icon
+        fill: var(--accent)
+    @include focus
+      outline-color: $white
+    display: block
+    cursor: pointer
+    width: rem-calc(38)
+    height: rem-calc(38)
+    @include desktop
+      width: rem-calc(44)
+      height: rem-calc(44)
+    @include tablet-md
+      width: 2rem
+      height: 2rem
+
+  &__social-icon
+    transition: fill .2s ease
+    width: 100%
+    height: 100%
+    fill: $white
+
+    .block-banner__content[data-color='dark'] &
+      fill: var(--text)
+
+    .block-banner__content[data-color='primary'] &
+      fill: var(--primary)

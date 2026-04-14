@@ -1,77 +1,62 @@
 {
   "enable_development_mode": false,
-  "company_name": "Tyska Alexander Orthodontics",
-  "domain": "taortho.com",
-  "email": "info@mandtortho.com",
+  "company_name": "Valley Orthodontics",
+  "domain": "www.valleyorthodontics.net",
+  "email": "smiles@valleyorthodontics.net",
   "phone": {
-    "number": "(716) 759-8323",
-    "href": "tel:+17167598323",
-    "aria": "7 1 6, 7 5 9, 8 3 2 3"
+    "number": "415-479-2400",
+    "href": "tel:+14154792400",
+    "aria": "4 1 5, 4 7 9, 2 4 0 0"
   },
   "location": [
     {
-      "title": "Clarence Office",
+      "title": "San Rafael",
       "address": {
-        "street": "9650 Main Street",
-        "suite": "",
-        "city_state": "Clarence, NY 14031",
+        "street": "2400 Las Gallinas Ave",
+        "suite": "Suite 130",
+        "city_state": "San Rafael, CA 94903",
         "coordinates": {
-          "longitude": "-78.6314355",
-          "latitude": "42.9736638"
+          "longitude": "-122.525800",
+          "latitude": "37.972600"
         }
       },
       "phone": {
-        "number": "(716) 759-8323",
-        "href": "tel:+17167598323"
+        "number": "415-479-2400",
+        "href": "tel:+14154792400"
       },
-      "email": "info@mandtortho.com",
+      "email": "smiles@valleyorthodontics.net",
       "hours": [
         {
           "day": "Monday",
-          "time": "8:30 am \t6:30 pm"
+          "time": "8:30am - 5:00pm"
         },
         {
           "day": "Tuesday",
-          "time": "8:30 am \t6:30 pm"
+          "time": "9:00am - 5:00pm"
         },
         {
           "day": "Wednesday",
-          "time": "8:00 am \t11:30 am"
+          "time": "8:30am - 5:00pm"
         },
         {
           "day": "Thursday",
-          "time": "8:00 am \t6:00 pm"
+          "time": "9:00am - 5:00pm"
         },
         {
           "day": "Friday",
-          "time": "8:00 am \t11:30 am"
+          "time": "Closed"
+        },
+        {
+          "day": "Saturday",
+          "time": "Closed"
+        },
+        {
+          "day": "Sunday",
+          "time": "Closed"
         }
       ],
       "directions_link": {
-        "href": "https://www.google.com/maps/search/?api=1&query=9650+Main+St+Clarence+NY+14031",
-        "label": "Get Directions"
-      },
-      "special_note": ""
-    },
-    {
-      "title": "Tonawanda Office",
-      "address": {
-        "street": "1077 Delaware Rd",
-        "suite": "",
-        "city_state": "Tonawanda, NY 14223",
-        "coordinates": {
-          "longitude": "-78.8730228",
-          "latitude": "42.9901241"
-        }
-      },
-      "phone": {
-        "number": "(716) 875-0405",
-        "href": "tel:+17168750405"
-      },
-      "email": "info@mandtortho.com",
-      "hours": [],
-      "directions_link": {
-        "href": "https://www.google.com/maps/search/?api=1&query=1077+Delaware+Rd+Tonawanda+NY+14223",
+        "href": "https://www.google.com/maps/place/2400+Las+Gallinas+Ave+%23130,+San+Rafael,+CA+94903,+USA",
         "label": "Get Directions"
       },
       "special_note": ""
@@ -92,30 +77,15 @@
     "type": "links",
     "theme": "dark",
     "content_alignment": "right",
-    "links": [
-      {
-        "icon": "tooth-two-v1",
-        "text": "9650 Main Street, Clarence, NY 14031",
-        "href": "https://www.google.com/maps/search/?api=1&query=9650+Main+St+Clarence+NY+14031",
-        "label": "View 9650 Main Street, Clarence, NY 14031 on google maps",
-        "new_window": true
-      },
-      {
-        "icon": "phone",
-        "text": "(716) 759-8323",
-        "href": "tel:+17167598323",
-        "label": "Call 7 1 6. 7 5 9. 8 3 2 3.",
-        "new_window": false
-      }
-    ],
+    "links": [],
     "announcement": {
       "icon": "tooth-two-v2",
-      "label": "",
-      "text": "",
-      "mobile_text": "",
+      "label": "Practice Notice",
+      "text": "Valley Orthodontics welcomes new patients and offers complimentary consultations. Call 415-479-2400 to schedule.",
+      "mobile_text": "Schedule a consult",
       "modal": {
-        "title": "",
-        "text": ""
+        "title": "Welcome to Valley Orthodontics",
+        "text": "<p>We create healthy, beautiful smiles with individualized, up-to-date orthodontic care for children and adults. Call us at 415-479-2400 or book a complimentary consultation online.</p>"
       }
     }
   },
@@ -129,8 +99,8 @@
           "label": "Schedule Consultation",
           "aria_label": "Schedule a consultation",
           "href": "",
-          "path": "/contact",
-          "hash": "#form",
+          "path": "/complimentary-consultation",
+          "hash": "",
           "external": false,
           "include_icon": true,
           "icon": "tooth-two-v2",
@@ -150,7 +120,19 @@
   "footer": {
     "social_media": [
       {
-        "href": "https://www.youtube.com/channel/UC1pgQhnbNQ7Mf0xFm_2KF-g",
+        "href": "https://www.facebook.com/valleyorthomarin/",
+        "icon": "facebook"
+      },
+      {
+        "href": "https://www.instagram.com/valley_orthodontics/",
+        "icon": "instagram"
+      },
+      {
+        "href": "https://www.yelp.com/biz/valley-orthodontics-san-rafael",
+        "icon": "yelp"
+      },
+      {
+        "href": "https://www.youtube.com/watch?v=iWzccidNPVQ",
         "icon": "youtube"
       }
     ],
@@ -158,12 +140,12 @@
   },
   "enable_popup": false,
   "popup": {
-    "title": "",
-    "text": "",
+    "title": "Welcome to Valley Orthodontics",
+    "text": "Creating healthy, confident smiles for children and adults in Marin County. Book a complimentary consultation or call 415-479-2400.",
     "image": {
-      "src": "",
+      "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_be65c4a5f5fa42b69136be01909e45a1mv2-1.webp",
       "webp": "",
-      "alt": "",
+      "alt": "Valley Orthodontics office interior",
       "aria_hidden": false,
       "bgColor": "",
       "imageBackground": false,
@@ -171,7 +153,9 @@
       "objectPosition": "",
       "forceAlt": "",
       "loading_mask": "",
-      "image_selection_hints": null
+      "image_selection_hints": {
+        "context_category": "Contact Hero"
+      }
     }
   }
 }

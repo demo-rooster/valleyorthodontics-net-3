@@ -42,6 +42,9 @@
       BlockMultiTestimonial(v-else-if='section.acf_fc_layout === "multi_item_testimonial" && !section.hide_component',
         :class='`component-padding--` + section.component_padding',
         :props='section')
+      BlockResourceGrid(v-else-if='section.acf_fc_layout === "block_resource_grid" && !section.hide_component',
+        :class='section.component_options && section.component_options.component_padding ? `component-padding--${section.component_options.component_padding}` : null',
+        :props='section')
       BlockSingleImageSlider(v-else-if='section.acf_fc_layout === "single_image_slider" && !section.hide_component',
         :class='`component-padding--` + section.component_padding',
         :props='section')

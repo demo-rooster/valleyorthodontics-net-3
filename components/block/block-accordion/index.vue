@@ -2,11 +2,11 @@
 
 <script>
 import { fadeUpIn } from '~/resources/mixins'
-import BlockButtons from '~/components/block/block-buttons'
+import BlockButton from '~/components/block/block-button'
 
 export default {
   components: {
-    BlockButtons
+    BlockButton
   },
   mixins: [fadeUpIn],
   props: {
@@ -23,26 +23,24 @@ export default {
       default: () => ({})
     }
   },
-  data: () => ({
-    expandedSection: 0
-  }),
+  data () {
+    return {
+      expandedSection: this.props.start_collapsed ? null : 0,
+      heightSyncTimers: []
+    }
+  },
   mounted () {
     this.$nextTick(() => {
       this.setComponentHeight()
       if (this.$refs.itBtns) {
         this.$_fadeUpIn(this.$refs.itBtns.$el, 32, 'bottom bottom')
       }
-      // Set initial height for the default open section (index 0)
-      setTimeout(() => {
-        this.setComponentHeight()
-        if (this.$refs.sections && this.$refs.sections[0]) {
-          this.$refs.sections[0].style.height = this.$refs.sections[0].scrollHeight + 'px'
-        }
-      }, 100)
+      this.queueHeightSync()
     })
     window.addEventListener('resize', this.setComponentHeight)
   },
   destroyed () {
+    this.heightSyncTimers.forEach(timer => clearTimeout(timer))
     window.removeEventListener('resize', this.setComponentHeight)
   },
   methods: {
@@ -70,10 +68,31 @@ export default {
         this.$refs.sections[i].style.height = this.$refs.sections[i].scrollHeight + 'px'
       }
       this.$emit('open-tab', i)
+      this.queueHeightSync()
+    },
+    queueHeightSync () {
+      this.heightSyncTimers.forEach(timer => clearTimeout(timer))
+      this.heightSyncTimers = [100, 400, 900, 1500].map((delay) => {
+        return setTimeout(() => {
+          this.setComponentHeight()
+          this.syncExpandedSectionHeight()
+        }, delay)
+      })
+    },
+    syncExpandedSectionHeight () {
+      if (this.expandedSection === null || !this.$refs.sections || !this.$refs.sections[this.expandedSection]) {
+        return
+      }
+      this.$refs.sections[this.expandedSection].style.height = this.$refs.sections[this.expandedSection].scrollHeight + 'px'
     },
     setComponentHeight () {
       const component = this.$refs.main
       if (!component) {
+        return
+      }
+      if (this.props.acf_fc_layout === 'accordion') {
+        component.style.height = ''
+        this.syncExpandedSectionHeight()
         return
       }
       if (window.innerWidth > 480) {
@@ -91,9 +110,11 @@ export default {
           const sectionMaxHeight = Math.max(...sectionsHeights)
           const headerTotalHeight = headersHeights.reduce((partialSum, a) => partialSum + a, 0)
           component.style.height = sectionMaxHeight + headerTotalHeight + 'px'
+          this.syncExpandedSectionHeight()
         }, 100) // Reduced timeout to prevent interference
       } else {
         component.style.height = ''
+        this.syncExpandedSectionHeight()
       }
     }
   }

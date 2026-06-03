@@ -17,6 +17,7 @@ export default {
     imgSrc: null,
     webpSrc: null,
     videoPlaying: true,
+    mediaReady: false,
     options: {
       root: null,
       rootMargin: '0px',
@@ -28,12 +29,9 @@ export default {
       this.loadImage()
     }
     if (this.$refs.video) {
-      this.$refs.video.addEventListener('loadeddata', () => {
-        if (!this.$store.state.siteLoaded) {
-          this.$store.dispatch('VIEW_SITE', true)
-        }
-        this.handleAnimation()
-      })
+      this.$refs.video.addEventListener('loadeddata', this.handleMediaReady, { once: true })
+      this.$refs.video.addEventListener('error', this.handleMediaReady, { once: true })
+      window.setTimeout(this.handleMediaReady, 3000)
     }
     if (!this.$refs.video && !this.props.image.src) {
       if (!this.$store.state.siteLoaded) {
@@ -47,10 +45,7 @@ export default {
       this.imgSrc = this.props.image.src
       this.webpSrc = this.props.image.webp
       this.$refs.image.children[1].onload = () => {
-        if (!this.$store.state.siteLoaded) {
-          this.$store.dispatch('VIEW_SITE', true)
-        }
-        this.handleAnimation()
+        this.handleMediaReady()
       }
     },
     playVideo () {
@@ -68,6 +63,16 @@ export default {
       } else if (this.props.button.path) {
         this.$router.push(this.props.button.path)
       }
+    },
+    handleMediaReady () {
+      if (this.mediaReady) {
+        return
+      }
+      this.mediaReady = true
+      if (!this.$store.state.siteLoaded) {
+        this.$store.dispatch('VIEW_SITE', true)
+      }
+      this.handleAnimation()
     },
     handleAnimation (delay) {
       this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')

@@ -15,6 +15,7 @@ import BlockItemRow from '~/components/block/block-item-row'
 import BlockLogoBanner from '~/components/block/block-logo-banner'
 import BlockMasonaryGrid from '~/components/block/block-masonary-grid'
 import BlockMultiTestimonial from '~/components/block/block-multi-testimonial'
+import BlockResourceGrid from '~/components/block/block-resource-grid'
 import BlockSingleImageSlider from '~/components/block/block-single-image-slider'
 import BlockSingleTestimonial from '~/components/block/block-single-testimonial'
 import BlockSingleVideoSlider from '~/components/block/block-single-video-slider'
@@ -39,6 +40,7 @@ export default {
     BlockLogoBanner,
     BlockMasonaryGrid,
     BlockMultiTestimonial,
+    BlockResourceGrid,
     BlockSingleImageSlider,
     BlockSingleTestimonial,
     BlockSingleVideoSlider,

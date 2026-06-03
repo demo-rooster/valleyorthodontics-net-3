@@ -65,21 +65,36 @@
   "typography": [
     {
       "label": "font",
-      "font": "'Open Sans', helvetica, arial, sans-serif"
+      "font": "'Nunito Sans', helvetica, arial, sans-serif"
     },
     {
       "label": "font-title",
-      "font": "'Archivo', sans-serif"
+      "font": "'Freeman', sans-serif"
     }
   ],
   "top_bar": {
-    "enable_top_bar": false,
+    "enable_top_bar": true,
     "type": "links",
     "theme": "dark",
     "content_alignment": "right",
-    "links": [],
+    "links": [
+      {
+        "href": "tel:+14154792400",
+        "icon": "phone",
+        "label": "Call Valley Orthodontics",
+        "text": "415-479-2400",
+        "new_window": false
+      },
+      {
+        "href": "mailto:smiles@valleyorthodontics.net",
+        "icon": "envelope",
+        "label": "Email Valley Orthodontics",
+        "text": "smiles@valleyorthodontics.net",
+        "new_window": false
+      }
+    ],
     "announcement": {
-      "icon": "tooth-two-v2",
+      "icon": "scheduling-tooth",
       "label": "Practice Notice",
       "text": "Valley Orthodontics welcomes new patients and offers complimentary consultations. Call 415-479-2400 to schedule.",
       "mobile_text": "Schedule a consult",
@@ -96,14 +111,14 @@
         "button": {
           "type": "nuxt",
           "style": "primary",
-          "label": "Schedule Consultation",
-          "aria_label": "Schedule a consultation",
+          "label": "Book Your Free Smile Assessment",
+          "aria_label": "Book your free smile assessment",
           "href": "",
-          "path": "/complimentary-consultation",
-          "hash": "",
+          "path": "/contact",
+          "hash": "#form",
           "external": false,
           "include_icon": true,
-          "icon": "tooth-two-v2",
+          "icon": "scheduling-tooth",
           "color": "primary"
         }
       }
@@ -111,7 +126,7 @@
     "floating": false
   },
   "primary_cta": {
-    "label": "Schedule Consultation",
+    "label": "Book Your Free Smile Assessment",
     "path": "/contact",
     "hash": "#form",
     "external": false,
@@ -132,7 +147,7 @@
         "icon": "yelp"
       },
       {
-        "href": "https://www.youtube.com/watch?v=iWzccidNPVQ",
+        "href": "https://www.youtube.com/@ValleyOrthodonticsMarin",
         "icon": "youtube"
       }
     ],

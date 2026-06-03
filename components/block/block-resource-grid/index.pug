@@ -1,0 +1,65 @@
+.block-resource-grid(
+  :class='[props.background ? `block-resource-grid--${props.background}` : null, props.layout ? `block-resource-grid--${props.layout}` : null]',
+  :data-count='items.length'
+)
+  BaseTexture(v-if='props.add_texture')
+  .block-resource-grid__container
+    header.block-resource-grid__header(v-if='props.eyebrow || props.title || props.intro')
+      p.block-resource-grid__eyebrow(v-if='props.eyebrow' v-html='props.eyebrow')
+      h2.block-resource-grid__title(v-if='props.title' v-html='props.title')
+      p.block-resource-grid__intro(v-if='props.intro' v-html='props.intro')
+
+    .block-resource-grid__grid(:data-layout='props.layout')
+      article.block-resource-grid__card(
+        v-for='(item, i) in items',
+        :key='`resource-card-${i}`',
+        :data-type='cardType(item)'
+      )
+        .block-resource-grid__media(v-if='isVideo(item)')
+          a.block-resource-grid__video-link(
+            :data-caption='item.title || null',
+            data-fancybox='videos',
+            :data-type='fancyboxType(item)',
+            :href='videoHref(item)',
+            :aria-label='videoLinkLabel(item)'
+          )
+            BaseImage.block-resource-grid__image(v-if='hasVideoThumbnail(item)' v-bind='item.image' imageBackground forceVisible)
+            video.block-resource-grid__video(
+              v-else,
+              :src='item.video.src',
+              muted,
+              playsinline,
+              loop,
+              preload='metadata'
+            )
+            .block-resource-grid__play
+              BaseIcon.block-resource-grid__play-icon(name='play')
+
+        .block-resource-grid__media.block-resource-grid__media--image(v-else-if='isImageCard(item)')
+          BaseImage.block-resource-grid__image(v-bind='item.image' forceVisible)
+
+        .block-resource-grid__icon-shell(v-else-if='item.icon')
+          BaseIcon.block-resource-grid__icon(:name='item.icon')
+
+        .block-resource-grid__body
+          p.block-resource-grid__card-eyebrow(v-if='item.eyebrow' v-html='item.eyebrow')
+          h3.block-resource-grid__card-title(v-if='item.title' v-html='item.title')
+          .block-resource-grid__text(v-if='item.text' v-html='item.text')
+
+          nuxt-link.block-resource-grid__button(
+            v-if='hasButton(item) && buttonType(item.button) === "nuxt"',
+            :to='{ path: item.button.path || buttonPath(item.button), hash: item.button.hash || "" }',
+            :aria-label='buttonAria(item.button)'
+          )
+            span(v-html='buttonLabel(item.button)')
+            BaseIcon.block-resource-grid__button-icon(:name='buttonIcon(item.button)')
+
+          a.block-resource-grid__button(
+            v-else-if='hasButton(item)',
+            :href='buttonHref(item.button)',
+            :target='buttonTarget(item.button)',
+            :rel='buttonRel(item.button)',
+            :aria-label='buttonAria(item.button)'
+          )
+            span(v-html='buttonLabel(item.button)')
+            BaseIcon.block-resource-grid__button-icon(:name='buttonIcon(item.button)')

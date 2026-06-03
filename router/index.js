@@ -11,63 +11,117 @@ const router = [
     navigation: true,
     children: [
       {
-        name: 'Meet Dr. Tyska',
-        path: '#meet-dr-tyska'
+        name: 'Meet Dr. Rocha',
+        path: '/meet-dr-rocha'
       },
       {
-        name: 'Meet Dr. Alexander',
-        path: '#meet-dr-alexander'
+        name: 'Meet The Team',
+        path: '/meet-the-team'
+      },
+      {
+        name: 'Tour The Office',
+        path: '/tour-the-office'
+      },
+      {
+        name: 'What Sets Us Apart',
+        path: '/what-sets-us-apart'
+      },
+      {
+        name: 'Supporting Our Local Community',
+        path: '/supporting-our-local-community'
       }
     ]
-  },
-  {
-    name: 'Get Started',
-    path: '/get-started',
-    navigation: true
   },
   {
     name: 'Treatments',
-    path: '/treatments',
+    path: '/about-orthodontics',
     navigation: true,
     children: [
       {
-        name: 'Early/interceptive treatment for children',
-        path: '#early-interceptive-treatment'
+        name: 'Braces for Children',
+        path: '/for-children'
       },
       {
-        name: 'Adult orthodontic options — It\'s never too late',
-        path: '#adult-orthodontic-options'
+        name: 'Braces for Teens',
+        path: '/for-teens'
       },
       {
-        name: 'Traditional (metal) and ceramic braces',
-        path: '#braces'
+        name: 'Braces for Adults',
+        path: '/for-adults'
       },
       {
-        name: 'Invisalign<sup>®</sup> clear aligners',
-        path: '#invisalign'
+        name: 'Clear Aligners',
+        path: '/clear-aligners'
       },
       {
-        name: 'Surgical orthodontics (jaw surgery)',
-        path: '#orthognathic-surgery'
+        name: 'Braces',
+        path: '/braces'
       },
       {
-        name: 'Retainers and maintaining results',
-        path: '#retainers'
+        name: 'Iconix Braces',
+        path: '/iconix-champagne-gold-braces'
       },
       {
-        name: 'Advanced technology — 3D scanning and imaging',
-        path: '#advanced-technology'
+        name: 'Braces First Aid',
+        path: '/braces-first-aid'
+      },
+      {
+        name: 'What To Expect',
+        path: '/what-to-expect-on-the-first-day-of-braces'
+      },
+      {
+        name: 'Instructional Videos',
+        path: '/instructional-videos'
+      },
+      {
+        name: 'Recommended Products',
+        path: '/orthodontic-products-we-recommend'
       }
     ]
   },
   {
-    name: 'Contact',
-    path: '/contact',
+    name: 'Resources',
+    path: '/for-new-patients',
+    navigation: true,
+    children: [
+      {
+        name: 'New Patients',
+        path: '/for-new-patients'
+      },
+      {
+        name: 'Why Choose Us',
+        path: '/why-choose-us'
+      },
+      {
+        name: 'Financial Information',
+        path: '/financial-information'
+      },
+      {
+        name: 'Patient Forms',
+        path: '/patient-forms'
+      },
+      {
+        name: 'Privacy Policy',
+        path: '/privacypolicy'
+      },
+      {
+        name: 'Frequently Asked Questions',
+        path: '/faq'
+      },
+      {
+        name: 'Patient Referral Form',
+        path: '/doctor-referals-slips'
+      }
+    ]
+  },
+  {
+    name: 'Join Our Team',
+    path: '/join-our-team',
     navigation: true
   },
   {
-    name: 'FAQ',
-    path: '/faq',
+    name: 'Contact Us',
+    path: '/contact',
     navigation: true
   }
 ]

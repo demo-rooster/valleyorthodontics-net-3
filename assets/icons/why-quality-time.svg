@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 68" aria-hidden="true">
+  <circle cx="34" cy="34" r="22" style="fill:none;stroke:var(--primary,#2f7770);stroke-width:3"/>
+  <line x1="34" y1="34" x2="34" y2="20" style="stroke:var(--primary,#2f7770);stroke-width:3;stroke-linecap:round"/>
+  <line x1="34" y1="34" x2="44" y2="38" style="stroke:var(--primary,#2f7770);stroke-width:3;stroke-linecap:round"/>
+  <circle cx="34" cy="34" r="2.5" style="fill:var(--primary,#2f7770);stroke:none"/>
+</svg>

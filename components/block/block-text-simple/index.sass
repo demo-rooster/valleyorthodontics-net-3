@@ -63,3 +63,47 @@
 
     &:not(:last-child)
       margin-bottom: rem-calc(20)
+
+    h2, h3, h4
+      margin-top: rem-calc(28)
+      margin-bottom: rem-calc(12)
+
+      &:first-child
+        margin-top: 0
+
+    p, ul, ol
+      &:not(:last-child)
+        margin-bottom: rem-calc(18)
+
+    ul, ol
+      padding-left: rem-calc(22)
+
+    a
+      text-decoration: underline
+      color: var(--primary)
+
+    img
+      display: block
+      margin: rem-calc(24) 0
+      max-width: 100%
+      height: auto
+
+    figure
+      margin: rem-calc(24) 0
+      break-inside: avoid
+
+      img
+        margin: 0
+
+    iframe,
+    video
+      display: block
+      border: 0
+      border-radius: rem-calc(8)
+      background: var(--bg-2)
+      width: 100%
+      max-width: 100%
+      aspect-ratio: 16 / 9
+
+    video
+      height: auto

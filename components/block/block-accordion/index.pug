@@ -7,6 +7,16 @@
       .block-accordion__content(:id='sanitizeId(`${props.title}-content-${i}`)', role='region', :aria-labelledby='sanitizeId(`${props.title}-section-${i}`)', ref='sections')
         .block-accordion__paragraph(v-for='(paragraph, j) in section.paragraphs', :key='`accordion-${i}-paragraph-${j}`')
           p.block-accordion__paragraph-text(v-html='paragraph.text')
+        .block-accordion__actions(v-if='section.buttons && section.buttons.length')
+          BlockButton.block-accordion__button(
+            v-for='(button, k) in section.buttons',
+            :key='`accordion-${i}-button-${k}`',
+            :props='button.button ? button.button : button'
+          )
+        BlockButton.block-accordion__button(
+          v-else-if='section.button && section.button.label',
+          :props='section.button'
+        )
         BaseImage.block-accordion__image(v-if='section.media_type === "image" && section.has_media' v-bind='section.image', forceVisible :bgColor='section.image.loading_mask ? section.image.loading_mask : null ')
         iframe.block-accordion__video(v-else-if='section.media_type === "video" && section.video.type === "embedded" && section.has_media', :src='section.video.src', title="YouTube video player", frameborder="0", allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture", allowfullscreen)
         video.block-accordion__video(v-else-if='section.media_type === "video" && section.video.type === "file" && section.has_media' :src='section.video.src' controls type='video/mp4' ref='video')

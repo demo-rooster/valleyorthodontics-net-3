@@ -4,148 +4,148 @@
       {
         "label": "primary",
         "color": {
-          "red": 48,
-          "green": 134,
-          "blue": 134,
+          "red": 39,
+          "green": 97,
+          "blue": 90,
           "alpha": 1
         },
-        "hex": "#308686",
+        "hex": "#27615A",
         "accessibility": {
-          "luminance": 0.19,
-          "luminancePercent": "19%",
-          "recommendedTextColor": "#000000",
-          "contrastRatio": 4.88,
-          "wcagRating": "AA"
+          "luminance": 0.1,
+          "luminancePercent": "10%",
+          "recommendedTextColor": "#ffffff",
+          "contrastRatio": 7,
+          "wcagRating": "AAA"
         }
       },
       {
         "label": "secondary",
         "color": {
-          "red": 0,
-          "green": 123,
-          "blue": 255,
+          "red": 117,
+          "green": 180,
+          "blue": 170,
           "alpha": 1
         },
-        "hex": "#007BFF",
+        "hex": "#75B4AA",
         "accessibility": {
-          "luminance": 0.21,
-          "luminancePercent": "21%",
+          "luminance": 0.38,
+          "luminancePercent": "38%",
           "recommendedTextColor": "#000000",
-          "contrastRatio": 5.28,
-          "wcagRating": "AA"
+          "contrastRatio": 8.5,
+          "wcagRating": "AAA"
         }
       },
       {
         "label": "accent",
         "color": {
-          "red": 66,
-          "green": 162,
-          "blue": 109,
+          "red": 220,
+          "green": 170,
+          "blue": 150,
           "alpha": 1
         },
-        "hex": "#42a26d",
+        "hex": "#DCAA96",
         "accessibility": {
-          "luminance": 0.28,
-          "luminancePercent": "28%",
+          "luminance": 0.47,
+          "luminancePercent": "47%",
           "recommendedTextColor": "#000000",
-          "contrastRatio": 6.62,
-          "wcagRating": "AA"
+          "contrastRatio": 10.5,
+          "wcagRating": "AAA"
         }
       },
       {
         "label": "text",
         "color": {
-          "red": 0,
-          "green": 0,
-          "blue": 0,
+          "red": 40,
+          "green": 38,
+          "blue": 47,
           "alpha": 1
         },
-        "hex": "#000000",
+        "hex": "#28262F",
         "accessibility": {
-          "luminance": 0,
-          "luminancePercent": "0%",
+          "luminance": 0.02,
+          "luminancePercent": "2%",
           "recommendedTextColor": "#ffffff",
-          "contrastRatio": 21,
+          "contrastRatio": 14.4,
           "wcagRating": "AAA"
         }
       },
       {
         "label": "bg-1",
         "color": {
-          "red": 255,
-          "green": 255,
-          "blue": 255,
+          "red": 250,
+          "green": 247,
+          "blue": 241,
           "alpha": 1
         },
-        "hex": "#FFFFFF",
+        "hex": "#FAF7F1",
         "accessibility": {
-          "luminance": 1,
-          "luminancePercent": "100%",
+          "luminance": 0.93,
+          "luminancePercent": "93%",
           "recommendedTextColor": "#000000",
-          "contrastRatio": 21,
+          "contrastRatio": 19.5,
           "wcagRating": "AAA"
         }
       },
       {
         "label": "bg-2",
         "color": {
-          "red": 245,
-          "green": 245,
-          "blue": 245,
+          "red": 220,
+          "green": 230,
+          "blue": 220,
           "alpha": 1
         },
-        "hex": "#f5f5f5",
+        "hex": "#DCE6DC",
         "accessibility": {
-          "luminance": 0.91,
-          "luminancePercent": "91%",
+          "luminance": 0.77,
+          "luminancePercent": "77%",
           "recommendedTextColor": "#000000",
-          "contrastRatio": 19.26,
+          "contrastRatio": 16.4,
           "wcagRating": "AAA"
         }
       },
       {
         "label": "topbar-light",
         "color": {
-          "red": 242,
-          "green": 242,
-          "blue": 242,
+          "red": 250,
+          "green": 247,
+          "blue": 241,
           "alpha": 1
         },
-        "hex": "#f2f2f2",
+        "hex": "#FAF7F1",
         "accessibility": {
-          "luminance": 0.89,
-          "luminancePercent": "89%",
+          "luminance": 0.93,
+          "luminancePercent": "93%",
           "recommendedTextColor": "#000000",
-          "contrastRatio": 18.76,
+          "contrastRatio": 19.5,
           "wcagRating": "AAA"
         }
       },
       {
         "label": "topbar-dark",
         "color": {
-          "red": 48,
-          "green": 134,
-          "blue": 134,
+          "red": 39,
+          "green": 97,
+          "blue": 90,
           "alpha": 1
         },
-        "hex": "#308686",
+        "hex": "#27615A",
         "accessibility": {
-          "luminance": 0.19,
-          "luminancePercent": "19%",
-          "recommendedTextColor": "#000000",
-          "contrastRatio": 4.88,
-          "wcagRating": "AA"
+          "luminance": 0.1,
+          "luminancePercent": "10%",
+          "recommendedTextColor": "#ffffff",
+          "contrastRatio": 7,
+          "wcagRating": "AAA"
         }
       }
     ],
     "typography": [
       {
         "label": "font",
-        "font": "'Roboto', helvetica, arial, sans-serif"
+        "font": "'Nunito Sans', helvetica, arial, sans-serif"
       },
       {
         "label": "font-title",
-        "font": "'futura-book', sans-serif"
+        "font": "'Freeman', sans-serif"
       }
     ],
     "logo_url": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/logo.webp",

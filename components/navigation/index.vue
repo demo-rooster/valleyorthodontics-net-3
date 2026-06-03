@@ -90,6 +90,12 @@ export default {
       currPos > this.scrollPos ? this.scrollDir = 'down' : this.scrollDir = 'up'
       this.scrollPos = currPos
     },
+    resolveNavPath (link, sublink) {
+      if (sublink.path && sublink.path.charAt(0) === '/') {
+        return sublink.path
+      }
+      return `${link.path}${sublink.path || ''}`
+    },
     setWindowWidth () {
       this.windowWidth = window.innerWidth
     },

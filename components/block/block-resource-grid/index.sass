@@ -1,0 +1,305 @@
+.block-resource-grid
+  position: relative
+  overflow: hidden
+
+  &--bg1
+    background: var(--bg-1)
+
+  &--bg2
+    background: var(--bg-2)
+
+  &__container
+    @include container
+
+  &__header,
+  &__grid
+    @include col (10)
+    @include col--offset (1)
+    @include tablet-lg
+      margin-left: 0
+      width: 100%
+
+  &__header
+    margin-bottom: 3rem
+    text-align: center
+    @include phone-lg
+      margin-bottom: 2rem
+
+  &__eyebrow
+    @extend %body-small
+    margin-bottom: .75rem
+    text-transform: uppercase
+    color: var(--primary)
+    font-weight: 700
+
+  &__title
+    @extend %h1
+    margin: 0 auto 1rem
+    max-width: rem-calc(880)
+
+  &__intro
+    @extend %body
+    margin: 0 auto
+    max-width: rem-calc(780)
+
+  &__grid
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(rem-calc(280), 1fr))
+    gap: 1.25rem
+    @include desktop
+      grid-template-columns: repeat(auto-fit, minmax(rem-calc(320), 1fr))
+      gap: 1.5rem
+    @include phone-lg
+      grid-template-columns: 1fr
+
+    &[data-layout='videos']
+      grid-template-columns: repeat(auto-fit, minmax(rem-calc(320), 1fr))
+      @include phone-lg
+        grid-template-columns: 1fr
+
+  &[data-count='4']
+    .block-resource-grid__grid[data-layout='links']
+      @include laptop-lg
+        grid-template-columns: repeat(4, minmax(0, 1fr))
+      @include laptop
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+      @include phone-lg
+        grid-template-columns: 1fr
+
+  &__card
+    display: flex
+    position: relative
+    flex-direction: column
+    border: 1px solid rgba(var(--text-rgb), .14)
+    border-radius: .5rem
+    box-shadow: 0 rem-calc(16) rem-calc(34) rgba($black, .06)
+    background: $white
+    min-height: rem-calc(260)
+    overflow: hidden
+
+    &:before
+      position: absolute
+      top: 0
+      left: 0
+      background: var(--accent)
+      width: 100%
+      height: rem-calc(5)
+      content: ''
+
+    &[data-type='link'],
+    &[data-type='text']
+      justify-content: space-between
+      padding-top: rem-calc(5)
+
+  &__media
+    position: relative
+    border-bottom: 1px solid rgba(var(--text-rgb), .12)
+    background: rgba(var(--secondary-rgb), .08)
+    width: 100%
+    aspect-ratio: 16 / 9
+    overflow: hidden
+
+    &--image
+      background: linear-gradient(135deg, rgba(var(--secondary-rgb), .08), rgba(var(--accent-rgb), .18))
+      aspect-ratio: 4 / 3
+
+  &__iframe,
+  &__video,
+  &__image
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+  &__iframe
+    border: 0
+
+  &__video
+    background: $black
+    object-fit: cover
+
+  &__video-link
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    overflow: hidden
+
+    .block-resource-grid__image
+      padding: 0
+
+    .base-image__image
+      object-fit: cover
+
+    @include hover-supported
+      .block-resource-grid__play
+        transform: translate(-50%, -50%) scale(1.08)
+
+  &__play
+    display: flex
+    position: absolute
+    top: 50%
+    left: 50%
+    align-items: center
+    justify-content: center
+    transform: translate(-50%, -50%)
+    transition: transform .2s ease
+    border-radius: 50%
+    background: rgba(var(--primary-rgb), .9)
+    width: rem-calc(58)
+    height: rem-calc(58)
+
+  &__play-icon
+    width: rem-calc(22)
+    height: rem-calc(22)
+
+    svg
+      width: 100%
+      height: 100%
+
+    svg path
+      fill: $white !important
+
+  &__image
+    padding: 1.25rem
+
+    .base-image__image
+      object-fit: contain
+
+  &__icon-shell
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 2rem 2rem 0
+    border-radius: 50%
+    background: rgba(var(--primary-rgb), .1)
+    width: rem-calc(72)
+    height: rem-calc(72)
+
+  &__icon
+    width: rem-calc(38)
+    height: rem-calc(38)
+
+    svg
+      width: 100%
+      height: 100%
+
+    svg path
+      fill: var(--primary) !important
+
+  &__body
+    display: flex
+    flex: 1
+    flex-direction: column
+    align-items: flex-start
+    padding: 1.5rem
+    @include desktop
+      padding: 1.75rem
+
+  &__card-eyebrow
+    @extend %body-small
+    margin-bottom: .45rem
+    color: var(--primary)
+    font-weight: 700
+
+  &__card-title
+    @extend %h4
+    margin-bottom: .75rem
+    color: var(--text)
+
+  &__text
+    @extend %body-small
+    margin-bottom: 1.35rem
+
+    p
+      margin-bottom: .8rem
+
+      &:last-child
+        margin-bottom: 0
+
+    ul,
+    ol
+      padding-left: 1.25rem
+
+    a
+      color: var(--primary)
+      font-weight: 700
+
+  &__button
+    @include button-primary(var(--primary), $white, var(--accent), $black)
+    display: inline-flex
+    align-items: center
+    margin-top: auto
+    text-decoration: none
+
+  &__button-icon
+    margin-left: .5rem
+    width: rem-calc(15)
+    height: rem-calc(15)
+
+    svg
+      transform: rotate(-90deg)
+      width: 100%
+      height: 100%
+
+  &--products
+    .block-resource-grid__grid
+      gap: 1.4rem
+      @include desktop
+        grid-template-columns: repeat(auto-fit, minmax(rem-calc(300), 1fr))
+        gap: 1.65rem
+
+    .block-resource-grid__card
+      border-color: rgba(var(--accent-rgb), .45)
+      box-shadow: 0 rem-calc(18) rem-calc(40) rgba($black, .055)
+      min-height: 0
+
+      &:before
+        height: rem-calc(4)
+
+    .block-resource-grid__media--image
+      border-bottom-color: rgba(var(--primary-rgb), .12)
+      background: linear-gradient(180deg, rgba(var(--secondary-rgb), .08), rgba($white, .98))
+      aspect-ratio: 1 / 1
+
+    .block-resource-grid__image
+      padding: 1rem
+
+    .block-resource-grid__body
+      padding: 1.2rem
+      @include desktop
+        padding: 1.25rem
+
+    .block-resource-grid__card-title
+      margin-bottom: .65rem
+      line-height: 1.14
+
+    .block-resource-grid__text
+      margin-bottom: 1.2rem
+
+      p
+        margin-bottom: .65rem
+
+    .block-resource-grid__button
+      align-self: stretch
+      justify-content: center
+      margin-top: auto
+      padding: rem-calc(13) rem-calc(14)
+      width: 100%
+      min-height: rem-calc(52)
+      line-height: 1.15
+      white-space: nowrap
+      font-size: rem-calc(13)
+
+      span
+        display: block
+        text-align: center
+
+    .block-resource-grid__button-icon
+      flex: 0 0 rem-calc(13)
+      margin-left: .45rem
+      width: rem-calc(13)
+      height: rem-calc(13)

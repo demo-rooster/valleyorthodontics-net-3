@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 68" aria-hidden="true">
+  <rect x="14" y="21" width="40" height="28" rx="4" ry="4" style="fill:none;stroke:var(--primary,#2f7770);stroke-width:3;stroke-linecap:round;stroke-linejoin:round"/>
+  <line x1="14" y1="29" x2="54" y2="29" style="stroke:var(--primary,#2f7770);stroke-width:3;stroke-linecap:round"/>
+  <rect x="20" y="36" width="10" height="6" rx="1.5" ry="1.5" style="fill:none;stroke:var(--primary,#2f7770);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"/>
+  <line x1="36" y1="38" x2="48" y2="38" style="stroke:var(--primary,#2f7770);stroke-width:2.5;stroke-linecap:round"/>
+  <line x1="36" y1="43" x2="44" y2="43" style="stroke:var(--primary,#2f7770);stroke-width:2.5;stroke-linecap:round"/>
+</svg>

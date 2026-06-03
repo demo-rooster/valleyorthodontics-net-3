@@ -3,6 +3,6 @@
 
 export default {
   google: {
-    families: [ 'Open+Sans:400,600,700', 'Archivo:400,600,700,800&display=swap' ]
+    families: [ 'Nunito+Sans:400,600,700', 'Freeman:400&display=swap' ]
   }
 }

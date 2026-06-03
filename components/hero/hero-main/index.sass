@@ -116,6 +116,12 @@
       margin-left: 0
       text-align: center
       color: $white
+
+      .hero-main__title
+        margin-right: auto
+        margin-left: auto
+        max-width: rem-calc(1320)
+
       @include tablet
         padding: 0 2rem
       @include phone-lg
@@ -126,6 +132,17 @@
       text-align: center
 
   &__title
+    .hero-main__content--title-only &
+      font-size: rem-calc(38)
+      @include desktop
+        font-size: rem-calc(38)
+      @include laptop
+        font-size: rem-calc(36)
+      @include tablet-lg
+        font-size: rem-calc(36)
+      @include phone-lg
+        font-size: rem-calc(42)
+
     // Mobile line break control
     .mobile-break
       display: none

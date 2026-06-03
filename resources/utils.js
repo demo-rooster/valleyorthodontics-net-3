@@ -59,7 +59,8 @@ export const getForms = async () => {
       ...item.acf
     }))
   } catch (e) {
-    console.error(`ERROR getting FORMS posts: ${e}`)
+    console.warn(`Using local form fallback because the forms API is unavailable: ${e}`)
+    return require('../data/forms.json')
   }
 }
 
@@ -153,7 +154,6 @@ export const setJSONData = (slug, customPostType = 'pages') => {
       sections: pageSections,
       meta: seoData
     }
-    console.log('item', item)
     if (!item) {
       console.error(`No item found with slug: ${slug} in ${customPostType}.json`)
       return {} // Return empty object instead of throwing to avoid build failures

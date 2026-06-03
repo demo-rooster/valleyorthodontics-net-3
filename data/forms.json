@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1025,
+    "title": "Contact Form",
+    "slug": "contact-form",
+    "bcc": "",
+    "submit_button_label": "Send Message",
+    "content": {
+      "content": {
+        "header": "Book Your Free Smile Assessment",
+        "body": "Schedule a consultation by filling out this form and someone from our office staff will get back to you shortly."
+      }
+    },
+    "input_fields": [
+      {
+        "acf_fc_layout": "name",
+        "label": "Name",
+        "required": true,
+        "width": "half",
+        "autocomplete": true,
+        "text_area": false,
+        "error_message": "Please enter your name."
+      },
+      {
+        "acf_fc_layout": "email",
+        "label": "Email",
+        "required": true,
+        "width": "half",
+        "autocomplete": true,
+        "text_area": false,
+        "error_message": "Please enter a valid email address."
+      },
+      {
+        "acf_fc_layout": "phone",
+        "label": "Phone",
+        "required": true,
+        "width": "half",
+        "autocomplete": true,
+        "text_area": false,
+        "error_message": "Please enter a valid phone number."
+      },
+      {
+        "acf_fc_layout": "text",
+        "label": "Patient Age",
+        "required": false,
+        "width": "half",
+        "autocomplete": false,
+        "text_area": false,
+        "error_message": "Please enter the patient age."
+      },
+      {
+        "acf_fc_layout": "text",
+        "label": "How can we help?",
+        "required": false,
+        "width": "full",
+        "autocomplete": false,
+        "text_area": true,
+        "error_message": "Please share a short message."
+      },
+      {
+        "acf_fc_layout": "captcha",
+        "label": "Captcha",
+        "required": true,
+        "width": "half",
+        "autocomplete": false,
+        "text_area": false,
+        "error_message": "Please answer the math question."
+      }
+    ]
+  }
+]

@@ -1,16 +1,37 @@
+import fs from 'fs'
+import path from 'path'
 import axios from 'axios'
 import { api } from '../resources/api'
-import { setData } from '../resources/utils'
 import { siteHead } from './head.config.js'
 import buildConfig from './build.config.js'
 import { siteMap, setRobots } from './seo.config'
 import 'core-js/features/array/at'
-const path = require('path')
-const fs = require('fs')
 
 // Load theme.json using absolute path from project root
 const themeFile = path.join(process.cwd(), 'data', 'theme.json')
 const theme = JSON.parse(fs.readFileSync(themeFile, 'utf8'))
+const staticPageKeys = new Set(['Home', 'About', 'Get Started', 'Treatments', 'Contact', 'FAQ'])
+
+const getLocalDynamicRoutes = () => {
+  const pagesFile = path.join(process.cwd(), 'data', 'pages.json')
+  const pages = JSON.parse(fs.readFileSync(pagesFile, 'utf8'))
+
+  return Object.keys(pages)
+    .filter(key => !staticPageKeys.has(key))
+    .filter(key => /^[a-z0-9-]+$/.test(key))
+    .map(key => `/${key}`)
+}
+
+const getHomeMeta = () => {
+  const pagesFile = path.join(process.cwd(), 'data', 'pages.json')
+  const pages = JSON.parse(fs.readFileSync(pagesFile, 'utf8'))
+  const seo = pages.Home.find(section => section.seo).seo
+
+  return {
+    title: 'home',
+    seo
+  }
+}
 
 // Extract Google Fonts from theme.json typography
 const systemFonts = ['helvetica', 'arial', 'sans-serif', 'serif', 'monospace', 'georgia']
@@ -26,21 +47,17 @@ if (googleFonts.length > 0) {
   googleFonts[googleFonts.length - 1] += '&display=swap'
 }
 
-// Debug: Log extracted fonts
-console.log('Theme typography:', typography)
-console.log('Google Fonts to load:', googleFonts)
-
-export default async () => {
-  const meta = await setData('home')
+export default () => {
+  const meta = getHomeMeta()
   return {
     server: {
-      port: 8080,
+      port: 8081,
       host: '0.0.0.0'
     },
     target: 'static',
     generate: {
       async routes () {
-        const dyRoutes = []
+        const dyRoutes = getLocalDynamicRoutes()
 
         await axios.get(`${api}/wp/v2/posts?per_page=100`).then(async (response) => {
           const dataPages = response.headers['x-wp-totalpages']

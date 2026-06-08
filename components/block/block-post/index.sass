@@ -109,11 +109,68 @@
         margin-bottom: 1rem
       margin-bottom: 1rem
 
-      h4
-        margin: 2rem 0 1rem
+      // Scope blog body headings down from the global hero-scale sizes
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6
+        margin: 2rem 0 .75rem
+        line-height: 1.25
+        color: var(--primary)
+        font-family: var(--font-title)
+        font-weight: 500
 
-      ul
-        margin: 1rem 0
+      h1,
+      h2
+        font-size: rem-calc(28)
+        @include tablet
+          font-size: rem-calc(24)
+
+      h3
+        font-size: rem-calc(22)
+        @include tablet
+          font-size: rem-calc(20)
+
+      h4
+        margin: 1.5rem 0 .5rem
+        font-size: rem-calc(19)
+
+      h5,
+      h6
+        margin: 1.5rem 0 .5rem
+        font-size: rem-calc(17)
+
+      // First element shouldn't add a big gap under the title/date
+      > :first-child
+        margin-top: 0
+
+      p
+        margin-bottom: 1rem
+
+      ul,
+      ol
+        margin: 1rem 0 1.25rem 1.5rem
+
+      li
+        margin-bottom: .4rem
+        list-style: disc
+
+      ol li
+        list-style: decimal
+
+      hr
+        margin: 2rem 0
+        border: none
+        border-top: 1px solid var(--grey, rgba(0, 0, 0, .12))
+
+      img
+        display: block
+        margin: 1.5rem auto
+        border-radius: rem-calc(8)
+        max-width: 100%
+        height: auto
 
       video
         width: 70%

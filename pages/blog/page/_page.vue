@@ -1,7 +1,7 @@
 <template lang="pug" src="./_page.pug"></template>
 
 <script>
-import { setData, setMeta } from '~/resources/utils'
+import { setJSONData, setMeta } from '~/resources/utils'
 import PageSections from '~/components/page-sections'
 
 export default {
@@ -9,9 +9,10 @@ export default {
   components: {
     PageSections
   },
+  // eslint-disable-next-line require-await
   async asyncData () {
-    const data = await setData('blog')
-    return { props: data }
+    const data = setJSONData('blog')
+    return { props: { ...data, slug: 'blog' } }
   },
   mounted () {
     this.$nextTick(() => {

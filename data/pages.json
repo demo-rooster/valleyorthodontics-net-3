@@ -7918,7 +7918,7 @@
       "items": [
         {
           "title": "Customization",
-          "icon": "gear-process-tooth",
+          "icon": "why-customization",
           "text": "No two patients, smiles, or bites are the same. Dr. Rocha uses years of experience and specialty training to personalize each treatment plan around the patient’s unique needs and ideal outcome.",
           "add_button": false,
           "button": {
@@ -7932,7 +7932,7 @@
         },
         {
           "title": "Financing",
-          "icon": "files-tooth",
+          "icon": "why-financing",
           "text": "Financing terms that are right for you. We offer flexible and monthly payments and adjustable payment periods. You have all our efforts so that you can do your treatment until the end.",
           "add_button": false,
           "button": {
@@ -7946,7 +7946,7 @@
         },
         {
           "title": "Quality Time",
-          "icon": "time-tooth",
+          "icon": "why-quality-time",
           "text": "Dr. Rocha takes time to ask the right questions and make accurate evaluations, ensuring every conversation helps create your smile and moves you toward world-class results.",
           "add_button": false,
           "button": {
@@ -7960,7 +7960,7 @@
         },
         {
           "title": "Technology",
-          "icon": "technology-tooth",
+          "icon": "why-technology",
           "text": "Dr. Rocha brings advanced orthodontic technology to Valley Orthodontics, using tools like Invisalign, iTero scanning, and 3D X-rays to deliver accurate, comfortable, efficient, and personalized care.",
           "add_button": false,
           "button": {
@@ -7974,7 +7974,7 @@
         },
         {
           "title": "Expertise",
-          "icon": "shield-tooth",
+          "icon": "why-expertise",
           "text": "We specialize exclusively in orthodontics, dedicating years of study to personalized care. Join the many families who have trusted Dr. Rocha to create smiles for over 10 years.",
           "add_button": false,
           "button": {
@@ -7988,7 +7988,7 @@
         },
         {
           "title": "Personalized Care",
-          "icon": "care-tooth",
+          "icon": "why-personalized-care",
           "text": "At Valley Orthodontics, our fun, friendly team cares for each patient as a whole person, going the extra mile to make a lasting difference in every life.",
           "add_button": false,
           "button": {
@@ -8313,7 +8313,7 @@
       "items": [
         {
           "title": "Talk Through Payment Options",
-          "icon": "scheduling-tooth",
+          "icon": "why-financing",
           "text": "Our team can review your options and answer insurance questions before treatment begins.",
           "add_button": false,
           "button": {
@@ -8327,7 +8327,7 @@
         },
         {
           "title": "Complete Patient Forms",
-          "icon": "form-tooth",
+          "icon": "why-forms",
           "text": "Finish forms online so your consultation can move efficiently.",
           "add_button": false,
           "button": {
@@ -8341,7 +8341,7 @@
         },
         {
           "title": "Prepare for Your First Visit",
-          "icon": "time-tooth",
+          "icon": "why-quality-time",
           "text": "Review what to expect before, during, and after your consultation.",
           "add_button": false,
           "button": {
@@ -12691,25 +12691,15 @@
       }
     },
     {
-      "acf_fc_layout": "block_text_simple",
-      "title": "Blog",
-      "paragraphs": [
-        {
-          "text": "<h2>Blog</h2>\n<ul><li>\n\t\t\t\t\t<a href=\"#content-all-posts\" target=\"_blank\" rel=\"noopener\">\n\t\t\t\t\t   All Posts\t\t\t\t\t</a>\n\t\t\t\t</li></ul>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2026/05/traveling-with-invisalign-aligners-1200x800.jpg\" alt=\"Hands holding clear Invisalign aligners\"></figure>\n<p>Rooster Grin</p>\n<ul><li>June 1, 2026</li><li>•</li><li>1 min</li></ul>\n<h3>Traveling With Invisalign: Airports, Eating Out, and Keeping Track of Aligners</h3>\n<p>\n\t\t\t\t\t\t\t\t\t\t\tTraveling with Invisalign? Valley Orthodontics in San Rafael shares expert Invisalign travel tips for patients in Mill Valley, Larkspur, Corte Madera, Novato, and throughout Marin County\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.valleyorthodontics.net/traveling-with-invisalign-airports-eating-out-and-keeping-track-of-aligners/\" target=\"_blank\" rel=\"noopener\">\n\t\t\t\t\t\t\t\t\t\t\t\tContinue reading &quot;Traveling With Invisalign: Airports, Eating Out, and Keeping Track of Aligners&quot;\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2026/05/common-myths-orthodontic-treatment-1200x800.jpg\" alt=\"Woman receiving orthodontic care at the dentist\"></figure>\n<ul><li>May 18, 2026</li><li>•</li><li>1 min</li></ul>\n<h3>Common Myths About Orthodontic Treatment Debunked</h3>\n<p>\n\t\t\t\t\t\t\t\t\t\t\tModern orthodontics is more comfortable, convenient, and effective than ever. Learn the truth behind common myths about braces, clear aligners, retainers, and treatment timelines.\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.valleyorthodontics.net/common-myths-about-orthodontic-treatment-debunked/\" target=\"_blank\" rel=\"noopener\">\n\t\t\t\t\t\t\t\t\t\t\t\tContinue reading &quot;Common Myths About Orthodontic Treatment Debunked&quot;\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2026/02/airway-ortho.jpg\" alt=\"\"></figure>\n<ul><li>April 27, 2026</li><li>•</li><li>1 min</li></ul>\n<h3>More Than Just a Straight Smile: Why Airway Matters in Orthodontics</h3>\n<p>\n\t\t\t\t\t\t\t\t\t\t\tWhen you think of the orthodontist, you probably think of braces, clear aligners, and perfectly straight teeth. While a beautiful smile is a fantastic goal, at Valley Orthodontics, we believe it’s only one piece of the puzzle. As an airway-centered orthodontic practice, we don’t just look at your teeth; we look at the person behind...\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.valleyorthodontics.net/more-than-just-a-straight-smile-why-airway-matters-in-orthodontics/\" target=\"_blank\" rel=\"noopener\">\n\t\t\t\t\t\t\t\t\t\t\t\tContinue reading &quot;More Than Just a Straight Smile: Why Airway Matters in Orthodontics&quot;\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2026/02/affordable-braces-2-1200x800.jpeg\" alt=\"\"></figure>\n<ul><li>February 25, 2026</li><li>•</li><li>1 min</li></ul>\n<h3>Affordable Braces in San Rafael: Payment Plans, Insurance, and How to Fit Treatment Into Your Budget</h3>\n<p>\n\t\t\t\t\t\t\t\t\t\t\tIf you’re searching for affordable braces in San Rafael or Marin County, you’re not alone. Many families want a healthy, confident smile—but understandably worry about cost. At Valley Orthodontics in San Rafael, we believe that finances should never stand in the way of exceptional orthodontic care. Whether you’re considering braces for your child, teen, or even yourself,...\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.valleyorthodontics.net/affordable-braces-in-san-rafael-payment-plans-insurance-and-how-to-fit-treatment-into-your-budget/\" target=\"_blank\" rel=\"noopener\">\n\t\t\t\t\t\t\t\t\t\t\t\tContinue reading &quot;Affordable Braces in San Rafael: Payment Plans, Insurance, and How to Fit Treatment Into Your Budget&quot;\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2026/02/7-questions-1200x800.jpeg\" alt=\"\"></figure>\n<ul><li>February 4, 2026</li><li>•</li><li>1 min</li></ul>\n<h3>7 Important Questions Parents Should Ask at an Orthodontic Consultation</h3>\n<p>\n\t\t\t\t\t\t\t\t\t\t\tIf you’re a parent searching for a trusted orthodontist near you, you may be wondering when your child should see an orthodontist and how to prepare for the first visit. An orthodontic consultation is an important step in protecting your child’s long-term oral health—and it should feel informative, comfortable, and stress-free. At Valley Orthodontics in...\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.valleyorthodontics.net/7-important-questions-parents-should-ask-at-an-orthodontic-consultation/\" target=\"_blank\" rel=\"noopener\">\n\t\t\t\t\t\t\t\t\t\t\t\tContinue reading &quot;7 Important Questions Parents Should Ask at an Orthodontic Consultation&quot;\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2025/12/Comprehensive-Orthodontic-Care-for-Kids-Families.png\" alt=\"\"></figure>\n<ul><li>December 22, 2025</li><li>•</li><li>1 min</li></ul>\n<h3>Comprehensive Orthodontic Care for Kids &amp; Families</h3>\n<p>\n\t\t\t\t\t\t\t\t\t\t\tEarly orthodontic care plays a vital role. It shapes a child’s long-term oral health, facial development, and overall confidence. On-time detection and treatment of alignment problems like bite irregularities and spacing issues can help prevent numerous complications in the future. Thankfully, modern orthodontics has come a long way in recent years. It offers gentle, efficient,...\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.valleyorthodontics.net/comprehensive-orthodontic-care-for-kids-families/\" target=\"_blank\" rel=\"noopener\">\n\t\t\t\t\t\t\t\t\t\t\t\tContinue reading &quot;Comprehensive Orthodontic Care for Kids &amp; Families&quot;\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2025/12/Achieve-a-Confident-Straighter-Smile-with-Advanced-Invisalign-Treatment.png\" alt=\"\"></figure>\n<h3>Achieve a Confident, Straighter Smile with Advanced Invisalign Treatment</h3>\n<p>\n\t\t\t\t\t\t\t\t\t\t\tInvisalign has emerged as one of the most reliable modern methods of orthodontic treatment. It’s a discreet and painless alternative to conventional metal braces. This system lets teenagers and adults improve their smiles and stay confident during the treatment process. Through current digital advancements, Invisalign provides very precise outcomes that support long-term oral health and...\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.valleyorthodontics.net/achieve-a-confident-straighter-smile-with-advanced-invisalign-treatment/\" target=\"_blank\" rel=\"noopener\">\n\t\t\t\t\t\t\t\t\t\t\t\tContinue reading &quot;Achieve a Confident, Straighter Smile with Advanced Invisalign Treatment&quot;\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2025/12/Transform-Your-Smile-with-Modern-Affordable-Braces-for-Kids-Teens-and-Adults.png\" alt=\"\"></figure>\n<h3>Transform Your Smile with Modern, Affordable Braces for Kids, Teens, and Adults</h3>\n<p>\n\t\t\t\t\t\t\t\t\t\t\tBraces are one of the most reliable ways to get a beautiful, healthy smile. Over the years, we’ve moved from chunky metal appliances to comfortable, efficient aligners. Whether you’re dealing with alignment issues, bite problems, or just want to improve your smile’s appearance, today’s braces can make orthodontics effective and empowering. Understanding How Braces Work...\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.valleyorthodontics.net/transform-your-smile-with-modern-affordable-braces-for-kids-teens-and-adults/\" target=\"_blank\" rel=\"noopener\">\n\t\t\t\t\t\t\t\t\t\t\t\tContinue reading &quot;Transform Your Smile with Modern, Affordable Braces for Kids, Teens, and Adults&quot;\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2025/10/AdobeStock_447820503-1-1200x880.jpeg\" alt=\"\"></figure>\n<ul><li>October 15, 2025</li><li>•</li><li>1 min</li></ul>\n<h3>Trick, Treat &amp; Smile: How to Have a Braces-Friendly Halloween</h3>\n<p>\n\t\t\t\t\t\t\t\t\t\t\t  Trick or Treat with Braces? Yes You Can! — Your Friendly Guide to a Braces-Safe Halloween Halloween is just around the corner, and we know what that means — costumes, spooky decorations, and of course… CANDY! But if you’re rocking braces this year, you might be wondering: Can I still enjoy Halloween treats without breaking...\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.valleyorthodontics.net/trick-treat-smile-how-to-have-a-braces-friendly-halloween/\" target=\"_blank\" rel=\"noopener\">\n\t\t\t\t\t\t\t\t\t\t\t\tContinue reading &quot;Trick, Treat &amp; Smile: How to Have a Braces-Friendly Halloween&quot;\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2025/08/blog-retainer-for-life.jpg\" alt=\"\"></figure>\n<ul><li>August 14, 2025</li><li>•</li><li>1 min</li></ul>\n<h3>Retainers for Life: Why Your Smile Needs a Lifetime Security System</h3>\n<p>\n\t\t\t\t\t\t\t\t\t\t\tIf you’ve recently finished orthodontic treatment or are just curious about keeping your smile straight forever, you need to know about one superstar appliance: the retainer! Let’s break down why your retainer is absolutely crucial—and how it keeps your teeth in line no matter your age. Why Teeth Never Stop Moving Did you know your...\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.valleyorthodontics.net/retainers-for-life-why-your-smile-needs-a-lifetime-security-system/\" target=\"_blank\" rel=\"noopener\">\n\t\t\t\t\t\t\t\t\t\t\t\tContinue reading &quot;Retainers for Life: Why Your Smile Needs a Lifetime Security System&quot;\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2025/05/phase-one.jpeg\" alt=\"\"></figure>\n<ul><li>May 28, 2025</li><li>•</li><li>1 min</li></ul>\n<h3>What is Phase I “Early Interceptive” Orthodontic Treatment?</h3>\n<p>\n\t\t\t\t\t\t\t\t\t\t\tWhat Is Phase I Treatment? Phase I, or “early interceptive” orthodontic treatment, is an approach designed for children while they still have some baby teeth. The goal is to address specific dental and jaw issues early—during a child’s active growth phase—so we can guide the development of their bite and smile in the healthiest direction...\t\t\t\t\t\t\t\t\t\t\t<a href=\"https://www.valleyorthodontics.net/what-is-phase-i-early-interceptive-orthodontic-treatment/\" target=\"_blank\" rel=\"noopener\">\n\t\t\t\t\t\t\t\t\t\t\t\tContinue reading &quot;What is Phase I “Early Interceptive” Orthodontic Treatment?&quot;\n\t\t\t\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t\t\t\t</p>"
-        }
-      ],
+      "acf_fc_layout": "blog_posts",
+      "title": "All Posts",
       "component_options": {
         "hash": "",
         "component_padding": "half",
         "component_margins": "none",
         "hide_component": false
       },
-      "background": "bg1",
-      "add_texture": false,
-      "linear_gradient": "",
-      "center_title": false,
-      "large_title": false,
-      "one_column": true
+      "background": "bg1"
     },
     {
       "acf_fc_layout": "multi_use_banner",

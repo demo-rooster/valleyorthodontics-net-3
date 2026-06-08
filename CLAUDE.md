@@ -1,93 +1,74 @@
-# Lakeshore Orthodontics - Nuxt.js Project
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
-This is a Nuxt.js 2 orthodontics website with a component-based architecture using Pug templates, Sass styling, and Vue.js components.
 
-## Architecture & File Structure
+`rg-nuxt` — a RoosterGrin Nuxt.js 2 template used to build statically-generated orthodontics/dental marketing sites (this instance: Valley Orthodontics). Content is authored in WordPress (headless, via the WP REST API) and mirrored into local JSON files under `data/` that are baked into the static build. Templates are Pug, styling is Sass (indented syntax), animation is GSAP.
 
-### Component Structure
-All components follow a three-file pattern:
-- `index.vue` or `[component-name].vue` - Main Vue component file
-- `index.pug` or `[component-name].pug` - Pug template file
-- `index.sass` or `[component-name].sass` - Sass styling file
+## Commands
 
-### Directory Structure
-- `components/` - Reusable Vue components
-  - `base/` - Base components (buttons, icons, modals, etc.)
-  - `block/` - Content block components (accordions, forms, grids, etc.)
-  - `dev-mode/` - Development tools and overlays
-  - `footer/`, `navigation/`, `hero/` - Layout components
-- `pages/` - Nuxt.js pages (auto-routing)
-- `layouts/` - Page layouts
-- `assets/icons/` - SVG icon files
-- `data/` - JSON data files for content
-- `styles/` - Global Sass files and utilities
-- `resources/` - JavaScript utilities and helpers
+All Nuxt commands point at `config/nuxt.config.js` via `--config-file`, and all are prefixed by `node scripts/process-logo.js` (which regenerates `assets/icons/logo.svg` + `logo-white.svg` from `data/theme.json`). Always use the npm scripts — running `nuxt` directly will use the wrong config and skip logo generation.
 
-### Component Conventions
+- `npm run dev` — dev server on port 8081 (host 0.0.0.0)
+- `npm run generate` — static site generation into `dist/` (this is the deploy artifact; `npm run deploy` aliases it)
+- `npm run build` — Nuxt SSR build (rarely used; site ships as `target: 'static'`)
+- `npm run lint` — ESLint over `.js`/`.vue`. Run after changes.
+- `npm test` — Jest. Single test: `npx jest test/Logo.spec.js` or `npx jest -t '<name>'`. Tests live in `test/`; coverage is collected from `components/**/*.vue` and `pages/**/*.vue`.
 
-#### Vue Component Structure
+Deploys: CodeBuild (`buildspec.yml`, Node 14, runs `npm run generate`, artifact = `dist/`) and Cloudflare (`wrangler.jsonc`, same generate → `dist/`).
+
+Note: `.npmrc` configures the private GreenSock (`@gsap`) registry — `npm install` needs it.
+
+## Architecture
+
+### Data-driven pages (the core pattern)
+
+There is essentially **one page template** that renders everything. `pages/_slug.vue` catches all routes and calls `setJSONData(slug)` (in `resources/utils.js`) to load that page's section array from `data/pages.json`, then hands it to the `PageSections` component.
+
+- `data/pages.json` — keyed by page name/slug (e.g. `Home`, `About`, `iconix-champagne-gold-braces`). Each value is an array of **section objects**; one element carries an `seo` object, the rest are page sections.
+- Each section object has an `acf_fc_layout` discriminator (e.g. `"hero"`, `"image_text"`, `"block_grid"`, `"form"`, `"map"`). `components/page-sections/index.pug` is a long `v-if`/`v-else-if` chain that maps each `acf_fc_layout` value to a `Block*` component, passing the whole section object as `:props`. Sections also honor `hide_component`, `component_padding`, and `background`.
+- **To add a new section type:** create the `Block*` component, import + register it in `components/page-sections/index.vue`, and add a matching `v-else-if` branch keyed on its `acf_fc_layout` in `index.pug`.
+
+Static page keys (`Home`, `About`, `Get Started`, `Treatments`, `Contact`, `FAQ`) are excluded from dynamic-route generation in `config/nuxt.config.js`; everything else in `pages.json` (lowercase, slug-shaped keys) becomes a generated route. Blog routes are generated at build time by fetching `/wp/v2/posts` live from the WP API.
+
+### WordPress as content source
+
+`resources/api.js` defines `api` (WP REST base, `…/wp-json`) and `url` (public site URL) — **update both when repurposing the template for a new site.** `resources/utils.js` holds the data layer:
+
+- `setJSONData(slug, type)` — reads from local `data/${type}.json` via `require` (so content is bundled at build time). Used for pages/global.
+- `getForms`, `getCustomPosts`, `getAllPages`, `setData` — live `axios` calls to the WP API (paginate via `x-wp-totalpages`). `getForms` falls back to `data/forms.json` if the API is down.
+- `setMeta(page)` — builds the Nuxt `head()` (title, description, OG tags, canonical) from a section's `seo` object.
+
+`data/` JSON files (`pages.json`, `globalData.json`, `forms.json`, `theme.json`) are the local mirror of WP content and are the source of truth for the static build. `scripts/sync-pages.js`, `generate-routes*.js` help reconcile `router/index.js` with these files.
+
+### Global data & theming
+
+- `layouts/default.vue` `fetch()`s forms, posts, global data, and theme, then dispatches them into the Vuex store (`store/`). `data/globalData.json` holds company name, phone, nav, footer, CTA, popup, and typography.
+- **Theming is runtime CSS variables, not Sass vars.** `default.vue`'s `updateGlobalStyles()` reads `theme.json` colors and sets `--<label>` / `--<label>-rgb` custom properties on `:root`. Google Fonts are auto-extracted from `theme.json` typography in `nuxt.config.js`. Editing colors = edit `data/theme.json` (see `.cursor/rules/theme-json.mdc` for the palette-overhaul prompt: all colors unique, no pure white, WCAG AA contrast).
+- Responsive breakpoints are tracked in the store via window-width dispatches in `default.vue` (`IS_PHONE_LG`, `IS_TABLET`, etc.) rather than purely in CSS.
+
+### Dev mode
+
+`globalData.json`'s `enable_development_mode` toggles an in-page overlay (`components/dev-mode/`) that only renders when running locally (`NODE_ENV === 'development'`). The store flags `devInspector`/`devTools` gate `DevModeOverlay`/`DevModeTools` in `page-sections`, which annotate each section with its `acf_fc_layout`.
+
+## Component conventions
+
+Three-file pattern, referenced via `src` attributes:
+
 ```vue
 <template lang='pug' src='./index.pug'></template>
-
-<script>
-// Component logic
-</script>
-
+<script> /* logic */ </script>
 <style lang="sass" src="./index.sass"></style>
 ```
 
-#### Template Files
-- Use Pug templating language
-- Templates are separated into `.pug` files
-- Referenced via `src` attribute in Vue template tag
+- `components/base/` — primitives (button, icon, image, modal); several are globally registered in `resources/components.js`.
+- `components/block/` — the `Block*` page-section components consumed by `page-sections`.
+- `components/hero/`, `footer/`, `navigation/`, `popup/`, `form/` — layout/chrome.
+- Styling uses stylelint (BEM selector pattern, `.stylelintrc`) and sass-lint; global Sass resources in `styles/base|utilities|grid` are auto-injected into every component via `styleResources`. GSAP is loaded through `nuxt-gsap-module` + `resources/vendors*.js`.
 
-#### Styling
-- Use Sass preprocessor
-- Styles are separated into `.sass` files (indented syntax)
-- Referenced via `src` attribute in Vue style tag
+## When working here
 
-### Key Features
-- **Content Management**: JSON-based content in `data/` directory
-- **SEO**: Meta tag management via `resources/utils.js`
-- **Animations**: GSAP animations with custom easing
-- **Icons**: SVG icon system with dynamic loading
-- **Responsive**: Mobile-first responsive design
-
-### Available Scripts
-- `npm run dev` - Development server
-- `npm run build` - Production build
-- `npm run lint` - ESLint linting
-- `npm run test` - Jest testing
-
-### Technology Stack
-- **Framework**: Nuxt.js 2
-- **Templates**: Pug
-- **Styling**: Sass (indented syntax)
-- **Animation**: GSAP with SplitText
-- **Icons**: SVG with dynamic loading
-- **Testing**: Jest
-- **Linting**: ESLint
-
-## Development Guidelines
-- Follow the three-file component pattern
-- Use Pug for templates, Sass for styles
-- Keep components modular and reusable
-- Utilize the existing utility functions in `resources/`
-- Test components with Jest
-- Maintain consistent naming conventions
-
-## Task Planning Instructions
-When working on tasks in this project, always:
-1. **Plan First**: Use TodoWrite to break down tasks into bite-sized pieces
-2. **Create Three Files**: For new components, plan to create all three files (.vue, .pug, .sass)
-3. **Edit Incrementally**: Work on one file at a time, marking todos as complete
-4. **Test Changes**: Run `npm run lint` after making changes
-5. **Follow Patterns**: Study existing components before creating new ones
-
-Example task breakdown for a new component:
-- [ ] Create component Vue file with basic structure
-- [ ] Create Pug template file
-- [ ] Create Sass styling file
-- [ ] Test component integration
-- [ ] Run linting and fix any issues
+- New components: create all three files (`.vue`/`.pug`/`.sass`), wire into `page-sections` if it's a section type, then `npm run lint`.
+- Content/copy changes generally mean editing `data/*.json`, not Vue components.
+- `AGENTS.md` is a legacy copy of older guidance; this file supersedes it.

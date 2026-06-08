@@ -66,6 +66,16 @@ export const getForms = async () => {
 
 // gets data for all custom posts of a specific type
 export const getCustomPosts = async (customPostType, total = 100) => {
+  // Blog posts are baked into data/posts.json at build time. The live WordPress
+  // posts store their body in standard `content` (not ACF), so we mirror them
+  // locally in the shape the listing + BlockPost components expect.
+  if (customPostType === 'posts') {
+    try {
+      return require('../data/posts.json')
+    } catch (e) {
+      console.warn(`Falling back to live posts API; local data/posts.json unavailable: ${e}`)
+    }
+  }
   try {
     const response = await axios.get(
       `${api}/wp/v2/${customPostType}?per_page=${total}`
@@ -167,6 +177,19 @@ export const setJSONData = (slug, customPostType = 'pages') => {
 }
 
 export const setData = async (slug, customPostType = 'pages') => {
+  // Blog post detail pages read from the local data/posts.json mirror so the
+  // static build doesn't depend on the (empty) live ACF for posts.
+  if (customPostType === 'posts') {
+    try {
+      const local = require('../data/posts.json')
+      const item = (local.posts || []).find(p => p.slug === slug)
+      if (item) {
+        return { title: item.title, slug: item.slug, ...item.post }
+      }
+    } catch (e) {
+      console.warn(`Falling back to live post API for ${slug}: ${e}`)
+    }
+  }
   try {
     const response = await axios.get(
       `${api}/wp/v2/${customPostType}?slug=${slug}`
@@ -198,9 +221,11 @@ export const setMeta = (meta) => {
       seoData.page_description && { hid: 'og:description', property: 'og:description', content: seoData.social_meta?.og_meta?.description ? seoData.social_meta.og_meta.description : seoData.page_description },
       seoData.social_meta?.og_meta?.image && { hid: 'og:image', property: 'og:image', content: seoData.social_meta.og_meta.image },
       { hid: 'og:url', property: 'og:url', content: `${url}${meta.slug || ''}` }
-    ],
+    // Drop falsy entries (missing description/keywords/og:image) so vue-meta
+    // doesn't try to read `.hid` off an undefined array element.
+    ].filter(Boolean),
     link: [
       { hid: 'canonical', rel: 'canonical', href: `${url}${meta.slug || ''}` }
-    ]
+    ].filter(Boolean)
   }
 }

@@ -8942,10 +8942,10 @@
     },
     {
       "acf_fc_layout": "block_text_simple",
-      "title": "SUPPORTING OUR LOCAL COMMUNITY",
+      "title": "Giving Back to Our Community",
       "paragraphs": [
         {
-          "text": "<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2024/09/nsplsh_584d4761424e34664d3538mv2_d_6720_4480_s_4_2.webp\" alt=\"\"></figure>\n<h2>SUPPORTING OUR LOCAL COMMUNITY</h2>\n<h3>Mary E. Silveira Elementary School</h3>\n<p>We were honored to host the 4th and 5th grade students of Mary E. Silveira Elementary School for a special celebration of their artistic masterpieces. Their creativity and talent shine through each piece, and we were thrilled to showcase their work in our office.</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2025/02/image1-1.jpeg\" alt=\"Content image\"></figure>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_a5fed92df0124c4d9cbce3814f341efbmv2.webp\" alt=\"\"></figure>\n<h4>San Rafael Girls Softball and Terra Linda Boys Baseball Team</h4>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2025/09/vo-girls-softball.jpeg\" alt=\"\"></figure>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2025/09/9f1f28_59ac817e6e9644cab5d6de174d8efb01mv2.webp\" alt=\"\"></figure>\n<p>Every year Valley Orthodontics sponsors a Girls Softball team and a Boys Baseball team. This year we enjoyed seeing all of the beautiful floats and meeting the teams while bringing our team donuts at the opening day celebrations!</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2025/09/vo-boys-baseball.jpg\" alt=\"\"></figure>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_ca04df871dd247f19ac733314dfc9282mv2.webp\" alt=\"\"></figure>\n<h4>Kindergarten Adopt-a-School Program: Vallecito, Lucas Valley &amp; Mary E. Silveira Elementary Schools</h4>\n<p>As a member and representative of the Marin County Dental Society, each year Dr. Rocha and her team visits our local elementary kindergarten classes and teaches the students about the importance of good oral health and nutrition.</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_748e0a52b1d94758a50f3d680682c1c2mv2.webp\" alt=\"\"></figure>\n<h3>Making waves together!</h3>\n<p>We’re thrilled to sponsor the Lucas Valley Swim Team and support these dedicated swimmers.</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2025/09/lv-swim-team.png\" alt=\"Content image\"></figure>\n<h3>The Can Do Foundation</h3>\n<p>We proudly support the <a href=\"https://cando4schools.org/business-partner-directory/\" target=\"_blank\" rel=\"noopener\">Can Do Foundation</a> to help ensure all Miller Creek School District students receive the enriched education they deserve. Supporting our community’s future is at the heart of Valley Orthodontics.</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2025/01/can-do-2.png\" alt=\"Content image\"></figure>\n<h3>College of Marin, Dental Assisting Program</h3>\n<p>Every year Dr. Rocha had the opportunity to visit the College of Marin Dental Assisting Program to teach the students basic orthdontic principles. She enjoys being able to do this, as most of our staff have graduated from the program. Many of the students also come to Valley Orthodontics for their internship and gain skills and experience in a private practice setting.</p>\n<figure><img src=\"https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_1e5135917e6c4bfa91bcd33f79442348mv2.webp\" alt=\"Content image\"></figure>"
+          "text": "At Valley Orthodontics, giving back is at the heart of who we are. We're proud to support the schools, teams, and organizations that help our community thrive — here are a few of the partnerships we cherish most."
         }
       ],
       "component_options": {
@@ -8957,9 +8957,321 @@
       "background": "bg1",
       "add_texture": false,
       "linear_gradient": "",
-      "center_title": false,
-      "large_title": false,
+      "center_title": true,
+      "large_title": true,
       "one_column": true
+    },
+    {
+      "acf_fc_layout": "image_text",
+      "title": "Mary E. Silveira Elementary School",
+      "paragraphs": [
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "We were honored to host the 4th and 5th grade students of Mary E. Silveira Elementary School for a special celebration of their artistic masterpieces. Their creativity and talent shine through each piece, and we were thrilled to showcase their work in our office."
+        }
+      ],
+      "accordion": [],
+      "image": {
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/02/image1-1.jpeg",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/02/image1-1.jpeg",
+        "alt": "Mary E. Silveira Elementary students' artwork on display at Valley Orthodontics",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Supporting Our Local Community"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "component_options": {
+        "hash": "",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "has_background": true,
+      "background": "bg2",
+      "add_texture": false,
+      "linear_gradient": "",
+      "reverse": false,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_title": true,
+      "title_color": "primary",
+      "title_underline_color": "primary",
+      "large_image": false,
+      "has_buttons": false,
+      "buttons": [],
+      "has_accordion": false,
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "image_text",
+      "title": "San Rafael Girls Softball & Terra Linda Boys Baseball",
+      "paragraphs": [
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "Every year Valley Orthodontics sponsors a Girls Softball team and a Boys Baseball team. This year we enjoyed seeing all of the beautiful floats and meeting the teams while bringing our team donuts at the opening day celebrations!"
+        }
+      ],
+      "accordion": [],
+      "image": {
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/09/vo-girls-softball.jpeg",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/09/vo-girls-softball.jpeg",
+        "alt": "Valley Orthodontics-sponsored San Rafael Girls Softball team",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Supporting Our Local Community"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "component_options": {
+        "hash": "",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "has_background": false,
+      "background": "bg1",
+      "add_texture": false,
+      "linear_gradient": "",
+      "reverse": true,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_title": true,
+      "title_color": "primary",
+      "title_underline_color": "primary",
+      "large_image": false,
+      "has_buttons": false,
+      "buttons": [],
+      "has_accordion": false,
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "image_text",
+      "title": "Kindergarten Adopt-a-School Program",
+      "paragraphs": [
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "Serving Vallecito, Lucas Valley & Mary E. Silveira Elementary Schools. As a member and representative of the Marin County Dental Society, each year Dr. Rocha and her team visits our local elementary kindergarten classes and teaches the students about the importance of good oral health and nutrition."
+        }
+      ],
+      "accordion": [],
+      "image": {
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_748e0a52b1d94758a50f3d680682c1c2mv2.webp",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_748e0a52b1d94758a50f3d680682c1c2mv2.webp",
+        "alt": "Dr. Rocha teaching a local kindergarten class about oral health",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Supporting Our Local Community"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "component_options": {
+        "hash": "",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "has_background": true,
+      "background": "bg2",
+      "add_texture": false,
+      "linear_gradient": "",
+      "reverse": false,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_title": true,
+      "title_color": "primary",
+      "title_underline_color": "primary",
+      "large_image": false,
+      "has_buttons": false,
+      "buttons": [],
+      "has_accordion": false,
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "image_text",
+      "title": "Making Waves Together",
+      "paragraphs": [
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "We’re thrilled to sponsor the Lucas Valley Swim Team and support these dedicated swimmers."
+        }
+      ],
+      "accordion": [],
+      "image": {
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/09/lv-swim-team.png",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/09/lv-swim-team.png",
+        "alt": "Valley Orthodontics-sponsored Lucas Valley Swim Team",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Supporting Our Local Community"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "component_options": {
+        "hash": "",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "has_background": false,
+      "background": "bg1",
+      "add_texture": false,
+      "linear_gradient": "",
+      "reverse": true,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_title": true,
+      "title_color": "primary",
+      "title_underline_color": "primary",
+      "large_image": false,
+      "has_buttons": false,
+      "buttons": [],
+      "has_accordion": false,
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "image_text",
+      "title": "The Can Do Foundation",
+      "paragraphs": [
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "We proudly support the <a href=\"https://cando4schools.org/business-partner-directory/\" target=\"_blank\" rel=\"noopener\">Can Do Foundation</a> to help ensure all Miller Creek School District students receive the enriched education they deserve. Supporting our community’s future is at the heart of Valley Orthodontics."
+        }
+      ],
+      "accordion": [],
+      "image": {
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/01/can-do-2.png",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/01/can-do-2.png",
+        "alt": "Valley Orthodontics supporting the Can Do Foundation",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Supporting Our Local Community"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "component_options": {
+        "hash": "",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "has_background": true,
+      "background": "bg2",
+      "add_texture": false,
+      "linear_gradient": "",
+      "reverse": false,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_title": true,
+      "title_color": "primary",
+      "title_underline_color": "primary",
+      "large_image": false,
+      "has_buttons": false,
+      "buttons": [],
+      "has_accordion": false,
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "image_text",
+      "title": "College of Marin Dental Assisting Program",
+      "paragraphs": [
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "Every year Dr. Rocha has the opportunity to visit the College of Marin Dental Assisting Program to teach the students basic orthodontic principles. She enjoys being able to do this, as most of our staff have graduated from the program. Many of the students also come to Valley Orthodontics for their internship and gain skills and experience in a private practice setting."
+        }
+      ],
+      "accordion": [],
+      "image": {
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_1e5135917e6c4bfa91bcd33f79442348mv2.webp",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_1e5135917e6c4bfa91bcd33f79442348mv2.webp",
+        "alt": "Dr. Rocha with College of Marin Dental Assisting Program students",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Supporting Our Local Community"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "component_options": {
+        "hash": "",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "has_background": false,
+      "background": "bg1",
+      "add_texture": false,
+      "linear_gradient": "",
+      "reverse": true,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_title": true,
+      "title_color": "primary",
+      "title_underline_color": "primary",
+      "large_image": false,
+      "has_buttons": false,
+      "buttons": [],
+      "has_accordion": false,
+      "preserve_image": true
     },
     {
       "acf_fc_layout": "multi_use_banner",
@@ -11037,99 +11349,92 @@
       }
     },
     {
-      "acf_fc_layout": "block_resource_grid",
+      "acf_fc_layout": "multi_item_row",
       "title": "What makes Valley Orthodontics Experience Extraordinary?",
-      "intro": "",
-      "eyebrow": "",
-      "layout": "links",
-      "cards": [
+      "items": [
         {
-          "title": "CUSTOMIZATION",
+          "title": "Customization",
+          "icon": "why-customization",
           "text": "Dr. Rocha customizes each smile for each patient. Each patient is different and so is each smile. Dr. Rocha's years of experience help each patient have the smile that is right for them",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim-7.png",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim-7.png",
-            "alt": "Customization icon",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "What Sets Us Apart"
-            }
+          "add_button": false,
+          "button": {
+            "button_type": "button",
+            "path": "",
+            "hash": "",
+            "href": "",
+            "label": "",
+            "aria": ""
           }
         },
         {
-          "title": "CONSERVATIVE",
+          "title": "Conservative",
+          "icon": "why-expertise",
           "text": "Dr. Rocha prefers a non-extraction approach to orthodontics, whenever possible, to achieve a beautiful, healthy and full smile.",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim-3.png",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim-3.png",
-            "alt": "Conservative treatment icon",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "What Sets Us Apart"
-            }
+          "add_button": false,
+          "button": {
+            "button_type": "button",
+            "path": "",
+            "hash": "",
+            "href": "",
+            "label": "",
+            "aria": ""
           }
         },
         {
-          "title": "TIME",
+          "title": "Time",
+          "icon": "why-quality-time",
           "text": "Dr. Rocha takes time whenever possible to ask the right questions and make accurate evaluations when creating a smile for you. Time talking with Dr. Rocha is time well spent. At the end of your visit, you will be on your way to a world-class smile!!",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim-2.png",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim-2.png",
-            "alt": "Time icon",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "What Sets Us Apart"
-            }
+          "add_button": false,
+          "button": {
+            "button_type": "button",
+            "path": "",
+            "hash": "",
+            "href": "",
+            "label": "",
+            "aria": ""
           }
         },
         {
-          "title": "TECHNOLOGY",
+          "title": "Technology",
+          "icon": "why-technology",
           "text": "Cutting Edge orthodontic technology, high standards & extraordinary service. Dr. Rocha and her dedicated team take time to learn about the latest state-of-the-art technology like Invisalign, Itero Scanner, and digital 3D imagery. Patients benefit from technology that makes having orthodontic treatment easier and faster than ever.",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim-5.png",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim-5.png",
-            "alt": "Technology icon",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "What Sets Us Apart"
-            }
+          "add_button": false,
+          "button": {
+            "button_type": "button",
+            "path": "",
+            "hash": "",
+            "href": "",
+            "label": "",
+            "aria": ""
           }
         }
       ],
+      "button": {
+        "type": "nuxt",
+        "style": "secondary",
+        "label": "",
+        "aria_label": "",
+        "href": "",
+        "path": "",
+        "hash": "",
+        "external": false,
+        "include_icon": false,
+        "icon": "pencil",
+        "color": "black"
+      },
       "component_options": {
         "hash": "extraordinary-care",
         "component_padding": "half",
         "component_margins": "none",
         "hide_component": false
       },
-      "background": "bg2",
-      "add_texture": false,
+      "media_type": "icon",
       "linear_gradient": "",
-      "has_background": true
+      "add_cta": false,
+      "left_aligned": false,
+      "large_title": true,
+      "alt_color": true,
+      "background": "bg2"
     },
     {
       "acf_fc_layout": "block_text_simple",
@@ -11223,99 +11528,92 @@
       "preserve_image": true
     },
     {
-      "acf_fc_layout": "block_resource_grid",
+      "acf_fc_layout": "multi_item_row",
       "title": "A Welcoming Smile Experience",
-      "intro": "",
-      "eyebrow": "",
-      "layout": "links",
-      "cards": [
+      "items": [
         {
-          "title": "ATMOSPHERE",
+          "title": "Atmosphere",
+          "icon": "why-quality-time",
           "text": "High-quality orthodontics in a relaxing, Covid-19 safe, and nurturing atmosphere gives patients and parents peace of mind. With the hustle and bustle of the day, our patients and their families enjoy the spa-like atmosphere in our office.",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim-1.png",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim-1.png",
-            "alt": "Atmosphere icon",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "What Sets Us Apart"
-            }
+          "add_button": false,
+          "button": {
+            "button_type": "button",
+            "path": "",
+            "hash": "",
+            "href": "",
+            "label": "",
+            "aria": ""
           }
         },
         {
-          "title": "CARING",
+          "title": "Caring",
+          "icon": "why-personalized-care",
           "text": "<strong>We care for each INDIVIDUAL!</strong> Our fun, friendly, and nurturing team care for the entire person, not just their smiles. Dr. Rocha and her team always go the extra mile. At Valley Orthodontics, our goal is to make a lasting difference in our patients’ lives.",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim-6.png",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim-6.png",
-            "alt": "Caring icon",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "What Sets Us Apart"
-            }
+          "add_button": false,
+          "button": {
+            "button_type": "button",
+            "path": "",
+            "hash": "",
+            "href": "",
+            "label": "",
+            "aria": ""
           }
         },
         {
-          "title": "FUN",
+          "title": "Fun",
+          "icon": "why-customization",
           "text": "We sponsor fun events to celebrate our great patients and their families. From our annual Halloween Candy Buy-Back Program to our Dixie / Terra Linda Boys Baseball and San Rafael Girls Softball parade and celebrations.",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim-4.png",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim-4.png",
-            "alt": "Fun icon",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "What Sets Us Apart"
-            }
+          "add_button": false,
+          "button": {
+            "button_type": "button",
+            "path": "",
+            "hash": "",
+            "href": "",
+            "label": "",
+            "aria": ""
           }
         },
         {
-          "title": "GIVING",
+          "title": "Giving",
+          "icon": "why-financing",
           "text": "Dr. Rocha believes in giving to the local and global community. Dr. Rocha and her team believe it is a privilege to give back to their community, both local and global. A few causes near and dear to their hearts include: Dixie / Terra Linda Boys Baseball League, San Rafael Girls Softball League, Marinwood Waterdevils Team, Dixie Can Do! Dr. Rocha and her team love volunteering at the local",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim.png",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/imgpsh_fullsize_anim.png",
-            "alt": "Giving icon",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "What Sets Us Apart"
-            }
+          "add_button": false,
+          "button": {
+            "button_type": "button",
+            "path": "",
+            "hash": "",
+            "href": "",
+            "label": "",
+            "aria": ""
           }
         }
       ],
+      "button": {
+        "type": "nuxt",
+        "style": "secondary",
+        "label": "",
+        "aria_label": "",
+        "href": "",
+        "path": "",
+        "hash": "",
+        "external": false,
+        "include_icon": false,
+        "icon": "pencil",
+        "color": "black"
+      },
       "component_options": {
         "hash": "patient-experience",
         "component_padding": "half",
         "component_margins": "none",
         "hide_component": false
       },
-      "background": "bg1",
-      "add_texture": false,
+      "media_type": "icon",
       "linear_gradient": "",
-      "has_background": true
+      "add_cta": false,
+      "left_aligned": false,
+      "large_title": true,
+      "alt_color": true,
+      "background": "bg1"
     },
     {
       "acf_fc_layout": "multi_use_banner",

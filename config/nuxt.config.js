@@ -22,6 +22,25 @@ const getLocalDynamicRoutes = () => {
     .map(key => `/${key}`)
 }
 
+const getLocalBlogRoutes = () => {
+  const postsFile = path.join(process.cwd(), 'data', 'posts.json')
+  const postsData = JSON.parse(fs.readFileSync(postsFile, 'utf8'))
+  const posts = postsData.posts || []
+  const routes = new Set(['/blog/page/1'])
+
+  Object.keys(postsData.postsPerPage || {}).forEach((page) => {
+    routes.add(`/blog/page/${page}`)
+  })
+
+  posts.forEach((post) => {
+    if (post.slug) {
+      routes.add(`/blog/${post.slug}`)
+    }
+  })
+
+  return [...routes]
+}
+
 const getHomeMeta = () => {
   const pagesFile = path.join(process.cwd(), 'data', 'pages.json')
   const pages = JSON.parse(fs.readFileSync(pagesFile, 'utf8'))
@@ -58,22 +77,29 @@ export default () => {
     generate: {
       async routes () {
         const dyRoutes = getLocalDynamicRoutes()
+        const addRoute = route => !dyRoutes.includes(route) && dyRoutes.push(route)
 
-        await axios.get(`${api}/wp/v2/posts?per_page=100`).then(async (response) => {
-          const dataPages = response.headers['x-wp-totalpages']
-          let postsArray = response.data
-          dyRoutes.push('/blog/page/1')
-          for (let i = 2; i <= dataPages; i++) {
-            const nextPage = await axios.get(
-              `${api}/wp/v2/posts?per_page=100&page=${i}`
-            )
-            postsArray = [...postsArray, ...nextPage.data]
-            dyRoutes.push('/blog/page/' + i)
-          }
-          return postsArray.map((post) => {
-            dyRoutes.push('/blog/' + post.slug)
+        getLocalBlogRoutes().forEach(addRoute)
+
+        try {
+          await axios.get(`${api}/wp/v2/posts?per_page=100`).then(async (response) => {
+            const dataPages = response.headers['x-wp-totalpages']
+            let postsArray = response.data
+            addRoute('/blog/page/1')
+            for (let i = 2; i <= dataPages; i++) {
+              const nextPage = await axios.get(
+                `${api}/wp/v2/posts?per_page=100&page=${i}`
+              )
+              postsArray = [...postsArray, ...nextPage.data]
+              addRoute('/blog/page/' + i)
+            }
+            return postsArray.map((post) => {
+              addRoute('/blog/' + post.slug)
+            })
           })
-        })
+        } catch (e) {
+          console.warn(`Falling back to local blog routes; WordPress posts API unavailable: ${e}`)
+        }
 
         return dyRoutes
       }

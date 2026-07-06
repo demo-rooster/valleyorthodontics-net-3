@@ -6,11 +6,12 @@
     :to=`{ path: props.path, hash: props.hash }`,
     :aria-label='props.aria_label',
   )
+    span(v-html='props.label')
     BaseIcon.block-button__button-icon(
       v-if='props.include_icon',
+      :class="{ 'block-button__button-icon--caret': props.icon === 'caret' }",
       :name='props.icon'
     )
-    span(v-html='props.label')
 
   //- Anchor Link ============================================
   a.block-button__button(
@@ -20,11 +21,12 @@
     :aria-label='props.aria_label',
     :target='props.external ? `_blank` : null'
   )
+    span(v-html='props.label')
     BaseIcon.block-button__button-icon(
       v-if='props.include_icon',
+      :class="{ 'block-button__button-icon--caret': props.icon === 'caret' }",
       :name='props.icon'
     )
-    span(v-html='props.label')
   
   //- Open Chair ============================================
   a.block-button__button.openchair-widget(
@@ -32,11 +34,12 @@
     :class=`'block-button__button--' + props.style`,
     :aria-label='props.aria_label'
   )
+    span(v-html='props.label')
     BaseIcon.block-button__button-icon(
       v-if='props.include_icon',
+      :class="{ 'block-button__button-icon--caret': props.icon === 'caret' }",
       :name='props.icon'
     )
-    span(v-html='props.label')
 
   //- Custom Link ============================================
   button.block-button__button(
@@ -45,11 +48,12 @@
     @click='handleClick',
     :aria-label='props.aria_label'
   )
+    span(v-html='props.label')
     BaseIcon.block-button__button-icon(
       v-if='props.include_icon',
+      :class="{ 'block-button__button-icon--caret': props.icon === 'caret' }",
       :name='props.icon'
     )
-    span(v-html='props.label')
 
   //- Phone Link ============================================
   a.block-button__button(

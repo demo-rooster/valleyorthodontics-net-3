@@ -4,13 +4,13 @@
   background: #f5f5f5
 
   &[data-no-title]
-    padding: 5rem 0 7rem
+    padding: 1.5rem 0 7rem
     @include desktop
-      padding: 6rem 0 8rem
+      padding: 2rem 0 8rem
     @include tablet-lg
-      padding: 2rem 0 4rem
+      padding: 1rem 0 4rem
     @include tablet
-      padding: 1rem 0 3rem
+      padding: .5rem 0 3rem
 
   &__container
     @include container
@@ -160,3 +160,14 @@
     display: flex
     justify-content: center
     margin-top: 5rem
+
+#patient-experience
+  .block-item-row[data-no-title]
+    margin-top: -4rem
+    padding-top: 0
+    @include desktop
+      margin-top: -5rem
+    @include tablet-lg
+      margin-top: -2rem
+    @include tablet
+      margin-top: -1rem

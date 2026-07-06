@@ -2,7 +2,7 @@
   "Home": [
     {
       "acf_fc_layout": "hero",
-      "title": "Healthy, Beautiful Smiles Start Here for Children, Teens, and Adults",
+      "title": "Beautiful Smiles<br>Start Here",
       "text": "",
       "button": {
         "type": "nuxt",
@@ -302,7 +302,7 @@
             }
           },
           "title": "Braces for All Ages",
-          "path": "/braces",
+          "path": "/for-adults",
           "hash": ""
         },
         {
@@ -327,9 +327,9 @@
         },
         {
           "image": {
-            "src": "https://ik.imagekit.io/rooster/tr:w-1000,f-jpg,q-auto,fo-auto/45615865_Close_up_of_purple_dental_braces_and_toothbrush_is.jpg",
-            "webp": "https://ik.imagekit.io/rooster/tr:w-1000,f-webp,q-auto,fo-auto/45615865_Close_up_of_purple_dental_braces_and_toothbrush_is.jpg",
-            "alt": "Metal braces closeup",
+            "src": "https://d1euqd8u2uyjl7.cloudfront.net/home-treatment-braces.jpg",
+            "webp": "https://d1euqd8u2uyjl7.cloudfront.net/home-treatment-braces.webp",
+            "alt": "Young girl smiling with metal braces",
             "aria_hidden": false,
             "bgColor": "",
             "imageBackground": false,
@@ -4110,8 +4110,8 @@
       },
       "media_type": "image",
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/02/Anna-1.jpg",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/02/Anna-1.jpg",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/meet-the-team/meet-the-team-hero.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/meet-the-team/meet-the-team-hero.webp",
         "alt": "Meet the Team at Valley Orthodontics",
         "aria_hidden": false,
         "bgColor": "",
@@ -4130,7 +4130,7 @@
         "title": "",
         "poster": ""
       },
-      "small": true,
+      "small": false,
       "component_options": {
         "hash": "",
         "component_padding": "none",
@@ -4139,25 +4139,113 @@
       }
     },
     {
-      "acf_fc_layout": "block_text_simple",
+      "acf_fc_layout": "block_grid",
       "title": "Meet the Team",
-      "paragraphs": [
+      "items": [
         {
-          "text": "<h3>Meet the Team</h3>\n<p><a href=\"https://www.valleyorthodontics.net/meet-anna-our-practice-coordinator/\" target=\"_blank\" rel=\"noopener\">\n                                            \n                                            Anna\n                                            Practice Coordinator\n                                        </a></p>\n<p><a href=\"https://www.valleyorthodontics.net/meet-alison-our-orthodontic-assistant/\" target=\"_blank\" rel=\"noopener\">\n                                            \n                                            Alison\n                                            Orthodontic Assistant\n                                        </a></p>\n<p><a href=\"https://www.valleyorthodontics.net/meet-abi-our-dental-assistant/\" target=\"_blank\" rel=\"noopener\">\n                                            \n                                            Abi\n                                            Orthodontic Assistant\n                                        </a></p>\n<p><a href=\"https://www.valleyorthodontics.net/meet-carrie-our-patient-care-coordinator/\" target=\"_blank\" rel=\"noopener\">\n                                            \n                                            Carrie\n                                            Patient Care Coordinator\n                                        </a></p>"
+          "name": "Anna Bacon",
+          "position": "Practice Coordinator",
+          "bio": "Anna manages the front office, scheduling, treatment planning, financial consultations, and insurance requests. She holds a BA in Communications from UC Santa Barbara and enjoys hiking and road trips.",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/Anna.webp",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/Anna.webp",
+            "alt": "Anna Bacon, Practice Coordinator",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": null
+          }
+        },
+        {
+          "name": "Alison",
+          "position": "Orthodontic Assistant",
+          "bio": "",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/02/Alison.jpg",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/02/Alison.jpg",
+            "alt": "Alison, Orthodontic Assistant",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": null
+          }
+        },
+        {
+          "name": "Abi",
+          "position": "Orthodontic Assistant",
+          "bio": "",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/03/abi.png",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/03/abi.png",
+            "alt": "Abi, Orthodontic Assistant",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": null
+          }
+        },
+        {
+          "name": "Carrie",
+          "position": "Patient Care Coordinator",
+          "bio": "Carrie supports patient care coordination, insurance questions, and new patient onboarding. She is a reliable point of contact for scheduling and patient communication.",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/03/carrie.png",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/03/carrie.png",
+            "alt": "Carrie, Patient Care Coordinator",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": null
+          }
+        },
+        {
+          "name": "Marina Freedman",
+          "position": "Lead Orthodontic Assistant",
+          "bio": "",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/Marina.webp",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/Marina.webp",
+            "alt": "Marina Freedman, Lead Orthodontic Assistant",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": null
+          }
         }
       ],
       "component_options": {
         "hash": "",
-        "component_padding": "half",
+        "component_padding": "full",
         "component_margins": "none",
         "hide_component": false
       },
+      "has_bio": true,
+      "large_title": false,
+      "center_title": false,
       "background": "bg1",
       "add_texture": false,
       "linear_gradient": "",
-      "center_title": false,
-      "large_title": false,
-      "one_column": true
+      "preserve_image": true
     },
     {
       "acf_fc_layout": "multi_use_banner",
@@ -10884,9 +10972,9 @@
       },
       "media_type": "image",
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/Dr_-Rocha.webp",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/Dr_-Rocha.webp",
-        "alt": "Dr. Rocha at Valley Orthodontics",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/about/about-hero.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/about/about-hero.webp",
+        "alt": "Valley Orthodontics team smiling together",
         "aria_hidden": false,
         "bgColor": "",
         "imageBackground": false,
@@ -10914,20 +11002,179 @@
     },
     {
       "acf_fc_layout": "image_text",
-      "title": "Dr. Rocha",
+      "title": "About Dr. Rocha",
       "paragraphs": [
         {
           "has_heading": false,
           "heading": "",
           "text": "<strong>DDS, MSD Specialist in Orthodontics for children and adults</strong>"
-        },
-        {
-          "has_heading": false,
-          "heading": "",
-          "text": "<em>Dr. Charlene Rocha brings extensive experience as an orthodontic specialist, treating both children and adults, using braces and clear aligners.</em>"
         }
       ],
-      "accordion": [],
+      "start_collapsed": true,
+      "accordion": [
+        {
+          "header": "Education & Training",
+          "paragraphs": [
+            {
+              "text": "Dr. Rocha is a bay area native; where she has been practicing orthodontics for the past eight years. She was the first in her family to pursue higher education, starting at UCSD where she received the highest GPA in her major. She then received her Doctor of Dental Surgery degree at University of California, San Francisco. Dr. Rocha was then one of eight residents admitted to University of the Pacific, where she received a masters degree and in depth training in orthodontics. Dr. Rocha received numerous awards over the course of her many years in college and graduate school."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "",
+            "webp": "",
+            "alt": "",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": null
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "Community & Philanthropy",
+          "paragraphs": [
+            {
+              "text": "Dr. Rocha also uses her expertise to enrich philanthropy; in one instance, Dr. Rocha traveled to Honduras to provide free dental treatment to the local underserved communities. She loves the opportunity to participate in local health fairs and any opportunity to mentor and connect to the community."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "",
+            "webp": "",
+            "alt": "",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": null
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "Her Orthodontic Career",
+          "paragraphs": [
+            {
+              "text": "Dr. Rocha began her orthodontic career only a week after graduating and she hasn't stopped since. (\"The longer I practice, the more I fall in love with what I do!\") From her years in training and practice, Dr. Rocha is a leader in her field in treating patients of all ages and using both braces and clear aligners. Her favorite part of the job is building long term relationships with her patients and coworkers."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "",
+            "webp": "",
+            "alt": "",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": null
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "Treatment Philosophy",
+          "paragraphs": [
+            {
+              "text": "Dr. Rocha believes every patient has individual needs, and their orthodontic plan and care should reflect that. Orthodontics is more than a beautiful smile- having your teeth in a healthy position sets a patient up for a lifetime of improved dental health."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "",
+            "webp": "",
+            "alt": "",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": null
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "Personal Life",
+          "paragraphs": [
+            {
+              "text": "When she's not creating beautiful smiles at the office, Dr. Rocha enjoys exploring local parks with her husband and their adventurous, energetic children- Jayden and Maya. In her rare moments of kid-free time, she loves running half marathons with her sisters, diving into audiobooks or true crime podcasts, and savoring new culinary spots with friends and family."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "",
+            "webp": "",
+            "alt": "",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": null
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "Professional Memberships",
+          "paragraphs": [
+            {
+              "text": "Dr. Rocha is a member of the American Dental Association, California Dental Association, and the Marin County Dental Society."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "",
+            "webp": "",
+            "alt": "",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": null
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        }
+      ],
       "image": {
         "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/Dr_-Rocha.webp",
         "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/Dr_-Rocha.webp",
@@ -10966,7 +11213,7 @@
       "large_image": false,
       "has_buttons": false,
       "buttons": [],
-      "has_accordion": false,
+      "has_accordion": true,
       "preserve_image": true
     },
     {
@@ -11198,42 +11445,6 @@
       "primary_color": true
     },
     {
-      "acf_fc_layout": "block_text_simple",
-      "title": "About Dr. Rocha",
-      "paragraphs": [
-        {
-          "text": "Dr. Rocha is a bay area native; where she has been practicing orthodontics for the past eight years. She was the first in her family to pursue higher education, starting at UCSD where she received the highest GPA in her major. She then received her Doctor of Dental Surgery degree at University of California, San Francisco. Dr. Rocha was then one of eight residents admitted to University of the Pacific, where she received a masters degree and in depth training in orthodontics. Dr. Rocha received numerous awards over the course of her many years in college and graduate school."
-        },
-        {
-          "text": "Dr. Rocha also uses her expertise to enrich philanthropy; in one instance, Dr. Rocha traveled to Honduras to provide free dental treatment to the local underserved communities. She loves the opportunity to participate in local health fairs and any opportunity to mentor and connect to the community."
-        },
-        {
-          "text": "Dr. Rocha began her orthodontic career only a week after graduating and she hasn’t stopped since. (“The longer I practice, the more I fall in love with what I do!”) From her years in training and practice, Dr. Rocha is a leader in her field in treating patients of all ages and using both braces and clear aligners. Her favorite part of the job is building long term relationships with her patients and coworkers."
-        },
-        {
-          "text": "Dr. Rocha believes every patient has individual needs, and their orthodontic plan and care should reflect that. Orthodontics is more than a beautiful smile- having your teeth in a healthy position sets a patient up for a lifetime of improved dental health."
-        },
-        {
-          "text": "When she’s not creating beautiful smiles at the office, Dr. Rocha enjoys exploring local parks with her husband and their adventurous, energetic children- Jayden and Maya. In her rare moments of kid-free time, she loves running half marathons with her sisters, diving into audiobooks or true crime podcasts, and savoring new culinary spots with friends and family."
-        },
-        {
-          "text": "Dr. Rocha is a member of the American Dental Association, California Dental Association, and the Marin County Dental Society."
-        }
-      ],
-      "component_options": {
-        "hash": "bio",
-        "component_padding": "half",
-        "component_margins": "none",
-        "hide_component": false
-      },
-      "background": "bg1",
-      "add_texture": false,
-      "linear_gradient": "",
-      "center_title": false,
-      "large_title": false,
-      "one_column": true
-    },
-    {
       "acf_fc_layout": "multi_use_banner",
       "title": "Ready to get started?",
       "content_block": "text_block",
@@ -11320,14 +11531,14 @@
       },
       "media_type": "image",
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/07/smiling-pro.jpg",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/07/smiling-pro.jpg",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/what-sets-us-apart/what-sets-us-apart-hero.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/what-sets-us-apart/what-sets-us-apart-hero.webp",
         "alt": "Smiling Valley Orthodontics patient",
         "aria_hidden": false,
         "bgColor": "",
         "imageBackground": false,
         "addLoader": false,
-        "objectPosition": "center",
+        "objectPosition": "center 10%",
         "forceAlt": "",
         "loading_mask": "",
         "image_selection_hints": {
@@ -11340,7 +11551,7 @@
         "title": "",
         "poster": ""
       },
-      "small": true,
+      "small": false,
       "component_options": {
         "hash": "",
         "component_padding": "none",
@@ -11350,7 +11561,7 @@
     },
     {
       "acf_fc_layout": "multi_item_row",
-      "title": "What makes Valley Orthodontics Experience Extraordinary?",
+      "title": "Extraordinary Experience",
       "items": [
         {
           "title": "Customization",
@@ -11437,6 +11648,94 @@
       "background": "bg2"
     },
     {
+      "acf_fc_layout": "multi_item_row",
+      "title": "",
+      "items": [
+        {
+          "title": "Atmosphere",
+          "icon": "atmosphere",
+          "text": "High-quality orthodontics in a relaxing, Covid-19 safe, and nurturing atmosphere gives patients and parents peace of mind. With the hustle and bustle of the day, our patients and their families enjoy the spa-like atmosphere in our office.",
+          "add_button": false,
+          "button": {
+            "button_type": "button",
+            "path": "",
+            "hash": "",
+            "href": "",
+            "label": "",
+            "aria": ""
+          }
+        },
+        {
+          "title": "Caring",
+          "icon": "why-personalized-care",
+          "text": "<strong>We care for each INDIVIDUAL!</strong> Our fun, friendly, and nurturing team care for the entire person, not just their smiles. Dr. Rocha and her team always go the extra mile. At Valley Orthodontics, our goal is to make a lasting difference in our patients’ lives.",
+          "add_button": false,
+          "button": {
+            "button_type": "button",
+            "path": "",
+            "hash": "",
+            "href": "",
+            "label": "",
+            "aria": ""
+          }
+        },
+        {
+          "title": "Fun",
+          "icon": "fun",
+          "text": "We sponsor fun events to celebrate our great patients and their families. From our annual Halloween Candy Buy-Back Program to our Dixie / Terra Linda Boys Baseball and San Rafael Girls Softball parade and celebrations.",
+          "add_button": false,
+          "button": {
+            "button_type": "button",
+            "path": "",
+            "hash": "",
+            "href": "",
+            "label": "",
+            "aria": ""
+          }
+        },
+        {
+          "title": "Giving",
+          "icon": "giving",
+          "text": "Dr. Rocha believes in giving to the local and global community. Dr. Rocha and her team believe it is a privilege to give back to their community, both local and global. A few causes near and dear to their hearts include: Dixie / Terra Linda Boys Baseball League, San Rafael Girls Softball League, Marinwood Waterdevils Team, Dixie Can Do! Dr. Rocha and her team love volunteering at the local",
+          "add_button": false,
+          "button": {
+            "button_type": "button",
+            "path": "",
+            "hash": "",
+            "href": "",
+            "label": "",
+            "aria": ""
+          }
+        }
+      ],
+      "button": {
+        "type": "nuxt",
+        "style": "secondary",
+        "label": "",
+        "aria_label": "",
+        "href": "",
+        "path": "",
+        "hash": "",
+        "external": false,
+        "include_icon": false,
+        "icon": "pencil",
+        "color": "black"
+      },
+      "component_options": {
+        "hash": "patient-experience",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "media_type": "icon",
+      "linear_gradient": "",
+      "add_cta": false,
+      "left_aligned": false,
+      "large_title": true,
+      "alt_color": true,
+      "background": "bg1"
+    },
+    {
       "acf_fc_layout": "block_text_simple",
       "title": "EXPERIENCE",
       "paragraphs": [
@@ -11487,8 +11786,8 @@
       ],
       "accordion": [],
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/07/smiling-pro.jpg",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/07/smiling-pro.jpg",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/what-sets-us-apart/dental-pain-eraser.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/what-sets-us-apart/dental-pain-eraser.webp",
         "alt": "Smiling patient using orthodontic comfort technology",
         "aria_hidden": false,
         "bgColor": "",
@@ -11526,94 +11825,6 @@
       "buttons": [],
       "has_accordion": false,
       "preserve_image": true
-    },
-    {
-      "acf_fc_layout": "multi_item_row",
-      "title": "A Welcoming Smile Experience",
-      "items": [
-        {
-          "title": "Atmosphere",
-          "icon": "why-quality-time",
-          "text": "High-quality orthodontics in a relaxing, Covid-19 safe, and nurturing atmosphere gives patients and parents peace of mind. With the hustle and bustle of the day, our patients and their families enjoy the spa-like atmosphere in our office.",
-          "add_button": false,
-          "button": {
-            "button_type": "button",
-            "path": "",
-            "hash": "",
-            "href": "",
-            "label": "",
-            "aria": ""
-          }
-        },
-        {
-          "title": "Caring",
-          "icon": "why-personalized-care",
-          "text": "<strong>We care for each INDIVIDUAL!</strong> Our fun, friendly, and nurturing team care for the entire person, not just their smiles. Dr. Rocha and her team always go the extra mile. At Valley Orthodontics, our goal is to make a lasting difference in our patients’ lives.",
-          "add_button": false,
-          "button": {
-            "button_type": "button",
-            "path": "",
-            "hash": "",
-            "href": "",
-            "label": "",
-            "aria": ""
-          }
-        },
-        {
-          "title": "Fun",
-          "icon": "why-customization",
-          "text": "We sponsor fun events to celebrate our great patients and their families. From our annual Halloween Candy Buy-Back Program to our Dixie / Terra Linda Boys Baseball and San Rafael Girls Softball parade and celebrations.",
-          "add_button": false,
-          "button": {
-            "button_type": "button",
-            "path": "",
-            "hash": "",
-            "href": "",
-            "label": "",
-            "aria": ""
-          }
-        },
-        {
-          "title": "Giving",
-          "icon": "why-financing",
-          "text": "Dr. Rocha believes in giving to the local and global community. Dr. Rocha and her team believe it is a privilege to give back to their community, both local and global. A few causes near and dear to their hearts include: Dixie / Terra Linda Boys Baseball League, San Rafael Girls Softball League, Marinwood Waterdevils Team, Dixie Can Do! Dr. Rocha and her team love volunteering at the local",
-          "add_button": false,
-          "button": {
-            "button_type": "button",
-            "path": "",
-            "hash": "",
-            "href": "",
-            "label": "",
-            "aria": ""
-          }
-        }
-      ],
-      "button": {
-        "type": "nuxt",
-        "style": "secondary",
-        "label": "",
-        "aria_label": "",
-        "href": "",
-        "path": "",
-        "hash": "",
-        "external": false,
-        "include_icon": false,
-        "icon": "pencil",
-        "color": "black"
-      },
-      "component_options": {
-        "hash": "patient-experience",
-        "component_padding": "half",
-        "component_margins": "none",
-        "hide_component": false
-      },
-      "media_type": "icon",
-      "linear_gradient": "",
-      "add_cta": false,
-      "left_aligned": false,
-      "large_title": true,
-      "alt_color": true,
-      "background": "bg1"
     },
     {
       "acf_fc_layout": "multi_use_banner",
@@ -11731,29 +11942,9 @@
       }
     },
     {
-      "acf_fc_layout": "block_text_simple",
-      "title": "Clean. Comfortable. Professional. Caring. Convenient.",
-      "paragraphs": [
-        {
-          "text": "Feel safe, confident, and at home the minute you walk into the office."
-        }
-      ],
-      "component_options": {
-        "hash": "welcome",
-        "component_padding": "half",
-        "component_margins": "none",
-        "hide_component": false
-      },
-      "background": "bg1",
-      "add_texture": false,
-      "linear_gradient": "",
-      "center_title": true,
-      "large_title": true,
-      "one_column": true
-    },
-    {
       "acf_fc_layout": "single_image_slider",
-      "title": "Tour the Office",
+      "title": "Clean. Comfortable. Professional.<br>Caring. Convenient.",
+      "text": "Feel safe, confident, and at home the minute you walk into the office.",
       "carousel_aria": "Tour the Office image carousel",
       "slides": [
         {
@@ -11906,17 +12097,35 @@
     },
     {
       "acf_fc_layout": "multi_item_testimonial",
-      "title": "What Patients Say",
+      "title": "Patient Testimonials",
       "review_text": "Read More Reviews",
-      "links": [],
+      "links": [
+        {
+          "href": "https://search.google.com/local/reviews?placeid=ChIJvaAB9vuXhYARgwA9WK0Lag0",
+          "icon": "facebook",
+          "color": "primary"
+        }
+      ],
       "testimonials": [
         {
-          "author": "",
-          "testimonial": "“Thank you so much for my awesome smile! I really like the office and the garden areas. I like coming here because everyone is so friendly and I feel at home.”"
+          "author": "Elizabeth Martinoni",
+          "testimonial": "Dr. Rocha has been beyond exceptional with helping me and guiding me through the process of fixing my alignment. Fixing my bite as an adult seemed impossible, especially after wearing a retainer that wasn’t helping but rather shifting my teeth. She made me new retainers that would help correct my bite, I’d say it’s magic but it’s her talent and her knowledge that make it all happen and you can tell how caring and passionate she is about what she does and her clients :) . Thank you Dr Rocha and all at Valley Orthodontics."
         },
         {
-          "author": "",
-          "testimonial": "“This is my favorite office! It is so calm and inviting. Everyone is always smiling. Thank you for making my orthodontic experience a great one.”"
+          "author": "Jenna Erlich",
+          "testimonial": "My son's experience with Dr. Rocha has been absolutely wonderful from start to finish! Their team is so welcoming, and they whole heartedly care about their patients! I couldn't recommend a better orthodontist! There are not enough words to say how truly thankful I am to have found this special place. Thank you everyone at Valley Orthodontics!"
+        },
+        {
+          "author": "Karen Segovia",
+          "testimonial": "What a positive experience with Dr. Rocha and her team! The office is welcoming and organized, and everyone is incredibly friendly and professional. They made sure I understood my treatment plan and were always patient with any questions I had. Appointments were efficient, and I always felt well taken care of. My smile has completely transformed, and I’m beyond grateful. Keep up the GREAT work, Valley Orthodontics!"
+        },
+        {
+          "author": "_Sebastian",
+          "testimonial": "Valley Orthodontics! The office is always super clean and well-maintained, which made me feel comfortable right away. Everyone there is so friendly and welcoming—they really make you feel like you’re part of the family. The staff is professional, knowledgeable, and takes the time to explain everything clearly. Most importantly, they do amazing work, and I’m really happy with my results. Highly recommend to anyone looking for top-quality orthodontic care!"
+        },
+        {
+          "author": "Carrie Gaffney",
+          "testimonial": "I highly recommend Valley Orthodontics! Dr. Rocha and her team are all so welcoming and skilled. The office is great for kids and adults alike. I know I am in good hands there and most importantly-my teeth are straight!! You won’t be disappointed!"
         }
       ],
       "component_options": {

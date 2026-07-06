@@ -2,6 +2,7 @@
   width: fit-content
 
   &__button
+    justify-content: center
     cursor: pointer
     width: fit-content
     @include button-primary(var(--block-btn-bg, var(--accent)), var(--block-btn-text, #ffffff), rgba($white, 0.6), $black)
@@ -18,6 +19,7 @@
       @include button-primary(transparent, $white, var(--accent), $black)
 
     &-icon
+      flex-shrink: 0
       margin-left: rem-calc(8)
       stroke-width: 2px
       height: rem-calc(20)
@@ -26,6 +28,15 @@
         transition: all .3s ease
         width: auto
         height: 100%
+
+      &--caret
+        width: rem-calc(15)
+        height: rem-calc(15)
+
+        svg
+          transform: rotate(-90deg)
+          width: 100%
+          height: 100%
 
   a
     text-decoration: none

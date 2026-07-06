@@ -24,6 +24,31 @@ export default {
       threshold: [ 0.01 ]
     }
   }),
+  computed: {
+    routeSlug () {
+      return this.$route.path.replace(/^\/|\/$/g, '')
+    },
+    hasHeaderOffset () {
+      return [
+        'meet-the-team',
+        'meet-dr-rocha',
+        'what-sets-us-apart'
+      ].includes(this.routeSlug)
+    },
+    heroClasses () {
+      return {
+        'hero-main--no-image': !this.props.image.src && !this.props.video.src,
+        'hero-main--small-height': this.props.small,
+        'hero-main--inner-page': this.$route.path !== '/',
+        'hero-main--header-offset': this.hasHeaderOffset
+      }
+    },
+    imageStyles () {
+      return {
+        objectPosition: this.props.image.objectPosition || (this.hasHeaderOffset ? 'center top' : null)
+      }
+    }
+  },
   mounted () {
     if (this.$refs.image) {
       this.loadImage()

@@ -257,15 +257,15 @@
 
       &:checked.form-flexible__checkbox-input:hover ~ .form-flexible__checkbox-overlay,
       &:checked.form-flexible__checkbox-input:focus-visible ~ .form-flexible__checkbox-overlay
-        border-color: var(--bg-2)
+        border-color: rgba(var(--bg-2-rgb), 1)
 
     &-overlay
       display: flex
       align-items: center
       justify-content: center
       transition: border-color .25s ease
-      border: rem-calc(2) solid var(--bg-2)
-      background-color: var(--bg-2)
+      border: rem-calc(2) solid rgba(var(--bg-2-rgb), 1)
+      background-color: rgba(var(--bg-2-rgb), 1)
       padding: 0 rem-calc(10)
       width: 100%
 

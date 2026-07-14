@@ -8,6 +8,24 @@ import SkipLink from '~/components/base/base-skip-link'
 import TheFooter from '~/components/footer'
 import TheNavigation from '~/components/navigation'
 import BaseAccess from '~/components/base/base-access'
+import CustomizationToolbar from '~/components/customization-toolbar'
+
+const activeThemeStorageKey = 'rg-active-theme'
+const legacyThemeStorageKey = 'rg-theme-color-overrides'
+const secondaryThemeStorageKey = 'rg-secondary-theme'
+const cloneTheme = theme => JSON.parse(JSON.stringify(theme))
+const gradientTint = color => ({
+  red: Math.max(0, Math.round(color.red * 0.68)),
+  green: Math.max(0, Math.round(color.green * 0.72)),
+  blue: Math.max(0, Math.round(color.blue * 0.68))
+})
+const gradientStyles = {
+  radialMist: color => `radial-gradient(circle at 18% 20%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .72), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .3) 27%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, 0) 56%), radial-gradient(circle at 84% 16%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .58), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .24) 31%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, 0) 60%), linear-gradient(135deg, rgba(255, 255, 255, .98), rgba(${color.red}, ${color.green}, ${color.blue}, .18))`,
+  cornerBloom: color => `radial-gradient(circle at 94% 6%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .86), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .38) 32%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, 0) 64%), radial-gradient(circle at 68% 48%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .34), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, 0) 46%), linear-gradient(160deg, rgba(255, 255, 255, .98), rgba(${color.red}, ${color.green}, ${color.blue}, .16))`,
+  softHalo: color => `radial-gradient(circle at 50% 30%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .68), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .28) 34%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, 0) 64%), radial-gradient(circle at 12% 86%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .42), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, 0) 48%), linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(${color.red}, ${color.green}, ${color.blue}, .14))`,
+  linearWash: color => `linear-gradient(135deg, rgba(255, 255, 255, .96), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .42))`,
+  linearLift: color => `linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .36) 56%, rgba(255, 255, 255, .94))`
+}
 
 export default {
   components: {
@@ -15,6 +33,7 @@ export default {
     DevModeBanner,
     Popup,
     SkipLink,
+    CustomizationToolbar,
     TheFooter,
     TheNavigation
   },
@@ -22,26 +41,38 @@ export default {
     forms: null,
     posts: null,
     global: null,
-    theme: null,
     popupActive: false,
     showDevModeBanner: false
   }),
+  computed: {
+    theme () {
+      return this.$store.state.theme
+    }
+  },
   watch: {
-    $route: 'onRouteChange'
+    $route: 'onRouteChange',
+    theme: {
+      handler () {
+        this.updateGlobalStyles()
+      },
+      deep: true
+    }
   },
   async fetch () {
     this.forms = await getForms()
     this.posts = await getCustomPosts('posts', 2)
     this.global = await setJSONData('global', 'globalData')
     const theme = await getThemeJSON()
-    this.theme = theme.default
-    // console.log('theme', this.theme)
+    const defaultTheme = cloneTheme(theme.default)
 
+    this.$store.dispatch('SET_DEFAULT_THEME', defaultTheme)
+    this.$store.dispatch('SET_THEME', cloneTheme(defaultTheme))
     this.$store.dispatch('SET_BLOG', this.posts)
     this.$store.dispatch('SET_GLOBAL', this.global)
     this.$store.dispatch('SET_FORMS', this.forms)
   },
   mounted () {
+    this.applyStoredThemePreset()
     this.updateGlobalStyles()
     this.checkWindowWidth()
 
@@ -69,13 +100,86 @@ export default {
       const target = document.querySelector('#page-wrapper')
       target.focus()
     },
+    applyStoredThemePreset () {
+      if (!this.$store.state.defaultTheme) {
+        return
+      }
+
+      const primaryTheme = cloneTheme(this.$store.state.defaultTheme)
+      const secondaryTheme = this.getStoredSecondaryTheme(primaryTheme)
+      const activeThemeName = window.localStorage.getItem(activeThemeStorageKey) || 'secondary'
+
+      this.$store.dispatch('SET_SECONDARY_THEME', secondaryTheme)
+      this.$store.dispatch('SET_ACTIVE_THEME_NAME', activeThemeName)
+      this.$store.dispatch('SET_THEME', activeThemeName === 'primary' ? primaryTheme : secondaryTheme)
+    },
+    getStoredSecondaryTheme (primaryTheme) {
+      const savedSecondaryTheme = this.getStoredTheme(secondaryThemeStorageKey)
+
+      if (savedSecondaryTheme) {
+        return this.mergeStoredThemeColors(primaryTheme, savedSecondaryTheme)
+      }
+
+      const legacyOverrides = this.getStoredTheme(legacyThemeStorageKey)
+
+      if (legacyOverrides) {
+        const secondaryTheme = this.mergeStoredThemeColors(primaryTheme, legacyOverrides)
+        window.localStorage.setItem(secondaryThemeStorageKey, JSON.stringify({ colors: secondaryTheme.colors }))
+        return secondaryTheme
+      }
+
+      return cloneTheme(primaryTheme)
+    },
+    getStoredTheme (storageKey) {
+      const storedTheme = window.localStorage.getItem(storageKey)
+
+      if (!storedTheme) {
+        return null
+      }
+
+      try {
+        return JSON.parse(storedTheme)
+      } catch (error) {
+        window.localStorage.removeItem(storageKey)
+        return null
+      }
+    },
+    mergeStoredThemeColors (baseTheme, storedTheme) {
+      const storedColors = Array.isArray(storedTheme.colors)
+        ? storedTheme.colors
+        : Object.keys(storedTheme).map(label => ({ label, ...storedTheme[label] }))
+
+      return {
+        ...cloneTheme(baseTheme),
+        colors: baseTheme.colors.map((color) => {
+          const storedColor = storedColors.find(item => item.label === color.label)
+
+          if (!storedColor) {
+            return color
+          }
+
+          return {
+            ...color,
+            ...storedColor,
+            color: {
+              ...color.color,
+              ...storedColor.color
+            }
+          }
+        })
+      }
+    },
     updateGlobalStyles () {
+      if (typeof document === 'undefined') {
+        return
+      }
+
       const root = document.documentElement
 
       // Colors
       if (this.theme && this.theme.colors) {
         this.theme.colors.forEach((color) => {
-          root.style.setProperty(`--${color.label}`, `rgba(${color.color.red}, ${color.color.green}, ${color.color.blue}, ${color.color.alpha})`)
+          root.style.setProperty(`--${color.label}`, this.getThemeColorValue(color))
           root.style.setProperty(`--${color.label}-rgb`, `${color.color.red}, ${color.color.green}, ${color.color.blue}`)
         })
       }
@@ -86,6 +190,13 @@ export default {
           root.style.setProperty(`--${font.label}`, font.font)
         })
       }
+    },
+    getThemeColorValue (color) {
+      if (color.gradient && color.gradient !== 'solid' && gradientStyles[color.gradient]) {
+        return gradientStyles[color.gradient](color.color)
+      }
+
+      return `rgba(${color.color.red}, ${color.color.green}, ${color.color.blue}, ${color.color.alpha})`
     }
   }
 }

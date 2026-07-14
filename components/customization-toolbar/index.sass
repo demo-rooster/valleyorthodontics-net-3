@@ -1,0 +1,234 @@
+.customization-toolbar
+  --toolbar-purple: #4d4ec1
+  --toolbar-purple-soft: rgba(77, 78, 193, .12)
+  --toolbar-text: #28262f
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  z-index: 700
+  font-family: var(--font)
+  pointer-events: none
+
+  &--open
+    .customization-toolbar__panel
+      transform: translateX(0)
+      visibility: visible
+      opacity: 1
+      pointer-events: auto
+
+  &__rail
+    display: flex
+    position: absolute
+    top: 50%
+    right: 0
+    flex-direction: column
+    align-items: center
+    gap: rem-calc(18)
+    transform: translateY(-50%)
+    border: rem-calc(1) solid var(--toolbar-purple-soft)
+    border-right: 0
+    border-radius: rem-calc(18) 0 0 rem-calc(18)
+    box-shadow: 0 rem-calc(16) rem-calc(36) rgba($black, .14)
+    background: $white
+    padding: rem-calc(14) rem-calc(10)
+    width: rem-calc(66)
+    pointer-events: auto
+
+  &__logo
+    width: rem-calc(38)
+    height: rem-calc(38)
+
+  &__toggle,
+  &__close,
+  &__theme-button,
+  &__save-button,
+  &__copy-button,
+  &__apply-button
+    border: 0
+    cursor: pointer
+    font-family: var(--font)
+
+  &__toggle
+    border-radius: rem-calc(999)
+    background: var(--toolbar-purple)
+    padding: rem-calc(11) rem-calc(8)
+    min-height: rem-calc(88)
+    text-transform: uppercase
+    letter-spacing: .08em
+    color: $white
+    font-size: rem-calc(12)
+    font-weight: 800
+    writing-mode: vertical-rl
+
+  &__panel
+    position: absolute
+    top: rem-calc(32)
+    right: rem-calc(78)
+    transform: translateX(calc(100% + #{rem-calc(96)}))
+    transition: transform .28s ease, opacity .2s ease, visibility .2s ease
+    visibility: hidden
+    opacity: 0
+    border: rem-calc(1) solid var(--toolbar-purple-soft)
+    border-radius: rem-calc(8)
+    box-shadow: 0 rem-calc(18) rem-calc(48) rgba($black, .18)
+    background: $white
+    padding: rem-calc(22)
+    width: rem-calc(336)
+    max-width: calc(100vw - #{rem-calc(96)})
+    max-height: calc(100vh - #{rem-calc(64)})
+    overflow-y: auto
+    pointer-events: none
+
+  &__header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: rem-calc(16)
+    margin-bottom: rem-calc(18)
+
+  &__title
+    margin: 0
+    line-height: 1.1
+    color: var(--toolbar-purple)
+    font-size: rem-calc(22)
+
+  &__close
+    flex: 0 0 rem-calc(34)
+    border-radius: 50%
+    background: var(--toolbar-purple-soft)
+    width: rem-calc(34)
+    height: rem-calc(34)
+    line-height: 1
+    color: var(--toolbar-purple)
+    font-size: rem-calc(18)
+
+  &__theme-controls
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: rem-calc(8)
+    margin-bottom: rem-calc(20)
+
+  &__theme-button,
+  &__save-button
+    border: rem-calc(2) solid var(--toolbar-purple)
+    border-radius: rem-calc(999)
+    background: $white
+    padding: rem-calc(8) rem-calc(10)
+    color: var(--toolbar-purple)
+    font-size: rem-calc(12)
+    font-weight: 800
+
+  &__theme-button--active,
+  &__save-button
+    background: var(--toolbar-purple)
+    color: $white
+
+  &__save-button
+    grid-column: 1 / -1
+    margin-bottom: rem-calc(20)
+    width: 100%
+
+  &__colors
+    display: grid
+    gap: rem-calc(12)
+
+  &__field
+    display: grid
+    grid-template-columns: 1fr
+    align-items: center
+    gap: rem-calc(12)
+    border: rem-calc(1) solid rgba($black, .08)
+    border-radius: rem-calc(8)
+    padding: rem-calc(10)
+
+  &__label
+    display: grid
+    gap: rem-calc(3)
+    color: var(--toolbar-text)
+
+  &__field-top
+    display: grid
+    grid-template-columns: 1fr auto
+    align-items: start
+    gap: rem-calc(10)
+
+  &__gradient-select
+    appearance: none
+    border: rem-calc(1) solid rgba($black, .12)
+    border-radius: rem-calc(999)
+    background: var(--toolbar-purple-soft)
+    cursor: pointer
+    padding: rem-calc(6) rem-calc(24) rem-calc(6) rem-calc(10)
+    max-width: rem-calc(128)
+    min-height: rem-calc(32)
+    color: var(--toolbar-purple)
+    font-size: rem-calc(11)
+    font-weight: 800
+
+  &__controls
+    display: grid
+    grid-template-columns: rem-calc(48) 1fr 1fr
+    align-items: center
+    gap: rem-calc(8)
+
+  &__copy-button,
+  &__apply-button
+    border-radius: rem-calc(999)
+    background: var(--toolbar-purple-soft)
+    padding: rem-calc(6) rem-calc(8)
+    min-height: rem-calc(32)
+    color: var(--toolbar-purple)
+    font-size: rem-calc(11)
+    font-weight: 800
+
+    &:disabled
+      opacity: .42
+      cursor: not-allowed
+
+  &__copy-button
+    background: var(--toolbar-purple)
+    color: $white
+
+  &__label-text
+    text-transform: capitalize
+    font-size: rem-calc(13)
+    font-weight: 800
+
+  &__hex
+    color: rgba($black, .58)
+    font-size: rem-calc(12)
+    font-weight: 700
+
+  &__input
+    appearance: none
+    border: rem-calc(1) solid rgba($black, .12)
+    border-radius: rem-calc(6)
+    background: transparent
+    cursor: pointer
+    padding: 0
+    width: rem-calc(48)
+    height: rem-calc(42)
+
+    &::-webkit-color-swatch-wrapper
+      padding: rem-calc(3)
+
+    &::-webkit-color-swatch
+      border: 0
+      border-radius: rem-calc(4)
+
+    &::-moz-color-swatch
+      border: 0
+      border-radius: rem-calc(4)
+
+  @media (max-width: 480px)
+    &__rail
+      width: rem-calc(58)
+
+    &__panel
+      top: rem-calc(16)
+      right: rem-calc(66)
+      padding: rem-calc(18)
+      width: calc(100vw - #{rem-calc(82)})
+      max-width: none
+      max-height: calc(100vh - #{rem-calc(32)})

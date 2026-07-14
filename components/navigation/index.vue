@@ -6,6 +6,8 @@ import { setJSONData } from '~/resources/utils'
 import router from '~/router/index'
 import { removeFocus, trapFocus } from '~/resources/mixins'
 
+const secondaryThemeLogoUrl = '/vo-logo-2.png'
+
 export default {
   components: {
     Topbar
@@ -52,6 +54,10 @@ export default {
       return this.theme?.logo_config?.type === 'url'
     },
     logoUrl () {
+      if (this.$store.state.activeThemeName === 'secondary') {
+        return secondaryThemeLogoUrl
+      }
+
       return this.theme?.logo_url || this.theme?.logo_config?.url
     },
     companyName () {

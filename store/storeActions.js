@@ -1,6 +1,12 @@
 import {
   DEV_INSPECTOR,
   DEV_TOOLS,
+  SET_ACTIVE_THEME_NAME,
+  SET_DEFAULT_THEME,
+  SET_SECONDARY_THEME,
+  SET_THEME,
+  UPDATE_THEME_COLOR,
+  RESTORE_DEFAULT_THEME,
   IS_PHONE_LAND_LG,
   IS_PHONE_LG,
   IS_TABLET,
@@ -21,6 +27,24 @@ const stateActions = () => ({
   },
   DEV_TOOLS ({ commit }, data) {
     commit(DEV_TOOLS, data)
+  },
+  SET_ACTIVE_THEME_NAME ({ commit }, data) {
+    commit(SET_ACTIVE_THEME_NAME, data)
+  },
+  SET_DEFAULT_THEME ({ commit }, data) {
+    commit(SET_DEFAULT_THEME, data)
+  },
+  SET_SECONDARY_THEME ({ commit }, data) {
+    commit(SET_SECONDARY_THEME, data)
+  },
+  SET_THEME ({ commit }, data) {
+    commit(SET_THEME, data)
+  },
+  UPDATE_THEME_COLOR ({ commit }, data) {
+    commit(UPDATE_THEME_COLOR, data)
+  },
+  RESTORE_DEFAULT_THEME ({ commit }) {
+    commit(RESTORE_DEFAULT_THEME)
   },
   IS_PHONE_LAND_LG ({ commit }, data) {
     commit(IS_PHONE_LAND_LG, data)

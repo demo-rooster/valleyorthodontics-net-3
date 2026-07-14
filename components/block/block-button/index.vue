@@ -1,7 +1,7 @@
 <template lang='pug' src='./index.pug'></template>
 
 <script>
-import { setJSONData, getThemeJSON } from '~/resources/utils'
+import { setJSONData } from '~/resources/utils'
 
 export default {
   props: {
@@ -14,10 +14,6 @@ export default {
     global: null
   }),
   computed: {
-    themeColors () {
-      const theme = getThemeJSON()
-      return theme.default?.colors || []
-    },
     buttonStyles () {
       const style = this.props?.style || 'primary'
       let bgColorLabel = 'accent'
@@ -28,12 +24,8 @@ export default {
         bgColorLabel = 'accent'
       }
 
-      const bgColor = this.themeColors.find(c => c.label === bgColorLabel)
-      if (!bgColor) { return {} }
-
       return {
-        '--block-btn-bg': bgColor.hex,
-        '--block-btn-text': bgColor.accessibility?.recommendedTextColor || '#ffffff'
+        '--block-btn-bg': `var(--${bgColorLabel})`
       }
     }
   },

@@ -1,0 +1,73 @@
+.customization-toolbar(:class="{ 'customization-toolbar--open': isOpen }")
+  section#customization-toolbar-panel.customization-toolbar__panel(:aria-hidden='(!isOpen).toString()')
+    .customization-toolbar__header
+      h2.customization-toolbar__title Theme colors
+      button.customization-toolbar__close(
+        type='button',
+        aria-label='Close customization toolbar',
+        @click='toggleToolbar'
+      )
+        span(aria-hidden='true') x
+
+    .customization-toolbar__theme-controls
+      button.customization-toolbar__theme-button(
+        type='button',
+        :class="{ 'customization-toolbar__theme-button--active': activeThemeName === 'primary' }",
+        @click='setPrimaryTheme'
+      ) Primary theme
+      button.customization-toolbar__theme-button(
+        type='button',
+        :class="{ 'customization-toolbar__theme-button--active': activeThemeName === 'secondary' }",
+        @click='setSecondaryTheme'
+      ) Secondary theme
+      button.customization-toolbar__save-button(
+        type='button',
+        @click='saveSecondaryTheme'
+      ) Save current as secondary
+
+    .customization-toolbar__colors
+      .customization-toolbar__field(v-for='color in themeColors' :key='color.label')
+        .customization-toolbar__field-top
+          label.customization-toolbar__label(:for='colorInputId(color)')
+            span.customization-toolbar__label-text(v-html='color.label')
+            span.customization-toolbar__hex(v-html='colorValue(color)')
+          select.customization-toolbar__gradient-select(
+            v-if='isBackgroundColor(color)',
+            :value='gradientValue(color)',
+            :aria-label='`Gradient style for ${color.label}`',
+            @change='handleGradientInput(color, $event.target.value)'
+          )
+            option(
+              v-for='gradient in gradientOptions',
+              :key='gradient.value',
+              :value='gradient.value',
+              v-html='gradient.label'
+            )
+        .customization-toolbar__controls
+          input.customization-toolbar__input(
+            :id='colorInputId(color)',
+            type='color',
+            :value='colorValue(color)',
+            @input='handleColorInput(color, $event.target.value)'
+          )
+          button.customization-toolbar__copy-button(
+            type='button',
+            :aria-label='copyButtonLabel(color)',
+            @click='copyThemeColor(color)'
+          ) Copy
+          button.customization-toolbar__apply-button(
+            type='button',
+            :aria-label='applyButtonLabel(color)',
+            :disabled='!copiedColor',
+            @click='applyCopiedColor(color)'
+          ) Apply
+
+  .customization-toolbar__rail
+    BaseIcon.customization-toolbar__logo(name='rg-logo-purple')
+    button.customization-toolbar__toggle(
+      type='button',
+      aria-controls='customization-toolbar-panel',
+      :aria-expanded='isOpen.toString()',
+      @click='toggleToolbar'
+    )
+      span(v-html="isOpen ? 'Close' : 'Theme'")

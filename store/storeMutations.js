@@ -1,6 +1,12 @@
 import {
   DEV_INSPECTOR,
   DEV_TOOLS,
+  SET_ACTIVE_THEME_NAME,
+  SET_DEFAULT_THEME,
+  SET_SECONDARY_THEME,
+  SET_THEME,
+  UPDATE_THEME_COLOR,
+  RESTORE_DEFAULT_THEME,
   IS_PHONE_LAND_LG,
   IS_PHONE_LG,
   IS_TABLET,
@@ -15,12 +21,56 @@ import {
   SET_NAV
 } from './mutation-types.js'
 
+const cloneTheme = theme => JSON.parse(JSON.stringify(theme))
+
 const stateMutations = () => ({
   [DEV_INSPECTOR] (state, data) {
     state.devInspector = data
   },
   [DEV_TOOLS] (state, data) {
     state.devTools = data
+  },
+  [SET_ACTIVE_THEME_NAME] (state, data) {
+    state.activeThemeName = data
+  },
+  [SET_DEFAULT_THEME] (state, data) {
+    state.defaultTheme = cloneTheme(data)
+  },
+  [SET_SECONDARY_THEME] (state, data) {
+    state.secondaryTheme = cloneTheme(data)
+  },
+  [SET_THEME] (state, data) {
+    state.theme = cloneTheme(data)
+  },
+  [UPDATE_THEME_COLOR] (state, data) {
+    if (!state.theme || !state.theme.colors) {
+      return
+    }
+
+    state.theme = {
+      ...state.theme,
+      colors: state.theme.colors.map((color) => {
+        if (color.label !== data.label) {
+          return color
+        }
+
+        return {
+          ...color,
+          ...data,
+          color: {
+            ...color.color,
+            ...data.color
+          }
+        }
+      })
+    }
+  },
+  [RESTORE_DEFAULT_THEME] (state) {
+    if (!state.defaultTheme) {
+      return
+    }
+
+    state.theme = cloneTheme(state.defaultTheme)
   },
   [IS_PHONE_LAND_LG] (state, data) {
     state.isPhoneLandLg = data

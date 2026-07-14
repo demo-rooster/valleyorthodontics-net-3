@@ -2888,14 +2888,14 @@
       },
       "media_type": "image",
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2026/02/team-photo-2.jpg",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2026/02/team-photo-2.jpg",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/about/about-hero.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/about/about-hero.jpg",
         "alt": "Valley Orthodontics team members smiling together",
         "aria_hidden": false,
         "bgColor": "",
         "imageBackground": false,
         "addLoader": false,
-        "objectPosition": "center center",
+        "objectPosition": "center 40%",
         "forceAlt": "",
         "loading_mask": "",
         "image_selection_hints": {
@@ -2938,8 +2938,8 @@
       ],
       "accordion": [],
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2026/02/team-photo-2.jpg",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2026/02/team-photo-2.jpg",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/join-our-team/staff-expanded.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/join-our-team/staff-expanded.webp",
         "alt": "Valley Orthodontics team members smiling together",
         "aria_hidden": false,
         "bgColor": "",
@@ -3154,6 +3154,7 @@
   "instructional-videos": [
     {
       "acf_fc_layout": "hero",
+      "hide_component": true,
       "title": "Instructional Videos",
       "text": "",
       "button": {
@@ -3236,6 +3237,8 @@
         "component_margins": "none",
         "hide_component": false
       },
+      "hide_component": true,
+      "component_padding": "top-only-full",
       "reverse": false,
       "has_buttons": false,
       "has_accordion": false,
@@ -3256,6 +3259,7 @@
       "title": "Instructional Video Guide",
       "eyebrow": "Patient Resources",
       "intro": "Quick demonstrations for common orthodontic care routines at home.",
+      "component_padding": "top-only-triple",
       "layout": "videos",
       "items": [
         {
@@ -3525,7 +3529,7 @@
       ],
       "component_options": {
         "hash": "videos",
-        "component_padding": "half",
+        "component_padding": "top-only-triple",
         "component_margins": "none",
         "hide_component": false
       },
@@ -3839,7 +3843,7 @@
     },
     {
       "acf_fc_layout": "tabs",
-      "title": "Clear Aligners Essentials",
+      "title": "Essentials",
       "paragraphs": [],
       "intro": "",
       "image": {
@@ -3861,7 +3865,7 @@
       "buttons": [],
       "tabs": [
         {
-          "header": "Is Dr.Rocha Experienced With Clear Aligners?",
+          "header": "Is Dr. Rocha Experienced With Clear Aligners?",
           "paragraphs": [
             {
               "text": "Our office is proud to announce that Dr. Rocha has extensive experience treating patients of all ages, starting as young as 7 years old! Dr. Rocha attended a rigorous post graduate residency program that has one of the strongest clear aligner programs, being taught under orthodontists who helped create clear aligners! Dr. Rocha introduced the Itero 3-D digital model scanner to Valley orthodontics, which will allow in office scans of patients teeth. No more messy, uncomfortable dental impressions or visits to the lab for digital scans!"
@@ -4589,6 +4593,7 @@
   "orthodontic-products-we-recommend": [
     {
       "acf_fc_layout": "hero",
+      "hide_component": true,
       "title": "Orthodontic Products We Recommend",
       "text": "",
       "button": {
@@ -4671,6 +4676,8 @@
         "component_margins": "none",
         "hide_component": false
       },
+      "hide_component": true,
+      "component_padding": "top-only-triple",
       "reverse": true,
       "has_buttons": false,
       "has_accordion": false,
@@ -5278,7 +5285,7 @@
       ],
       "component_options": {
         "hash": "recommended-products",
-        "component_padding": "half",
+        "component_padding": "top-only-triple",
         "component_margins": "none",
         "hide_component": false
       },
@@ -5818,17 +5825,12 @@
           "has_heading": false,
           "heading": "",
           "text": "Please help us be prepared for your first appointment by completing the Medical and Dental History form below."
-        },
-        {
-          "has_heading": false,
-          "heading": "",
-          "text": "Click below to complete digital form:"
         }
       ],
       "accordion": [],
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_53d8925865884d1099770efba47879c0mv2.webp",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_53d8925865884d1099770efba47879c0mv2.webp",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/resources/forms.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/resources/forms.webp",
         "alt": "Patient Forms at Valley Orthodontics",
         "aria_hidden": false,
         "bgColor": "",
@@ -5845,7 +5847,23 @@
         "type": "embedded",
         "src": ""
       },
-      "buttons": [],
+      "buttons": [
+        {
+          "button": {
+            "type": "anchor",
+            "style": "primary",
+            "label": "Click Here for Form",
+            "aria_label": "Click Here for Form",
+            "href": "https://p.adit.com/1xX3r",
+            "path": "",
+            "hash": "",
+            "external": true,
+            "include_icon": true,
+            "icon": "form-tooth",
+            "color": "primary"
+          }
+        }
+      ],
       "component_options": {
         "hash": "overview",
         "component_padding": "half",
@@ -5853,7 +5871,7 @@
         "hide_component": false
       },
       "reverse": true,
-      "has_buttons": false,
+      "has_buttons": true,
       "has_accordion": false,
       "is_dynamic": false,
       "use_video": false,
@@ -5868,102 +5886,49 @@
       "preserve_image": true
     },
     {
-      "acf_fc_layout": "accordion",
-      "title": "Forms and Next Steps",
+      "acf_fc_layout": "image_text",
+      "title": "Doctor Referral Forms",
       "paragraphs": [
         {
           "has_heading": false,
           "heading": "",
-          "text": "Complete your digital patient form before your first appointment or access the doctor referral form for referring providers."
+          "text": "Download the blank orthodontic referral slip for referring doctors and providers to complete before sending a patient to our practice."
         }
       ],
-      "accordion": [
+      "accordion": [],
+      "image": {
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/resources/doctor-referral.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/resources/doctor-referral.webp",
+        "alt": "Doctor referral forms at Valley Orthodontics",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Legacy Page"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "buttons": [
         {
-          "header": "New Patient Information",
-          "paragraphs": [
-            {
-              "text": "Complete the Medical and Dental History form digitally before your first appointment so our team can review your information before you arrive."
-            }
-          ],
-          "buttons": [
-            {
-              "type": "anchor",
-              "style": "primary",
-              "label": "Click Here for Form",
-              "aria_label": "Click Here for Form",
-              "href": "https://p.adit.com/1xX3r",
-              "path": "",
-              "hash": "",
-              "external": true,
-              "include_icon": true,
-              "icon": "form-tooth",
-              "color": "primary"
-            }
-          ],
-          "has_media": false,
-          "media_type": "image",
-          "image": {
-            "src": "",
-            "webp": "",
-            "alt": "",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Patient Resources"
-            }
-          },
-          "video": {
-            "type": "embedded",
-            "src": ""
-          }
-        },
-        {
-          "header": "Doctor Referral Form",
-          "paragraphs": [
-            {
-              "text": "Download the blank orthodontic referral slip for referring doctors and providers to complete before sending a patient to our practice."
-            }
-          ],
-          "buttons": [
-            {
-              "type": "anchor",
-              "style": "primary",
-              "label": "Download Referral PDF",
-              "aria_label": "Download blank referral PDF",
-              "href": "https://www.valleyorthodontics.net/wp-content/uploads/2025/12/Referral-slip-1.pdf",
-              "path": "",
-              "hash": "",
-              "external": true,
-              "include_icon": true,
-              "icon": "form-tooth",
-              "color": "primary"
-            }
-          ],
-          "has_media": false,
-          "media_type": "image",
-          "image": {
-            "src": "",
-            "webp": "",
-            "alt": "",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Patient Resources"
-            }
-          },
-          "video": {
-            "type": "embedded",
-            "src": ""
+          "button": {
+            "type": "anchor",
+            "style": "primary",
+            "label": "Download Referral PDF",
+            "aria_label": "Download blank referral PDF",
+            "href": "https://www.valleyorthodontics.net/wp-content/uploads/2025/12/Referral-slip-1.pdf",
+            "path": "",
+            "hash": "",
+            "external": true,
+            "include_icon": true,
+            "icon": "form-tooth",
+            "color": "primary"
           }
         }
       ],
@@ -5976,7 +5941,17 @@
       "has_background": true,
       "background": "bg1",
       "add_texture": false,
-      "linear_gradient": ""
+      "linear_gradient": "",
+      "reverse": false,
+      "has_buttons": true,
+      "has_accordion": false,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_image": false,
+      "large_title": true,
+      "title_color": "text",
+      "title_underline_color": "primary",
+      "preserve_image": true
     },
     {
       "acf_fc_layout": "multi_use_banner",
@@ -6342,8 +6317,8 @@
       },
       "media_type": "image",
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2026/02/affordable-braces-2.jpeg",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2026/02/affordable-braces-2.jpeg",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/braces-first-aid-hero.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/braces-first-aid-hero.jpg",
         "alt": "Close up of braces for orthodontic first aid guidance",
         "aria_hidden": false,
         "bgColor": "",
@@ -6427,7 +6402,7 @@
       "background": "bg1",
       "linear_gradient": "",
       "add_texture": false,
-      "large_title": true,
+      "large_title": false,
       "title_color": "text",
       "title_underline_color": "primary",
       "preserve_image": true
@@ -6479,7 +6454,7 @@
       "background": "bg2",
       "linear_gradient": "",
       "add_texture": false,
-      "large_title": true,
+      "large_title": false,
       "title_color": "text",
       "title_underline_color": "primary",
       "preserve_image": true
@@ -6531,7 +6506,7 @@
       "background": "bg1",
       "linear_gradient": "",
       "add_texture": false,
-      "large_title": true,
+      "large_title": false,
       "title_color": "text",
       "title_underline_color": "primary",
       "preserve_image": true
@@ -6583,7 +6558,7 @@
       "background": "bg2",
       "linear_gradient": "",
       "add_texture": false,
-      "large_title": true,
+      "large_title": false,
       "title_color": "text",
       "title_underline_color": "primary",
       "preserve_image": true
@@ -6635,7 +6610,7 @@
       "background": "bg1",
       "linear_gradient": "",
       "add_texture": false,
-      "large_title": true,
+      "large_title": false,
       "title_color": "text",
       "title_underline_color": "primary",
       "preserve_image": true
@@ -6687,7 +6662,7 @@
       "background": "bg2",
       "linear_gradient": "",
       "add_texture": false,
-      "large_title": true,
+      "large_title": false,
       "title_color": "text",
       "title_underline_color": "primary",
       "preserve_image": true
@@ -6739,7 +6714,7 @@
       "background": "bg1",
       "linear_gradient": "",
       "add_texture": false,
-      "large_title": true,
+      "large_title": false,
       "title_color": "text",
       "title_underline_color": "primary",
       "preserve_image": true
@@ -6791,7 +6766,7 @@
       "background": "bg2",
       "linear_gradient": "",
       "add_texture": false,
-      "large_title": true,
+      "large_title": false,
       "title_color": "text",
       "title_underline_color": "primary",
       "preserve_image": true
@@ -6843,7 +6818,7 @@
       "background": "bg1",
       "linear_gradient": "",
       "add_texture": false,
-      "large_title": true,
+      "large_title": false,
       "title_color": "text",
       "title_underline_color": "primary",
       "preserve_image": true
@@ -6895,7 +6870,7 @@
       "background": "bg2",
       "linear_gradient": "",
       "add_texture": false,
-      "large_title": true,
+      "large_title": false,
       "title_color": "text",
       "title_underline_color": "primary",
       "preserve_image": true
@@ -6947,7 +6922,7 @@
       "background": "bg1",
       "linear_gradient": "",
       "add_texture": false,
-      "large_title": true,
+      "large_title": false,
       "title_color": "text",
       "title_underline_color": "primary",
       "preserve_image": true
@@ -6999,7 +6974,7 @@
       "background": "bg2",
       "linear_gradient": "",
       "add_texture": false,
-      "large_title": true,
+      "large_title": false,
       "title_color": "text",
       "title_underline_color": "primary",
       "preserve_image": true
@@ -7670,220 +7645,6 @@
         "component_margins": "none",
         "hide_component": false
       }
-    },
-    {
-      "acf_fc_layout": "image_text",
-      "title": "Orthodontics for Children",
-      "paragraphs": [
-        {
-          "has_heading": false,
-          "heading": "",
-          "text": "By age 7, most children have a mix of adult and baby teeth. Orthodontists can spot subtle problems with jaw growth and emerging teeth while some baby teeth are still present. That’s important because some orthodontic problems are easier to correct if they’re found early."
-        },
-        {
-          "has_heading": false,
-          "heading": "",
-          "text": "For these reasons, the American Association of Orthodontists recommends that your child gets an orthodontic check-up no later than age 7. While your child’s teeth may appear to be straight, there could be a problem that only an orthodontist can detect. Of course, the check-up may reveal that your child’s bite is fine, and that can be comforting news."
-        }
-      ],
-      "accordion": [],
-      "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
-        "alt": "photo of smiling children",
-        "aria_hidden": false,
-        "bgColor": "",
-        "imageBackground": false,
-        "addLoader": false,
-        "objectPosition": "center",
-        "forceAlt": "",
-        "loading_mask": "",
-        "image_selection_hints": {
-          "context_category": "Treatment Page"
-        }
-      },
-      "video": {
-        "type": "embedded",
-        "src": ""
-      },
-      "buttons": [],
-      "component_options": {
-        "hash": "overview",
-        "component_padding": "half",
-        "component_margins": "none",
-        "hide_component": false
-      },
-      "reverse": true,
-      "has_buttons": false,
-      "has_accordion": false,
-      "is_dynamic": false,
-      "use_video": false,
-      "large_image": false,
-      "has_background": true,
-      "background": "bg2",
-      "linear_gradient": "",
-      "add_texture": false,
-      "large_title": true,
-      "title_color": "text",
-      "title_underline_color": "accent",
-      "preserve_image": true
-    },
-    {
-      "acf_fc_layout": "tabs",
-      "title": "Orthodontics for Children Essentials",
-      "paragraphs": [],
-      "intro": "",
-      "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
-        "alt": "photo of smiling children",
-        "aria_hidden": false,
-        "bgColor": "",
-        "imageBackground": false,
-        "addLoader": false,
-        "objectPosition": "center",
-        "forceAlt": "",
-        "loading_mask": "",
-        "image_selection_hints": {
-          "context_category": "Treatment Page"
-        }
-      },
-      "has_buttons": false,
-      "buttons": [],
-      "tabs": [
-        {
-          "header": "Age 7 Checkup",
-          "paragraphs": [
-            {
-              "text": "By age 7, most children have a mix of adult and baby teeth. Orthodontists can spot subtle problems with jaw growth and emerging teeth while some baby teeth are still present. That’s important because some orthodontic problems are easier to correct if they’re found early."
-            }
-          ],
-          "has_media": false,
-          "media_type": "image",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
-            "alt": "photo of smiling children",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Treatment Page"
-            }
-          },
-          "video": {
-            "type": "embedded",
-            "src": ""
-          }
-        },
-        {
-          "header": "What Orthodontists Can Spot",
-          "paragraphs": [
-            {
-              "text": "For these reasons, the American Association of Orthodontists recommends that your child gets an orthodontic check-up no later than age 7. While your child’s teeth may appear to be straight, there could be a problem that only an orthodontist can detect. Of course, the check-up may reveal that your child’s bite is fine, and that can be comforting news."
-            }
-          ],
-          "has_media": false,
-          "media_type": "image",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
-            "alt": "photo of smiling children",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Treatment Page"
-            }
-          },
-          "video": {
-            "type": "embedded",
-            "src": ""
-          }
-        },
-        {
-          "header": "Monitoring Growth",
-          "paragraphs": [
-            {
-              "text": "Even if a problem is detected, Dr. Rocha may take a “wait-and-see” approach, checking on your child from time to time as the permanent teeth come in and the jaws and face continue to grow. For each patient who needs treatment, there’s an ideal time for treatment to begin in order to achieve the best results."
-            }
-          ],
-          "has_media": false,
-          "media_type": "image",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
-            "alt": "photo of smiling children",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Treatment Page"
-            }
-          },
-          "video": {
-            "type": "embedded",
-            "src": ""
-          }
-        },
-        {
-          "header": "When Early Treatment Helps",
-          "paragraphs": [
-            {
-              "text": "In some cases, Dr. Rocha might find a problem that can benefit from early treatment. Early treatment may prevent more serious problems from developing and may make treatment at a later age shorter and less complicated. Typically, early treatment involves the use of orthodontic appliances to guide the growth of your child’s bones and create a better foundation for adult teeth as they emerge. In some cases, Dr. Rocha will be able to achieve results that wouldn’t be possible once the face and jaws have finished growing."
-            }
-          ],
-          "has_media": false,
-          "media_type": "image",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
-            "alt": "photo of smiling children",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Treatment Page"
-            }
-          },
-          "video": {
-            "type": "embedded",
-            "src": ""
-          }
-        }
-      ],
-      "component_options": {
-        "hash": "treatment-details",
-        "component_padding": "half",
-        "component_margins": "none",
-        "hide_component": false
-      },
-      "has_background": true,
-      "background": "bg1",
-      "linear_gradient": "",
-      "add_texture": false,
-      "reverse": false,
-      "is_dynamic": false,
-      "large_title": true,
-      "large_image": false,
-      "title_alt": true,
-      "preserve_image": true
     },
     {
       "acf_fc_layout": "multi_use_banner",
@@ -8598,8 +8359,8 @@
       ],
       "accordion": [],
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_6caa0fab415f433997eee83e1914ead5mv2.webp",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_6caa0fab415f433997eee83e1914ead5mv2.webp",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/resources/for-new-patients-intro.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/resources/for-new-patients-intro.webp",
         "alt": "Valley Orthodontics resource image",
         "aria_hidden": false,
         "bgColor": "",
@@ -8640,12 +8401,12 @@
     },
     {
       "acf_fc_layout": "tabs",
-      "title": "Your First Visit, Step by Step",
+      "title": "Your first visit,<br>Step by Step",
       "paragraphs": [],
       "intro": "",
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_6caa0fab415f433997eee83e1914ead5mv2.webp",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_6caa0fab415f433997eee83e1914ead5mv2.webp",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/resources/first-visit.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/resources/first-visit.webp",
         "alt": "Valley Orthodontics resource image",
         "aria_hidden": false,
         "bgColor": "",
@@ -8830,7 +8591,7 @@
       },
       "reverse": false,
       "is_dynamic": false,
-      "large_title": true,
+      "large_title": false,
       "has_background": true,
       "background": "bg1",
       "linear_gradient": "",
@@ -9719,14 +9480,14 @@
       },
       "media_type": "image",
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/nsplsh_19486c2d339c48c8b9e5d49b0d4250b8mv2.webp",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/nsplsh_19486c2d339c48c8b9e5d49b0d4250b8mv2.webp",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/braces-hero-2.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/braces-hero-2.jpg",
         "alt": "Braces at Valley Orthodontics",
         "aria_hidden": false,
         "bgColor": "",
         "imageBackground": false,
         "addLoader": false,
-        "objectPosition": "center",
+        "objectPosition": "center bottom",
         "forceAlt": "",
         "loading_mask": "",
         "image_selection_hints": {
@@ -9933,6 +9694,162 @@
       "preserve_image": true
     },
     {
+      "acf_fc_layout": "image_text",
+      "title": "School/Work Attendance:",
+      "paragraphs": [
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "The appointment to place braces is usually 1.5-2.5 hours long. We request that this appointment be scheduled in the morning when you or your child is most alert and less tired. This is also a time of the day when the office is quieter, as opposed to after school hours. After this appointment you or your child should be well enough to return to work or school for the remainder of the day."
+        }
+      ],
+      "accordion": [],
+      "image": {
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/item-10.jpg",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/item-10.jpg",
+        "alt": "item-10",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatment Page"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "buttons": [],
+      "component_options": {
+        "hash": "overview",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "reverse": false,
+      "has_buttons": false,
+      "has_accordion": false,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_image": false,
+      "has_background": true,
+      "background": "bg2",
+      "linear_gradient": "",
+      "add_texture": false,
+      "large_title": true,
+      "title_color": "text",
+      "title_underline_color": "accent",
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "accordion",
+      "title": "What to Expect on the First Day of Braces Guide",
+      "paragraphs": [],
+      "accordion": [
+        {
+          "header": "Foods to Prepare and Eat",
+          "paragraphs": [
+            {
+              "text": "The bonding adhesives used to attach braces take approximately 24 hours to reach maximum strength. Therefore, it is important not to eat hard or crunchy food immediately (or during the duration of your treatment) or the braces may come off. Also, as your teeth begin to move and become straight, you will find that a soft diet for the first three days is most comfortable. At your first appointment, we will provide you with recommendations for foods to avoid and suggestions for foods to prepare to protect your braces and teeth."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/item-10.jpg",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/item-10.jpg",
+            "alt": "item-10",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "Mild Discomfort",
+          "paragraphs": [
+            {
+              "text": "Mild tooth discomfort may begin a few hours after the braces are placed and last (on average) up to three days. Ibuprofen is the analgesic medication of choice (Advil or Motrin). If you feel you or your child may benefit from Ibuprofen, take it 30 minutes before the appointment as prescribed. Every person’s pain threshold is different, so please use your discretion and follow pain management as directed by your physician or your child’s pediatrician."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/item-10.jpg",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/item-10.jpg",
+            "alt": "item-10",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "A clear choice for a straight smile",
+          "paragraphs": [
+            {
+              "text": "We proudly service patients in San Rafael, Marin, Mill Valley, Novato, and surrounding communities. Book your complimentary consultation with Valley orthodontics today to find out if clear braces are right for you."
+            }
+          ],
+          "has_media": true,
+          "media_type": "image",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_be65c4a5f5fa42b69136be01909e45a1mv2.webp",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_be65c4a5f5fa42b69136be01909e45a1mv2.webp",
+            "alt": "Content image",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        }
+      ],
+      "component_options": {
+        "hash": "details",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "has_background": true,
+      "background": "bg1",
+      "linear_gradient": "",
+      "add_texture": false
+    },
+    {
       "acf_fc_layout": "multi_use_banner",
       "title": "Ready to get started?",
       "content_block": "text_block",
@@ -9999,6 +9916,306 @@
       }
     }
   ],
+  "ceramic-braces": [
+    {
+      "acf_fc_layout": "hero",
+      "title": "Ceramic Braces",
+      "text": "",
+      "button": {
+        "type": "nuxt",
+        "style": "primary",
+        "label": "Book Your Free Assessment",
+        "aria_label": "Book your free assessment",
+        "href": "",
+        "path": "/contact",
+        "hash": "#form",
+        "external": false,
+        "include_icon": true,
+        "icon": "scheduling-tooth",
+        "color": "primary"
+      },
+      "media_type": "image",
+      "image": {
+        "src": "https://ik.imagekit.io/rooster/tr:w-1000,f-jpg,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+        "webp": "https://ik.imagekit.io/rooster/tr:w-1000,f-webp,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+        "alt": "Smiling woman with ceramic braces",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatments Hero"
+        }
+      },
+      "video": {
+        "src": "",
+        "webm": "",
+        "title": "",
+        "poster": ""
+      },
+      "small": true,
+      "component_options": {
+        "hash": "",
+        "component_padding": "none",
+        "component_margins": "none",
+        "hide_component": false
+      }
+    },
+    {
+      "acf_fc_layout": "image_text",
+      "title": "Ceramic Braces",
+      "paragraphs": [
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "Ceramic braces work just like traditional braces, but they're made with clear or tooth-colored brackets instead of metal ones. These brackets are molded to the front of your teeth and connected by archwires, which are held in place with small elastic bands. Together, these devices apply gentle pressure to move your teeth into alignment."
+        },
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "Ceramic braces are a popular choice for patients who want effective treatment with a more subtle look. Because the brackets blend in with your natural tooth color, they're far less noticeable than metal braces while still delivering the same reliable results!"
+        }
+      ],
+      "accordion": [],
+      "image": {
+        "src": "https://ik.imagekit.io/rooster/tr:w-1000,f-jpg,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+        "webp": "https://ik.imagekit.io/rooster/tr:w-1000,f-webp,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+        "alt": "Smiling woman with ceramic braces",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatment Page"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "buttons": [],
+      "component_options": {
+        "hash": "overview",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "reverse": false,
+      "has_buttons": false,
+      "has_accordion": false,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_image": false,
+      "has_background": true,
+      "background": "bg1",
+      "linear_gradient": "",
+      "add_texture": false,
+      "large_title": true,
+      "title_color": "text",
+      "title_underline_color": "primary",
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "tabs",
+      "title": "Braces Essentials",
+      "paragraphs": [],
+      "intro": "",
+      "image": {
+        "src": "https://ik.imagekit.io/rooster/tr:w-1000,f-jpg,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+        "webp": "https://ik.imagekit.io/rooster/tr:w-1000,f-webp,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+        "alt": "Smiling woman with ceramic braces",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatment Page"
+        }
+      },
+      "has_buttons": false,
+      "buttons": [],
+      "tabs": [
+        {
+          "header": "Clear, Subtle Brackets",
+          "paragraphs": [
+            {
+              "text": "Ceramic braces are made with clear or tooth-colored brackets that blend in with your natural smile."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://ik.imagekit.io/rooster/tr:w-1000,f-jpg,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+            "webp": "https://ik.imagekit.io/rooster/tr:w-1000,f-webp,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+            "alt": "Smiling woman with ceramic braces",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "How Braces Move Teeth",
+          "paragraphs": [
+            {
+              "text": "These brackets are connected by archwires and held in place with small elastic bands attached to each bracket."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://ik.imagekit.io/rooster/tr:w-1000,f-jpg,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+            "webp": "https://ik.imagekit.io/rooster/tr:w-1000,f-webp,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+            "alt": "Smiling woman with ceramic braces",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "Effective, Discreet Results",
+          "paragraphs": [
+            {
+              "text": "By working together, these devices apply gentle pressure to your teeth to move them into alignment."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://ik.imagekit.io/rooster/tr:w-1000,f-jpg,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+            "webp": "https://ik.imagekit.io/rooster/tr:w-1000,f-webp,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+            "alt": "Smiling woman with ceramic braces",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        }
+      ],
+      "component_options": {
+        "hash": "treatment-details",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "has_background": true,
+      "background": "bg2",
+      "linear_gradient": "",
+      "add_texture": false,
+      "reverse": true,
+      "is_dynamic": false,
+      "large_title": true,
+      "large_image": false,
+      "title_alt": true,
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "multi_use_banner",
+      "title": "Ready to get started?",
+      "content_block": "text_block",
+      "text": "",
+      "social_links": [],
+      "email": "",
+      "button": {
+        "type": "nuxt",
+        "style": "primary",
+        "label": "Book Your Free Assessment",
+        "aria_label": "Book your free assessment",
+        "href": "",
+        "path": "/contact",
+        "hash": "#form",
+        "external": false,
+        "include_icon": true,
+        "icon": "scheduling-tooth",
+        "color": "primary"
+      },
+      "component_options": {
+        "hash": "",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "background_type": "has_background",
+      "background": "bg2",
+      "add_texture": false,
+      "linear_gradient": "",
+      "image": {
+        "src": "https://ik.imagekit.io/rooster/tr:w-1000,f-jpg,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+        "webp": "https://ik.imagekit.io/rooster/tr:w-1000,f-webp,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+        "alt": "Ready to get started with ceramic braces at Valley Orthodontics",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatments Hero"
+        }
+      },
+      "reversed": false,
+      "centered": true,
+      "large_title": true,
+      "text_color": "primary"
+    },
+    {
+      "seo": {
+        "page_title": "Ceramic Braces - Valley Orthodontics",
+        "page_description": "Learn more about ceramic braces at Valley Orthodontics in San Rafael.",
+        "page_keywords": "Valley Orthodontics, orthodontics, San Rafael, ceramic braces, clear braces",
+        "additional_settings": false,
+        "social_meta": {
+          "og_meta": {
+            "title": "Ceramic Braces - Valley Orthodontics",
+            "description": "Learn more about ceramic braces at Valley Orthodontics in San Rafael.",
+            "image": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/logo.webp"
+          }
+        },
+        "slug": "ceramic-braces"
+      }
+    }
+  ],
   "for-adults": [
     {
       "acf_fc_layout": "hero",
@@ -10046,191 +10263,6 @@
         "component_margins": "none",
         "hide_component": false
       }
-    },
-    {
-      "acf_fc_layout": "image_text",
-      "title": "Orthodontics for Adults",
-      "paragraphs": [
-        {
-          "has_heading": false,
-          "heading": "",
-          "text": "There is no age limit for orthodontic treatment. As long as you have healthy teeth, gums and bones, orthodontics can straighten your teeth and correct your bite. More than 30% of orthodontic patients are now adults over the age of 21."
-        },
-        {
-          "has_heading": false,
-          "heading": "",
-          "text": "New technology such as Invisalign and clear braces have resulted in appliances that are hardly noticeable and easy to wear. Visits to the orthodontist are less frequent and time in the office has been reduced to fit your busy schedule."
-        }
-      ],
-      "accordion": [],
-      "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
-        "alt": "Content image",
-        "aria_hidden": false,
-        "bgColor": "",
-        "imageBackground": false,
-        "addLoader": false,
-        "objectPosition": "center",
-        "forceAlt": "",
-        "loading_mask": "",
-        "image_selection_hints": {
-          "context_category": "Treatment Page"
-        }
-      },
-      "video": {
-        "type": "embedded",
-        "src": ""
-      },
-      "buttons": [],
-      "component_options": {
-        "hash": "overview",
-        "component_padding": "half",
-        "component_margins": "none",
-        "hide_component": false
-      },
-      "reverse": true,
-      "has_buttons": false,
-      "has_accordion": false,
-      "is_dynamic": false,
-      "use_video": false,
-      "large_image": false,
-      "has_background": true,
-      "background": "bg2",
-      "linear_gradient": "",
-      "add_texture": false,
-      "large_title": true,
-      "title_color": "text",
-      "title_underline_color": "accent",
-      "preserve_image": true
-    },
-    {
-      "acf_fc_layout": "tabs",
-      "title": "Orthodontics for Adults Essentials",
-      "paragraphs": [],
-      "intro": "",
-      "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
-        "alt": "Content image",
-        "aria_hidden": false,
-        "bgColor": "",
-        "imageBackground": false,
-        "addLoader": false,
-        "objectPosition": "center",
-        "forceAlt": "",
-        "loading_mask": "",
-        "image_selection_hints": {
-          "context_category": "Treatment Page"
-        }
-      },
-      "has_buttons": false,
-      "buttons": [],
-      "tabs": [
-        {
-          "header": "Healthy Teeth at Any Age",
-          "paragraphs": [
-            {
-              "text": "There is no age limit for orthodontic treatment. As long as you have healthy teeth, gums and bones, orthodontics can straighten your teeth and correct your bite. More than 30% of orthodontic patients are now adults over the age of 21."
-            }
-          ],
-          "has_media": false,
-          "media_type": "image",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
-            "alt": "Content image",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Treatment Page"
-            }
-          },
-          "video": {
-            "type": "embedded",
-            "src": ""
-          }
-        },
-        {
-          "header": "Discreet Options",
-          "paragraphs": [
-            {
-              "text": "New technology such as Invisalign and clear braces have resulted in appliances that are hardly noticeable and easy to wear."
-            }
-          ],
-          "has_media": false,
-          "media_type": "image",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
-            "alt": "Content image",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Treatment Page"
-            }
-          },
-          "video": {
-            "type": "embedded",
-            "src": ""
-          }
-        },
-        {
-          "header": "Fewer Office Visits",
-          "paragraphs": [
-            {
-              "text": "Visits to the orthodontist are less frequent and time in the office has been reduced to fit your busy schedule."
-            }
-          ],
-          "has_media": false,
-          "media_type": "image",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
-            "alt": "Content image",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Treatment Page"
-            }
-          },
-          "video": {
-            "type": "embedded",
-            "src": ""
-          }
-        }
-      ],
-      "component_options": {
-        "hash": "treatment-details",
-        "component_padding": "half",
-        "component_margins": "none",
-        "hide_component": false
-      },
-      "has_background": true,
-      "background": "bg1",
-      "linear_gradient": "",
-      "add_texture": false,
-      "reverse": false,
-      "is_dynamic": false,
-      "large_title": true,
-      "large_image": false,
-      "title_alt": true,
-      "preserve_image": true
     },
     {
       "acf_fc_layout": "multi_use_banner",
@@ -10346,186 +10378,6 @@
         "component_margins": "none",
         "hide_component": false
       }
-    },
-    {
-      "acf_fc_layout": "image_text",
-      "title": "Orthodontics for Teens",
-      "paragraphs": [
-        {
-          "has_heading": false,
-          "heading": "",
-          "text": "Most orthodontic patients begin treatment between ages 9 and 14. Thanks to today’s shorter treatment times, and smaller, less visible, more comfortable braces and Invisalign, orthodontics is more appealing to teenagers than ever before. If treatment is started at the right time, a teen may finish braces before entering high school."
-        }
-      ],
-      "accordion": [],
-      "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
-        "alt": "Content image",
-        "aria_hidden": false,
-        "bgColor": "",
-        "imageBackground": false,
-        "addLoader": false,
-        "objectPosition": "center",
-        "forceAlt": "",
-        "loading_mask": "",
-        "image_selection_hints": {
-          "context_category": "Treatment Page"
-        }
-      },
-      "video": {
-        "type": "embedded",
-        "src": ""
-      },
-      "buttons": [],
-      "component_options": {
-        "hash": "overview",
-        "component_padding": "half",
-        "component_margins": "none",
-        "hide_component": false
-      },
-      "reverse": false,
-      "has_buttons": false,
-      "has_accordion": false,
-      "is_dynamic": false,
-      "use_video": false,
-      "large_image": false,
-      "has_background": true,
-      "background": "bg1",
-      "linear_gradient": "",
-      "add_texture": false,
-      "large_title": true,
-      "title_color": "text",
-      "title_underline_color": "primary",
-      "preserve_image": true
-    },
-    {
-      "acf_fc_layout": "tabs",
-      "title": "Orthodontics for Teens Essentials",
-      "paragraphs": [],
-      "intro": "",
-      "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
-        "alt": "Content image",
-        "aria_hidden": false,
-        "bgColor": "",
-        "imageBackground": false,
-        "addLoader": false,
-        "objectPosition": "center",
-        "forceAlt": "",
-        "loading_mask": "",
-        "image_selection_hints": {
-          "context_category": "Treatment Page"
-        }
-      },
-      "has_buttons": false,
-      "buttons": [],
-      "tabs": [
-        {
-          "header": "Teen Treatment Timing",
-          "paragraphs": [
-            {
-              "text": "Most orthodontic patients begin treatment between ages 9 and 14."
-            }
-          ],
-          "has_media": false,
-          "media_type": "image",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
-            "alt": "Content image",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Treatment Page"
-            }
-          },
-          "video": {
-            "type": "embedded",
-            "src": ""
-          }
-        },
-        {
-          "header": "Shorter Treatment Times",
-          "paragraphs": [
-            {
-              "text": "Thanks to today’s shorter treatment times, and smaller, less visible, more comfortable braces and Invisalign, orthodontics is more appealing to teenagers than ever before."
-            }
-          ],
-          "has_media": false,
-          "media_type": "image",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
-            "alt": "Content image",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Treatment Page"
-            }
-          },
-          "video": {
-            "type": "embedded",
-            "src": ""
-          }
-        },
-        {
-          "header": "Smaller, More Comfortable Options",
-          "paragraphs": [
-            {
-              "text": "If treatment is started at the right time, a teen may finish braces before entering high school."
-            }
-          ],
-          "has_media": false,
-          "media_type": "image",
-          "image": {
-            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
-            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
-            "alt": "Content image",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Treatment Page"
-            }
-          },
-          "video": {
-            "type": "embedded",
-            "src": ""
-          }
-        }
-      ],
-      "component_options": {
-        "hash": "treatment-details",
-        "component_padding": "half",
-        "component_margins": "none",
-        "hide_component": false
-      },
-      "has_background": true,
-      "background": "bg2",
-      "linear_gradient": "",
-      "add_texture": false,
-      "reverse": true,
-      "is_dynamic": false,
-      "large_title": true,
-      "large_image": false,
-      "title_alt": true,
-      "preserve_image": true
     },
     {
       "acf_fc_layout": "multi_use_banner",
@@ -10700,7 +10552,7 @@
       "paragraphs": [],
       "accordion": [
         {
-          "header": "Is Dr.Rocha Experienced With the Invisalign System?",
+          "header": "Is Dr. Rocha Experienced With the Invisalign System?",
           "paragraphs": [
             {
               "text": "Our office is proud to announce that Dr. Rocha has extensive experience treating patients of all ages, starting as young as 7 years old! Dr. Rocha attended a rigorous post graduate residency program that has one of the strongest Invisalign programs, being taught under orthodontists who helped create Invisalign! Dr. Rocha introduced the Itero 3-D digital model scanner to Valley orthodontics, which will allow in office scans of patients teeth. No more messy, uncomfortable dental impressions or visits to the lab for digital scans!"
@@ -14904,6 +14756,776 @@
           }
         },
         "slug": "category/all-posts"
+      }
+    }
+  ],
+  "all-ages-treatments": [
+    {
+      "acf_fc_layout": "hero",
+      "title": "Treatment for all Ages",
+      "text": "",
+      "button": {
+        "type": "nuxt",
+        "style": "primary",
+        "label": "Book Your Free Smile Assessment",
+        "aria_label": "Book your free smile assessment",
+        "href": "",
+        "path": "/contact",
+        "hash": "#form",
+        "external": false,
+        "include_icon": true,
+        "icon": "scheduling-tooth",
+        "color": "primary"
+      },
+      "media_type": "image",
+      "image": {
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/all-ages-treatments/all-ages-hero.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/all-ages-treatments/all-ages-hero.webp",
+        "alt": "Treatment for all ages at Valley Orthodontics",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center bottom",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatment Page"
+        }
+      },
+      "video": {
+        "src": "",
+        "webm": "",
+        "title": "",
+        "poster": ""
+      },
+      "small": true,
+      "component_options": {
+        "hash": "all-ages-hero",
+        "component_padding": "none",
+        "component_margins": "none",
+        "hide_component": false
+      }
+    },
+    {
+      "acf_fc_layout": "multi_item_row",
+      "title": "Explore Treatment by Age",
+      "items": [
+        {
+          "title": "Children",
+          "icon": "happy-tooth",
+          "text": "Learn more about orthodontic treatment for children.",
+          "add_button": true,
+          "button": {
+            "button_type": "nuxt_link",
+            "path": "/all-ages-treatments",
+            "hash": "#children",
+            "href": "",
+            "label": "View Children",
+            "aria": "View orthodontic treatment for children"
+          }
+        },
+        {
+          "title": "Teens",
+          "icon": "happy-tooth",
+          "text": "Learn more about orthodontic treatment for teens.",
+          "add_button": true,
+          "button": {
+            "button_type": "nuxt_link",
+            "path": "/all-ages-treatments",
+            "hash": "#teens",
+            "href": "",
+            "label": "View Teens",
+            "aria": "View orthodontic treatment for teens"
+          }
+        },
+        {
+          "title": "Adults",
+          "icon": "happy-tooth",
+          "text": "Learn more about orthodontic treatment for adults.",
+          "add_button": true,
+          "button": {
+            "button_type": "nuxt_link",
+            "path": "/all-ages-treatments",
+            "hash": "#adults",
+            "href": "",
+            "label": "View Adults",
+            "aria": "View orthodontic treatment for adults"
+          }
+        }
+      ],
+      "button": {
+        "type": "nuxt",
+        "style": "secondary",
+        "label": "",
+        "aria_label": "",
+        "href": "",
+        "path": "",
+        "hash": "",
+        "external": false,
+        "include_icon": false,
+        "icon": "pencil",
+        "color": "black"
+      },
+      "component_options": {
+        "hash": "age-options",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "has_background": true,
+      "background": "bg1",
+      "add_texture": false,
+      "media_type": "icon",
+      "linear_gradient": "",
+      "add_cta": false,
+      "left_aligned": false,
+      "large_title": true,
+      "alt_color": true
+    },
+    {
+      "acf_fc_layout": "image_text",
+      "title": "Orthodontics for Children",
+      "paragraphs": [
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "By age 7, most children have a mix of adult and baby teeth. Orthodontists can spot subtle problems with jaw growth and emerging teeth while some baby teeth are still present. That’s important because some orthodontic problems are easier to correct if they’re found early."
+        },
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "For these reasons, the American Association of Orthodontists recommends that your child gets an orthodontic check-up no later than age 7. While your child’s teeth may appear to be straight, there could be a problem that only an orthodontist can detect. Of course, the check-up may reveal that your child’s bite is fine, and that can be comforting news."
+        }
+      ],
+      "accordion": [],
+      "image": {
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
+        "alt": "photo of smiling children",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatment Page"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "buttons": [],
+      "component_options": {
+        "hash": "children",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "reverse": true,
+      "has_buttons": false,
+      "has_accordion": false,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_image": false,
+      "has_background": true,
+      "background": "bg2",
+      "linear_gradient": "",
+      "add_texture": false,
+      "large_title": true,
+      "title_color": "text",
+      "title_underline_color": "accent",
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "tabs",
+      "title": "Orthodontics for Children Essentials",
+      "paragraphs": [],
+      "intro": "",
+      "image": {
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
+        "alt": "photo of smiling children",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatment Page"
+        }
+      },
+      "has_buttons": false,
+      "buttons": [],
+      "tabs": [
+        {
+          "header": "Age 7 Checkup",
+          "paragraphs": [
+            {
+              "text": "By age 7, most children have a mix of adult and baby teeth. Orthodontists can spot subtle problems with jaw growth and emerging teeth while some baby teeth are still present. That’s important because some orthodontic problems are easier to correct if they’re found early."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
+            "alt": "photo of smiling children",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "What Orthodontists Can Spot",
+          "paragraphs": [
+            {
+              "text": "For these reasons, the American Association of Orthodontists recommends that your child gets an orthodontic check-up no later than age 7. While your child’s teeth may appear to be straight, there could be a problem that only an orthodontist can detect. Of course, the check-up may reveal that your child’s bite is fine, and that can be comforting news."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
+            "alt": "photo of smiling children",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "Monitoring Growth",
+          "paragraphs": [
+            {
+              "text": "Even if a problem is detected, Dr. Rocha may take a “wait-and-see” approach, checking on your child from time to time as the permanent teeth come in and the jaws and face continue to grow. For each patient who needs treatment, there’s an ideal time for treatment to begin in order to achieve the best results."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
+            "alt": "photo of smiling children",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "When Early Treatment Helps",
+          "paragraphs": [
+            {
+              "text": "In some cases, Dr. Rocha might find a problem that can benefit from early treatment. Early treatment may prevent more serious problems from developing and may make treatment at a later age shorter and less complicated. Typically, early treatment involves the use of orthodontic appliances to guide the growth of your child’s bones and create a better foundation for adult teeth as they emerge. In some cases, Dr. Rocha will be able to achieve results that wouldn’t be possible once the face and jaws have finished growing."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2025/05/ortho-children.jpeg",
+            "alt": "photo of smiling children",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        }
+      ],
+      "component_options": {
+        "hash": "children-details",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "has_background": true,
+      "background": "bg1",
+      "linear_gradient": "",
+      "add_texture": false,
+      "reverse": false,
+      "is_dynamic": false,
+      "large_title": true,
+      "large_image": false,
+      "title_alt": true,
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "image_text",
+      "title": "Orthodontics for Teens",
+      "paragraphs": [
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "Most orthodontic patients begin treatment between ages 9 and 14. Thanks to today’s shorter treatment times, and smaller, less visible, more comfortable braces and Invisalign, orthodontics is more appealing to teenagers than ever before. If treatment is started at the right time, a teen may finish braces before entering high school."
+        }
+      ],
+      "accordion": [],
+      "image": {
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
+        "alt": "Content image",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatment Page"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "buttons": [],
+      "component_options": {
+        "hash": "teens",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "reverse": false,
+      "has_buttons": false,
+      "has_accordion": false,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_image": false,
+      "has_background": true,
+      "background": "bg1",
+      "linear_gradient": "",
+      "add_texture": false,
+      "large_title": true,
+      "title_color": "text",
+      "title_underline_color": "primary",
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "tabs",
+      "title": "Orthodontics for Teens Essentials",
+      "paragraphs": [],
+      "intro": "",
+      "image": {
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
+        "alt": "Content image",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatment Page"
+        }
+      },
+      "has_buttons": false,
+      "buttons": [],
+      "tabs": [
+        {
+          "header": "Teen Treatment Timing",
+          "paragraphs": [
+            {
+              "text": "Most orthodontic patients begin treatment between ages 9 and 14."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
+            "alt": "Content image",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "Shorter Treatment Times",
+          "paragraphs": [
+            {
+              "text": "Thanks to today’s shorter treatment times, and smaller, less visible, more comfortable braces and Invisalign, orthodontics is more appealing to teenagers than ever before."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
+            "alt": "Content image",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "Smaller, More Comfortable Options",
+          "paragraphs": [
+            {
+              "text": "If treatment is started at the right time, a teen may finish braces before entering high school."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_7202fb53890a489f997f65bc25df52f5mv2.webp",
+            "alt": "Content image",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        }
+      ],
+      "component_options": {
+        "hash": "teens-details",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "has_background": true,
+      "background": "bg2",
+      "linear_gradient": "",
+      "add_texture": false,
+      "reverse": true,
+      "is_dynamic": false,
+      "large_title": true,
+      "large_image": false,
+      "title_alt": true,
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "image_text",
+      "title": "Orthodontics for Adults",
+      "paragraphs": [
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "There is no age limit for orthodontic treatment. As long as you have healthy teeth, gums and bones, orthodontics can straighten your teeth and correct your bite. More than 30% of orthodontic patients are now adults over the age of 21."
+        },
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "New technology such as Invisalign and clear braces have resulted in appliances that are hardly noticeable and easy to wear. Visits to the orthodontist are less frequent and time in the office has been reduced to fit your busy schedule."
+        }
+      ],
+      "accordion": [],
+      "image": {
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
+        "alt": "Content image",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatment Page"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "buttons": [],
+      "component_options": {
+        "hash": "adults",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "reverse": true,
+      "has_buttons": false,
+      "has_accordion": false,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_image": false,
+      "has_background": true,
+      "background": "bg2",
+      "linear_gradient": "",
+      "add_texture": false,
+      "large_title": true,
+      "title_color": "text",
+      "title_underline_color": "accent",
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "tabs",
+      "title": "Orthodontics for Adults Essentials",
+      "paragraphs": [],
+      "intro": "",
+      "image": {
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
+        "alt": "Content image",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatment Page"
+        }
+      },
+      "has_buttons": false,
+      "buttons": [],
+      "tabs": [
+        {
+          "header": "Healthy Teeth at Any Age",
+          "paragraphs": [
+            {
+              "text": "There is no age limit for orthodontic treatment. As long as you have healthy teeth, gums and bones, orthodontics can straighten your teeth and correct your bite. More than 30% of orthodontic patients are now adults over the age of 21."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
+            "alt": "Content image",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "Discreet Options",
+          "paragraphs": [
+            {
+              "text": "New technology such as Invisalign and clear braces have resulted in appliances that are hardly noticeable and easy to wear."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
+            "alt": "Content image",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        },
+        {
+          "header": "Fewer Office Visits",
+          "paragraphs": [
+            {
+              "text": "Visits to the orthodontist are less frequent and time in the office has been reduced to fit your busy schedule."
+            }
+          ],
+          "has_media": false,
+          "media_type": "image",
+          "image": {
+            "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
+            "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
+            "alt": "Content image",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatment Page"
+            }
+          },
+          "video": {
+            "type": "embedded",
+            "src": ""
+          }
+        }
+      ],
+      "component_options": {
+        "hash": "adults-details",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "has_background": true,
+      "background": "bg1",
+      "linear_gradient": "",
+      "add_texture": false,
+      "reverse": false,
+      "is_dynamic": false,
+      "large_title": true,
+      "large_image": false,
+      "title_alt": true,
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "multi_use_banner",
+      "title": "Ready to get started?",
+      "content_block": "text_block",
+      "text": "",
+      "social_links": [],
+      "email": "",
+      "button": {
+        "type": "nuxt",
+        "style": "primary",
+        "label": "Book Your Free Smile Assessment",
+        "aria_label": "Book your free smile assessment",
+        "href": "",
+        "path": "/contact",
+        "hash": "#form",
+        "external": false,
+        "include_icon": true,
+        "icon": "scheduling-tooth",
+        "color": "primary"
+      },
+      "component_options": {
+        "hash": "",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "background_type": "has_background",
+      "background": "bg2",
+      "add_texture": false,
+      "linear_gradient": "",
+      "image": {
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_c8e7991d345d453dab8a3f36ef4631f8mv2.webp",
+        "alt": "Content image",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Legacy Page"
+        }
+      },
+      "reversed": false,
+      "centered": true,
+      "large_title": true,
+      "text_color": "primary"
+    },
+    {
+      "seo": {
+        "page_title": "Treatment for all Ages - Valley Orthodontics",
+        "page_description": "Learn more about orthodontic treatment for children, teens, and adults at Valley Orthodontics in San Rafael.",
+        "page_keywords": "Valley Orthodontics, orthodontics, San Rafael, braces, clear aligners, children, teens, adults",
+        "additional_settings": false,
+        "social_meta": {
+          "og_meta": {
+            "title": "Treatment for all Ages - Valley Orthodontics",
+            "description": "Learn more about orthodontic treatment for children, teens, and adults at Valley Orthodontics in San Rafael.",
+            "image": "https://d1euqd8u2uyjl7.cloudfront.net/all-ages-treatments/ages-hero.jpg"
+          }
+        },
+        "slug": "all-ages-treatments"
       }
     }
   ]

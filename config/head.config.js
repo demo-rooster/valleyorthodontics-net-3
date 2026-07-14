@@ -8,7 +8,7 @@ export const siteHead = (meta, theme = {}) => {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'referrer', content: 'no-referrer' },
+      { name: 'referrer', content: 'strict-origin-when-cross-origin' },
       { hid: 'robots', name: 'robots', content: 'noindex, nofollow' },
       { hid: 'description', name: 'description', content: meta.seo.page_description },
       { hid: 'keywords', name: 'keywords', content: meta.seo.page_keywords ? meta.seo.page_keywords : '' },

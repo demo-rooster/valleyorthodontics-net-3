@@ -171,3 +171,60 @@
       margin-top: -2rem
     @include tablet
       margin-top: -1rem
+
+#age-options
+  .block-item-row
+    padding-top: rem-calc(40)
+    @include desktop
+      padding-top: rem-calc(48)
+    @include tablet-lg
+      padding-top: rem-calc(28)
+    @include tablet
+      padding-top: rem-calc(24)
+
+  .block-item-row__item:nth-child(1)
+    .block-item-row__icon
+      margin-top: rem-calc(84)
+      width: rem-calc(56)
+      height: rem-calc(56)
+      @include desktop
+        margin-top: rem-calc(86)
+        width: rem-calc(64)
+        height: rem-calc(64)
+      @include tablet-lg
+        margin-top: 4rem
+        width: 3rem
+        height: 3rem
+      @include phone-lg
+        margin-top: 3rem
+
+  .block-item-row__item:nth-child(2)
+    .block-item-row__icon
+      margin-top: rem-calc(44)
+      width: rem-calc(96)
+      height: rem-calc(96)
+      @include desktop
+        margin-top: rem-calc(46)
+        width: rem-calc(104)
+        height: rem-calc(104)
+      @include tablet-lg
+        margin-top: 2rem
+        width: 5rem
+        height: 5rem
+      @include phone-lg
+        margin-top: 1rem
+
+  .block-item-row__item:nth-child(3)
+    .block-item-row__icon
+      margin-top: 0
+      width: rem-calc(140)
+      height: rem-calc(140)
+      @include desktop
+        width: rem-calc(150)
+        height: rem-calc(150)
+      @include tablet-lg
+        width: 7rem
+        height: 7rem
+      @include phone-lg
+        width: 6rem
+        height: 6rem

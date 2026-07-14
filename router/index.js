@@ -37,17 +37,21 @@ const router = [
     path: '/about-orthodontics',
     navigation: true,
     children: [
+      // {
+      //   name: 'Braces for Children',
+      //   path: '/for-children'
+      // },
+      // {
+      //   name: 'Braces for Teens',
+      //   path: '/for-teens'
+      // },
+      // {
+      //   name: 'Braces for Adults',
+      //   path: '/for-adults'
+      // },
       {
-        name: 'Braces for Children',
-        path: '/for-children'
-      },
-      {
-        name: 'Braces for Teens',
-        path: '/for-teens'
-      },
-      {
-        name: 'Braces for Adults',
-        path: '/for-adults'
+        name: 'Treatments For All Ages',
+        path: '/all-ages-treatments'
       },
       {
         name: 'Clear Aligners',
@@ -56,6 +60,10 @@ const router = [
       {
         name: 'Braces',
         path: '/braces'
+      },
+      {
+        name: 'Ceramic Braces',
+        path: '/ceramic-braces'
       },
       {
         name: 'Iconix Braces',

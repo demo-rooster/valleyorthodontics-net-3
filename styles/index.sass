@@ -20,6 +20,17 @@
   &--top-only-full
     @extend %component-padding--top
 
+  &--top-only-triple
+    padding-top: rem-calc(168)
+    @include desktop
+      padding-top: rem-calc(192)
+    @include tablet-lg
+      padding-top: rem-calc(96)
+    @include phone-land-lg
+      padding-top: rem-calc(72)
+    @include nexus
+      padding-top: rem-calc(72)
+
   &--top-only-half
     @extend %component-padding--half-top
 

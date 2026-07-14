@@ -68,7 +68,7 @@ export default {
       return Boolean(item.button && item.button.label)
     },
     hasVideoThumbnail (item = {}) {
-      return Boolean(this.isEmbeddedVideo(item) && item.image && item.image.src)
+      return Boolean(this.videoThumbnail(item))
     },
     fancyboxType (item = {}) {
       return this.isFileVideo(item) ? 'video' : null
@@ -138,11 +138,34 @@ export default {
         })
       }
     },
+    videoThumbnail (item = {}) {
+      if (item.image && item.image.src) {
+        return item.image
+      }
+
+      const videoId = this.youtubeVideoId(item.video && item.video.src)
+      if (!this.isEmbeddedVideo(item) || !videoId) {
+        return null
+      }
+
+      return {
+        src: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+        webp: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+        alt: item.title || 'Video thumbnail',
+        aria_hidden: false,
+        objectPosition: 'center',
+        forceAlt: ''
+      }
+    },
+    youtubeVideoId (src = '') {
+      const youtubeMatch = src.match(/(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([^?&/]+)/)
+      return youtubeMatch && youtubeMatch[1] ? youtubeMatch[1] : null
+    },
     videoHref (item = {}) {
       const src = item.video && item.video.src ? item.video.src : ''
-      const youtubeMatch = src.match(/youtube\.com\/embed\/([^?&/]+)/)
-      if (youtubeMatch && youtubeMatch[1]) {
-        return `https://www.youtube.com/watch?v=${youtubeMatch[1]}`
+      const videoId = this.youtubeVideoId(src)
+      if (videoId) {
+        return `https://www.youtube.com/watch?v=${videoId}`
       }
       return src
     },

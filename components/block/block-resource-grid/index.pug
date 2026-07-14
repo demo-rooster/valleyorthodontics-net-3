@@ -23,9 +23,9 @@
             :href='videoHref(item)',
             :aria-label='videoLinkLabel(item)'
           )
-            BaseImage.block-resource-grid__image(v-if='hasVideoThumbnail(item)' v-bind='item.image' imageBackground forceVisible)
+            BaseImage.block-resource-grid__image(v-if='videoThumbnail(item)' v-bind='videoThumbnail(item)' imageBackground forceVisible)
             video.block-resource-grid__video(
-              v-else,
+              v-else-if='isFileVideo(item)',
               :src='item.video.src',
               muted,
               playsinline,

@@ -40,6 +40,7 @@ export default {
         'hero-main--no-image': !this.props.image.src && !this.props.video.src,
         'hero-main--small-height': this.props.small,
         'hero-main--inner-page': this.$route.path !== '/',
+        'hero-main--braces-page': this.routeSlug === 'braces',
         'hero-main--header-offset': this.hasHeaderOffset
       }
     },

@@ -10,9 +10,10 @@ import TheNavigation from '~/components/navigation'
 import BaseAccess from '~/components/base/base-access'
 import CustomizationToolbar from '~/components/customization-toolbar'
 
-const activeThemeStorageKey = 'rg-active-theme'
-const legacyThemeStorageKey = 'rg-theme-color-overrides'
-const secondaryThemeStorageKey = 'rg-secondary-theme'
+const activeThemeStorageKey = 'rg-active-theme-v3'
+const themePresetNames = ['primary', 'secondary', 'tertiary', 'quaternary']
+const themePresetsStorageKey = 'rg-theme-presets-v1'
+const themePresetsStorageVersion = 'theme-presets-data-1'
 const cloneTheme = theme => JSON.parse(JSON.stringify(theme))
 const gradientTint = color => ({
   red: Math.max(0, Math.round(color.red * 0.68)),
@@ -63,10 +64,12 @@ export default {
     this.posts = await getCustomPosts('posts', 2)
     this.global = await setJSONData('global', 'globalData')
     const theme = await getThemeJSON()
-    const defaultTheme = cloneTheme(theme.default)
+    const themePresets = this.getThemePresets(theme)
 
-    this.$store.dispatch('SET_DEFAULT_THEME', defaultTheme)
-    this.$store.dispatch('SET_THEME', cloneTheme(defaultTheme))
+    this.$store.dispatch('SET_DEFAULT_THEME', themePresets.primary)
+    this.$store.dispatch('SET_SECONDARY_THEME', themePresets.secondary)
+    this.$store.dispatch('SET_THEME_PRESETS', themePresets)
+    this.$store.dispatch('SET_THEME', cloneTheme(themePresets.secondary))
     this.$store.dispatch('SET_BLOG', this.posts)
     this.$store.dispatch('SET_GLOBAL', this.global)
     this.$store.dispatch('SET_FORMS', this.forms)
@@ -100,35 +103,45 @@ export default {
       const target = document.querySelector('#page-wrapper')
       target.focus()
     },
+    getThemePresets (theme) {
+      return themePresetNames.reduce((presets, name) => {
+        const themeKey = name === 'primary' ? 'default' : name
+        presets[name] = cloneTheme(theme[themeKey] || theme.default)
+        return presets
+      }, {})
+    },
     applyStoredThemePreset () {
-      if (!this.$store.state.defaultTheme) {
+      if (!this.$store.state.themePresets.primary) {
         return
       }
 
-      const primaryTheme = cloneTheme(this.$store.state.defaultTheme)
-      const secondaryTheme = this.getStoredSecondaryTheme(primaryTheme)
-      const activeThemeName = window.localStorage.getItem(activeThemeStorageKey) || 'secondary'
+      const themePresets = this.getStoredThemePresets(this.$store.state.themePresets)
+      const storedActiveThemeName = window.localStorage.getItem(activeThemeStorageKey)
+      const activeThemeName = themePresets[storedActiveThemeName] ? storedActiveThemeName : 'secondary'
 
-      this.$store.dispatch('SET_SECONDARY_THEME', secondaryTheme)
+      this.$store.dispatch('SET_THEME_PRESETS', themePresets)
+      this.$store.dispatch('SET_DEFAULT_THEME', themePresets.primary)
+      this.$store.dispatch('SET_SECONDARY_THEME', themePresets.secondary)
       this.$store.dispatch('SET_ACTIVE_THEME_NAME', activeThemeName)
-      this.$store.dispatch('SET_THEME', activeThemeName === 'primary' ? primaryTheme : secondaryTheme)
+      this.$store.dispatch('SET_THEME', themePresets[activeThemeName])
     },
-    getStoredSecondaryTheme (primaryTheme) {
-      const savedSecondaryTheme = this.getStoredTheme(secondaryThemeStorageKey)
+    getStoredThemePresets (basePresets) {
+      const savedThemePresets = this.getStoredTheme(themePresetsStorageKey)
 
-      if (savedSecondaryTheme) {
-        return this.mergeStoredThemeColors(primaryTheme, savedSecondaryTheme)
+      if (savedThemePresets) {
+        if (savedThemePresets.version === themePresetsStorageVersion) {
+          return themePresetNames.reduce((presets, name) => {
+            presets[name] = savedThemePresets.presets && savedThemePresets.presets[name]
+              ? this.mergeStoredThemeColors(basePresets[name], savedThemePresets.presets[name])
+              : cloneTheme(basePresets[name])
+            return presets
+          }, {})
+        }
+
+        window.localStorage.removeItem(themePresetsStorageKey)
       }
 
-      const legacyOverrides = this.getStoredTheme(legacyThemeStorageKey)
-
-      if (legacyOverrides) {
-        const secondaryTheme = this.mergeStoredThemeColors(primaryTheme, legacyOverrides)
-        window.localStorage.setItem(secondaryThemeStorageKey, JSON.stringify({ colors: secondaryTheme.colors }))
-        return secondaryTheme
-      }
-
-      return cloneTheme(primaryTheme)
+      return cloneTheme(basePresets)
     },
     getStoredTheme (storageKey) {
       const storedTheme = window.localStorage.getItem(storageKey)

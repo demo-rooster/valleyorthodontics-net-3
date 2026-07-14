@@ -212,5 +212,407 @@
       "is_light": false
     },
     "favicon_url": "https://www.valleyorthodontics.net/wp-content/uploads/2026/01/cropped-logo-fav-32x32.png"
+  },
+  "secondary": {
+    "colors": [
+      {
+        "label": "primary",
+        "color": {
+          "red": 125,
+          "green": 174,
+          "blue": 130,
+          "alpha": 1
+        },
+        "hex": "#7DAE82",
+        "accessibility": {
+          "recommendedTextColor": "#ffffff",
+          "wcagRating": "AA"
+        }
+      },
+      {
+        "label": "secondary",
+        "color": {
+          "red": 125,
+          "green": 174,
+          "blue": 130,
+          "alpha": 1
+        },
+        "hex": "#7DAE82",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AA"
+        }
+      },
+      {
+        "label": "accent",
+        "color": {
+          "red": 210,
+          "green": 167,
+          "blue": 75,
+          "alpha": 1
+        },
+        "hex": "#D2A74B",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AA"
+        }
+      },
+      {
+        "label": "text",
+        "color": {
+          "red": 42,
+          "green": 42,
+          "blue": 42,
+          "alpha": 1
+        },
+        "hex": "#2A2A2A",
+        "accessibility": {
+          "recommendedTextColor": "#ffffff",
+          "wcagRating": "AAA"
+        }
+      },
+      {
+        "label": "bg-1",
+        "color": {
+          "red": 247,
+          "green": 251,
+          "blue": 248,
+          "alpha": 1
+        },
+        "hex": "#F7FBF8",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AAA"
+        }
+      },
+      {
+        "label": "bg-2",
+        "color": {
+          "red": 228,
+          "green": 240,
+          "blue": 232,
+          "alpha": 1
+        },
+        "hex": "#E4F0E8",
+        "gradient": "cornerBloom",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AAA"
+        }
+      },
+      {
+        "label": "topbar-light",
+        "color": {
+          "red": 247,
+          "green": 251,
+          "blue": 248,
+          "alpha": 1
+        },
+        "hex": "#F7FBF8",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AAA"
+        }
+      },
+      {
+        "label": "topbar-dark",
+        "color": {
+          "red": 93,
+          "green": 126,
+          "blue": 96,
+          "alpha": 1
+        },
+        "hex": "#5D7E60",
+        "accessibility": {
+          "recommendedTextColor": "#ffffff",
+          "wcagRating": "AA"
+        }
+      }
+    ],
+    "typography": [
+      {
+        "label": "font",
+        "font": "'Nunito Sans', helvetica, arial, sans-serif"
+      },
+      {
+        "label": "font-title",
+        "font": "'Freeman', sans-serif"
+      }
+    ],
+    "logo_url": "/vo-logo-2.png",
+    "logo_config": {
+      "type": "url",
+      "variant": "light",
+      "url": "/vo-logo-2.png"
+    },
+    "favicon_url": "https://www.valleyorthodontics.net/wp-content/uploads/2026/01/cropped-logo-fav-32x32.png"
+  },
+  "tertiary": {
+    "colors": [
+      {
+        "label": "primary",
+        "color": {
+          "red": 59,
+          "green": 157,
+          "blue": 181,
+          "alpha": 1
+        },
+        "hex": "#3B9DB5",
+        "accessibility": {
+          "recommendedTextColor": "#ffffff",
+          "wcagRating": "AA"
+        }
+      },
+      {
+        "label": "secondary",
+        "color": {
+          "red": 138,
+          "green": 169,
+          "blue": 187,
+          "alpha": 1
+        },
+        "hex": "#8AA9BB",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AA"
+        }
+      },
+      {
+        "label": "accent",
+        "color": {
+          "red": 137,
+          "green": 176,
+          "blue": 105,
+          "alpha": 1
+        },
+        "hex": "#89B069",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AA"
+        }
+      },
+      {
+        "label": "text",
+        "color": {
+          "red": 43,
+          "green": 45,
+          "blue": 56,
+          "alpha": 1
+        },
+        "hex": "#2B2D38",
+        "accessibility": {
+          "recommendedTextColor": "#ffffff",
+          "wcagRating": "AAA"
+        }
+      },
+      {
+        "label": "bg-1",
+        "color": {
+          "red": 247,
+          "green": 249,
+          "blue": 252,
+          "alpha": 1
+        },
+        "hex": "#F7F9FC",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AAA"
+        }
+      },
+      {
+        "label": "bg-2",
+        "color": {
+          "red": 226,
+          "green": 235,
+          "blue": 241,
+          "alpha": 1
+        },
+        "hex": "#E2EBF1",
+        "gradient": "radialMist",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AAA"
+        }
+      },
+      {
+        "label": "topbar-light",
+        "color": {
+          "red": 247,
+          "green": 249,
+          "blue": 252,
+          "alpha": 1
+        },
+        "hex": "#F7F9FC",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AAA"
+        }
+      },
+      {
+        "label": "topbar-dark",
+        "color": {
+          "red": 59,
+          "green": 157,
+          "blue": 181,
+          "alpha": 1
+        },
+        "hex": "#3B9DB5",
+        "accessibility": {
+          "recommendedTextColor": "#ffffff",
+          "wcagRating": "AA"
+        }
+      }
+    ],
+    "typography": [
+      {
+        "label": "font",
+        "font": "'Nunito Sans', helvetica, arial, sans-serif"
+      },
+      {
+        "label": "font-title",
+        "font": "'Freeman', sans-serif"
+      }
+    ],
+    "logo_url": "/vo-logo-2.png",
+    "logo_config": {
+      "type": "url",
+      "variant": "light",
+      "url": "/vo-logo-2.png"
+    },
+    "favicon_url": "https://www.valleyorthodontics.net/wp-content/uploads/2026/01/cropped-logo-fav-32x32.png"
+  },
+  "quaternary": {
+    "colors": [
+      {
+        "label": "primary",
+        "color": {
+          "red": 108,
+          "green": 82,
+          "blue": 127,
+          "alpha": 1
+        },
+        "hex": "#6C527F",
+        "accessibility": {
+          "recommendedTextColor": "#ffffff",
+          "wcagRating": "AA"
+        }
+      },
+      {
+        "label": "secondary",
+        "color": {
+          "red": 170,
+          "green": 145,
+          "blue": 177,
+          "alpha": 1
+        },
+        "hex": "#AA91B1",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AA"
+        }
+      },
+      {
+        "label": "accent",
+        "color": {
+          "red": 219,
+          "green": 167,
+          "blue": 77,
+          "alpha": 1
+        },
+        "hex": "#DBA74D",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AA"
+        }
+      },
+      {
+        "label": "text",
+        "color": {
+          "red": 47,
+          "green": 41,
+          "blue": 53,
+          "alpha": 1
+        },
+        "hex": "#2F2935",
+        "accessibility": {
+          "recommendedTextColor": "#ffffff",
+          "wcagRating": "AAA"
+        }
+      },
+      {
+        "label": "bg-1",
+        "color": {
+          "red": 252,
+          "green": 248,
+          "blue": 249,
+          "alpha": 1
+        },
+        "hex": "#FCF8F9",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AAA"
+        }
+      },
+      {
+        "label": "bg-2",
+        "color": {
+          "red": 242,
+          "green": 230,
+          "blue": 236,
+          "alpha": 1
+        },
+        "hex": "#F2E6EC",
+        "gradient": "softHalo",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AAA"
+        }
+      },
+      {
+        "label": "topbar-light",
+        "color": {
+          "red": 252,
+          "green": 248,
+          "blue": 249,
+          "alpha": 1
+        },
+        "hex": "#FCF8F9",
+        "accessibility": {
+          "recommendedTextColor": "#000000",
+          "wcagRating": "AAA"
+        }
+      },
+      {
+        "label": "topbar-dark",
+        "color": {
+          "red": 108,
+          "green": 82,
+          "blue": 127,
+          "alpha": 1
+        },
+        "hex": "#6C527F",
+        "accessibility": {
+          "recommendedTextColor": "#ffffff",
+          "wcagRating": "AA"
+        }
+      }
+    ],
+    "typography": [
+      {
+        "label": "font",
+        "font": "'Nunito Sans', helvetica, arial, sans-serif"
+      },
+      {
+        "label": "font-title",
+        "font": "'Freeman', sans-serif"
+      }
+    ],
+    "logo_url": "/vo-logo-2.png",
+    "logo_config": {
+      "type": "url",
+      "variant": "light",
+      "url": "/vo-logo-2.png"
+    },
+    "favicon_url": "https://www.valleyorthodontics.net/wp-content/uploads/2026/01/cropped-logo-fav-32x32.png"
   }
 }

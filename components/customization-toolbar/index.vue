@@ -1,8 +1,10 @@
 <template lang='pug' src='./index.pug'></template>
 
 <script>
-const activeThemeStorageKey = 'rg-active-theme'
-const secondaryThemeStorageKey = 'rg-secondary-theme'
+const activeThemeStorageKey = 'rg-active-theme-v3'
+const themePresetNames = ['primary', 'secondary', 'tertiary', 'quaternary']
+const themePresetsStorageKey = 'rg-theme-presets-v1'
+const themePresetsStorageVersion = 'theme-presets-data-1'
 const backgroundColorLabels = ['bg-1', 'bg-2']
 
 export default {
@@ -24,6 +26,15 @@ export default {
     },
     activeThemeName () {
       return this.$store.state.activeThemeName
+    },
+    activeThemeLabel () {
+      return this.themePresetLabel(this.activeThemeName)
+    },
+    themePresetButtons () {
+      return themePresetNames.map(name => ({
+        name,
+        label: this.themePresetLabel(name)
+      }))
     }
   },
   methods: {
@@ -60,7 +71,7 @@ export default {
       }
 
       this.$store.dispatch('UPDATE_THEME_COLOR', updatedColor)
-      this.saveSecondaryTheme()
+      this.saveActiveThemePreset()
     },
     handleGradientInput (color, value) {
       const updatedColor = {
@@ -69,7 +80,7 @@ export default {
       }
 
       this.$store.dispatch('UPDATE_THEME_COLOR', updatedColor)
-      this.saveSecondaryTheme()
+      this.saveActiveThemePreset()
     },
     isBackgroundColor (color) {
       return backgroundColorLabels.includes(color.label)
@@ -100,35 +111,32 @@ export default {
 
       return `Apply ${this.copiedColor.label} color to ${color.label}`
     },
-    setPrimaryTheme () {
-      if (!this.$store.state.defaultTheme) {
+    setThemePreset (name) {
+      if (!this.$store.state.themePresets[name]) {
         return
       }
 
-      window.localStorage.setItem(activeThemeStorageKey, 'primary')
-      this.$store.dispatch('SET_ACTIVE_THEME_NAME', 'primary')
-      this.$store.dispatch('SET_THEME', this.$store.state.defaultTheme)
+      window.localStorage.setItem(activeThemeStorageKey, name)
+      this.$store.dispatch('SET_ACTIVE_THEME_NAME', name)
+      this.$store.dispatch('SET_THEME', this.$store.state.themePresets[name])
     },
-    setSecondaryTheme () {
-      if (!this.$store.state.secondaryTheme) {
-        return
-      }
-
-      window.localStorage.setItem(activeThemeStorageKey, 'secondary')
-      this.$store.dispatch('SET_ACTIVE_THEME_NAME', 'secondary')
-      this.$store.dispatch('SET_THEME', this.$store.state.secondaryTheme)
-    },
-    saveSecondaryTheme () {
+    saveActiveThemePreset () {
       if (!this.$store.state.theme) {
         return
       }
 
       const theme = this.$store.state.theme
+      const themePresets = {
+        ...this.$store.state.themePresets,
+        [this.activeThemeName]: theme
+      }
 
-      window.localStorage.setItem(secondaryThemeStorageKey, JSON.stringify({ colors: theme.colors }))
-      window.localStorage.setItem(activeThemeStorageKey, 'secondary')
-      this.$store.dispatch('SET_SECONDARY_THEME', theme)
-      this.$store.dispatch('SET_ACTIVE_THEME_NAME', 'secondary')
+      window.localStorage.setItem(themePresetsStorageKey, JSON.stringify({ version: themePresetsStorageVersion, presets: themePresets }))
+      window.localStorage.setItem(activeThemeStorageKey, this.activeThemeName)
+      this.$store.dispatch('SET_THEME_PRESET', { name: this.activeThemeName, theme })
+    },
+    themePresetLabel (name) {
+      return `${name.charAt(0).toUpperCase()}${name.slice(1)} theme`
     },
     normalizeHex (hex) {
       const value = hex.charAt(0) === '#' ? hex : `#${hex}`

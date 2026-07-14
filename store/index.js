@@ -7,6 +7,7 @@ export const state = () => ({
   activeThemeName: 'secondary',
   defaultTheme: null,
   secondaryTheme: null,
+  themePresets: {},
   theme: null,
   forms: null,
   posts: null,

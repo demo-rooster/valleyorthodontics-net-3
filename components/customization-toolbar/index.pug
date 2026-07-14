@@ -11,19 +11,18 @@
 
     .customization-toolbar__theme-controls
       button.customization-toolbar__theme-button(
+        v-for='themePreset in themePresetButtons',
+        :key='themePreset.name',
         type='button',
-        :class="{ 'customization-toolbar__theme-button--active': activeThemeName === 'primary' }",
-        @click='setPrimaryTheme'
-      ) Primary theme
-      button.customization-toolbar__theme-button(
-        type='button',
-        :class="{ 'customization-toolbar__theme-button--active': activeThemeName === 'secondary' }",
-        @click='setSecondaryTheme'
-      ) Secondary theme
+        :class="{ 'customization-toolbar__theme-button--active': activeThemeName === themePreset.name }",
+        @click='setThemePreset(themePreset.name)',
+        v-html='themePreset.label'
+      )
       button.customization-toolbar__save-button(
         type='button',
-        @click='saveSecondaryTheme'
-      ) Save current as secondary
+        @click='saveActiveThemePreset'
+        v-html='`Save current as ${activeThemeLabel}`'
+      )
 
     .customization-toolbar__colors
       .customization-toolbar__field(v-for='color in themeColors' :key='color.label')

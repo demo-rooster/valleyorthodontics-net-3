@@ -5,6 +5,8 @@ import {
   SET_DEFAULT_THEME,
   SET_SECONDARY_THEME,
   SET_THEME,
+  SET_THEME_PRESET,
+  SET_THEME_PRESETS,
   UPDATE_THEME_COLOR,
   RESTORE_DEFAULT_THEME,
   IS_PHONE_LAND_LG,
@@ -39,6 +41,12 @@ const stateActions = () => ({
   },
   SET_THEME ({ commit }, data) {
     commit(SET_THEME, data)
+  },
+  SET_THEME_PRESET ({ commit }, data) {
+    commit(SET_THEME_PRESET, data)
+  },
+  SET_THEME_PRESETS ({ commit }, data) {
+    commit(SET_THEME_PRESETS, data)
   },
   UPDATE_THEME_COLOR ({ commit }, data) {
     commit(UPDATE_THEME_COLOR, data)

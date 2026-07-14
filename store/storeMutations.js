@@ -5,6 +5,8 @@ import {
   SET_DEFAULT_THEME,
   SET_SECONDARY_THEME,
   SET_THEME,
+  SET_THEME_PRESET,
+  SET_THEME_PRESETS,
   UPDATE_THEME_COLOR,
   RESTORE_DEFAULT_THEME,
   IS_PHONE_LAND_LG,
@@ -41,6 +43,15 @@ const stateMutations = () => ({
   },
   [SET_THEME] (state, data) {
     state.theme = cloneTheme(data)
+  },
+  [SET_THEME_PRESET] (state, data) {
+    state.themePresets = {
+      ...state.themePresets,
+      [data.name]: cloneTheme(data.theme)
+    }
+  },
+  [SET_THEME_PRESETS] (state, data) {
+    state.themePresets = cloneTheme(data)
   },
   [UPDATE_THEME_COLOR] (state, data) {
     if (!state.theme || !state.theme.colors) {

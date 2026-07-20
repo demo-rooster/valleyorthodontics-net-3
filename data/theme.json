@@ -294,7 +294,7 @@
           "alpha": 1
         },
         "hex": "#E4F0E8",
-        "gradient": "cornerBloom",
+        "gradient": "solid",
         "accessibility": {
           "recommendedTextColor": "#000000",
           "wcagRating": "AAA"
@@ -428,7 +428,7 @@
           "alpha": 1
         },
         "hex": "#E2EBF1",
-        "gradient": "radialMist",
+        "gradient": "solid",
         "accessibility": {
           "recommendedTextColor": "#000000",
           "wcagRating": "AAA"
@@ -562,7 +562,7 @@
           "alpha": 1
         },
         "hex": "#F2E6EC",
-        "gradient": "softHalo",
+        "gradient": "solid",
         "accessibility": {
           "recommendedTextColor": "#000000",
           "wcagRating": "AAA"

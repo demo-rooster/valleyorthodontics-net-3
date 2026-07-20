@@ -68,22 +68,6 @@ const router = [
       {
         name: 'Iconix Braces',
         path: '/iconix-champagne-gold-braces'
-      },
-      {
-        name: 'Braces First Aid',
-        path: '/braces-first-aid'
-      },
-      {
-        name: 'What To Expect',
-        path: '/what-to-expect-on-the-first-day-of-braces'
-      },
-      {
-        name: 'Instructional Videos',
-        path: '/instructional-videos'
-      },
-      {
-        name: 'Recommended Products',
-        path: '/orthodontic-products-we-recommend'
       }
     ]
   },
@@ -111,6 +95,22 @@ const router = [
       {
         name: 'Privacy Policy',
         path: '/privacypolicy'
+      },
+      {
+        name: 'Braces First Aid',
+        path: '/braces-first-aid'
+      },
+      // {
+      //   name: 'What To Expect',
+      //   path: '/what-to-expect-on-the-first-day-of-braces'
+      // },
+      {
+        name: 'Instructional Videos',
+        path: '/instructional-videos'
+      },
+      {
+        name: 'Recommended Products',
+        path: '/orthodontic-products-we-recommend'
       },
       {
         name: 'Frequently Asked Questions',

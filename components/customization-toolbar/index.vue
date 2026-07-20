@@ -5,20 +5,11 @@ const activeThemeStorageKey = 'rg-active-theme-v3'
 const themePresetNames = ['primary', 'secondary', 'tertiary', 'quaternary']
 const themePresetsStorageKey = 'rg-theme-presets-v1'
 const themePresetsStorageVersion = 'theme-presets-data-1'
-const backgroundColorLabels = ['bg-1', 'bg-2']
 
 export default {
   data: () => ({
     isOpen: false,
-    copiedColor: null,
-    gradientOptions: [
-      { label: 'Solid', value: 'solid' },
-      { label: 'Radial mist', value: 'radialMist' },
-      { label: 'Corner bloom', value: 'cornerBloom' },
-      { label: 'Soft halo', value: 'softHalo' },
-      { label: 'Linear wash', value: 'linearWash' },
-      { label: 'Linear lift', value: 'linearLift' }
-    ]
+    copiedColor: null
   }),
   computed: {
     themeColors () {
@@ -72,21 +63,6 @@ export default {
 
       this.$store.dispatch('UPDATE_THEME_COLOR', updatedColor)
       this.saveActiveThemePreset()
-    },
-    handleGradientInput (color, value) {
-      const updatedColor = {
-        ...color,
-        gradient: value
-      }
-
-      this.$store.dispatch('UPDATE_THEME_COLOR', updatedColor)
-      this.saveActiveThemePreset()
-    },
-    isBackgroundColor (color) {
-      return backgroundColorLabels.includes(color.label)
-    },
-    gradientValue (color) {
-      return color.gradient || 'solid'
     },
     copyThemeColor (color) {
       this.copiedColor = {

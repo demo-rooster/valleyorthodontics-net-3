@@ -30,18 +30,6 @@
           label.customization-toolbar__label(:for='colorInputId(color)')
             span.customization-toolbar__label-text(v-html='color.label')
             span.customization-toolbar__hex(v-html='colorValue(color)')
-          select.customization-toolbar__gradient-select(
-            v-if='isBackgroundColor(color)',
-            :value='gradientValue(color)',
-            :aria-label='`Gradient style for ${color.label}`',
-            @change='handleGradientInput(color, $event.target.value)'
-          )
-            option(
-              v-for='gradient in gradientOptions',
-              :key='gradient.value',
-              :value='gradient.value',
-              v-html='gradient.label'
-            )
         .customization-toolbar__controls
           input.customization-toolbar__input(
             :id='colorInputId(color)',

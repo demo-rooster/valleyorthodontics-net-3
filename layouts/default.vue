@@ -15,18 +15,6 @@ const themePresetNames = ['primary', 'secondary', 'tertiary', 'quaternary']
 const themePresetsStorageKey = 'rg-theme-presets-v1'
 const themePresetsStorageVersion = 'theme-presets-data-1'
 const cloneTheme = theme => JSON.parse(JSON.stringify(theme))
-const gradientTint = color => ({
-  red: Math.max(0, Math.round(color.red * 0.68)),
-  green: Math.max(0, Math.round(color.green * 0.72)),
-  blue: Math.max(0, Math.round(color.blue * 0.68))
-})
-const gradientStyles = {
-  radialMist: color => `radial-gradient(circle at 18% 20%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .72), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .3) 27%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, 0) 56%), radial-gradient(circle at 84% 16%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .58), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .24) 31%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, 0) 60%), linear-gradient(135deg, rgba(255, 255, 255, .98), rgba(${color.red}, ${color.green}, ${color.blue}, .18))`,
-  cornerBloom: color => `radial-gradient(circle at 94% 6%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .86), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .38) 32%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, 0) 64%), radial-gradient(circle at 68% 48%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .34), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, 0) 46%), linear-gradient(160deg, rgba(255, 255, 255, .98), rgba(${color.red}, ${color.green}, ${color.blue}, .16))`,
-  softHalo: color => `radial-gradient(circle at 50% 30%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .68), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .28) 34%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, 0) 64%), radial-gradient(circle at 12% 86%, rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .42), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, 0) 48%), linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(${color.red}, ${color.green}, ${color.blue}, .14))`,
-  linearWash: color => `linear-gradient(135deg, rgba(255, 255, 255, .96), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .42))`,
-  linearLift: color => `linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(${gradientTint(color).red}, ${gradientTint(color).green}, ${gradientTint(color).blue}, .36) 56%, rgba(255, 255, 255, .94))`
-}
 
 export default {
   components: {
@@ -174,6 +162,7 @@ export default {
           return {
             ...color,
             ...storedColor,
+            gradient: 'solid',
             color: {
               ...color.color,
               ...storedColor.color
@@ -205,10 +194,6 @@ export default {
       }
     },
     getThemeColorValue (color) {
-      if (color.gradient && color.gradient !== 'solid' && gradientStyles[color.gradient]) {
-        return gradientStyles[color.gradient](color.color)
-      }
-
       return `rgba(${color.color.red}, ${color.color.green}, ${color.color.blue}, ${color.color.alpha})`
     }
   }

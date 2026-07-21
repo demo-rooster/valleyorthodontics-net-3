@@ -1,0 +1,82 @@
+.customization-context-menu
+  --toolbar-purple: #4d4ec1
+  --toolbar-purple-soft: rgba(77, 78, 193, .12)
+  --toolbar-text: #28262f
+  display: grid
+  position: fixed
+  z-index: 720
+  gap: rem-calc(8)
+  border: rem-calc(1) solid var(--toolbar-purple-soft)
+  border-radius: rem-calc(8)
+  box-shadow: 0 rem-calc(14) rem-calc(36) rgba($black, .2)
+  background: $white
+  padding: rem-calc(10)
+  width: rem-calc(248)
+  font-family: var(--font)
+
+  &__header
+    display: flex
+    align-items: baseline
+    justify-content: space-between
+    gap: rem-calc(8)
+
+  &__role
+    color: var(--toolbar-text)
+    font-size: rem-calc(12)
+    font-weight: 800
+
+  &__section
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+    color: rgba($black, .48)
+    font-size: rem-calc(10)
+    font-weight: 700
+
+  &__button-controls
+    display: grid
+    gap: rem-calc(5)
+
+  &__segmented
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: rem-calc(2)
+    border-radius: rem-calc(6)
+    background: var(--toolbar-purple-soft)
+    padding: rem-calc(2)
+
+  &__segmented-button
+    border: 0
+    border-radius: rem-calc(4)
+    background: transparent
+    cursor: pointer
+    padding: rem-calc(5) rem-calc(6)
+    color: var(--toolbar-text)
+    font-family: var(--font)
+    font-size: rem-calc(10.5)
+    font-weight: 800
+
+    &:focus-visible
+      outline: rem-calc(2) solid var(--toolbar-purple)
+      outline-offset: rem-calc(1)
+
+    &--active
+      box-shadow: 0 rem-calc(1) rem-calc(3) rgba($black, .16)
+      background: $white
+      color: var(--toolbar-purple)
+
+  &__reset
+    border: 0
+    border-radius: rem-calc(999)
+    background: var(--toolbar-purple-soft)
+    cursor: pointer
+    padding: rem-calc(6) rem-calc(8)
+    min-height: rem-calc(28)
+    color: var(--toolbar-purple)
+    font-family: var(--font)
+    font-size: rem-calc(10.5)
+    font-weight: 800
+
+    &:disabled
+      opacity: .42
+      cursor: not-allowed

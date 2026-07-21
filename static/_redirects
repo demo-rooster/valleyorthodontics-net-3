@@ -1,0 +1,112 @@
+# Canonical replacements for legacy WordPress pages
+/about-us/ /about 301
+/accessibility-statement/ /accessibility 301
+/complimentary-consultation/ /contact#form 301
+/for-adults/ /all-ages-treatments#adults 301
+/for-children/ /all-ages-treatments#children 301
+/for-teens/ /all-ages-treatments#teens 301
+/invisalign/ /clear-aligners 301
+/patients-experiences/ / 301
+/privacypolicy/ /privacy-policy 301
+/what-to-expect-on-the-first-day-of-braces/ /braces 301
+
+# The replacement site uses one blog index instead of a WordPress category archive
+/category/all-posts/ /blog 301
+
+# WordPress posts move from root-level slugs to the replacement site's blog routes
+# This newest post is not in the local content snapshot yet, so avoid redirecting to a 404
+/patient-appreciation-ice-cream-social-2026/ /blog 301
+/introducing-grin-remote-orthodontic-monitoring-valley-orthodontics/ /blog/introducing-grin-remote-orthodontic-monitoring-valley-orthodontics 301
+/adult-orthodontics-its-never-too-late-for-a-beautiful-healthy-smile/ /blog/adult-orthodontics-its-never-too-late-for-a-beautiful-healthy-smile 301
+/traveling-with-invisalign-airports-eating-out-and-keeping-track-of-aligners/ /blog/traveling-with-invisalign-airports-eating-out-and-keeping-track-of-aligners 301
+/common-myths-about-orthodontic-treatment-debunked/ /blog/common-myths-about-orthodontic-treatment-debunked 301
+/more-than-just-a-straight-smile-why-airway-matters-in-orthodontics/ /blog/more-than-just-a-straight-smile-why-airway-matters-in-orthodontics 301
+/affordable-braces-in-san-rafael-payment-plans-insurance-and-how-to-fit-treatment-into-your-budget/ /blog/affordable-braces-in-san-rafael-payment-plans-insurance-and-how-to-fit-treatment-into-your-budget 301
+/7-important-questions-parents-should-ask-at-an-orthodontic-consultation/ /blog/7-important-questions-parents-should-ask-at-an-orthodontic-consultation 301
+/transform-your-smile-with-modern-affordable-braces-for-kids-teens-and-adults/ /blog/transform-your-smile-with-modern-affordable-braces-for-kids-teens-and-adults 301
+/achieve-a-confident-straighter-smile-with-advanced-invisalign-treatment/ /blog/achieve-a-confident-straighter-smile-with-advanced-invisalign-treatment 301
+/comprehensive-orthodontic-care-for-kids-families/ /blog/comprehensive-orthodontic-care-for-kids-families 301
+/trick-treat-smile-how-to-have-a-braces-friendly-halloween/ /blog/trick-treat-smile-how-to-have-a-braces-friendly-halloween 301
+/retainers-for-life-why-your-smile-needs-a-lifetime-security-system/ /blog/retainers-for-life-why-your-smile-needs-a-lifetime-security-system 301
+/what-is-phase-i-early-interceptive-orthodontic-treatment/ /blog/what-is-phase-i-early-interceptive-orthodontic-treatment 301
+
+# Standalone WordPress media attachment aliases
+# Lambda/edge-only exception: /?attachment_id=4376 -> / (301)
+/11062b_2381e8a6e7444f4f902e7b649aa3f0acmv2/ / 301
+/11062b_55e4be1e75564866b6c28290f9a9d271mv2/ / 301
+/11062b_e4f51512c6a64b839b6d7479f5d5e047mv2/ / 301
+/1cc85cbea2ae49e3abdecbb7a4bc6904/ / 301
+/2025-yelp-award/ / 301
+/6de947df4d8641efa8adba45f790b8a4/ / 301
+/7-questions/ /blog/7-important-questions-parents-should-ask-at-an-orthodontic-consultation 301
+/84770f_02b3ddc056fa48fcb36b5ae65fdc02cdmv2_d_3264_2448_s_4_2/ / 301
+/84770f_71452a9fe6d44784ad7909dca9778e69mv2_d_5184_3456_s_4_2/ / 301
+/84770f_d1cff376fa38409bb6d7afe36ddc3326mv2_d_2562_2656_s_4_2/ / 301
+/9f1f28_2741aa25950148cb83e93ba67ec05df4mv2/ / 301
+/bgfile/ / 301
+/blog-retainer-for-life/ /blog/retainers-for-life-why-your-smile-needs-a-lifetime-security-system 301
+/common-myths-orthodontic-treatment/ /blog/common-myths-about-orthodontic-treatment-debunked 301
+/d6eac3bee19440d68c941428f31c0f09/ / 301
+/food-drive-flier-for-char-jpg/ /supporting-our-local-community 301
+/image0/ / 301
+/image2/ / 301
+/img_0007-jpg/ / 301
+/logo-fav/ / 301
+/logo-tm_angel-aligner-logo/ /clear-aligners 301
+/logo/ / 301
+/mute/ / 301
+/parent-consult-checklist/ /for-new-patients 301
+/pink-out-poster-for-charlenes-business-jpg-format-2/ /supporting-our-local-community 301
+/poster/ / 301
+/referral-slip-1/ /doctor-referals-slips 301
+/referral-slip/ /doctor-referals-slips 301
+/share-a-smile-referral/ /doctor-referals-slips 301
+/sound/ / 301
+/team-photo-2/ /about 301
+/team-photo/ /about 301
+/traveling-with-invisalign-aligners/ /blog/traveling-with-invisalign-airports-eating-out-and-keeping-track-of-aligners 301
+/valley-orthodontics-patient-appreciation-ice-cream-social-2026/ /blog 301
+/iconix-champagne-gold-braces/attachment/1/ /iconix-champagne-gold-braces 301
+/iconix-champagne-gold-braces/attachment/2/ /iconix-champagne-gold-braces 301
+/iconix-champagne-gold-braces/attachment/3/ /iconix-champagne-gold-braces 301
+
+# Nested WordPress media attachment aliases, grouped by their legacy parent page
+/about-orthodontics/:attachment/ /about-orthodontics 301
+/about-us/:attachment/ /about 301
+/achieve-a-confident-straighter-smile-with-advanced-invisalign-treatment/:attachment/ /blog/achieve-a-confident-straighter-smile-with-advanced-invisalign-treatment 301
+/adult-orthodontics-its-never-too-late-for-a-beautiful-healthy-smile/:attachment/ /blog/adult-orthodontics-its-never-too-late-for-a-beautiful-healthy-smile 301
+/affordable-braces-in-san-rafael-payment-plans-insurance-and-how-to-fit-treatment-into-your-budget/:attachment/ /blog/affordable-braces-in-san-rafael-payment-plans-insurance-and-how-to-fit-treatment-into-your-budget 301
+/braces/:attachment/ /braces 301
+/braces-first-aid/:attachment/ /braces-first-aid 301
+/complimentary-consultation/:attachment/ /contact#form 301
+/comprehensive-orthodontic-care-for-kids-families/:attachment/ /blog/comprehensive-orthodontic-care-for-kids-families 301
+/designer-braces/:attachment/ /designer-braces 301
+/doctor-referals-slips/:attachment/ /doctor-referals-slips 301
+/faq/:attachment/ /faq 301
+/financial-information/:attachment/ /financial-information 301
+/for-adults/:attachment/ /all-ages-treatments#adults 301
+/for-children/:attachment/ /all-ages-treatments#children 301
+/for-new-patients/:attachment/ /for-new-patients 301
+/for-teens/:attachment/ /all-ages-treatments#teens 301
+/home/:attachment/ / 301
+/iconix-champagne-gold-braces/:attachment/ /iconix-champagne-gold-braces 301
+/instructional-videos/:attachment/ /instructional-videos 301
+/introducing-grin-remote-orthodontic-monitoring-valley-orthodontics/:attachment/ /blog/introducing-grin-remote-orthodontic-monitoring-valley-orthodontics 301
+/invisalign/:attachment/ /clear-aligners 301
+/meet-abi-our-dental-assistant/:attachment/ /meet-abi-our-dental-assistant 301
+/meet-alison-our-orthodontic-assistant/:attachment/ /meet-alison-our-orthodontic-assistant 301
+/meet-anna-our-practice-coordinator/:attachment/ /meet-anna-our-practice-coordinator 301
+/meet-dr-rocha/:attachment/ /meet-dr-rocha 301
+/meet-marina-our-orthodontic-assistant/:attachment/ /meet-marina-our-orthodontic-assistant 301
+/meet-the-team/:attachment/ /meet-the-team 301
+/newsletter/:attachment/ /newsletter 301
+/orthodontic-products-we-recommend/:attachment/ /orthodontic-products-we-recommend 301
+/patients-experiences/:attachment/ / 301
+/supporting-our-local-community/:attachment/ /supporting-our-local-community 301
+/tour-the-office/:attachment/ /tour-the-office 301
+/transform-your-smile-with-modern-affordable-braces-for-kids-teens-and-adults/:attachment/ /blog/transform-your-smile-with-modern-affordable-braces-for-kids-teens-and-adults 301
+/trick-treat-smile-how-to-have-a-braces-friendly-halloween/:attachment/ /blog/trick-treat-smile-how-to-have-a-braces-friendly-halloween 301
+/what-is-phase-i-early-interceptive-orthodontic-treatment/:attachment/ /blog/what-is-phase-i-early-interceptive-orthodontic-treatment 301
+/what-sets-us-apart/:attachment/ /what-sets-us-apart 301
+/what-to-expect-on-the-first-day-of-braces/:attachment/ /braces 301
+/why-choose-us/:attachment/ /why-choose-us 301

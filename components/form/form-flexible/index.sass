@@ -277,19 +277,19 @@
     @include focus
     position: relative
     transition: background .2s ease, color .2s ease
-    border: solid rem-calc(2) var(--primary)
-    background: var(--primary)
+    border: solid rem-calc(2) var(--section-btn-background, var(--primary))
+    background: var(--section-btn-background, var(--primary))
     cursor: pointer
     padding: 0
     overflow: hidden
-    color: $white
+    color: var(--section-btn-text, #{$white})
 
     &:active
       outline: transparent
 
     &:hover
-      background: transparent
-      color: var(--primary)
+      background: var(--section-btn-hover-background, transparent)
+      color: var(--section-btn-hover-text, var(--section-btn-background, var(--primary)))
 
     &--sending
       background: $gray

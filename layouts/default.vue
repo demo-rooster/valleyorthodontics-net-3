@@ -2,6 +2,8 @@
 
 <script>
 import { getCustomPosts, getForms, setJSONData, getThemeJSON } from '~/resources/utils'
+import { buildGradientCss, normalizeGradient } from '~/resources/gradients'
+import { normalizeTheme } from '~/resources/theme-scheme'
 import DevModeBanner from '~/components/dev-mode/dev-mode-banner'
 import Popup from '~/components/popup'
 import SkipLink from '~/components/base/base-skip-link'
@@ -9,16 +11,42 @@ import TheFooter from '~/components/footer'
 import TheNavigation from '~/components/navigation'
 import BaseAccess from '~/components/base/base-access'
 import CustomizationToolbar from '~/components/customization-toolbar'
+import CustomizationContextMenu from '~/components/customization-context-menu'
 
 const activeThemeStorageKey = 'rg-active-theme-v3'
 const themePresetNames = ['primary', 'secondary', 'tertiary', 'quaternary']
 const themePresetsStorageKey = 'rg-theme-presets-v1'
-const themePresetsStorageVersion = 'theme-presets-data-1'
+const themePresetsStorageVersion = 'theme-presets-data-2'
+const legacyThemePresetsStorageVersion = 'theme-presets-data-1'
 const cloneTheme = theme => JSON.parse(JSON.stringify(theme))
+const defaultHeaderSettings = {
+  enable_top_bar: false,
+  type: 'links',
+  theme: 'dark',
+  content_alignment: 'right',
+  links: [],
+  announcement: {
+    icon: 'phone',
+    label: '',
+    text: '',
+    mobile_text: '',
+    open_popup: false
+  }
+}
+const defaultPopupSettings = {
+  enable_popup: false,
+  pages: 'home',
+  frequency: 'every',
+  title: '',
+  text: '',
+  image: null
+}
+const popupSeenStorageKey = 'rg-popup-seen-v1'
 
 export default {
   components: {
     BaseAccess,
+    CustomizationContextMenu,
     DevModeBanner,
     Popup,
     SkipLink,
@@ -36,6 +64,27 @@ export default {
   computed: {
     theme () {
       return this.$store.state.theme
+    },
+    popupProps () {
+      return this.theme?.popup || this.global?.popup || null
+    },
+    popupEnabled () {
+      const popup = this.theme?.popup
+
+      if (popup) {
+        return !!popup.enable_popup
+      }
+
+      return !!(this.global && this.global.enable_popup)
+    },
+    popupPages () {
+      return this.theme?.popup?.pages || 'home'
+    },
+    popupFrequency () {
+      return this.theme?.popup?.frequency || 'every'
+    },
+    popupMatchesPage () {
+      return this.popupPages === 'all' || this.$route.path === '/'
     }
   },
   watch: {
@@ -45,7 +94,9 @@ export default {
         this.updateGlobalStyles()
       },
       deep: true
-    }
+    },
+    popupEnabled: 'refreshPopupPreview',
+    popupPages: 'refreshPopupPreview'
   },
   async fetch () {
     this.forms = await getForms()
@@ -54,6 +105,7 @@ export default {
     const theme = await getThemeJSON()
     const themePresets = this.getThemePresets(theme)
 
+    this.$store.dispatch('SET_CUSTOMIZATION_ENABLED', !!theme.enable_customization)
     this.$store.dispatch('SET_DEFAULT_THEME', themePresets.primary)
     this.$store.dispatch('SET_SECONDARY_THEME', themePresets.secondary)
     this.$store.dispatch('SET_THEME_PRESETS', themePresets)
@@ -67,8 +119,9 @@ export default {
     this.updateGlobalStyles()
     this.checkWindowWidth()
 
-    if (this.$route.path === '/' && this.global.enable_popup) {
+    if (this.popupEnabled && this.popupMatchesPage && this.popupFrequencyAllows()) {
       this.popupActive = true
+      window.localStorage.setItem(popupSeenStorageKey, 'true')
     }
 
     this.showDevModeBanner = process.env.NODE_ENV === 'development' && this.global.enable_development_mode
@@ -91,15 +144,51 @@ export default {
       const target = document.querySelector('#page-wrapper')
       target.focus()
     },
+    popupFrequencyAllows () {
+      if (this.popupFrequency !== 'first') {
+        return true
+      }
+
+      return !window.localStorage.getItem(popupSeenStorageKey)
+    },
+    refreshPopupPreview () {
+      this.popupActive = this.popupEnabled && this.popupMatchesPage
+    },
     getThemePresets (theme) {
       return themePresetNames.reduce((presets, name) => {
         const themeKey = name === 'primary' ? 'default' : name
-        presets[name] = cloneTheme(theme[themeKey] || theme.default)
+        const preset = cloneTheme(theme[themeKey] || theme.default)
+
+        if (!preset.header) {
+          preset.header = cloneTheme(this.global?.top_bar || defaultHeaderSettings)
+        }
+
+        if (preset.header.announcement && preset.header.announcement.open_popup === undefined) {
+          const modal = preset.header.announcement.modal || {}
+          preset.header.announcement.open_popup = !!(modal.title || modal.text)
+        }
+
+        if (!preset.popup) {
+          preset.popup = {
+            enable_popup: !!this.global?.enable_popup,
+            ...cloneTheme(this.global?.popup || defaultPopupSettings)
+          }
+        }
+
+        if (preset.popup.pages === undefined) {
+          preset.popup.pages = defaultPopupSettings.pages
+        }
+
+        if (preset.popup.frequency === undefined) {
+          preset.popup.frequency = defaultPopupSettings.frequency
+        }
+
+        presets[name] = preset
         return presets
       }, {})
     },
     applyStoredThemePreset () {
-      if (!this.$store.state.themePresets.primary) {
+      if (!this.$store.state.customizationEnabled || !this.$store.state.themePresets.primary) {
         return
       }
 
@@ -117,13 +206,33 @@ export default {
       const savedThemePresets = this.getStoredTheme(themePresetsStorageKey)
 
       if (savedThemePresets) {
-        if (savedThemePresets.version === themePresetsStorageVersion) {
-          return themePresetNames.reduce((presets, name) => {
-            presets[name] = savedThemePresets.presets && savedThemePresets.presets[name]
+        if ([themePresetsStorageVersion, legacyThemePresetsStorageVersion].includes(savedThemePresets.version)) {
+          const isLegacyPreset = savedThemePresets.version === legacyThemePresetsStorageVersion
+          const migratedPresets = themePresetNames.reduce((presets, name) => {
+            const mergedTheme = savedThemePresets.presets && savedThemePresets.presets[name]
               ? this.mergeStoredThemeColors(basePresets[name], savedThemePresets.presets[name])
               : cloneTheme(basePresets[name])
+
+            if (isLegacyPreset) {
+              delete mergedTheme.scheme
+              delete mergedTheme.assignments
+              delete mergedTheme.sectionOverrides
+              presets[name] = normalizeTheme(mergedTheme)
+            } else {
+              presets[name] = mergedTheme
+            }
+
             return presets
           }, {})
+
+          if (isLegacyPreset) {
+            window.localStorage.setItem(themePresetsStorageKey, JSON.stringify({
+              version: themePresetsStorageVersion,
+              presets: migratedPresets
+            }))
+          }
+
+          return migratedPresets
         }
 
         window.localStorage.removeItem(themePresetsStorageKey)
@@ -150,8 +259,24 @@ export default {
         ? storedTheme.colors
         : Object.keys(storedTheme).map(label => ({ label, ...storedTheme[label] }))
 
+      const header = storedTheme.header
+        ? cloneTheme({ ...(baseTheme.header || defaultHeaderSettings), ...storedTheme.header })
+        : cloneTheme(baseTheme.header || defaultHeaderSettings)
+
+      if (header.announcement && header.announcement.open_popup === undefined) {
+        const modal = header.announcement.modal || {}
+        header.announcement.open_popup = !!(modal.title || modal.text)
+      }
+
       return {
         ...cloneTheme(baseTheme),
+        header,
+        popup: storedTheme.popup
+          ? cloneTheme({ ...(baseTheme.popup || defaultPopupSettings), ...storedTheme.popup })
+          : cloneTheme(baseTheme.popup || defaultPopupSettings),
+        scheme: this.mergeStoredScheme(baseTheme.scheme, storedTheme.scheme),
+        assignments: cloneTheme({ ...(baseTheme.assignments || {}), ...(storedTheme.assignments || {}) }),
+        sectionOverrides: cloneTheme(storedTheme.sectionOverrides || baseTheme.sectionOverrides || {}),
         colors: baseTheme.colors.map((color) => {
           const storedColor = storedColors.find(item => item.label === color.label)
 
@@ -162,7 +287,6 @@ export default {
           return {
             ...color,
             ...storedColor,
-            gradient: 'solid',
             color: {
               ...color.color,
               ...storedColor.color
@@ -170,6 +294,28 @@ export default {
           }
         })
       }
+    },
+    mergeStoredScheme (baseScheme, storedScheme) {
+      if (!Array.isArray(storedScheme) || !storedScheme.length) {
+        return Array.isArray(baseScheme) ? cloneTheme(baseScheme) : undefined
+      }
+
+      if (!Array.isArray(baseScheme) || !baseScheme.length) {
+        return cloneTheme(storedScheme)
+      }
+
+      const merged = baseScheme.map((family) => {
+        const storedFamily = storedScheme.find(item => item.key === family.key)
+        return cloneTheme(storedFamily || family)
+      })
+
+      storedScheme.forEach((family) => {
+        if (!merged.some(item => item.key === family.key)) {
+          merged.push(cloneTheme(family))
+        }
+      })
+
+      return merged
     },
     updateGlobalStyles () {
       if (typeof document === 'undefined') {
@@ -194,6 +340,12 @@ export default {
       }
     },
     getThemeColorValue (color) {
+      const gradient = normalizeGradient(color.gradient, color.color)
+
+      if (gradient.enabled) {
+        return buildGradientCss(gradient)
+      }
+
       return `rgba(${color.color.red}, ${color.color.green}, ${color.color.blue}, ${color.color.alpha})`
     }
   }

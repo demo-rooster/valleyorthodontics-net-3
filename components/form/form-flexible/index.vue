@@ -40,7 +40,7 @@ export default {
   mounted () {
     this.formRecipient = globalData.email
     this.formBCC = this.selectedForm.bcc
-    this.formSubject = `${globalData.company_name} Contact Form`
+    this.formSubject = `${globalData.company_name} ${this.selectedForm.title}`
     this.initiateFields()
   },
   methods: {

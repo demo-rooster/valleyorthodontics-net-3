@@ -114,6 +114,28 @@
     svg path
       fill: var(--primary) !important
 
+    &[data-icon='why-expertise'], &[data-icon='why-personalized-care']
+      background-color: var(--primary)
+      mask-position: center
+      mask-repeat: no-repeat
+      -webkit-mask-position: center
+      -webkit-mask-repeat: no-repeat
+
+      svg
+        display: none
+
+    &[data-icon='why-expertise']
+      mask-image: url('/icons/why-expertise-green.png')
+      mask-size: 79.4% 86.8%
+      -webkit-mask-image: url('/icons/why-expertise-green.png')
+      -webkit-mask-size: 79.4% 86.8%
+
+    &[data-icon='why-personalized-care']
+      mask-image: url('/icons/why-personalized-care-green.png')
+      mask-size: 94.1% 83.8%
+      -webkit-mask-image: url('/icons/why-personalized-care-green.png')
+      -webkit-mask-size: 94.1% 83.8%
+
   &__image
     display: block
     margin: 1rem auto 1.5rem

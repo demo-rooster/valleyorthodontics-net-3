@@ -1,0 +1,43 @@
+.customization-context-menu(
+  v-if='visible',
+  ref='menu',
+  :style='menuStyle',
+  role='menu',
+  :aria-label='`Choose a scheme color for ${roleLabel}`'
+)
+  .customization-context-menu__header
+    span.customization-context-menu__role(v-html='roleLabel')
+    span.customization-context-menu__section(v-html='sectionLabel')
+  .customization-context-menu__button-controls(v-if='isButtonContext')
+    .customization-context-menu__segmented(role='group' aria-label='Button style state')
+      button.customization-context-menu__segmented-button(
+        v-for='option in buttonStateOptions',
+        :key='option.key',
+        type='button',
+        :class="{ 'customization-context-menu__segmented-button--active': buttonState === option.key }",
+        :aria-pressed='(buttonState === option.key).toString()',
+        @click='buttonState = option.key',
+        v-html='option.label'
+      )
+    .customization-context-menu__segmented(role='group' aria-label='Button color property')
+      button.customization-context-menu__segmented-button(
+        v-for='option in buttonPropertyOptions',
+        :key='option.key',
+        type='button',
+        :class="{ 'customization-context-menu__segmented-button--active': buttonProperty === option.key }",
+        :aria-pressed='(buttonProperty === option.key).toString()',
+        @click='buttonProperty = option.key',
+        v-html='option.label'
+      )
+  CustomizationSchemePicker(
+    :scheme='themeScheme',
+    :selected-ref='overrideRef',
+    :show-transparent="activeRole === 'btn-hover-background'",
+    compact,
+    @select='applyOverride'
+  )
+  button.customization-context-menu__reset(
+    type='button',
+    :disabled='!overrideRef',
+    @click='resetOverride'
+  ) Reset to default

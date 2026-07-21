@@ -67,5 +67,74 @@
         "error_message": "Please answer the math question."
       }
     ]
+  },
+  {
+    "id": 1026,
+    "title": "Employment Inquiry",
+    "slug": "employment-inquiry",
+    "bcc": "",
+    "submit_button_label": "Send Inquiry",
+    "content": {
+      "content": {
+        "header": "Interested in Joining Our Team?",
+        "body": "Tell us a little about yourself and the type of opportunity you're looking for. This is a brief inquiry, not a formal application, and someone from our team will follow up with you shortly."
+      }
+    },
+    "input_fields": [
+      {
+        "acf_fc_layout": "name",
+        "label": "Name",
+        "required": true,
+        "width": "half",
+        "autocomplete": true,
+        "text_area": false,
+        "error_message": "Please enter your name."
+      },
+      {
+        "acf_fc_layout": "email",
+        "label": "Email",
+        "required": true,
+        "width": "half",
+        "autocomplete": true,
+        "text_area": false,
+        "error_message": "Please enter a valid email address."
+      },
+      {
+        "acf_fc_layout": "phone",
+        "label": "Phone",
+        "required": false,
+        "width": "half",
+        "autocomplete": true,
+        "text_area": false,
+        "error_message": "Please enter a valid phone number."
+      },
+      {
+        "acf_fc_layout": "text",
+        "label": "Position or Area of Interest",
+        "required": false,
+        "width": "half",
+        "autocomplete": false,
+        "text_area": false,
+        "error_message": "Please enter an area of interest."
+      },
+      {
+        "acf_fc_layout": "text",
+        "label": "Tell Us About Yourself",
+        "required": true,
+        "width": "full",
+        "autocomplete": false,
+        "text_area": true,
+        "error_message": "Please share a brief introduction and why you're interested in joining our team."
+      },
+      {
+        "acf_fc_layout": "captcha",
+        "label": "Captcha",
+        "required": true,
+        "width": "half",
+        "autocomplete": false,
+        "text_area": false,
+        "error_message": "Please answer the math question."
+      }
+    ]
   }
 ]

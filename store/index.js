@@ -9,6 +9,7 @@ export const state = () => ({
   secondaryTheme: null,
   themePresets: {},
   theme: null,
+  customizationEnabled: false,
   forms: null,
   posts: null,
   global: null,

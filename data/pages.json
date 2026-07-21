@@ -302,7 +302,7 @@
             }
           },
           "title": "Braces for All Ages",
-          "path": "/for-adults",
+          "path": "/all-ages-treatments",
           "hash": ""
         },
         {
@@ -322,7 +322,7 @@
             }
           },
           "title": "Ceramic Braces",
-          "path": "/braces",
+          "path": "/ceramic-braces",
           "hash": ""
         },
         {
@@ -2879,7 +2879,7 @@
         "label": "Inquire Today",
         "aria_label": "Inquire Today",
         "href": "",
-        "path": "/contact",
+        "path": "/join-our-team",
         "hash": "#form",
         "external": false,
         "include_icon": true,
@@ -2964,7 +2964,7 @@
             "label": "Inquire Today",
             "aria_label": "Inquire Today",
             "href": "",
-            "path": "/contact",
+            "path": "/join-our-team",
             "hash": "#form",
             "external": false,
             "include_icon": true,
@@ -3056,13 +3056,13 @@
         }
       ],
       "button": {
-        "type": "anchor",
+        "type": "nuxt",
         "style": "primary",
-        "label": "Contact Us",
-        "aria_label": "Contact us about joining the Valley Orthodontics team",
-        "href": "mailto:smiles@valleyorthodontics.net",
-        "path": "",
-        "hash": "",
+        "label": "Inquire Today",
+        "aria_label": "Inquire about joining the Valley Orthodontics team",
+        "href": "",
+        "path": "/join-our-team",
+        "hash": "#form",
         "external": false,
         "include_icon": true,
         "icon": "caret",
@@ -3097,7 +3097,7 @@
         "label": "Inquire Today",
         "aria_label": "Inquire Today",
         "href": "",
-        "path": "/contact",
+        "path": "/join-our-team",
         "hash": "#form",
         "external": false,
         "include_icon": true,
@@ -3133,6 +3133,19 @@
       "centered": true,
       "large_title": true,
       "text_color": "primary"
+    },
+    {
+      "acf_fc_layout": "form",
+      "form": [
+        1026
+      ],
+      "component_options": {
+        "hash": "form",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "stack": false
     },
     {
       "seo": {
@@ -9487,7 +9500,7 @@
         "bgColor": "",
         "imageBackground": false,
         "addLoader": false,
-        "objectPosition": "center bottom",
+        "objectPosition": "center top",
         "forceAlt": "",
         "loading_mask": "",
         "image_selection_hints": {

@@ -8,6 +8,10 @@ import {
   SET_THEME_PRESET,
   SET_THEME_PRESETS,
   UPDATE_THEME_COLOR,
+  UPDATE_SCHEME_COLOR,
+  SET_SCHEME_ASSIGNMENT,
+  SET_SECTION_OVERRIDE,
+  SET_CUSTOMIZATION_ENABLED,
   RESTORE_DEFAULT_THEME,
   IS_PHONE_LAND_LG,
   IS_PHONE_LG,
@@ -50,6 +54,18 @@ const stateActions = () => ({
   },
   UPDATE_THEME_COLOR ({ commit }, data) {
     commit(UPDATE_THEME_COLOR, data)
+  },
+  UPDATE_SCHEME_COLOR ({ commit }, data) {
+    commit(UPDATE_SCHEME_COLOR, data)
+  },
+  SET_SCHEME_ASSIGNMENT ({ commit }, data) {
+    commit(SET_SCHEME_ASSIGNMENT, data)
+  },
+  SET_SECTION_OVERRIDE ({ commit }, data) {
+    commit(SET_SECTION_OVERRIDE, data)
+  },
+  SET_CUSTOMIZATION_ENABLED ({ commit }, data) {
+    commit(SET_CUSTOMIZATION_ENABLED, data)
   },
   RESTORE_DEFAULT_THEME ({ commit }) {
     commit(RESTORE_DEFAULT_THEME)

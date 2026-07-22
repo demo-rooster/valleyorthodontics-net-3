@@ -30,6 +30,13 @@
       z-index: 1
       background: linear-gradient(45deg, rgba($black, .46), rgba($black, .26)), linear-gradient(0deg, rgba(var(--primary-rgb), .76), rgba(var(--primary-rgb), .36))
 
+  // Social banner (e.g. "Follow Us on Social Media") uses the same dimming
+  // scrim as the hero images so the light photo doesn't wash out the content.
+  &[data-content='social_block'] &__overlay
+    background: $ol1
+    @include tablet
+      background: $ol1
+
   &__background-image-container
     @extend %centered
     top: 40%

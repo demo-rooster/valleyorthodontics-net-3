@@ -255,7 +255,7 @@
         "label": "View Treatments",
         "aria_label": "View orthodontic treatments",
         "href": "",
-        "path": "/about-orthodontics",
+        "path": "/treatments",
         "hash": "",
         "external": false,
         "include_icon": false,
@@ -1705,9 +1705,9 @@
       ],
       "accordion": [],
       "image": {
-        "src": "https://ik.imagekit.io/rooster/tr:w-1000,f-jpg,q-auto,fo-auto/196907428.jpg",
-        "webp": "https://ik.imagekit.io/rooster/tr:w-1000,f-webp,q-auto,fo-auto/196907428.jpg",
-        "alt": "Orthodontic office interior showing treatment equipment",
+        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/nsplsh_19486c2d339c48c8b9e5d49b0d4250b8mv2.webp",
+        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/nsplsh_19486c2d339c48c8b9e5d49b0d4250b8mv2.webp",
+        "alt": "Close-up of self-ligating braces brackets on teeth",
         "aria_hidden": false,
         "bgColor": "",
         "imageBackground": false,
@@ -3327,21 +3327,6 @@
           "type": "video",
           "title": "Flossing With Superfloss",
           "text": "",
-          "image": {
-            "src": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "webp": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "alt": "Life with Braces - Brushing & Flossing",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Legacy Page"
-            }
-          },
           "video": {
             "type": "file",
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/08/Flossing-with-superfloss.mp4"
@@ -3375,21 +3360,6 @@
           "type": "video",
           "title": "Waterpik instructions",
           "text": "",
-          "image": {
-            "src": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "webp": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "alt": "Life with Braces - Brushing & Flossing",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Legacy Page"
-            }
-          },
           "video": {
             "type": "file",
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/08/Oral-Irrigation.mp4"
@@ -3399,21 +3369,6 @@
           "type": "video",
           "title": "Broken Brackets",
           "text": "",
-          "image": {
-            "src": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "webp": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "alt": "Life with Braces - Brushing & Flossing",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Legacy Page"
-            }
-          },
           "video": {
             "type": "file",
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/08/Broken-Brackets.mp4"
@@ -3423,21 +3378,6 @@
           "type": "video",
           "title": "How to Use Wax",
           "text": "",
-          "image": {
-            "src": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "webp": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "alt": "Life with Braces - Brushing & Flossing",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Legacy Page"
-            }
-          },
           "video": {
             "type": "file",
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/08/Wax-patient-comfort.mp4"
@@ -3447,21 +3387,6 @@
           "type": "video",
           "title": "Placing Separators",
           "text": "",
-          "image": {
-            "src": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "webp": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "alt": "Life with Braces - Brushing & Flossing",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Legacy Page"
-            }
-          },
           "video": {
             "type": "file",
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/08/Elastic-Tooth-Separator.mp4"
@@ -3471,21 +3396,6 @@
           "type": "video",
           "title": "What to Expect - Braces",
           "text": "",
-          "image": {
-            "src": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "webp": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "alt": "Life with Braces - Brushing & Flossing",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Legacy Page"
-            }
-          },
           "video": {
             "type": "file",
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/08/bracket-bonding.mp4"
@@ -3495,21 +3405,6 @@
           "type": "video",
           "title": "What to Expect - First Orthodontic",
           "text": "",
-          "image": {
-            "src": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "webp": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "alt": "Life with Braces - Brushing & Flossing",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Legacy Page"
-            }
-          },
           "video": {
             "type": "file",
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2025/08/what-to-expect.mp4"
@@ -3519,21 +3414,6 @@
           "type": "video",
           "title": "Teaching Mom to use DPE - Initial Bond Ortho",
           "text": "",
-          "image": {
-            "src": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "webp": "https://img.youtube.com/vi/iWzccidNPVQ/maxresdefault.jpg",
-            "alt": "Life with Braces - Brushing & Flossing",
-            "aria_hidden": false,
-            "bgColor": "",
-            "imageBackground": false,
-            "addLoader": false,
-            "objectPosition": "center",
-            "forceAlt": "",
-            "loading_mask": "",
-            "image_selection_hints": {
-              "context_category": "Legacy Page"
-            }
-          },
           "video": {
             "type": "file",
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2026/01/teaching_mom_to_use_dpe_-_initial_bond_ortho_v1-720p1.mp4"
@@ -6033,7 +5913,7 @@
       }
     }
   ],
-  "doctor-referals-slips": [
+  "doctor-referrals-slips": [
     {
       "acf_fc_layout": "hero",
       "title": "Doctor Referrals",
@@ -6053,8 +5933,8 @@
       },
       "media_type": "image",
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/teeth-icon.png",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/teeth-icon.png",
+        "src": "{{cdn}}/resources/doctor-referrals-hero.jpg",
+        "webp": "{{cdn}}/resources/doctor-referrals-hero.webp",
         "alt": "Orthodontic Referral Form at Valley Orthodontics",
         "aria_hidden": false,
         "bgColor": "",
@@ -6108,9 +5988,9 @@
       ],
       "accordion": [],
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/teeth-icon.png",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/teeth-icon.png",
-        "alt": "Valley Orthodontics resource image",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/resources/doctor-referral.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/resources/doctor-referral.webp",
+        "alt": "Orthodontic referral form",
         "aria_hidden": false,
         "bgColor": "",
         "imageBackground": false,
@@ -6163,7 +6043,7 @@
           "button": {
             "type": "anchor",
             "style": "primary",
-            "label": "Click Here for Blank PDF",
+            "label": "View PDF",
             "aria_label": "Click Here for Blank PDF",
             "href": "https://www.valleyorthodontics.net/wp-content/uploads/2025/12/Referral-slip-1.pdf",
             "path": "",
@@ -6306,7 +6186,7 @@
             "image": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/logo.webp"
           }
         },
-        "slug": "doctor-referals-slips"
+        "slug": "doctor-referrals-slips"
       }
     }
   ],
@@ -6365,7 +6245,7 @@
         {
           "has_heading": false,
           "heading": "",
-          "text": "True orthodontic emergencies are rare, but when they occur, we are available for you. As a general rule, you should call the office when you experience severe pain or when you have a painful appliance problem that you cannot take care of yourself. When the office is closed, Dr. Valley and her assistants are on call and can be reached on their cell phone. If Dr. Valley is out of town, she has a local orthodontist who will be available to take care of your emergency needs."
+          "text": "True orthodontic emergencies are rare, but when they occur, we are available for you. As a general rule, you should call the office when you experience severe pain or when you have a painful appliance problem that you cannot take care of yourself. When the office is closed, Dr. Rocha and her assistants are on call and can be reached on their cell phone. If Dr. Rocha is out of town, she has a local orthodontist who will be available to take care of your emergency needs."
         },
         {
           "has_heading": false,
@@ -7171,7 +7051,7 @@
               "text": "The Most Common Type of Braces. Today’s metal braces are much smaller, flatter, and more comfortable than in the past. Patients of all ages choose metal braces to help them."
             }
           ],
-          "has_media": true,
+          "has_media": false,
           "media_type": "image",
           "image": {
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/icons8-metal-braces-100.webp",
@@ -7200,7 +7080,7 @@
               "text": "Many of today’s braces are made from either clear or natural tooth-colored materials to provide patients with an attractive, less noticeable alternative to traditional braces."
             }
           ],
-          "has_media": true,
+          "has_media": false,
           "media_type": "image",
           "image": {
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/icons8-ceramic-braces-100.webp",
@@ -7229,7 +7109,7 @@
               "text": "There’s never been a better time to straighten your teeth with the most advanced clear aligner in the world. Our office is proud to be a certified provider of Invisalign clear aligners."
             }
           ],
-          "has_media": true,
+          "has_media": false,
           "media_type": "image",
           "image": {
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/straightens-teeth.webp",
@@ -7258,7 +7138,7 @@
               "text": "Surgical orthodontics, also known as orthognathic surgery, is a type of orthodontic treatment used to correct severe cases that include bad bites, jaw bone abnormalities, and malocclusion."
             }
           ],
-          "has_media": true,
+          "has_media": false,
           "media_type": "image",
           "image": {
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/icons8-chair-100.webp",
@@ -7287,7 +7167,7 @@
               "text": "Carriere Self-Ligating Bracket System has been created to give you an amazing smile with maximum comfort and a reduction in treatment length by an average of four months."
             }
           ],
-          "has_media": true,
+          "has_media": false,
           "media_type": "image",
           "image": {
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/icons8-orthodontic-100-3.webp",
@@ -7316,7 +7196,7 @@
               "text": "Clear aligners are an effective alternative to traditional braces because they use a system of clear, removable trays used to straighten teeth. Each aligner is custom-made to fit over your teeth."
             }
           ],
-          "has_media": true,
+          "has_media": false,
           "media_type": "image",
           "image": {
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/icons8-braces-100-2.webp",
@@ -7345,7 +7225,7 @@
               "text": "Wearing elastics improves the fit of your upper and lower teeth. Wear rubber bands as instructed, and remember that work far more efficiently if they’re worn as prescribed."
             }
           ],
-          "has_media": true,
+          "has_media": false,
           "media_type": "image",
           "image": {
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/icons8-orthodontic-100-4.webp",
@@ -7374,7 +7254,7 @@
               "text": "The palatal expander expands (or widens) your upper jaw by putting gentle pressure on your upper molars each time an adjustment is made."
             }
           ],
-          "has_media": true,
+          "has_media": false,
           "media_type": "image",
           "image": {
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/icons8-set-of-teeth-100.webp",
@@ -8472,7 +8352,7 @@
             {
               "has_heading": false,
               "heading": "",
-              "text": "At your first visit you will have the opportunity to meet Dr. Valley and our team, learn more about orthodontics and what this means for you or your child. During this initial visit, we will:"
+              "text": "At your first visit you will have the opportunity to meet Dr. Rocha and our team, learn more about orthodontics and what this means for you or your child. During this initial visit, we will:"
             },
             {
               "has_heading": false,
@@ -8508,7 +8388,7 @@
             {
               "has_heading": false,
               "heading": "",
-              "text": "The next step after your consultation appointment is to get standard orthodontic records. These consist of x-rays, photographs and impressions or a 3D scan of your teeth. From these records, Dr. Valley will be able to put together your most appropriate and detailed orthdontic treatment plan. All records and a full report will be sent to your dentist. We also recommend that you get a complete dental examination and cleaning at your dentist’s office so that we know your teeth and gums are healthy and no restorative work is required. Once these steps are completed, you will get started on achieving the smile you’ve always wanted!"
+              "text": "The next step after your consultation appointment is to get standard orthodontic records. These consist of x-rays, photographs and impressions or a 3D scan of your teeth. From these records, Dr. Rocha will be able to put together your most appropriate and detailed orthdontic treatment plan. All records and a full report will be sent to your dentist. We also recommend that you get a complete dental examination and cleaning at your dentist’s office so that we know your teeth and gums are healthy and no restorative work is required. Once these steps are completed, you will get started on achieving the smile you’ve always wanted!"
             }
           ],
           "has_media": false,
@@ -10684,7 +10564,7 @@
           "header": "What Do I Need to Get Started?",
           "paragraphs": [
             {
-              "text": "At your inial appointment we will discuss your concerns and determine a treatment plan that is right for you. Next, an appointment for your 3D Invisalign scan can be scheduled as soon as possible. After the 3D scan of your teeth is taken, the file is sent to Invisalign. Working with Invisalign, Dr. Valley determines how your finished result will be accomplished. Once the treatment plan is finalized, the aligners are fabricated and shipped and we can get started."
+              "text": "At your inial appointment we will discuss your concerns and determine a treatment plan that is right for you. Next, an appointment for your 3D Invisalign scan can be scheduled as soon as possible. After the 3D scan of your teeth is taken, the file is sent to Invisalign. Working with Invisalign, Dr. Rocha determines how your finished result will be accomplished. Once the treatment plan is finalized, the aligners are fabricated and shipped and we can get started."
             }
           ],
           "has_media": false,

@@ -114,7 +114,7 @@
     svg path
       fill: var(--primary) !important
 
-    &[data-icon='why-expertise'], &[data-icon='why-personalized-care']
+    &[data-icon='why-expertise'], &[data-icon='why-personalized-care'], &[data-icon='atmosphere'], &[data-icon='fun'], &[data-icon='giving']
       background-color: var(--primary)
       mask-position: center
       mask-repeat: no-repeat
@@ -123,6 +123,24 @@
 
       svg
         display: none
+
+    &[data-icon='atmosphere']
+      mask-image: url('/icons/atmosphere.png')
+      mask-size: 88%
+      -webkit-mask-image: url('/icons/atmosphere.png')
+      -webkit-mask-size: 88%
+
+    &[data-icon='fun']
+      mask-image: url('/icons/fun.png')
+      mask-size: 88%
+      -webkit-mask-image: url('/icons/fun.png')
+      -webkit-mask-size: 88%
+
+    &[data-icon='giving']
+      mask-image: url('/icons/giving.png')
+      mask-size: 88%
+      -webkit-mask-image: url('/icons/giving.png')
+      -webkit-mask-size: 88%
 
     &[data-icon='why-expertise']
       mask-image: url('/icons/why-expertise-green.png')

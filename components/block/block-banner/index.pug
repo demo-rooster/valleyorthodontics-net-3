@@ -1,4 +1,4 @@
-.block-banner(:class="props.background_type === 'has_background' && props.background ? 'block-banner--' + props.background : null", :data-texture='props.add_texture', :data-image='props.background_type === "has_image"')
+.block-banner(:class="props.background_type === 'has_background' && props.background ? 'block-banner--' + props.background : null", :data-texture='props.add_texture', :data-image='props.background_type === "has_image"', :data-content='props.content_block')
   BaseTexture(v-if='props.background_type === "has_background" && props.add_texture')
   .block-banner__gradient(v-if='props.background_type === "has_background" && props.linear_gradient', :style="{ background: props.linear_gradient }")
   picture.block-banner__background-image-container(v-if='props.background_type === "has_image" && props.image.src' ref='theImage')

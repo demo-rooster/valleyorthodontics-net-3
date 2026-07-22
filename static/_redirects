@@ -58,9 +58,10 @@
 /parent-consult-checklist/ /for-new-patients 301
 /pink-out-poster-for-charlenes-business-jpg-format-2/ /supporting-our-local-community 301
 /poster/ / 301
-/referral-slip-1/ /doctor-referals-slips 301
-/referral-slip/ /doctor-referals-slips 301
-/share-a-smile-referral/ /doctor-referals-slips 301
+/referral-slip-1/ /doctor-referrals-slips 301
+/referral-slip/ /doctor-referrals-slips 301
+/share-a-smile-referral/ /doctor-referrals-slips 301
+/doctor-referals-slips/ /doctor-referrals-slips 301
 /sound/ / 301
 /team-photo-2/ /about 301
 /team-photo/ /about 301
@@ -81,7 +82,7 @@
 /complimentary-consultation/:attachment/ /contact#form 301
 /comprehensive-orthodontic-care-for-kids-families/:attachment/ /blog/comprehensive-orthodontic-care-for-kids-families 301
 /designer-braces/:attachment/ /designer-braces 301
-/doctor-referals-slips/:attachment/ /doctor-referals-slips 301
+/doctor-referals-slips/:attachment/ /doctor-referrals-slips 301
 /faq/:attachment/ /faq 301
 /financial-information/:attachment/ /financial-information 301
 /for-adults/:attachment/ /all-ages-treatments#adults 301

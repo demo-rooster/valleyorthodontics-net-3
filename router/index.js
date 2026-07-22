@@ -34,7 +34,7 @@ const router = [
   },
   {
     name: 'Treatments',
-    path: '/about-orthodontics',
+    path: '/treatments',
     navigation: true,
     children: [
       // {
@@ -85,6 +85,10 @@ const router = [
         path: '/why-choose-us'
       },
       {
+        name: 'About Orthodontics',
+        path: '/about-orthodontics'
+      },
+      {
         name: 'Financial Information',
         path: '/financial-information'
       },
@@ -118,7 +122,7 @@ const router = [
       },
       {
         name: 'Patient Referral Form',
-        path: '/doctor-referals-slips'
+        path: '/doctor-referrals-slips'
       }
     ]
   },

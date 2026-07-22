@@ -66,6 +66,30 @@
       @include phone-lg
         grid-template-columns: 1fr
 
+  &__grid[data-layout='links']
+    .block-resource-grid__icon-shell
+      margin-right: auto
+      margin-left: auto
+
+    .block-resource-grid__body
+      align-items: center
+      text-align: center
+
+    .block-resource-grid__button
+      position: relative
+      justify-content: center
+
+      span
+        flex: 1
+        text-align: center
+
+      .block-resource-grid__button-icon
+        position: absolute
+        top: 50%
+        right: rem-calc(14)
+        transform: translateY(-50%)
+        margin-left: 0
+
   &__card
     display: flex
     position: relative

@@ -58,7 +58,7 @@ const router = [
         path: '/clear-aligners'
       },
       {
-        name: 'Braces',
+        name: 'Metal Braces',
         path: '/braces'
       },
       {

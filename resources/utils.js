@@ -1,5 +1,24 @@
 import axios from 'axios'
-import { api, url } from './api'
+import { api, url, cdn } from './api'
+
+// Recursively expand the "{{cdn}}" token in any string within the given data so
+// that JSON content can reference CloudFront assets without hard-coding the URL.
+const expandCdnTokens = (data) => {
+  if (typeof data === 'string') {
+    return data.replace(/\{\{cdn\}\}/g, cdn)
+  }
+  if (Array.isArray(data)) {
+    return data.map(expandCdnTokens)
+  }
+  if (data && typeof data === 'object') {
+    const out = {}
+    for (const key of Object.keys(data)) {
+      out[key] = expandCdnTokens(data[key])
+    }
+    return out
+  }
+  return data
+}
 
 export const getAllPages = async () => {
   try {
@@ -132,7 +151,7 @@ export const setJSONData = (slug, customPostType = 'pages') => {
     // Using require ensures data is included at build time for static generation
     const jsonData = require(`../data/${customPostType}.json`)
     if (slug === 'global') {
-      return jsonData
+      return expandCdnTokens(jsonData)
     }
 
     // Get the pages data - pages.json has { pages: {...}, sitemap_metadata: {...} }
@@ -161,8 +180,8 @@ export const setJSONData = (slug, customPostType = 'pages') => {
 
     const item = {
       title: slug,
-      sections: pageSections,
-      meta: seoData
+      sections: expandCdnTokens(pageSections),
+      meta: expandCdnTokens(seoData)
     }
     if (!item) {
       console.error(`No item found with slug: ${slug} in ${customPostType}.json`)

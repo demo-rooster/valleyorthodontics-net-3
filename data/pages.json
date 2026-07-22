@@ -1654,8 +1654,8 @@
       ],
       "accordion": [],
       "image": {
-        "src": "https://ik.imagekit.io/rooster/tr:w-1000,f-jpg,q-auto,fo-auto/223515577_3d_render_of_teeth_with_golden_orthodontic_braces.jpg",
-        "webp": "https://ik.imagekit.io/rooster/tr:w-1000,f-webp,q-auto,fo-auto/223515577_3d_render_of_teeth_with_golden_orthodontic_braces.jpg",
+        "src": "{{cdn}}/treatments/iconix-braces-hero.jpg",
+        "webp": "{{cdn}}/treatments/iconix-braces-hero.webp",
         "alt": "Iconix Champagne Gold Braces close-up",
         "aria_hidden": false,
         "bgColor": "",
@@ -2530,8 +2530,8 @@
       },
       "media_type": "image",
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2026/01/1.png",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2026/01/1.png",
+        "src": "{{cdn}}/treatments/iconix-braces-hero.jpg",
+        "webp": "{{cdn}}/treatments/iconix-braces-hero.webp",
         "alt": "Iconix Champagne Gold Braces at Valley Orthodontics",
         "aria_hidden": false,
         "bgColor": "",
@@ -3000,7 +3000,7 @@
       "items": [
         {
           "title": "Supportive Team Culture",
-          "icon": "care-tooth",
+          "icon": "why-personalized-care",
           "text": "Valley Orthodontics is a family-like environment where every team member is seen, supported, and respected.",
           "add_button": false,
           "button": {
@@ -3014,7 +3014,7 @@
         },
         {
           "title": "Meaningful Patient Impact",
-          "icon": "happy-tooth",
+          "icon": "why-customization",
           "text": "Our team helps patients feel confident about their smiles while creating a warm, joyful experience at each visit.",
           "add_button": false,
           "button": {
@@ -3028,7 +3028,7 @@
         },
         {
           "title": "Work-Life Balance",
-          "icon": "time-tooth",
+          "icon": "why-quality-time",
           "text": "A working-mothers-friendly daytime schedule helps the team thrive both personally and professionally.",
           "add_button": false,
           "button": {
@@ -3042,7 +3042,7 @@
         },
         {
           "title": "Mentorship and Growth",
-          "icon": "technology-tooth",
+          "icon": "why-expertise",
           "text": "Dr. Rocha is passionate about mentorship, training the right person, and helping careers move forward.",
           "add_button": false,
           "button": {
@@ -7109,7 +7109,7 @@
     },
     {
       "acf_fc_layout": "image_text",
-      "title": "OUR TREATMENT PHILOSOPHY",
+      "title": "Our Treatment Philosophy",
       "paragraphs": [
         {
           "has_heading": false,
@@ -8332,8 +8332,8 @@
       },
       "media_type": "image",
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_6caa0fab415f433997eee83e1914ead5mv2.webp",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/9f1f28_6caa0fab415f433997eee83e1914ead5mv2.webp",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/treatments-hero.src",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/treatments-hero.webp",
         "alt": "Valley Orthodontics at Valley Orthodontics",
         "aria_hidden": false,
         "bgColor": "",
@@ -9262,8 +9262,8 @@
       ],
       "accordion": [],
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/item-10.jpg",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/item-10.jpg",
+        "src": "{{cdn}}/treatments/school-work-attendance.jpg",
+        "webp": "{{cdn}}/treatments/school-work-attendance.webp",
         "alt": "item-10",
         "aria_hidden": false,
         "bgColor": "",
@@ -9476,7 +9476,7 @@
   "braces": [
     {
       "acf_fc_layout": "hero",
-      "title": "Braces",
+      "title": "Metal Braces",
       "text": "",
       "button": {
         "type": "nuxt",
@@ -9718,8 +9718,8 @@
       ],
       "accordion": [],
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/item-10.jpg",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/item-10.jpg",
+        "src": "{{cdn}}/treatments/school-work-attendance.jpg",
+        "webp": "{{cdn}}/treatments/school-work-attendance.webp",
         "alt": "item-10",
         "aria_hidden": false,
         "bgColor": "",
@@ -9949,8 +9949,8 @@
       },
       "media_type": "image",
       "image": {
-        "src": "https://ik.imagekit.io/rooster/tr:w-1000,f-jpg,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
-        "webp": "https://ik.imagekit.io/rooster/tr:w-1000,f-webp,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/ceramic-braces-3.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/ceramic-braces-3.webp",
         "alt": "Smiling woman with ceramic braces",
         "aria_hidden": false,
         "bgColor": "",
@@ -10040,8 +10040,8 @@
       "paragraphs": [],
       "intro": "",
       "image": {
-        "src": "https://ik.imagekit.io/rooster/tr:w-1000,f-jpg,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
-        "webp": "https://ik.imagekit.io/rooster/tr:w-1000,f-webp,q-auto,fo-auto/81317876_Braces_Teeth_Female_Smile.jpg",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/ceramic-braces-2.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/ceramic-braces-2.webp",
         "alt": "Smiling woman with ceramic braces",
         "aria_hidden": false,
         "bgColor": "",

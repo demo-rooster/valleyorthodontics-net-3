@@ -43,7 +43,31 @@ export const removeFocus = {
 export const fadeUpIn = {
   methods: {
     $_fadeUpIn (element, yStart, start = 'top+48') {
+      if (!element) {
+        return
+      }
+
       this.$CustomEase.create('customEaseOut', '0.23, 1, 0.32, 1')
+
+      const tween = {
+        y: yStart,
+        opacity: 0,
+        duration: 1.2,
+        ease: 'customEaseOut'
+      }
+
+      // If the element is already within the viewport at creation time (e.g. an
+      // above-the-fold hero/title), play the reveal immediately. A ScrollTrigger
+      // whose start is already scrolled past does not fire its "enter" until the
+      // first scroll event, which would otherwise leave the element invisible
+      // (opacity: 0) on initial page load until the user scrolls.
+      const rect = element.getBoundingClientRect()
+      const inView = rect.top < window.innerHeight && rect.bottom > 0
+
+      if (inView) {
+        this.$gsap.from(element, tween)
+        return
+      }
 
       const tl = this.$gsap.timeline({
         scrollTrigger: {
@@ -52,12 +76,7 @@ export const fadeUpIn = {
         }
       })
 
-      tl.from(element, {
-        y: yStart,
-        opacity: 0,
-        duration: 1.2,
-        ease: 'customEaseOut'
-      })
+      tl.from(element, tween)
     }
   }
 }

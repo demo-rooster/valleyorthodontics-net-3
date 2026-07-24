@@ -63,6 +63,8 @@
       transform: scale(1.1)
 
   &__content
+    display: flex
+    flex-direction: column
     transform: translateY(78%)
     transition: transform .325s cubic-bezier(.34, .615, .4, .985), background .3s ease
     z-index: 2
@@ -87,6 +89,7 @@
 
   &__header
     display: block
+    flex-shrink: 0
     margin-bottom: 1rem
     width: 100%
     text-align: left
@@ -105,21 +108,24 @@
 
   &__bio-container
     position: relative
-    height: 90%
-    overflow: hidden
+    flex: 1 1 auto
+    min-height: 0
+    overflow-y: auto
     text-align: left
     scrollbar-width: none
     -ms-overflow-style: none
+    overscroll-behavior: contain
+    // re-enable interaction so the bio can be scrolled while the card is active
+    // (parent .block-grid__content--active sets pointer-events: none)
+    pointer-events: auto
 
-    ::-webkit-scrollbar
+    &::-webkit-scrollbar
       display: none
 
   &__bio
     transform: translateY(2.5rem)
     transition: opacity .15s ease, transform 0s ease .2s
     opacity: 0
-    height: inherit
-    overflow: scroll
     color: $white
 
     .block-grid__content--active &

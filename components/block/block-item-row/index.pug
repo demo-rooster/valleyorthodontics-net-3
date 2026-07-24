@@ -7,7 +7,7 @@
         .block-item-row__item-title-container
           h3.block-item-row__item-title(v-html='item.title', v-if='item.title' ref='itemTitle')
         .block-item-row__content
-          p.block-item-row__text(v-html='item.text')
+          p.block-item-row__text(v-html='item.text' v-builder-field='["items", i, "text"]')
           BaseButtonSimple.block-item-row__item-btn(:props='item.button' @onClick='handleItemClick(item)' v-if='item.add_button')
     .block-item-row__button-container(v-if='props.button.label', ref='mainBtn')
       BlockButton.block-item-row__button(:props='props.button' @click='handleCtaClick')

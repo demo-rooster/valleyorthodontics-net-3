@@ -429,11 +429,23 @@ mixin element-color-rows(rowsExpr)
 
   .customization-toolbar__rail
     BaseIcon.customization-toolbar__logo(name='rg-logo-purple')
-    button.customization-toolbar__toggle(
+    button.customization-toolbar__launcher(
+      type='button',
+      aria-controls='content-structure-toolbar-panel',
+      :aria-expanded='(activeBuilderPanel === "content").toString()',
+      :class="{ 'customization-toolbar__launcher--active': activeBuilderPanel === 'content' }",
+      aria-label='Edit page content',
+      title='Page content',
+      @click="openPanel('content')"
+    )
+      BaseIcon.customization-toolbar__launcher-icon(name='toolbar-structure')
+    button.customization-toolbar__launcher(
       type='button',
       aria-controls='customization-toolbar-panel',
-      :aria-expanded='isOpen.toString()',
-      :aria-label="isOpen ? 'Close theme panel' : 'Open theme panel'",
-      @click='toggleToolbar'
+      :aria-expanded='(activeBuilderPanel === "appearance").toString()',
+      :class="{ 'customization-toolbar__launcher--active': activeBuilderPanel === 'appearance' }",
+      aria-label='Customize site appearance',
+      title='Site appearance',
+      @click="openPanel('appearance')"
     )
-      BaseIcon.customization-toolbar__toggle-icon(name='toolbar-caret')
+      BaseIcon.customization-toolbar__launcher-icon(name='toolbar-palette')

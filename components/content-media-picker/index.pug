@@ -1,0 +1,31 @@
+.content-media-picker
+  button.content-media-picker__trigger(type='button' :aria-expanded='isOpen.toString()' @click='toggle')
+    span Browse existing {{ label }}s
+    span.content-media-picker__count {{ filteredAssets.length }}
+
+  .content-media-picker__browser(v-if='isOpen')
+    .content-media-picker__header
+      input.content-media-picker__search(
+        v-model='query'
+        type='search'
+        :placeholder='`Search ${label}s`'
+        :aria-label='`Search existing ${label}s`'
+      )
+      button.content-media-picker__close(type='button' :aria-label='`Close ${label} browser`' @click='toggle') &times;
+
+    .content-media-picker__grid(v-if='visibleAssets.length')
+      button.content-media-picker__item(
+        v-for='asset in visibleAssets'
+        :key='`${asset.type}-${asset.src}`'
+        type='button'
+        :class="{ 'content-media-picker__item--active': asset.src === currentSrc }"
+        :title='asset.label'
+        @click='selectAsset(asset)'
+      )
+        .content-media-picker__preview
+          img(v-if='type === "image" || asset.poster || asset.image' :src='previewSrc(asset)' alt='' loading='lazy')
+          BaseIcon.content-media-picker__video-icon(v-else name='play')
+        span.content-media-picker__label(v-html='asset.label')
+
+    p.content-media-picker__empty(v-else) No matching {{ label }}s.
+    button.content-media-picker__more(v-if='hasMore' type='button' @click='showMore') Show more

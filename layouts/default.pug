@@ -8,6 +8,7 @@
     nuxt
   TheFooter
   Popup(v-if='popupActive && popupProps', :props='popupProps', @closemodal='popupActive = $event')
+  ContentStructureToolbar(v-if='$store.state.customizationEnabled')
   CustomizationToolbar(v-if='$store.state.customizationEnabled')
   CustomizationContextMenu(v-if='$store.state.customizationEnabled')
   DevModeBanner(v-if='showDevModeBanner')

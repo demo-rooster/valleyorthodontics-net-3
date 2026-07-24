@@ -2,13 +2,15 @@
 
 <script>
 import PageSections from '~/components/page-sections'
-import { setJSONData, setMeta } from '~/resources/utils'
+import contentMetaPreview from '~/resources/content-meta-preview'
+import { setJSONData } from '~/resources/utils'
 
 export default {
   transition: 'fade',
   components: {
     PageSections
   },
+  mixins: [contentMetaPreview],
   data () {
     return {
       props: {}
@@ -18,9 +20,6 @@ export default {
   async asyncData () {
     const props = setJSONData('about')
     return { props }
-  },
-  head () {
-    return setMeta(this.props)
   }
 }
 </script>

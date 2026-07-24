@@ -1,0 +1,125 @@
+.content-icon-picker
+  display: grid
+  gap: rem-calc(6)
+  margin-top: rem-calc(5)
+
+  &__current,
+  &__trigger,
+  &__header
+    display: flex
+    align-items: center
+
+  &__current
+    gap: rem-calc(7)
+    min-width: 0
+    color: var(--builder-text)
+    font-size: rem-calc(10)
+
+  &__current-icon
+    flex: 0 0 rem-calc(26)
+    width: rem-calc(26)
+    height: rem-calc(26)
+    color: var(--builder-purple)
+
+  &__trigger,
+  &__more,
+  &__clear
+    border: 0
+    border-radius: rem-calc(5)
+    background: var(--builder-purple-soft)
+    cursor: pointer
+    padding: rem-calc(8)
+    color: var(--builder-purple)
+    font-family: var(--font)
+    font-size: rem-calc(10)
+    font-weight: 800
+
+  &__trigger
+    justify-content: space-between
+    width: 100%
+
+  &__count
+    border-radius: rem-calc(999)
+    background: $white
+    padding: rem-calc(2) rem-calc(6)
+
+  &__browser
+    border: rem-calc(1) solid rgba($black, .12)
+    border-radius: rem-calc(6)
+    background: $white
+    padding: rem-calc(8)
+
+  &__header
+    gap: rem-calc(5)
+    margin-bottom: rem-calc(7)
+
+  &__search
+    border: rem-calc(1) solid rgba($black, .18)
+    border-radius: rem-calc(5)
+    padding: rem-calc(7)
+    width: 100%
+    min-width: 0
+    color: var(--builder-text)
+    font-family: var(--font)
+    font-size: rem-calc(11)
+
+  &__close
+    flex: 0 0 rem-calc(30)
+    border: 0
+    border-radius: rem-calc(5)
+    background: var(--builder-purple-soft)
+    cursor: pointer
+    width: rem-calc(30)
+    height: rem-calc(30)
+    color: var(--builder-purple)
+    font-size: rem-calc(16)
+
+  &__clear
+    margin-bottom: rem-calc(7)
+    width: 100%
+
+    &--active
+      box-shadow: inset 0 0 0 rem-calc(1) var(--builder-purple)
+
+  &__grid
+    display: grid
+    grid-template-columns: repeat(4, minmax(0, 1fr))
+    gap: rem-calc(5)
+
+  &__item
+    display: grid
+    justify-items: center
+    gap: rem-calc(3)
+    border: rem-calc(1) solid rgba($black, .12)
+    border-radius: rem-calc(5)
+    background: $white
+    cursor: pointer
+    padding: rem-calc(6) rem-calc(3)
+    min-width: 0
+    color: var(--builder-text)
+
+    span
+      width: 100%
+      overflow: hidden
+      text-align: center
+      text-overflow: ellipsis
+      white-space: nowrap
+      font-size: rem-calc(8)
+
+    &--active
+      border-color: var(--builder-purple)
+      box-shadow: 0 0 0 rem-calc(1) var(--builder-purple)
+
+  &__icon
+    width: rem-calc(24)
+    height: rem-calc(24)
+    color: var(--builder-purple)
+
+  &__more
+    margin-top: rem-calc(7)
+    width: 100%
+
+  &__empty
+    text-align: center
+    color: rgba($black, .58)
+    font-size: rem-calc(10)

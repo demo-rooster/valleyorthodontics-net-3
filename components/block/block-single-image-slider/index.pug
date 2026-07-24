@@ -4,7 +4,7 @@
   .block-single-image-slider__container
     .block-single-image-slider__row
       h2.block-single-image-slider__title(v-html='props.title')
-      p.block-single-image-slider__text(v-if='props.text' v-html='props.text')
+      p.block-single-image-slider__text(v-if='props.text' v-html='props.text' v-builder-field='["text"]')
     .block-single-image-slider__carousel(:aria-label='`${props.carousel_aria}`')
       button.block-single-image-slider__control-btn(v-if='props.slides.length > 1', aria-label='Previous Slide' tabindex='0' @click='handleSlide("prev")')
         BaseIcon.block-single-image-slider__icon.block-single-image-slider__icon--prev(name='caret')

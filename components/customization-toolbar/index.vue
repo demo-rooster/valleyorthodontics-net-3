@@ -78,6 +78,9 @@ export default {
     themeScheme () {
       return this.$store.state.theme?.scheme || []
     },
+    activeBuilderPanel () {
+      return this.$store.state.activeBuilderPanel
+    },
     themeAssignments () {
       return this.$store.state.theme?.assignments || {}
     },
@@ -179,6 +182,11 @@ export default {
       return JSON.stringify(theme) !== JSON.stringify(activePreset)
     }
   },
+  watch: {
+    activeBuilderPanel (panel) {
+      this.isOpen = panel === 'appearance'
+    }
+  },
   mounted () {
     window.addEventListener(contextMenuCheckpointEvent, this.handleExternalCheckpoint)
   },
@@ -188,7 +196,10 @@ export default {
   },
   methods: {
     toggleToolbar () {
-      this.isOpen = !this.isOpen
+      this.openPanel('appearance')
+    },
+    openPanel (panel) {
+      this.$store.dispatch('SET_ACTIVE_BUILDER_PANEL', this.activeBuilderPanel === panel ? null : panel)
     },
     handleExternalCheckpoint (event) {
       const editKey = event?.detail?.editKey || 'context-menu'

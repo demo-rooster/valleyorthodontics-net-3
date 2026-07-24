@@ -59,7 +59,7 @@ article.block-image-text(:class="props.background && props.has_background ? 'blo
           .block-image-text__title-underline(v-if='props.title_underline_color !== "none"', :class='`block-image-text__title-underline--${props.title_underline_color}`')
         .block-image-text__paragraph(v-for='(paragraph, i) in props.paragraphs', :key='`image-text-paragraph-${i}`' ref='itParagraphs')
           h3.block-image-text__paragraph-heading(v-if='paragraph.heading && paragraph.has_heading' v-html='paragraph.heading')
-          p.block-image-text__paragraph-text(v-html='paragraph.text')
+          p.block-image-text__paragraph-text(v-html='paragraph.text' v-builder-field='["paragraphs", i, "text"]')
         BlockAccordion.block-image-text__accordion(v-if='props.has_accordion', :props='props', @open-tab='getActive', ref='accordion')
         .block-image-text__buttons(v-if='props.has_buttons' ref='itBtns')
           BlockButton.block-image-text__button(v-for='(item, i) in props.buttons', :key='`main-btn-${i}`', :props='item.button')

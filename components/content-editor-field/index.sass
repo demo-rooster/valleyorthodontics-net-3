@@ -1,0 +1,113 @@
+.content-editor-field
+  margin-bottom: rem-calc(10)
+
+  &__label,
+  &__asset
+    display: grid
+    gap: rem-calc(5)
+
+  &__name,
+  &__asset span,
+  &__legend
+    color: var(--builder-text)
+    font-size: rem-calc(11)
+    font-weight: 800
+
+  &__input,
+  &__textarea,
+  &__select
+    border: rem-calc(1) solid rgba($black, .18)
+    border-radius: rem-calc(5)
+    background: $white
+    padding: rem-calc(8)
+    width: 100%
+    color: var(--builder-text)
+    font-family: var(--font)
+    font-size: rem-calc(12)
+
+  &__textarea
+    resize: vertical
+
+  &__toggle
+    display: flex
+    align-items: center
+    gap: rem-calc(8)
+    color: var(--builder-text)
+    font-size: rem-calc(11)
+    font-weight: 800
+
+    input
+      accent-color: var(--builder-purple)
+
+  &__group
+    margin: 0
+    border: rem-calc(1) solid rgba($black, .12)
+    border-radius: rem-calc(6)
+    padding: rem-calc(10)
+    min-width: 0
+
+  &__legend
+    padding: 0 rem-calc(5)
+
+  &__asset
+    margin-bottom: rem-calc(10)
+
+  &__icon-control,
+  &__repeater-header,
+  &__actions
+    display: flex
+    align-items: center
+
+  &__icon-control
+    gap: rem-calc(8)
+    margin-top: rem-calc(5)
+
+  &__icon-preview
+    flex: 0 0 rem-calc(30)
+    width: rem-calc(30)
+    height: rem-calc(30)
+    color: var(--builder-purple)
+
+  &__repeater
+    margin-bottom: rem-calc(8)
+    border: rem-calc(1) solid rgba($black, .1)
+    border-radius: rem-calc(5)
+    padding: rem-calc(8)
+
+  &__repeater-header
+    justify-content: space-between
+    gap: rem-calc(6)
+    margin-bottom: rem-calc(8)
+    color: var(--builder-text)
+    font-size: rem-calc(10)
+
+  &__actions
+    gap: rem-calc(2)
+
+    button
+      display: flex
+      align-items: center
+      justify-content: center
+      border: 0
+      border-radius: rem-calc(3)
+      background: var(--builder-purple-soft)
+      cursor: pointer
+      width: rem-calc(24)
+      height: rem-calc(24)
+      color: var(--builder-purple)
+      font-weight: 800
+
+      &:disabled
+        opacity: .35
+        cursor: not-allowed
+
+  &__add
+    border: 0
+    border-radius: rem-calc(999)
+    background: var(--builder-purple-soft)
+    cursor: pointer
+    padding: rem-calc(7) rem-calc(10)
+    color: var(--builder-purple)
+    font-family: var(--font)
+    font-size: rem-calc(10)
+    font-weight: 800

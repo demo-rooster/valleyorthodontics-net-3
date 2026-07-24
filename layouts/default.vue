@@ -12,6 +12,7 @@ import TheNavigation from '~/components/navigation'
 import BaseAccess from '~/components/base/base-access'
 import CustomizationToolbar from '~/components/customization-toolbar'
 import CustomizationContextMenu from '~/components/customization-context-menu'
+import ContentStructureToolbar from '~/components/content-structure-toolbar'
 
 const activeThemeStorageKey = 'rg-active-theme-v3'
 const themePresetNames = ['primary', 'secondary', 'tertiary', 'quaternary']
@@ -46,6 +47,7 @@ const popupSeenStorageKey = 'rg-popup-seen-v1'
 export default {
   components: {
     BaseAccess,
+    ContentStructureToolbar,
     CustomizationContextMenu,
     DevModeBanner,
     Popup,

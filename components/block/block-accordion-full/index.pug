@@ -5,5 +5,5 @@ section.block-accordion-full(ref='main', :class="[props.component_options?.compo
       h2.block-accordion-full__header(v-html='props.title', v-if='props.title' ref='itTitle')
       .block-accordion-full__paragraph(v-if='props.paragraphs' v-for='(paragraph, i) in props.paragraphs', :key='`image-text-paragraph-${i}`' ref='itParagraphs')
         h3.block-accordion-full__paragraph-heading(v-if='paragraph.has_heading && paragraph.has_heading' v-html='paragraph.heading')
-        p.block-accordion-full__paragraph-text(v-html='paragraph.text')
+        p.block-accordion-full__paragraph-text(v-html='paragraph.text' v-builder-field='["paragraphs", i, "text"]')
     BlockAccordion.block-accordion-full__accordion(v-if='props.accordion' :props='props')

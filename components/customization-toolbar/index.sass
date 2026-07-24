@@ -10,16 +10,6 @@
   font-family: var(--font)
   pointer-events: none
 
-  &--open
-    .customization-toolbar__panel
-      transform: translateX(0)
-      visibility: visible
-      opacity: 1
-      pointer-events: auto
-
-    .customization-toolbar__toggle-icon svg
-      transform: rotate(-90deg)
-
   &__rail
     display: flex
     position: absolute
@@ -42,7 +32,7 @@
     width: rem-calc(38)
     height: rem-calc(38)
 
-  &__toggle,
+  &__launcher,
   &__close,
   &__share-button,
   &__theme-button,
@@ -64,32 +54,27 @@
     cursor: pointer
     font-family: var(--font)
 
-  &__toggle
+  &__launcher
     display: flex
     align-items: center
     justify-content: center
+    border: rem-calc(1) solid transparent
     border-radius: rem-calc(999)
-    background: var(--toolbar-purple)
-    padding: rem-calc(11) rem-calc(8)
-    min-height: rem-calc(88)
-    color: $white
+    background: transparent
+    padding: rem-calc(8)
+    width: rem-calc(42)
+    height: rem-calc(42)
+    color: var(--toolbar-purple)
 
-  &__toggle-icon
-    width: rem-calc(16)
-    height: rem-calc(16)
+    &:hover,
+    &--active
+      border-color: var(--toolbar-purple-soft)
+      background: var(--toolbar-purple)
+      color: $white
 
-    svg
-      display: block
-      transform: rotate(90deg)
-      transition: transform .28s ease
-      width: 100%
-      height: 100%
-
-    polyline
-      stroke: $white
-      stroke-width: rem-calc(8)
-      stroke-linecap: round
-      stroke-linejoin: round
+  &__launcher-icon
+    width: rem-calc(24)
+    height: rem-calc(24)
 
   &__panel
     position: absolute
@@ -109,6 +94,13 @@
     max-height: calc(100vh - #{rem-calc(64)})
     overflow-y: auto
     pointer-events: none
+
+  &--open
+    .customization-toolbar__panel
+      transform: translateX(0)
+      visibility: visible
+      opacity: 1
+      pointer-events: auto
 
   &__header
     display: flex

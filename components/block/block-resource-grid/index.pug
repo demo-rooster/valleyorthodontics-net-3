@@ -44,7 +44,7 @@
         .block-resource-grid__body
           p.block-resource-grid__card-eyebrow(v-if='item.eyebrow' v-html='item.eyebrow')
           h3.block-resource-grid__card-title(v-if='item.title' v-html='item.title')
-          .block-resource-grid__text(v-if='item.text' v-html='item.text')
+          .block-resource-grid__text(v-if='item.text' v-html='item.text' v-builder-field='[props.items ? "items" : "cards", i, "text"]')
 
           nuxt-link.block-resource-grid__button(
             v-if='hasButton(item) && buttonType(item.button) === "nuxt"',

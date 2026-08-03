@@ -41,6 +41,7 @@ export default {
         'hero-main--small-height': this.props.small,
         'hero-main--inner-page': this.$route.path !== '/',
         'hero-main--braces-page': this.routeSlug === 'braces',
+        'hero-main--iconix-page': this.routeSlug === 'iconix-champagne-gold-braces',
         'hero-main--header-offset': this.hasHeaderOffset
       }
     },

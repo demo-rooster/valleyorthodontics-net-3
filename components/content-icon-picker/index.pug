@@ -1,0 +1,27 @@
+.content-icon-picker
+  .content-icon-picker__current
+    BaseIcon.content-icon-picker__current-icon(v-if='value' :name='value')
+    span {{ value || 'No icon selected' }}
+  button.content-icon-picker__trigger(type='button' :aria-expanded='isOpen.toString()' @click='toggle')
+    span Browse icons
+    span.content-icon-picker__count {{ filteredIcons.length }}
+
+  .content-icon-picker__browser(v-if='isOpen')
+    .content-icon-picker__header
+      input.content-icon-picker__search(v-model='query' type='search' placeholder='Search icons' aria-label='Search existing icons')
+      button.content-icon-picker__close(type='button' aria-label='Close icon browser' @click='toggle') &times;
+    button.content-icon-picker__clear(type='button' :class="{ 'content-icon-picker__clear--active': !value }" @click='selectIcon("")') No icon
+    .content-icon-picker__grid(v-if='visibleIcons.length')
+      button.content-icon-picker__item(
+        v-for='icon in visibleIcons'
+        :key='icon'
+        type='button'
+        :class="{ 'content-icon-picker__item--active': icon === value }"
+        :title='icon'
+        :aria-label='`Use ${icon} icon`'
+        @click='selectIcon(icon)'
+      )
+        BaseIcon.content-icon-picker__icon(:name='icon')
+        span {{ icon }}
+    p.content-icon-picker__empty(v-else) No matching icons.
+    button.content-icon-picker__more(v-if='hasMore' type='button' @click='showMore') Show more

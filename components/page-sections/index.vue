@@ -24,6 +24,7 @@ import BlockTextFH from '~/components/block/block-text-fh'
 import BlockTextSimple from '~/components/block/block-text-simple'
 import TheHero from '~/components/hero/hero-main'
 import { buildSectionStyleVars } from '~/resources/theme-scheme'
+import { getBasePage, getPageKeyForPath, readContentDrafts } from '~/resources/content-builder'
 
 const sectionBackgroundLabels = {
   bg1: 'bg-1',
@@ -66,18 +67,123 @@ export default {
       default: () => ('')
     }
   },
+  data: () => ({
+    animationRefreshTimeout: null
+  }),
+  computed: {
+    currentPageKey () {
+      return getPageKeyForPath(this.$route.path)
+    },
+    renderedSections () {
+      const page = this.currentPageKey && this.$store.state.contentPages[this.currentPageKey]
+
+      return page ? page.sections : this.props
+    },
+    activeSectionId () {
+      return this.$store.state.activeContentSectionId
+    },
+    customizationEnabled () {
+      return this.$store.state.customizationEnabled
+    }
+  },
+  watch: {
+    customizationEnabled (enabled) {
+      if (enabled) {
+        this.initializeContentPage()
+      }
+    },
+    currentPageKey () {
+      this.initializeContentPage()
+    },
+    renderedSections () {
+      this.refreshSectionAnimations()
+    }
+  },
   mounted () {
+    this.initializeContentPage()
+    window.addEventListener('rg-select-content-section', this.handleExternalSectionSelection)
     this.$nextTick(() => {
       setTimeout(() => {
         this.$store.dispatch('VIEW_SITE', true)
       }, 100)
     })
   },
+  beforeDestroy () {
+    window.removeEventListener('rg-select-content-section', this.handleExternalSectionSelection)
+    clearTimeout(this.animationRefreshTimeout)
+  },
   methods: {
+    initializeContentPage () {
+      if (!this.$store.state.customizationEnabled || !this.currentPageKey) {
+        return
+      }
+
+      const drafts = readContentDrafts()
+
+      this.$store.dispatch('INITIALIZE_CONTENT_PAGE', {
+        key: this.currentPageKey,
+        page: getBasePage(this.currentPageKey),
+        draft: drafts[this.currentPageKey]
+      })
+      this.$store.dispatch('SET_ACTIVE_CONTENT_PAGE', this.currentPageKey)
+      this.refreshSectionAnimations()
+    },
+    refreshSectionAnimations () {
+      if (!this.$ScrollTrigger) {
+        return
+      }
+
+      clearTimeout(this.animationRefreshTimeout)
+      this.$nextTick(() => {
+        window.requestAnimationFrame(() => {
+          this.$ScrollTrigger.getAll()
+            .filter(trigger => trigger.trigger && !trigger.trigger.isConnected)
+            .forEach(trigger => trigger.kill())
+          this.$ScrollTrigger.refresh()
+          this.$ScrollTrigger.update()
+
+          this.animationRefreshTimeout = setTimeout(() => {
+            this.$ScrollTrigger.refresh()
+            this.$ScrollTrigger.update()
+          }, 250)
+        })
+      })
+    },
+    handleExternalSectionSelection (event) {
+      const id = event && event.detail ? event.detail.id : null
+      const shouldScroll = event && event.detail ? event.detail.shouldScroll !== false : true
+
+      if (id) {
+        this.selectSection(id, shouldScroll)
+      }
+    },
+    selectSection (id, shouldScroll = false) {
+      if (!this.$store.state.customizationEnabled) {
+        return
+      }
+
+      this.$store.dispatch('SET_ACTIVE_CONTENT_SECTION', id)
+
+      if (!shouldScroll) {
+        return
+      }
+
+      this.$nextTick(() => {
+        const element = this.$el.querySelector(`[data-builder-id="${id}"]`)
+
+        if (element) {
+          const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          element.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' })
+        }
+      })
+    },
+    isActiveSection (section) {
+      return !!section.__builder_id && section.__builder_id === this.activeSectionId
+    },
     sectionId (section, i) {
       return section.component_options && section.component_options.hash
         ? section.component_options.hash
-        : `${section.acf_fc_layout}-${i}`
+        : section.__builder_id || `${section.acf_fc_layout}-${i}`
     },
     sectionKey (section, i) {
       return `${this.$route.path}::${this.sectionId(section, i)}`

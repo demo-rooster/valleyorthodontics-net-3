@@ -12,6 +12,16 @@ import {
   SET_SCHEME_ASSIGNMENT,
   SET_SECTION_OVERRIDE,
   SET_CUSTOMIZATION_ENABLED,
+  SET_ACTIVE_BUILDER_PANEL,
+  INITIALIZE_CONTENT_PAGE,
+  SET_ACTIVE_CONTENT_PAGE,
+  SET_ACTIVE_CONTENT_SECTION,
+  SET_CONTENT_PAGE,
+  ADD_CONTENT_SECTION,
+  DUPLICATE_CONTENT_SECTION,
+  MOVE_CONTENT_SECTION,
+  REMOVE_CONTENT_SECTION,
+  UPDATE_CONTENT_SECTION,
   RESTORE_DEFAULT_THEME,
   IS_PHONE_LAND_LG,
   IS_PHONE_LG,
@@ -154,6 +164,103 @@ const stateMutations = () => ({
   },
   [SET_CUSTOMIZATION_ENABLED] (state, data) {
     state.customizationEnabled = !!data
+  },
+  [SET_ACTIVE_BUILDER_PANEL] (state, data) {
+    state.activeBuilderPanel = data || null
+  },
+  [INITIALIZE_CONTENT_PAGE] (state, data) {
+    if (!data || !data.key || state.contentPages[data.key]) {
+      return
+    }
+
+    const baseline = cloneTheme(data.page)
+    const page = data.draft ? cloneTheme(data.draft) : cloneTheme(data.page)
+
+    state.contentBaselines = { ...state.contentBaselines, [data.key]: baseline }
+    state.contentPages = { ...state.contentPages, [data.key]: page }
+  },
+  [SET_ACTIVE_CONTENT_PAGE] (state, data) {
+    state.activeContentPageKey = data || null
+    state.activeContentSectionId = null
+  },
+  [SET_ACTIVE_CONTENT_SECTION] (state, data) {
+    state.activeContentSectionId = data || null
+  },
+  [SET_CONTENT_PAGE] (state, data) {
+    if (!data || !data.key || !data.page) {
+      return
+    }
+
+    state.contentPages = {
+      ...state.contentPages,
+      [data.key]: cloneTheme(data.page)
+    }
+  },
+  [ADD_CONTENT_SECTION] (state, data) {
+    const page = state.contentPages[data.key]
+
+    if (!page || !data.section) {
+      return
+    }
+
+    const sections = [...page.sections, cloneTheme(data.section)]
+
+    state.contentPages = { ...state.contentPages, [data.key]: { ...page, sections } }
+    state.activeContentSectionId = data.section.__builder_id
+  },
+  [DUPLICATE_CONTENT_SECTION] (state, data) {
+    const page = state.contentPages[data.key]
+    const index = page ? page.sections.findIndex(section => section.__builder_id === data.id) : -1
+
+    if (index < 0 || !data.section) {
+      return
+    }
+
+    const sections = [...page.sections]
+    sections.splice(index + 1, 0, cloneTheme(data.section))
+    state.contentPages = { ...state.contentPages, [data.key]: { ...page, sections } }
+    state.activeContentSectionId = data.section.__builder_id
+  },
+  [MOVE_CONTENT_SECTION] (state, data) {
+    const page = state.contentPages[data.key]
+    const index = page ? page.sections.findIndex(section => section.__builder_id === data.id) : -1
+    const nextIndex = index + data.direction
+
+    if (index < 0 || nextIndex < 0 || nextIndex >= page.sections.length) {
+      return
+    }
+
+    const sections = [...page.sections]
+    const section = sections.splice(index, 1)[0]
+    sections.splice(nextIndex, 0, section)
+    state.contentPages = { ...state.contentPages, [data.key]: { ...page, sections } }
+  },
+  [REMOVE_CONTENT_SECTION] (state, data) {
+    const page = state.contentPages[data.key]
+
+    if (!page) {
+      return
+    }
+
+    const sections = page.sections.filter(section => section.__builder_id !== data.id)
+    state.contentPages = { ...state.contentPages, [data.key]: { ...page, sections } }
+
+    if (state.activeContentSectionId === data.id) {
+      state.activeContentSectionId = null
+    }
+  },
+  [UPDATE_CONTENT_SECTION] (state, data) {
+    const page = state.contentPages[data.key]
+
+    if (!page) {
+      return
+    }
+
+    const sections = page.sections.map(section => section.__builder_id === data.id
+      ? { ...section, ...cloneTheme(data.patch) }
+      : section)
+
+    state.contentPages = { ...state.contentPages, [data.key]: { ...page, sections } }
   },
   [RESTORE_DEFAULT_THEME] (state) {
     if (!state.defaultTheme) {

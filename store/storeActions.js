@@ -12,6 +12,16 @@ import {
   SET_SCHEME_ASSIGNMENT,
   SET_SECTION_OVERRIDE,
   SET_CUSTOMIZATION_ENABLED,
+  SET_ACTIVE_BUILDER_PANEL,
+  INITIALIZE_CONTENT_PAGE,
+  SET_ACTIVE_CONTENT_PAGE,
+  SET_ACTIVE_CONTENT_SECTION,
+  SET_CONTENT_PAGE,
+  ADD_CONTENT_SECTION,
+  DUPLICATE_CONTENT_SECTION,
+  MOVE_CONTENT_SECTION,
+  REMOVE_CONTENT_SECTION,
+  UPDATE_CONTENT_SECTION,
   RESTORE_DEFAULT_THEME,
   IS_PHONE_LAND_LG,
   IS_PHONE_LG,
@@ -66,6 +76,36 @@ const stateActions = () => ({
   },
   SET_CUSTOMIZATION_ENABLED ({ commit }, data) {
     commit(SET_CUSTOMIZATION_ENABLED, data)
+  },
+  SET_ACTIVE_BUILDER_PANEL ({ commit }, data) {
+    commit(SET_ACTIVE_BUILDER_PANEL, data)
+  },
+  INITIALIZE_CONTENT_PAGE ({ commit }, data) {
+    commit(INITIALIZE_CONTENT_PAGE, data)
+  },
+  SET_ACTIVE_CONTENT_PAGE ({ commit }, data) {
+    commit(SET_ACTIVE_CONTENT_PAGE, data)
+  },
+  SET_ACTIVE_CONTENT_SECTION ({ commit }, data) {
+    commit(SET_ACTIVE_CONTENT_SECTION, data)
+  },
+  SET_CONTENT_PAGE ({ commit }, data) {
+    commit(SET_CONTENT_PAGE, data)
+  },
+  ADD_CONTENT_SECTION ({ commit }, data) {
+    commit(ADD_CONTENT_SECTION, data)
+  },
+  DUPLICATE_CONTENT_SECTION ({ commit }, data) {
+    commit(DUPLICATE_CONTENT_SECTION, data)
+  },
+  MOVE_CONTENT_SECTION ({ commit }, data) {
+    commit(MOVE_CONTENT_SECTION, data)
+  },
+  REMOVE_CONTENT_SECTION ({ commit }, data) {
+    commit(REMOVE_CONTENT_SECTION, data)
+  },
+  UPDATE_CONTENT_SECTION ({ commit }, data) {
+    commit(UPDATE_CONTENT_SECTION, data)
   },
   RESTORE_DEFAULT_THEME ({ commit }) {
     commit(RESTORE_DEFAULT_THEME)

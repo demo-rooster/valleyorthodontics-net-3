@@ -1,0 +1,112 @@
+.content-structure-toolbar(:class="{ 'content-structure-toolbar--open': isOpen, 'content-structure-toolbar--opposite-open': !isOpen && activeBuilderPanel === 'appearance' }")
+  section#content-structure-toolbar-panel.content-structure-toolbar__panel(:aria-hidden='(!isOpen).toString()')
+    .content-structure-toolbar__header
+      .content-structure-toolbar__brand
+        BaseIcon.content-structure-toolbar__brand-logo(name='rg-logo-purple')
+        h2.content-structure-toolbar__title STINSON
+      button.content-structure-toolbar__close(type='button' aria-label='Close content panel' @click='toggleToolbar') &times;
+
+    label.content-structure-toolbar__field
+      span.content-structure-toolbar__label Page
+      select.content-structure-toolbar__select(:value='$route.path' @change='changePage($event.target.value)')
+        option(v-for='item in pages' :key='item.key' :value='item.path' v-html='item.title')
+
+    .content-structure-toolbar__actions
+      button.content-structure-toolbar__action(type='button' :disabled='!undoStack.length' @click='undo') Undo
+      button.content-structure-toolbar__action(type='button' :disabled='!redoStack.length' @click='redo') Redo
+      button.content-structure-toolbar__action(type='button' :disabled='!hasUnsavedChanges' @click='savePage') Save
+      button.content-structure-toolbar__action(type='button' :disabled='!page' @click='resetPage') Reset
+    p.content-structure-toolbar__status(
+      aria-live='polite'
+      :class="{ 'content-structure-toolbar__status--unsaved': hasUnsavedChanges }"
+    )
+      span.content-structure-toolbar__status-dot
+      span {{ draftStatusLabel }}
+
+    .content-structure-toolbar__tabs(role='tablist' aria-label='Content editor sections')
+      button.content-structure-toolbar__tab(type='button' role='tab' :aria-selected='(activeTab === "sections").toString()' :class="{ 'content-structure-toolbar__tab--active': activeTab === 'sections' }" @click="activeTab = 'sections'") Sections
+      button.content-structure-toolbar__tab(type='button' role='tab' :aria-selected='(activeTab === "seo").toString()' :class="{ 'content-structure-toolbar__tab--active': activeTab === 'seo' }" @click="activeTab = 'seo'") SEO
+
+    template(v-if="activeTab === 'sections'")
+      .content-structure-toolbar__add
+        select.content-structure-toolbar__select(v-model='newSectionLayout' aria-label='Section type')
+          option(v-for='option in sectionLayoutOptions' :key='option.value' :value='option.value' v-html='option.label')
+        button.content-structure-toolbar__primary(type='button' :disabled='!page' @click='addSection') Add
+
+      ol.content-structure-toolbar__sections
+        li.content-structure-toolbar__section(v-for='(section, index) in sections' :key='section.__builder_id' :class="{ 'content-structure-toolbar__section--active': section.__builder_id === activeSectionId, 'content-structure-toolbar__section--hidden': section.hide_component }")
+          button.content-structure-toolbar__section-main(
+            type='button'
+            :aria-expanded='(section.__builder_id === activeSectionId).toString()'
+            :aria-controls='`section-editor-${section.__builder_id}`'
+            @click='toggleSectionEditor(section.__builder_id)'
+          )
+            .content-structure-toolbar__section-heading
+              span.content-structure-toolbar__section-icon(
+                v-if='sectionIconSvg(section.acf_fc_layout)'
+                aria-hidden='true'
+                v-html='sectionIconSvg(section.acf_fc_layout)'
+              )
+              .content-structure-toolbar__section-copy
+                span.content-structure-toolbar__section-name(v-html='sectionLabel(section, index)')
+                span.content-structure-toolbar__section-type(v-html='layoutLabel(section.acf_fc_layout)')
+          .content-structure-toolbar__section-actions
+            button(type='button' :disabled='index === 0' :aria-label='`Move ${sectionLabel(section, index)} up`' title='Move up' @click='moveSection(section, -1)') &uarr;
+            button(type='button' :disabled='index === sections.length - 1' :aria-label='`Move ${sectionLabel(section, index)} down`' title='Move down' @click='moveSection(section, 1)') &darr;
+            button(type='button' :aria-label='`Duplicate ${sectionLabel(section, index)}`' title='Duplicate' @click='duplicateSection(section)') +
+            button(type='button' :aria-label='section.hide_component ? `Show ${sectionLabel(section, index)}` : `Hide ${sectionLabel(section, index)}`' :title='section.hide_component ? "Show" : "Hide"' @click='selectSection(section.__builder_id); toggleSection(section)') &#9673;
+            button(type='button' :aria-label='`Delete ${sectionLabel(section, index)}`' title='Delete' @click='removeSection(section)') &times;
+          .content-structure-toolbar__editor(v-if='section.__builder_id === activeSectionId' :id='`section-editor-${section.__builder_id}`')
+            h3.content-structure-toolbar__editor-title(v-html='layoutLabel(section.acf_fc_layout)')
+            ContentEditorField(
+              v-for='field in sectionFields'
+              :key='field.path.join(".")'
+              :descriptor='field'
+              :media-catalog='mediaCatalog'
+              :icon-catalog='iconCatalog'
+              @change='updateSectionField'
+              @array-action='updateSectionArray'
+            )
+
+    .content-structure-toolbar__seo(v-else-if='page')
+      template(v-if='Object.keys(page.seo).length')
+        h3.content-structure-toolbar__editor-title Search metadata
+        label.content-structure-toolbar__field
+          span.content-structure-toolbar__label Page title
+          input.content-structure-toolbar__input(type='text' :value='page.seo.page_title || ""' @input='updateSEO("page_title", $event.target.value)')
+          span.content-structure-toolbar__guidance(:class="{ 'content-structure-toolbar__guidance--long': String(page.seo.page_title || '').length > 60 }") {{ String(page.seo.page_title || '').length }} / 60
+        label.content-structure-toolbar__field
+          span.content-structure-toolbar__label Page description
+          textarea.content-structure-toolbar__textarea(rows='4' :value='page.seo.page_description || ""' @input='updateSEO("page_description", $event.target.value)')
+          span.content-structure-toolbar__guidance(:class="{ 'content-structure-toolbar__guidance--long': String(page.seo.page_description || '').length > 160 }") {{ String(page.seo.page_description || '').length }} / 160
+        label.content-structure-toolbar__field
+          span.content-structure-toolbar__label Page keywords
+          textarea.content-structure-toolbar__textarea(rows='2' :value='page.seo.page_keywords || ""' @input='updateSEO("page_keywords", $event.target.value)')
+
+        .content-structure-toolbar__preview(aria-label='Search result preview')
+          span.content-structure-toolbar__preview-url {{ $route.path === '/' ? 'valleyorthodontics.net' : `valleyorthodontics.net${$route.path}` }}
+          strong.content-structure-toolbar__preview-title {{ page.seo.page_title || pageKey }}
+          p.content-structure-toolbar__preview-description {{ page.seo.page_description || 'No page description.' }}
+
+        h3.content-structure-toolbar__editor-title Social metadata
+        label.content-structure-toolbar__field
+          span.content-structure-toolbar__label Open Graph title
+          input.content-structure-toolbar__input(type='text' :value='ogMeta.title || ""' @input='updateSEO(["social_meta", "og_meta", "title"], $event.target.value)')
+        label.content-structure-toolbar__field
+          span.content-structure-toolbar__label Open Graph description
+          textarea.content-structure-toolbar__textarea(rows='3' :value='ogMeta.description || ""' @input='updateSEO(["social_meta", "og_meta", "description"], $event.target.value)')
+        label.content-structure-toolbar__field
+          span.content-structure-toolbar__label Open Graph image URL
+          input.content-structure-toolbar__input(type='text' :value='ogMeta.image || ""' @input='updateSEO(["social_meta", "og_meta", "image"], $event.target.value)')
+        ContentMediaPicker(
+          :assets='mediaCatalog'
+          :current-src='ogMeta.image || ""'
+          type='image'
+          @select='chooseOGImage'
+        )
+        .content-structure-toolbar__social-preview(aria-label='Social card preview')
+          img(v-if='ogMeta.image' :src='ogMeta.image' alt='')
+          .content-structure-toolbar__social-copy
+            strong {{ ogMeta.title || page.seo.page_title || pageKey }}
+            p {{ ogMeta.description || page.seo.page_description || 'No social description.' }}
+      p.content-structure-toolbar__empty(v-else) No SEO fields are available for this page.

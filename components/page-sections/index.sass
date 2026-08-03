@@ -1,8 +1,39 @@
 .page-sections
+  .builder-editable-field
+    border-radius: rem-calc(2)
+    cursor: text
+
+    &:hover
+      box-shadow: 0 0 0 rem-calc(2) rgba(77, 78, 193, .28)
+
+    &:focus
+      outline: rem-calc(2) solid #4d4ec1
+      outline-offset: rem-calc(3)
+
   &__section
     position: relative
 
   &__section-container
+    position: relative
+
+    &--editing
+      outline: rem-calc(2) solid rgba(77, 78, 193, .72)
+      outline-offset: rem-calc(-2)
+
+      &::after
+        position: absolute
+        top: rem-calc(8)
+        left: rem-calc(8)
+        z-index: 20
+        border-radius: rem-calc(4)
+        background: #4d4ec1
+        padding: rem-calc(4) rem-calc(7)
+        color: $white
+        pointer-events: none
+        font-size: rem-calc(10)
+        font-weight: 800
+        content: 'Editing'
+
     &--title-override
       h1, h2, h3, h4, h5, h6
         color: var(--headers)

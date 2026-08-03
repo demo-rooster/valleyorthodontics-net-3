@@ -14,16 +14,29 @@ export default {
   },
   data: () => ({
     mapLoading: true,
+    mapDestroyed: false,
   }),
   mounted () {
     const loadMap = new Loader ({
       apiKey: 'AIzaSyDZACTJZaObfFPVKCr4309ty6E5YqlrCBg'
     })
     loadMap.load().then(()=> {
+      if (this.mapDestroyed || !this.$refs.theMap) {
+        return
+      }
+
       this.createMap()
       this.addMarker()
       this.mapLoading = false
     })
+  },
+  beforeDestroy () {
+    this.mapDestroyed = true
+    if (this.$marker) {
+      this.$marker.setMap(null)
+    }
+    this.$marker = null
+    this.$map = null
   },
   methods: {
     createMap () {
@@ -39,7 +52,7 @@ export default {
       })
     },
     addMarker () {
-      const $marker = new google.maps.Marker({
+      this.$marker = new google.maps.Marker({
         position: {
           lat: Number(this.props.address.coordinates.latitude),
           lng: Number(this.props.address.coordinates.longitude)

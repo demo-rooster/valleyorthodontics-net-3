@@ -1,14 +1,16 @@
 <template lang="pug" src="./_page.pug"></template>
 
 <script>
-import { setJSONData, setMeta } from '~/resources/utils'
 import PageSections from '~/components/page-sections'
+import contentMetaPreview from '~/resources/content-meta-preview'
+import { setJSONData } from '~/resources/utils'
 
 export default {
   transition: 'fade',
   components: {
     PageSections
   },
+  mixins: [contentMetaPreview],
   // eslint-disable-next-line require-await
   async asyncData () {
     const data = setJSONData('blog')
@@ -20,9 +22,6 @@ export default {
         this.$store.dispatch('VIEW_SITE', true)
       }
     })
-  },
-  head () {
-    return setMeta(this.props)
   }
 }
 </script>

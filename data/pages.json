@@ -46,7 +46,7 @@
       "title": "Welcome to Valley Orthodontics",
       "paragraphs": [
         {
-          "text": "Valley Orthodontics believes that creating a beautiful smile involves more than just straightening teeth, so we look at the whole face when treating our patients. Our unique approach to orthodontics involves non-extraction treatment to achieve beautifully balanced faces, full smiles, and healthy bites. We take pride in our work and use only the highest quality appliances and the latest technology to create your perfect smile! We’re proud to serve patients of San Rafael, Marin, Mill Valley, Novato, and surrounding areas"
+          "text": "Valley Orthodontics believes that creating a beautiful smile involves more than just straightening teeth, so we look at the whole face when treating our patients. Airway-focused orthodontics is an area of specialty for Dr. Rocha, and our personalized approach considers breathing, jaw development, facial balance, and a healthy bite. We take pride in our work and use only the highest quality appliances and the latest technology to create your perfect smile! We’re proud to serve patients of San Rafael, Marin, Mill Valley, Novato, and surrounding areas."
         }
       ],
       "component_options": {
@@ -243,10 +243,10 @@
     },
     {
       "acf_fc_layout": "block_masonary_grid",
-      "title": "Treatments for All Ages and Smiles",
+      "title": "Specialized Care for Every Smile",
       "paragraphs": [
         {
-          "text": "Choose modern orthodontic treatment designed around your age, smile goals, and lifestyle."
+          "text": "Explore personalized orthodontic treatment designed around your age, smile goals, lifestyle, and overall well-being."
         }
       ],
       "button": {
@@ -263,7 +263,7 @@
         "color": "black"
       },
       "links": true,
-      "columns": 4,
+      "columns": 5,
       "items": [
         {
           "image": {
@@ -343,6 +343,26 @@
           },
           "title": "Metal Braces",
           "path": "/braces",
+          "hash": ""
+        },
+        {
+          "image": {
+            "src": "https://placehold.co/1000x800/e5e7eb/4b5563.jpg?text=Airway+Orthodontics",
+            "webp": "https://placehold.co/1000x800/e5e7eb/4b5563.webp?text=Airway+Orthodontics",
+            "alt": "Placeholder for airway orthodontics treatment image",
+            "aria_hidden": false,
+            "bgColor": "",
+            "imageBackground": false,
+            "addLoader": false,
+            "objectPosition": "center",
+            "forceAlt": "",
+            "loading_mask": "",
+            "image_selection_hints": {
+              "context_category": "Treatments Hero"
+            }
+          },
+          "title": "Airway Orthodontics",
+          "path": "/airway-orthodontics",
           "hash": ""
         }
       ],
@@ -2510,6 +2530,253 @@
       }
     }
   ],
+  "airway-orthodontics": [
+    {
+      "acf_fc_layout": "hero",
+      "title": "Airway Orthodontics",
+      "text": "A whole-person approach to healthier smiles, breathing, and development.",
+      "button": {
+        "type": "nuxt",
+        "style": "primary",
+        "label": "Book Your Free Smile Assessment",
+        "aria_label": "Book your free smile assessment",
+        "href": "",
+        "path": "/contact",
+        "hash": "#form",
+        "external": false,
+        "include_icon": true,
+        "icon": "scheduling-tooth",
+        "color": "primary"
+      },
+      "media_type": "image",
+      "image": {
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/airway-ortho.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/airway-ortho.webp",
+        "alt": "Airway-focused orthodontic care at Valley Orthodontics",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatment Page"
+        }
+      },
+      "video": {
+        "src": "",
+        "webm": "",
+        "title": "",
+        "poster": ""
+      },
+      "small": false,
+      "component_options": {
+        "hash": "",
+        "component_padding": "none",
+        "component_margins": "none",
+        "hide_component": false
+      }
+    },
+    {
+      "acf_fc_layout": "image_text",
+      "title": "More Than Straight Teeth",
+      "paragraphs": [
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "Airway-focused orthodontics is an area of specialty for Dr. Rocha. This whole-person approach considers how the teeth, jaws, facial growth, and breathing patterns work together. By looking beyond alignment alone, we can create an individualized treatment plan designed to support a balanced smile, healthy function, and long-term well-being."
+        },
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "Every patient is different. An airway evaluation helps us understand whether orthodontic concerns such as crowding or a narrow dental arch may be connected with breathing or developmental factors. When appropriate, we also collaborate with other healthcare providers as part of comprehensive care."
+        }
+      ],
+      "accordion": [],
+      "image": {
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/airway-ortho-2.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/airway-ortho-2.webp",
+        "alt": "Airway orthodontic evaluation at Valley Orthodontics",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatment Page"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "buttons": [],
+      "component_options": {
+        "hash": "overview",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "reverse": true,
+      "has_buttons": false,
+      "has_accordion": false,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_image": false,
+      "has_background": true,
+      "background": "bg2",
+      "linear_gradient": "",
+      "add_texture": false,
+      "large_title": true,
+      "title_color": "text",
+      "title_underline_color": "accent",
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "accordion",
+      "title": "Understanding Airway-Focused Care",
+      "paragraphs": [
+        {
+          "text": "Airway orthodontics begins with careful evaluation. These common questions explain what we consider and how treatment may fit into a broader care plan."
+        }
+      ],
+      "accordion": [
+        {
+          "header": "What Is Airway Orthodontics?",
+          "paragraphs": [
+            {
+              "text": "Airway orthodontics considers the relationship between orthodontic development and breathing. In addition to evaluating the teeth and bite, Dr. Rocha looks at the dental arches, jaw growth, facial balance, and breathing patterns to understand the full picture before recommending treatment."
+            }
+          ],
+          "has_media": false
+        },
+        {
+          "header": "What Signs May Suggest an Airway Evaluation?",
+          "paragraphs": [
+            {
+              "text": "Possible signs include frequent mouth breathing, snoring, restless sleep, a narrow palate, crowded teeth, or concerns about jaw and facial development. These signs do not confirm an airway condition, but they may be worth discussing during an orthodontic assessment."
+            }
+          ],
+          "has_media": false
+        },
+        {
+          "header": "How Can Orthodontic Treatment Help?",
+          "paragraphs": [
+            {
+              "text": "Depending on a patient’s age and needs, orthodontic treatment may guide jaw development, create appropriate space for the teeth, or broaden a narrow dental arch. The goal is a personalized plan that supports healthy oral function while creating a balanced, confident smile."
+            }
+          ],
+          "has_media": false
+        },
+        {
+          "header": "Who Can Benefit From an Airway Evaluation?",
+          "paragraphs": [
+            {
+              "text": "Children, teens, and adults may benefit from an airway-focused evaluation. Early assessment can be especially useful while a child’s jaws and face are still developing, but it is never too late to discuss breathing, sleep, bite, or alignment concerns with Dr. Rocha."
+            }
+          ],
+          "has_media": false
+        },
+        {
+          "header": "Does Airway Orthodontics Replace Medical Care?",
+          "paragraphs": [
+            {
+              "text": "No. Orthodontic care does not diagnose or treat medical sleep or breathing disorders. When needed, Dr. Rocha may coordinate with a patient’s dentist, pediatrician, ENT, sleep physician, or myofunctional therapist so each concern is evaluated by the appropriate provider."
+            }
+          ],
+          "has_media": false
+        },
+        {
+          "header": "What Happens During an Airway-Focused Assessment?",
+          "paragraphs": [
+            {
+              "text": "Dr. Rocha reviews your health history and concerns, examines the teeth, bite, jaws, and facial proportions, and discusses breathing and sleep patterns. Photos, digital scans, or 3D imaging may be recommended when clinically appropriate to help build a complete and individualized treatment plan."
+            }
+          ],
+          "has_media": false
+        }
+      ],
+      "component_options": {
+        "hash": "details",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "has_background": true,
+      "background": "bg1",
+      "linear_gradient": "",
+      "add_texture": false
+    },
+    {
+      "acf_fc_layout": "multi_use_banner",
+      "title": "A Healthier Smile Starts With a Complete Evaluation",
+      "content_block": "text_block",
+      "text": "Schedule a complimentary assessment to learn whether airway-focused orthodontic care may be right for you or your child.",
+      "social_links": [],
+      "email": "",
+      "button": {
+        "type": "nuxt",
+        "style": "primary",
+        "label": "Book Your Free Smile Assessment",
+        "aria_label": "Book your free smile assessment",
+        "href": "",
+        "path": "/contact",
+        "hash": "#form",
+        "external": false,
+        "include_icon": true,
+        "icon": "scheduling-tooth",
+        "color": "primary"
+      },
+      "component_options": {
+        "hash": "",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "background_type": "has_background",
+      "background": "bg2",
+      "add_texture": false,
+      "linear_gradient": "",
+      "image": {
+        "src": "https://placehold.co/1200x800/e5e7eb/4b5563.jpg?text=Airway+Orthodontics+CTA",
+        "webp": "https://placehold.co/1200x800/e5e7eb/4b5563.webp?text=Airway+Orthodontics+CTA",
+        "alt": "Placeholder for airway orthodontics consultation image",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Treatment Page"
+        }
+      },
+      "reversed": false,
+      "centered": true,
+      "large_title": true,
+      "text_color": "primary"
+    },
+    {
+      "seo": {
+        "page_title": "Airway Orthodontics in San Rafael - Valley Orthodontics",
+        "page_description": "Explore airway-focused orthodontic care with Dr. Rocha at Valley Orthodontics in San Rafael, including evaluations for breathing, growth, and healthy smiles.",
+        "page_keywords": "airway orthodontics, airway focused orthodontist, breathing and orthodontics, pediatric airway evaluation, San Rafael orthodontist",
+        "additional_settings": false,
+        "social_meta": {
+          "og_meta": {
+            "title": "Airway Orthodontics in San Rafael - Valley Orthodontics",
+            "description": "A whole-person orthodontic approach that considers breathing, jaw development, facial balance, and a healthy smile.",
+            "image": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/logo.webp"
+          }
+        },
+        "slug": "airway-orthodontics"
+      }
+    }
+  ],
   "iconix-champagne-gold-braces": [
     {
       "acf_fc_layout": "hero",
@@ -2530,8 +2797,8 @@
       },
       "media_type": "image",
       "image": {
-        "src": "{{cdn}}/treatments/iconix-braces-hero.jpg",
-        "webp": "{{cdn}}/treatments/iconix-braces-hero.webp",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/iconix-hero-4.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/iconix-hero-4.webp",
         "alt": "Iconix Champagne Gold Braces at Valley Orthodontics",
         "aria_hidden": false,
         "bgColor": "",
@@ -2570,9 +2837,9 @@
       ],
       "accordion": [],
       "image": {
-        "src": "https://www.valleyorthodontics.net/wp-content/uploads/2026/01/1.png",
-        "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2026/01/1.png",
-        "alt": "",
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/iconix-2.jpg",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/iconix-2.webp",
+        "alt": "Patient wearing Iconix Champagne Gold Braces",
         "aria_hidden": false,
         "bgColor": "",
         "imageBackground": false,
@@ -2608,6 +2875,73 @@
       "large_title": true,
       "title_color": "text",
       "title_underline_color": "accent",
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "single_image_slider",
+      "title": "See Iconix Braces Up Close",
+      "text": "Explore the distinctive champagne-gold finish and refined appearance of Iconix braces.",
+      "carousel_aria": "Iconix Champagne Gold Braces Gallery",
+      "slides": [
+        {
+          "src": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/Iconix-gallery-1.jpg",
+          "webp": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/Iconix-gallery-1.webp",
+          "alt": "Close-up view of Iconix Champagne Gold Braces",
+          "aria_hidden": false,
+          "bgColor": "",
+          "imageBackground": false,
+          "addLoader": false,
+          "objectPosition": "center",
+          "forceAlt": "",
+          "loading_mask": ""
+        },
+        {
+          "src": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/Iconix-gallery-2.jpg",
+          "webp": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/Iconix-gallery-2.webp",
+          "alt": "Patient smiling with Iconix Champagne Gold Braces",
+          "aria_hidden": false,
+          "bgColor": "",
+          "imageBackground": false,
+          "addLoader": false,
+          "objectPosition": "center",
+          "forceAlt": "",
+          "loading_mask": ""
+        },
+        {
+          "src": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/iconix-gallery-3.jpg",
+          "webp": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/iconix-gallery-3.webp",
+          "alt": "Iconix Champagne Gold Braces treatment result",
+          "aria_hidden": false,
+          "bgColor": "",
+          "imageBackground": false,
+          "addLoader": false,
+          "objectPosition": "center",
+          "forceAlt": "",
+          "loading_mask": ""
+        },
+        {
+          "src": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/iconix-gallery-4.jpg",
+          "webp": "https://d1euqd8u2uyjl7.cloudfront.net/treatments/iconix-gallery-4.webp",
+          "alt": "Detailed view of champagne-gold Iconix brackets",
+          "aria_hidden": false,
+          "bgColor": "",
+          "imageBackground": false,
+          "addLoader": false,
+          "objectPosition": "center",
+          "forceAlt": "",
+          "loading_mask": ""
+        }
+      ],
+      "component_options": {
+        "hash": "gallery",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "background": "bg2",
+      "add_texture": false,
+      "linear_gradient": "",
+      "primary_color": true,
       "preserve_image": true
     },
     {

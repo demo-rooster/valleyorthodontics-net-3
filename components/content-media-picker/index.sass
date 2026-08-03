@@ -1,0 +1,111 @@
+.content-media-picker
+  margin-bottom: rem-calc(10)
+
+  &__trigger,
+  &__more
+    border: 0
+    border-radius: rem-calc(5)
+    background: var(--builder-purple-soft)
+    cursor: pointer
+    padding: rem-calc(8)
+    width: 100%
+    color: var(--builder-purple)
+    font-family: var(--font)
+    font-size: rem-calc(10)
+    font-weight: 800
+
+  &__trigger
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__count
+    border-radius: rem-calc(999)
+    background: $white
+    padding: rem-calc(2) rem-calc(6)
+
+  &__browser
+    margin-top: rem-calc(6)
+    border: rem-calc(1) solid rgba($black, .12)
+    border-radius: rem-calc(6)
+    background: $white
+    padding: rem-calc(8)
+
+  &__header
+    display: grid
+    grid-template-columns: 1fr rem-calc(30)
+    gap: rem-calc(5)
+    margin-bottom: rem-calc(8)
+
+  &__search
+    border: rem-calc(1) solid rgba($black, .18)
+    border-radius: rem-calc(5)
+    padding: rem-calc(7)
+    min-width: 0
+    color: var(--builder-text)
+    font-family: var(--font)
+    font-size: rem-calc(11)
+
+  &__close
+    border: 0
+    border-radius: rem-calc(5)
+    background: var(--builder-purple-soft)
+    cursor: pointer
+    color: var(--builder-purple)
+    font-size: rem-calc(16)
+
+  &__grid
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    gap: rem-calc(6)
+    margin-bottom: rem-calc(8)
+
+  &__item
+    display: grid
+    gap: rem-calc(5)
+    border: rem-calc(1) solid rgba($black, .12)
+    border-radius: rem-calc(5)
+    background: $white
+    cursor: pointer
+    padding: rem-calc(5)
+    min-width: 0
+    text-align: left
+    color: var(--builder-text)
+
+    &--active
+      border-color: var(--builder-purple)
+      box-shadow: 0 0 0 rem-calc(1) var(--builder-purple)
+
+  &__preview
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: rem-calc(3)
+    background: rgba($black, .05)
+    aspect-ratio: 4 / 3
+    overflow: hidden
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &__video-icon
+    width: rem-calc(28)
+    height: rem-calc(28)
+    color: var(--builder-purple)
+
+  &__label
+    display: -webkit-box
+    min-height: rem-calc(26)
+    overflow: hidden
+    -webkit-box-orient: vertical
+    -webkit-line-clamp: 2
+    line-height: 1.4
+    font-size: rem-calc(9)
+
+  &__empty
+    margin: rem-calc(12) 0
+    text-align: center
+    color: rgba($black, .58)
+    font-size: rem-calc(11)

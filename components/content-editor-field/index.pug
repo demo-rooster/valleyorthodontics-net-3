@@ -1,0 +1,64 @@
+.content-editor-field
+  label.content-editor-field__label(v-if="['text', 'number', 'textarea', 'richtext', 'select'].includes(descriptor.type)")
+    span.content-editor-field__name(v-html='descriptor.label')
+    textarea.content-editor-field__textarea(v-if="['textarea', 'richtext'].includes(descriptor.type)" rows='4' :value='descriptor.value' @input='updateInput')
+    select.content-editor-field__select(v-else-if="descriptor.type === 'select'" :value='descriptor.value' @change='updateInput')
+      option(v-for='option in descriptor.options' :key='option' :value='option' v-html='option || "Default"')
+    input.content-editor-field__input(v-else :type='descriptor.type === "number" ? "number" : "text"' :value='descriptor.value' @input='updateInput')
+
+  label.content-editor-field__toggle(v-else-if="descriptor.type === 'boolean'")
+    input(type='checkbox' :checked='descriptor.value' @change='updateValue($event.target.checked)')
+    span(v-html='descriptor.label')
+
+  .content-editor-field__icon(v-else-if="descriptor.type === 'icon'")
+    span.content-editor-field__name(v-html='descriptor.label')
+    ContentIconPicker(:icons='iconCatalog' :value='descriptor.value' @input='updateValue')
+
+  fieldset.content-editor-field__group(v-else-if="['object', 'image', 'video'].includes(descriptor.type)")
+    legend.content-editor-field__legend(v-html='descriptor.label')
+    ContentMediaPicker(
+      v-if="['image', 'video'].includes(descriptor.type)"
+      :assets='mediaCatalog'
+      :current-src='descriptor.value.src || ""'
+      :type='descriptor.type'
+      @select='chooseAsset'
+    )
+    ContentEditorField(
+      v-for='field in childFields'
+      :key='field.path.join(".")'
+      :descriptor='field'
+      :media-catalog='mediaCatalog'
+      :icon-catalog='iconCatalog'
+      @change='forwardChange'
+      @array-action='forwardArrayAction'
+    )
+
+  fieldset.content-editor-field__group(v-else-if="descriptor.type === 'array'")
+    legend.content-editor-field__legend(v-html='descriptor.label')
+    .content-editor-field__repeater(v-for='(item, index) in descriptor.value' :key='index')
+      .content-editor-field__repeater-header
+        strong(v-html='`${descriptor.label} ${index + 1}`')
+        .content-editor-field__actions
+          button(type='button' :disabled='index === 0' title='Move up' @click='emitArrayAction("move-up", index)') &uarr;
+          button(type='button' :disabled='index === descriptor.value.length - 1' title='Move down' @click='emitArrayAction("move-down", index)') &darr;
+          button(type='button' title='Duplicate' @click='emitArrayAction("duplicate", index)') +
+          button(type='button' title='Delete' @click='emitArrayAction("remove", index)') &times;
+      template(v-if='item && typeof item === "object"')
+        ContentEditorField(
+          v-for='field in describeObject(item, [...descriptor.path, index])'
+          :key='field.path.join(".")'
+          :descriptor='field'
+          :media-catalog='mediaCatalog'
+          :icon-catalog='iconCatalog'
+          @change='forwardChange'
+          @array-action='forwardArrayAction'
+        )
+      ContentEditorField(
+        v-else
+        :descriptor='arrayItemDescriptor(item, index)'
+        :media-catalog='mediaCatalog'
+        :icon-catalog='iconCatalog'
+        @change='forwardChange'
+        @array-action='forwardArrayAction'
+      )
+    button.content-editor-field__add(type='button' @click='emitArrayAction("add")') Add item

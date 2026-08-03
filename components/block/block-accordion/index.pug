@@ -6,7 +6,7 @@
         BaseIcon.block-accordion__header-icon(name='caret', :class="{ 'block-accordion__header-icon--active': i === expandedSection }")
       .block-accordion__content(:id='sanitizeId(`${props.title}-content-${i}`)', role='region', :aria-labelledby='sanitizeId(`${props.title}-section-${i}`)', ref='sections')
         .block-accordion__paragraph(v-for='(paragraph, j) in section.paragraphs', :key='`accordion-${i}-paragraph-${j}`')
-          p.block-accordion__paragraph-text(v-html='paragraph.text')
+          p.block-accordion__paragraph-text(v-html='paragraph.text' v-builder-field='["accordion", i, "paragraphs", j, "text"]')
         .block-accordion__actions(v-if='section.buttons && section.buttons.length')
           BlockButton.block-accordion__button(
             v-for='(button, k) in section.buttons',

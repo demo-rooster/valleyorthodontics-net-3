@@ -54,6 +54,10 @@ const router = [
         path: '/all-ages-treatments'
       },
       {
+        name: 'Airway Orthodontics',
+        path: '/airway-orthodontics'
+      },
+      {
         name: 'Clear Aligners',
         path: '/clear-aligners'
       },

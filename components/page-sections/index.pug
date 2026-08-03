@@ -1,9 +1,11 @@
 .page-sections
   .page-sections__section-container(
-    v-for='(section, i) in props',
-    :key='`section-${i}`',
-    :class='[(section.has_background || section.background_type === "has_background") && section.background ? `bg--${section.background}` : null, { "page-sections__section-container--title-override": hasSectionTitleOverride(section, i) }]',
+    v-for='(section, i) in renderedSections',
+    :key='section.__builder_id || `section-${i}`',
+    :data-builder-id='section.__builder_id || null',
+    :class='[(section.has_background || section.background_type === "has_background") && section.background ? `bg--${section.background}` : null, { "page-sections__section-container--title-override": hasSectionTitleOverride(section, i), "page-sections__section-container--editing": isActiveSection(section) }]',
     :style='sectionStyle(section, i)'
+    @click.capture='selectSection(section.__builder_id)'
   )
     .page-sections__section(:id='sectionId(section, i)')
       div(v-if='section.acf_fc_layout === null')

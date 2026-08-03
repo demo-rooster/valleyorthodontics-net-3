@@ -1,0 +1,352 @@
+.content-structure-toolbar
+  --builder-purple: #4d4ec1
+  --builder-purple-soft: rgba(77, 78, 193, .12)
+  --builder-text: #28262f
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  z-index: 700
+  font-family: var(--font)
+  pointer-events: none
+
+  &__panel
+    position: absolute
+    top: rem-calc(32)
+    right: rem-calc(78)
+    transform: translateX(calc(100% + #{rem-calc(96)}))
+    transition: transform .28s ease, opacity .2s ease, visibility .2s ease
+    visibility: hidden
+    opacity: 0
+    border: rem-calc(1) solid var(--builder-purple-soft)
+    border-radius: rem-calc(8)
+    box-shadow: 0 rem-calc(18) rem-calc(48) rgba($black, .18)
+    background: $white
+    padding: rem-calc(22)
+    width: rem-calc(360)
+    max-width: calc(100vw - #{rem-calc(96)})
+    max-height: calc(100vh - #{rem-calc(64)})
+    overflow-y: auto
+    pointer-events: none
+
+  &--open
+    .content-structure-toolbar__panel
+      transform: translateX(0)
+      visibility: visible
+      opacity: 1
+      pointer-events: auto
+
+  &__header,
+  &__brand,
+  &__actions,
+  &__add,
+  &__section-actions
+    display: flex
+    align-items: center
+
+  &__header
+    justify-content: space-between
+    margin-bottom: rem-calc(18)
+
+  &__brand
+    gap: rem-calc(10)
+
+  &__brand-logo
+    width: rem-calc(30)
+    height: rem-calc(30)
+
+  &__title
+    margin: 0
+    letter-spacing: rem-calc(1.5)
+    color: var(--builder-purple)
+    font-size: rem-calc(18)
+
+  &__close
+    border: 0
+    border-radius: 50%
+    background: var(--builder-purple-soft)
+    cursor: pointer
+    width: rem-calc(34)
+    height: rem-calc(34)
+    color: var(--builder-purple)
+    font-size: rem-calc(18)
+
+  &__field
+    display: grid
+    gap: rem-calc(5)
+    margin-bottom: rem-calc(12)
+
+  &__label
+    color: var(--builder-text)
+    font-size: rem-calc(11)
+    font-weight: 800
+
+  &__select,
+  &__input,
+  &__textarea
+    border: rem-calc(1) solid rgba($black, .18)
+    border-radius: rem-calc(5)
+    background: $white
+    padding: rem-calc(8)
+    width: 100%
+    color: var(--builder-text)
+    font-family: var(--font)
+    font-size: rem-calc(12)
+
+  &__textarea
+    resize: vertical
+
+    &--code
+      font-family: monospace
+      font-size: rem-calc(10)
+
+  &__actions
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: rem-calc(5)
+    margin-bottom: rem-calc(14)
+
+  &__action,
+  &__primary,
+  &__tab,
+  &__section-actions button
+    border: 0
+    cursor: pointer
+    font-family: var(--font)
+    font-weight: 800
+
+    &:disabled
+      opacity: .4
+      cursor: not-allowed
+
+  &__action
+    border-radius: rem-calc(999)
+    background: var(--builder-purple-soft)
+    padding: rem-calc(7) rem-calc(4)
+    color: var(--builder-purple)
+    font-size: rem-calc(10)
+
+  &__status
+    display: flex
+    align-items: center
+    gap: rem-calc(6)
+    margin: rem-calc(-5) 0 rem-calc(14)
+    color: rgba($black, .58)
+    font-size: rem-calc(10)
+
+    &--unsaved
+      color: #8a4d08
+
+      .content-structure-toolbar__status-dot
+        background: #c87517
+
+  &__status-dot
+    border-radius: 50%
+    background: #3f855f
+    width: rem-calc(7)
+    height: rem-calc(7)
+
+  &__tabs
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: rem-calc(3)
+    margin-bottom: rem-calc(14)
+    border-radius: rem-calc(6)
+    background: var(--builder-purple-soft)
+    padding: rem-calc(3)
+
+  &__tab
+    border-radius: rem-calc(4)
+    background: transparent
+    padding: rem-calc(8)
+    color: var(--builder-text)
+
+    &--active
+      box-shadow: 0 rem-calc(1) rem-calc(3) rgba($black, .14)
+      background: $white
+      color: var(--builder-purple)
+
+  &__add
+    gap: rem-calc(6)
+    margin-bottom: rem-calc(14)
+
+  &__primary
+    border-radius: rem-calc(999)
+    background: var(--builder-purple)
+    padding: rem-calc(8) rem-calc(12)
+    white-space: nowrap
+    color: $white
+    font-size: rem-calc(11)
+
+  &__sections
+    display: grid
+    gap: rem-calc(7)
+    margin: 0 0 rem-calc(18)
+    padding: 0
+    list-style: none
+
+  &__section
+    border: rem-calc(1) solid rgba($black, .12)
+    border-radius: rem-calc(6)
+    background: $white
+    overflow: hidden
+
+    &--active
+      border-color: var(--builder-purple)
+      box-shadow: 0 0 0 rem-calc(1) var(--builder-purple)
+
+    &--hidden
+      opacity: .58
+
+  &__section-main
+    display: grid
+    gap: rem-calc(2)
+    border: 0
+    background: transparent
+    cursor: pointer
+    padding: rem-calc(9)
+    width: 100%
+    text-align: left
+    color: var(--builder-text)
+    font-family: var(--font)
+
+  &__section-heading
+    display: grid
+    grid-template-columns: rem-calc(48) minmax(0, 1fr)
+    align-items: center
+    gap: rem-calc(8)
+
+  &__section-copy
+    display: grid
+    gap: rem-calc(2)
+    min-width: 0
+
+  &__section-icon
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    width: rem-calc(48)
+    height: rem-calc(32)
+
+    svg
+      display: block
+      width: rem-calc(48)
+      height: rem-calc(32)
+
+    path
+      fill: var(--builder-purple)
+
+  &__section-name
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+    font-size: rem-calc(12)
+    font-weight: 800
+
+  &__section-type
+    color: rgba($black, .5)
+    font-size: rem-calc(11)
+    font-weight: 700
+
+  &__section-actions
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    border-top: rem-calc(1) solid rgba($black, .08)
+
+    button
+      background: var(--builder-purple-soft)
+      padding: rem-calc(5)
+      color: var(--builder-purple)
+
+  &__editor
+    border-top: rem-calc(1) solid rgba($black, .12)
+    background: rgba(77, 78, 193, .035)
+    padding: rem-calc(14) rem-calc(10) rem-calc(10)
+
+  &__editor-title
+    margin: 0 0 rem-calc(12)
+    color: var(--builder-text)
+    font-size: rem-calc(14)
+
+  &__seo
+    .content-structure-toolbar__editor-title:not(:first-child)
+      margin-top: rem-calc(22)
+
+  &__guidance
+    justify-self: end
+    color: rgba($black, .5)
+    font-size: rem-calc(9)
+
+    &--long
+      color: #a32424
+      font-weight: 800
+
+  &__preview,
+  &__social-preview
+    margin-top: rem-calc(14)
+    border: rem-calc(1) solid rgba($black, .12)
+    border-radius: rem-calc(6)
+    background: $white
+    overflow: hidden
+
+  &__preview
+    display: grid
+    gap: rem-calc(4)
+    padding: rem-calc(12)
+
+  &__preview-url
+    color: #39724e
+    font-size: rem-calc(9)
+
+  &__preview-title
+    color: #2458a6
+    font-family: Georgia, serif
+    font-size: rem-calc(15)
+    font-weight: 400
+
+  &__preview-description,
+  &__social-copy p
+    margin: 0
+    line-height: 1.45
+    color: rgba($black, .66)
+    font-size: rem-calc(10)
+
+  &__social-preview
+    img
+      display: block
+      width: 100%
+      aspect-ratio: 1.91 / 1
+      object-fit: cover
+
+  &__social-copy
+    display: grid
+    gap: rem-calc(4)
+    padding: rem-calc(10)
+    color: var(--builder-text)
+    font-size: rem-calc(11)
+
+  button,
+  input,
+  textarea,
+  select
+    &:focus-visible
+      outline: rem-calc(2) solid var(--builder-purple)
+      outline-offset: rem-calc(2)
+
+  &__error
+    color: #a32424
+    font-size: rem-calc(11)
+
+  &__empty
+    color: rgba($black, .58)
+    font-size: rem-calc(12)
+
+@media (prefers-reduced-motion: reduce)
+  .content-structure-toolbar__panel
+    transition: none
+
+@media (max-width: 480px)
+  .content-structure-toolbar--opposite-open
+    visibility: hidden
+    opacity: 0
+    pointer-events: none

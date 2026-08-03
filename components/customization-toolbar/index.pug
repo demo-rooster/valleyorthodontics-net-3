@@ -49,24 +49,6 @@ mixin element-color-rows(rowsExpr)
         )
           span(aria-hidden='true') &times;
 
-    .customization-toolbar__theme-controls
-      .customization-toolbar__theme-slot(v-for='themePreset in themePresetButtons', :key='themePreset.name')
-        button.customization-toolbar__theme-button(
-          type='button',
-          :class="{ 'customization-toolbar__theme-button--active': activeThemeName === themePreset.name }",
-          @click='setThemePreset(themePreset.name)',
-          v-html='themePreset.label'
-        )
-        transition(name='toolbar-fade')
-          button.customization-toolbar__save-badge(
-            v-if='activeThemeName === themePreset.name && hasUnsavedChanges',
-            type='button',
-            :aria-label='`Save changes to ${themePreset.label}`',
-            :title='`Save changes to ${themePreset.label}`',
-            @click='saveActiveThemePreset'
-          )
-            BaseIcon.customization-toolbar__save-icon(name='toolbar-save')
-
     .customization-toolbar__history
       button.customization-toolbar__history-button(
         type='button',

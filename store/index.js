@@ -4,7 +4,7 @@ import storeMutations from './storeMutations'
 export const state = () => ({
   devInspector: false,
   devTools: false,
-  activeThemeName: 'secondary',
+  activeThemeName: 'primary',
   defaultTheme: null,
   secondaryTheme: null,
   themePresets: {},

@@ -3,22 +3,14 @@
 <script>
 import { getCustomPosts, getForms, setJSONData, getThemeJSON } from '~/resources/utils'
 import { buildGradientCss, normalizeGradient } from '~/resources/gradients'
-import { normalizeTheme } from '~/resources/theme-scheme'
 import DevModeBanner from '~/components/dev-mode/dev-mode-banner'
 import Popup from '~/components/popup'
 import SkipLink from '~/components/base/base-skip-link'
 import TheFooter from '~/components/footer'
 import TheNavigation from '~/components/navigation'
 import BaseAccess from '~/components/base/base-access'
-import CustomizationToolbar from '~/components/customization-toolbar'
-import CustomizationContextMenu from '~/components/customization-context-menu'
-import ContentStructureToolbar from '~/components/content-structure-toolbar'
 
-const activeThemeStorageKey = 'rg-active-theme-v3'
 const themePresetNames = ['primary', 'secondary', 'tertiary', 'quaternary']
-const themePresetsStorageKey = 'rg-theme-presets-v1'
-const themePresetsStorageVersion = 'theme-presets-data-2'
-const legacyThemePresetsStorageVersion = 'theme-presets-data-1'
 const cloneTheme = theme => JSON.parse(JSON.stringify(theme))
 const defaultHeaderSettings = {
   enable_top_bar: false,
@@ -47,12 +39,9 @@ const popupSeenStorageKey = 'rg-popup-seen-v1'
 export default {
   components: {
     BaseAccess,
-    ContentStructureToolbar,
-    CustomizationContextMenu,
     DevModeBanner,
     Popup,
     SkipLink,
-    CustomizationToolbar,
     TheFooter,
     TheNavigation
   },
@@ -107,17 +96,16 @@ export default {
     const theme = await getThemeJSON()
     const themePresets = this.getThemePresets(theme)
 
-    this.$store.dispatch('SET_CUSTOMIZATION_ENABLED', !!theme.enable_customization)
     this.$store.dispatch('SET_DEFAULT_THEME', themePresets.primary)
     this.$store.dispatch('SET_SECONDARY_THEME', themePresets.secondary)
     this.$store.dispatch('SET_THEME_PRESETS', themePresets)
-    this.$store.dispatch('SET_THEME', cloneTheme(themePresets.secondary))
+    this.$store.dispatch('SET_ACTIVE_THEME_NAME', 'primary')
+    this.$store.dispatch('SET_THEME', cloneTheme(themePresets.primary))
     this.$store.dispatch('SET_BLOG', this.posts)
     this.$store.dispatch('SET_GLOBAL', this.global)
     this.$store.dispatch('SET_FORMS', this.forms)
   },
   mounted () {
-    this.applyStoredThemePreset()
     this.updateGlobalStyles()
     this.checkWindowWidth()
 
@@ -188,136 +176,6 @@ export default {
         presets[name] = preset
         return presets
       }, {})
-    },
-    applyStoredThemePreset () {
-      if (!this.$store.state.customizationEnabled || !this.$store.state.themePresets.primary) {
-        return
-      }
-
-      const themePresets = this.getStoredThemePresets(this.$store.state.themePresets)
-      const storedActiveThemeName = window.localStorage.getItem(activeThemeStorageKey)
-      const activeThemeName = themePresets[storedActiveThemeName] ? storedActiveThemeName : 'secondary'
-
-      this.$store.dispatch('SET_THEME_PRESETS', themePresets)
-      this.$store.dispatch('SET_DEFAULT_THEME', themePresets.primary)
-      this.$store.dispatch('SET_SECONDARY_THEME', themePresets.secondary)
-      this.$store.dispatch('SET_ACTIVE_THEME_NAME', activeThemeName)
-      this.$store.dispatch('SET_THEME', themePresets[activeThemeName])
-    },
-    getStoredThemePresets (basePresets) {
-      const savedThemePresets = this.getStoredTheme(themePresetsStorageKey)
-
-      if (savedThemePresets) {
-        if ([themePresetsStorageVersion, legacyThemePresetsStorageVersion].includes(savedThemePresets.version)) {
-          const isLegacyPreset = savedThemePresets.version === legacyThemePresetsStorageVersion
-          const migratedPresets = themePresetNames.reduce((presets, name) => {
-            const mergedTheme = savedThemePresets.presets && savedThemePresets.presets[name]
-              ? this.mergeStoredThemeColors(basePresets[name], savedThemePresets.presets[name])
-              : cloneTheme(basePresets[name])
-
-            if (isLegacyPreset) {
-              delete mergedTheme.scheme
-              delete mergedTheme.assignments
-              delete mergedTheme.sectionOverrides
-              presets[name] = normalizeTheme(mergedTheme)
-            } else {
-              presets[name] = mergedTheme
-            }
-
-            return presets
-          }, {})
-
-          if (isLegacyPreset) {
-            window.localStorage.setItem(themePresetsStorageKey, JSON.stringify({
-              version: themePresetsStorageVersion,
-              presets: migratedPresets
-            }))
-          }
-
-          return migratedPresets
-        }
-
-        window.localStorage.removeItem(themePresetsStorageKey)
-      }
-
-      return cloneTheme(basePresets)
-    },
-    getStoredTheme (storageKey) {
-      const storedTheme = window.localStorage.getItem(storageKey)
-
-      if (!storedTheme) {
-        return null
-      }
-
-      try {
-        return JSON.parse(storedTheme)
-      } catch (error) {
-        window.localStorage.removeItem(storageKey)
-        return null
-      }
-    },
-    mergeStoredThemeColors (baseTheme, storedTheme) {
-      const storedColors = Array.isArray(storedTheme.colors)
-        ? storedTheme.colors
-        : Object.keys(storedTheme).map(label => ({ label, ...storedTheme[label] }))
-
-      const header = storedTheme.header
-        ? cloneTheme({ ...(baseTheme.header || defaultHeaderSettings), ...storedTheme.header })
-        : cloneTheme(baseTheme.header || defaultHeaderSettings)
-
-      if (header.announcement && header.announcement.open_popup === undefined) {
-        const modal = header.announcement.modal || {}
-        header.announcement.open_popup = !!(modal.title || modal.text)
-      }
-
-      return {
-        ...cloneTheme(baseTheme),
-        header,
-        popup: storedTheme.popup
-          ? cloneTheme({ ...(baseTheme.popup || defaultPopupSettings), ...storedTheme.popup })
-          : cloneTheme(baseTheme.popup || defaultPopupSettings),
-        scheme: this.mergeStoredScheme(baseTheme.scheme, storedTheme.scheme),
-        assignments: cloneTheme({ ...(baseTheme.assignments || {}), ...(storedTheme.assignments || {}) }),
-        sectionOverrides: cloneTheme(storedTheme.sectionOverrides || baseTheme.sectionOverrides || {}),
-        colors: baseTheme.colors.map((color) => {
-          const storedColor = storedColors.find(item => item.label === color.label)
-
-          if (!storedColor) {
-            return color
-          }
-
-          return {
-            ...color,
-            ...storedColor,
-            color: {
-              ...color.color,
-              ...storedColor.color
-            }
-          }
-        })
-      }
-    },
-    mergeStoredScheme (baseScheme, storedScheme) {
-      if (!Array.isArray(storedScheme) || !storedScheme.length) {
-        return Array.isArray(baseScheme) ? cloneTheme(baseScheme) : undefined
-      }
-
-      if (!Array.isArray(baseScheme) || !baseScheme.length) {
-        return cloneTheme(storedScheme)
-      }
-
-      const merged = baseScheme.map((family) => {
-        const storedFamily = storedScheme.find(item => item.key === family.key)
-        return cloneTheme(storedFamily || family)
-      })
-
-      storedScheme.forEach((family) => {
-        if (!merged.some(item => item.key === family.key)) {
-          merged.push(cloneTheme(family))
-        }
-      })
-
-      return merged
     },
     updateGlobalStyles () {
       if (typeof document === 'undefined') {

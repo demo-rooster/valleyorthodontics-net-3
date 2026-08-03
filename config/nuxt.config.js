@@ -125,10 +125,6 @@ export default () => {
     plugins: [
       '~/resources/components',
       '~/resources/mixins',
-      {
-        src: '~/resources/content-builder-fields.client.js',
-        mode: 'client'
-      },
       '~/resources/vendors.js',
       {
         src: '~/resources/vendors.client.js',

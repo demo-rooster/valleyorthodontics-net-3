@@ -4,10 +4,6 @@
 import { buildGradientCss, maxGradientStops, minGradientStops, normalizeGradient, radialPositionOptions } from '~/resources/gradients'
 import { elementRoleCategories, elementRoles, getSlotValue, hexToRgb, normalizeHex, parseSlotRef, popupRoles, slotCssValue, topbarRoles, transparentSlotRef } from '~/resources/theme-scheme'
 
-const activeThemeStorageKey = 'rg-active-theme-v3'
-const themePresetNames = ['primary', 'secondary', 'tertiary', 'quaternary']
-const themePresetsStorageKey = 'rg-theme-presets-v1'
-const themePresetsStorageVersion = 'theme-presets-data-2'
 const backgroundColorLabels = ['bg-1', 'bg-2']
 const contextMenuCheckpointEvent = 'rg-theme-checkpoint'
 const historyLimit = 50
@@ -158,28 +154,6 @@ export default {
     },
     headerAnnouncement () {
       return this.themeHeader?.announcement || {}
-    },
-    activeThemeName () {
-      return this.$store.state.activeThemeName
-    },
-    activeThemeLabel () {
-      return this.themePresetLabel(this.activeThemeName)
-    },
-    themePresetButtons () {
-      return themePresetNames.map(name => ({
-        name,
-        label: this.themePresetLabel(name)
-      }))
-    },
-    hasUnsavedChanges () {
-      const theme = this.$store.state.theme
-      const activePreset = this.$store.state.themePresets[this.activeThemeName]
-
-      if (!theme || !activePreset) {
-        return false
-      }
-
-      return JSON.stringify(theme) !== JSON.stringify(activePreset)
     }
   },
   watch: {
@@ -493,34 +467,6 @@ export default {
       this.undoStack = []
       this.redoStack = []
       this.lastEditKey = null
-    },
-    setThemePreset (name) {
-      if (!this.$store.state.themePresets[name]) {
-        return
-      }
-
-      window.localStorage.setItem(activeThemeStorageKey, name)
-      this.$store.dispatch('SET_ACTIVE_THEME_NAME', name)
-      this.$store.dispatch('SET_THEME', this.$store.state.themePresets[name])
-      this.clearThemeHistory()
-    },
-    saveActiveThemePreset () {
-      if (!this.$store.state.theme) {
-        return
-      }
-
-      const theme = this.$store.state.theme
-      const themePresets = {
-        ...this.$store.state.themePresets,
-        [this.activeThemeName]: theme
-      }
-
-      window.localStorage.setItem(themePresetsStorageKey, JSON.stringify({ version: themePresetsStorageVersion, presets: themePresets }))
-      window.localStorage.setItem(activeThemeStorageKey, this.activeThemeName)
-      this.$store.dispatch('SET_THEME_PRESET', { name: this.activeThemeName, theme })
-    },
-    themePresetLabel (name) {
-      return `Theme ${themePresetNames.indexOf(name) + 1}`
     },
     async shareTheme () {
       const theme = this.$store.state.theme

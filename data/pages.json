@@ -4374,13 +4374,13 @@
       "title": "Meet the Team",
       "items": [
         {
-          "name": "Anna Bacon",
+          "name": "Anna",
           "position": "Practice Coordinator",
           "bio": "Anna brings years of customer service experience to Valley Orthodontics and a great capacity to care for all of our patients and their families. Anna manages the front office and helps our patients and their families with appointment scheduling, treatment planning, financial consultation, and insurance claims.<br><br>Anna grew up in San Rafael. She received her B.A. degree in communications from UC Santa Barbara.<br><br>Anna lives in San Rafael and has identical twin daughters in college. She enjoys hiking, camping and road trips.",
           "image": {
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/Anna.webp",
             "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/Anna.webp",
-            "alt": "Anna Bacon, Practice Coordinator",
+            "alt": "Anna, Practice Coordinator",
             "aria_hidden": false,
             "bgColor": "",
             "imageBackground": false,
@@ -4446,13 +4446,13 @@
           }
         },
         {
-          "name": "Marina Freedman",
+          "name": "Marina",
           "position": "Lead Orthodontic Assistant",
           "bio": "",
           "image": {
             "src": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/Marina.webp",
             "webp": "https://www.valleyorthodontics.net/wp-content/uploads/2024/09/Marina.webp",
-            "alt": "Marina Freedman, Lead Orthodontic Assistant",
+            "alt": "Marina, Lead Orthodontic Assistant",
             "aria_hidden": false,
             "bgColor": "",
             "imageBackground": false,

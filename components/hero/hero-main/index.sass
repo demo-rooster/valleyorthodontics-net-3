@@ -19,6 +19,32 @@
   &--iconix-page.hero-main--small-height
     min-height: 0
 
+  &--left-content
+    .hero-main__content
+      top: 50%
+      bottom: auto
+      align-items: flex-start
+      transform: translate(-50%, -50%)
+      text-align: left
+
+    .hero-main__text
+      max-width: calc((6/12) * #{$width})
+      @include desktop
+        max-width: calc((6/12) * #{$max-width})
+
+    @include phone-lg
+      .hero-main__content
+        top: 0
+        bottom: 0
+        align-items: flex-start
+        transform: translate(-50%, 0)
+        padding: 3rem 1rem 2.5rem
+        height: 100%
+        text-align: left
+
+      .hero-main__cta
+        margin-top: auto
+
   &--braces-page.hero-main--small-height
     height: 86vh
     min-height: rem-calc(680)
@@ -131,6 +157,8 @@
   &__image
     @extend %absolute
     object-fit: cover
+    @include tablet
+      object-position: var(--hero-mobile-object-position, center) !important
 
   &__container
     @include container

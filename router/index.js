@@ -93,6 +93,10 @@ const router = [
         path: '/about-orthodontics'
       },
       {
+        name: 'Grin Remote Monitoring',
+        path: '/grin-monitoring'
+      },
+      {
         name: 'Financial Information',
         path: '/financial-information'
       },

@@ -42,12 +42,14 @@ export default {
         'hero-main--inner-page': this.$route.path !== '/',
         'hero-main--braces-page': this.routeSlug === 'braces',
         'hero-main--iconix-page': this.routeSlug === 'iconix-champagne-gold-braces',
+        'hero-main--left-content': this.props.left_content,
         'hero-main--header-offset': this.hasHeaderOffset
       }
     },
     imageStyles () {
       return {
-        objectPosition: this.props.image.objectPosition || (this.hasHeaderOffset ? 'center top' : null)
+        objectPosition: this.props.image.objectPosition || (this.hasHeaderOffset ? 'center top' : null),
+        '--hero-mobile-object-position': this.props.image.mobileObjectPosition || null
       }
     }
   },

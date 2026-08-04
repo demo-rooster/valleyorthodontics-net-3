@@ -27,14 +27,17 @@ article.block-image-text(:class="props.background && props.has_background ? 'blo
       BaseIcon.block-image-text__video-button-icon(name='play-button')
   .block-image-text__container(:class="{ 'block-image-text__container--reverse': props.reverse }")
     .block-image-text__left(v-if='!props.large_image')
-      .block-image-text__image-container(:style="{ height: contentHeight }")
+      .block-image-text__image-container(
+        :class="{ 'block-image-text__image-container--aspect': props.image_aspect_ratio }"
+        :style="{ height: props.image_aspect_ratio ? 'auto' : contentHeight, aspectRatio: props.image_aspect_ratio || null }"
+      )
         BaseImage.block-image-text__image(
           v-if='!props.is_dynamic',
           :src='props.image.src',
           :webp='props.image.webp',
           :alt='props.image.alt',
           :aria-hidden=' props.image.aria_hidden ? "true" : null',
-          imageBackground, :object-position="'center top'",
+          :image-background='!props.image_aspect_ratio', :object-position="'center top'",
           :bgColor='props.image.loading_mask ? props.image.loading_mask : null'
         )
         .block-image-text__dynamic-images(v-if='props.is_dynamic')

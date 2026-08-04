@@ -5,7 +5,7 @@
     .block-single-video-slider__row
       h2.block-single-video-slider__title(v-html='props.title')
       .block-single-video-slider__pagination(v-if='props.slides.length > 1') {{ currIndex + 1 }} / {{ props.slides.length }}
-    .block-single-video-slider__video-title(v-if='currentTitle') {{ currentTitle }}
+    .block-single-video-slider__video-title(v-if='currentTitle && props.slides.length > 1') {{ currentTitle }}
     .block-single-video-slider__carousel(:aria-label='`${props.carousel_aria}`')
       button.block-single-video-slider__control-btn(v-if='props.slides.length > 1', aria-label='Previous Slide' tabindex='0' @click='handleSlide("prev")')
         BaseIcon.block-single-video-slider__icon.block-single-video-slider__icon--prev(name='caret')

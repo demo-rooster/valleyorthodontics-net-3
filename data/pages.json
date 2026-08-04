@@ -933,6 +933,28 @@
       "preserve_image": true
     },
     {
+      "acf_fc_layout": "single_video_slider",
+      "title": "Practice Spotlight: Dr. Charlene Rocha",
+      "carousel_aria": "Dr. Charlene Rocha Practice Spotlight Video",
+      "slides": [
+        {
+          "type": "iframe",
+          "src": "https://player.vimeo.com/video/1211484876?app_id=122963",
+          "title": "Practice Spotlight: Dr. Charlene Rocha"
+        }
+      ],
+      "component_options": {
+        "hash": "practice-spotlight",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "background": "primary",
+      "add_texture": false,
+      "linear_gradient": "",
+      "primary_color": true
+    },
+    {
       "acf_fc_layout": "single_image_slider",
       "title": "Our Office",
       "carousel_aria": "Office Tour Carousel",
@@ -7686,6 +7708,239 @@
           }
         },
         "slug": "about-orthodontics"
+      }
+    }
+  ],
+  "grin-monitoring": [
+    {
+      "acf_fc_layout": "hero",
+      "title": "Grin Remote Monitoring",
+      "text": "Stay connected with our team throughout your orthodontic treatment, wherever life takes you.",
+      "left_content": true,
+      "button": {
+        "type": "nuxt",
+        "style": "primary",
+        "label": "Book Your Free Smile Assessment",
+        "aria_label": "Book your free smile assessment",
+        "href": "",
+        "path": "/contact",
+        "hash": "#form",
+        "external": false,
+        "include_icon": true,
+        "icon": "scheduling-tooth",
+        "color": "primary"
+      },
+      "media_type": "image",
+      "image": {
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/resources/grin/grin-hero-2.png",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/resources/grin/grin-hero-2.webp",
+        "alt": "Patient using the Grin Scope for a remote orthodontic scan",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "mobileObjectPosition": "88% center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Patient Resources"
+        }
+      },
+      "video": {
+        "src": "",
+        "webm": "",
+        "title": "",
+        "poster": ""
+      },
+      "small": false,
+      "component_options": {
+        "hash": "",
+        "component_padding": "none",
+        "component_margins": "none",
+        "hide_component": false
+      }
+    },
+    {
+      "acf_fc_layout": "image_text",
+      "title": "Your Smile, Connected",
+      "paragraphs": [
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "Grin gives Dr. Rocha and the Valley Orthodontics team a clear view of your smile between office visits. Using the Grin App and Grin Scope®, you can send detailed photos and video scans from home for our team to review."
+        },
+        {
+          "has_heading": false,
+          "heading": "",
+          "text": "Remote monitoring helps us follow your progress, answer questions, and share personalized guidance while keeping your care connected to your treatment plan. It complements the in-person appointments Dr. Rocha recommends; it does not replace urgent or hands-on care when needed."
+        }
+      ],
+      "accordion": [],
+      "image": {
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/resources/grin/grin-2.png",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/resources/grin/grin-2.webp",
+        "alt": "Patient using Grin remote monitoring during orthodontic treatment",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Patient Resources"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "buttons": [],
+      "component_options": {
+        "hash": "overview",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "reverse": true,
+      "has_buttons": false,
+      "has_accordion": false,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_image": false,
+      "image_aspect_ratio": "4 / 3",
+      "has_background": true,
+      "background": "bg2",
+      "linear_gradient": "",
+      "add_texture": false,
+      "large_title": true,
+      "title_color": "text",
+      "title_underline_color": "accent",
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "image_text",
+      "title": "How Grin Monitoring Works",
+      "paragraphs": [
+        {
+          "has_heading": true,
+          "heading": "Join and Scan",
+          "text": "After our team invites you, download the Grin App and create your patient profile. When prompted, attach the Grin Scope® to your phone and follow the app's instructions to capture a quick scan from home."
+        },
+        {
+          "has_heading": true,
+          "heading": "Review and Connect",
+          "text": "Our team receives your scan, reviews your progress, and sends personalized guidance through the app when needed. Dr. Rocha will continue to recommend in-person visits whenever hands-on care is important."
+        }
+      ],
+      "accordion": [],
+      "image": {
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/resources/grin/grin-3.png",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/resources/grin/grin-3.webp",
+        "alt": "Grin app guiding an at-home orthodontic scan",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Patient Resources"
+        }
+      },
+      "video": {
+        "type": "embedded",
+        "src": ""
+      },
+      "buttons": [],
+      "component_options": {
+        "hash": "how-it-works",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "reverse": false,
+      "has_buttons": false,
+      "has_accordion": false,
+      "is_dynamic": false,
+      "use_video": false,
+      "large_image": false,
+      "image_aspect_ratio": "1 / 1",
+      "has_background": false,
+      "background": "bg1",
+      "linear_gradient": "",
+      "add_texture": false,
+      "large_title": true,
+      "title_color": "text",
+      "title_underline_color": "primary",
+      "preserve_image": true
+    },
+    {
+      "acf_fc_layout": "multi_use_banner",
+      "title": "Ready for More Connected Care?",
+      "content_block": "text_block",
+      "text": "Ask our team whether Grin remote monitoring is available for your treatment plan.",
+      "social_links": [],
+      "email": "",
+      "button": {
+        "type": "nuxt",
+        "style": "primary",
+        "label": "Book Your Free Smile Assessment",
+        "aria_label": "Book your free smile assessment",
+        "href": "",
+        "path": "/contact",
+        "hash": "#form",
+        "external": false,
+        "include_icon": true,
+        "icon": "scheduling-tooth",
+        "color": "primary"
+      },
+      "component_options": {
+        "hash": "",
+        "component_padding": "half",
+        "component_margins": "none",
+        "hide_component": false
+      },
+      "background_type": "has_background",
+      "background": "bg2",
+      "add_texture": false,
+      "linear_gradient": "",
+      "image": {
+        "src": "https://d1euqd8u2uyjl7.cloudfront.net/resources/grin/grin-hero.png",
+        "webp": "https://d1euqd8u2uyjl7.cloudfront.net/resources/grin/grin-hero.webp",
+        "alt": "Patient using the Grin Scope for remote orthodontic care",
+        "aria_hidden": false,
+        "bgColor": "",
+        "imageBackground": false,
+        "addLoader": false,
+        "objectPosition": "center",
+        "forceAlt": "",
+        "loading_mask": "",
+        "image_selection_hints": {
+          "context_category": "Patient Resources"
+        }
+      },
+      "reversed": false,
+      "centered": true,
+      "large_title": true,
+      "text_color": "primary"
+    },
+    {
+      "seo": {
+        "page_title": "Grin Remote Monitoring | Valley Orthodontics",
+        "page_description": "Learn how Grin remote monitoring helps Valley Orthodontics patients share at-home scans, stay connected, and receive personalized treatment guidance.",
+        "page_keywords": "Grin remote monitoring, virtual orthodontic care, Grin Scope, orthodontic app, Valley Orthodontics, San Rafael",
+        "additional_settings": false,
+        "social_meta": {
+          "og_meta": {
+            "title": "Grin Remote Monitoring | Valley Orthodontics",
+            "description": "Stay connected with Valley Orthodontics through convenient at-home scans and personalized remote treatment guidance.",
+            "image": "https://d1euqd8u2uyjl7.cloudfront.net/resources/grin/grin-hero.png"
+          }
+        },
+        "slug": "grin-monitoring"
       }
     }
   ],

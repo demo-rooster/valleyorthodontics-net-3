@@ -7924,6 +7924,7 @@
       },
       "reversed": false,
       "centered": true,
+      "wide_copy": true,
       "large_title": true,
       "text_color": "primary"
     },

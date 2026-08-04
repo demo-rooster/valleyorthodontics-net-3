@@ -95,6 +95,27 @@
         margin-left: 0
         width: 100%
 
+    &--wide-copy
+      .block-banner__title
+        transform: translateX(-50%)
+        margin-left: 50%
+        width: calc(100% + #{rem-calc(200)})
+        max-width: calc(100vw - 2rem)
+
+      .block-banner__text-block
+        max-width: rem-calc(666)
+        @include desktop
+          max-width: rem-calc(750)
+
+      @include tablet
+        .block-banner__title,
+        .block-banner__text-block
+          transform: none
+          margin-right: auto
+          margin-left: auto
+          width: 100%
+          max-width: 100%
+
   &__title
     margin-bottom: 1.5rem
     @include max-width (320px)

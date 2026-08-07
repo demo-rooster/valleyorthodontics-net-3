@@ -136,5 +136,142 @@
         "error_message": "Please answer the math question."
       }
     ]
+  },
+  {
+    "id": 1027,
+    "title": "Doctor Referral Form",
+    "slug": "doctor-referral-form",
+    "bcc": "",
+    "submit_button_label": "Submit Referral",
+    "content": {
+      "content": {
+        "header": "Submit a Patient Referral",
+        "body": "Complete the form below to refer a patient to our practice, and our team will follow up promptly. <strong>Please do not include any patient treatment information or other protected health information (PHI) in this form. This form is not HIPAA compliant and should only be used to share the basic contact details requested below.</strong>"
+      }
+    },
+    "input_fields": [
+      {
+        "acf_fc_layout": "name",
+        "label": "Patient Name",
+        "required": true,
+        "width": "half",
+        "autocomplete": false,
+        "text_area": false,
+        "error_message": "Please enter the patient's name."
+      },
+      {
+        "acf_fc_layout": "text",
+        "label": "Birth Date",
+        "required": true,
+        "width": "half",
+        "autocomplete": false,
+        "text_area": false,
+        "error_message": "Please enter the patient's birth date."
+      },
+      {
+        "acf_fc_layout": "text",
+        "label": "Referring Doctor",
+        "required": true,
+        "width": "half",
+        "autocomplete": false,
+        "text_area": false,
+        "error_message": "Please enter the referring doctor's name."
+      },
+      {
+        "acf_fc_layout": "text",
+        "label": "Today's Date",
+        "required": true,
+        "width": "half",
+        "autocomplete": false,
+        "text_area": false,
+        "error_message": "Please enter today's date."
+      },
+      {
+        "acf_fc_layout": "radio",
+        "label": "Radiographs Available (taken within the last year) *",
+        "required": true,
+        "width": "full",
+        "autocomplete": false,
+        "text_area": false,
+        "error_message": "",
+        "inputs": [
+          {
+            "label": "Bitewings",
+            "checked": false
+          },
+          {
+            "label": "FMX",
+            "checked": false
+          },
+          {
+            "label": "Panograph",
+            "checked": false
+          },
+          {
+            "label": "None",
+            "checked": false
+          },
+          {
+            "label": "Other",
+            "checked": false
+          }
+        ]
+      },
+      {
+        "acf_fc_layout": "phone",
+        "label": "Patient Phone #",
+        "required": true,
+        "width": "half",
+        "autocomplete": false,
+        "text_area": false,
+        "error_message": "Please enter a valid phone number."
+      },
+      {
+        "acf_fc_layout": "email",
+        "label": "Patient Email",
+        "required": true,
+        "width": "half",
+        "autocomplete": false,
+        "text_area": false,
+        "error_message": "Please enter a valid email address."
+      },
+      {
+        "acf_fc_layout": "radio",
+        "label": "Contact Preference *",
+        "required": true,
+        "width": "full",
+        "autocomplete": false,
+        "text_area": false,
+        "error_message": "",
+        "inputs": [
+          {
+            "label": "Please call me to discuss this patient",
+            "checked": false
+          },
+          {
+            "label": "Please call patient to schedule appointment",
+            "checked": false
+          }
+        ]
+      },
+      {
+        "acf_fc_layout": "text",
+        "label": "Comments",
+        "required": false,
+        "width": "full",
+        "autocomplete": false,
+        "text_area": true,
+        "error_message": "Please share a short message."
+      },
+      {
+        "acf_fc_layout": "captcha",
+        "label": "Captcha",
+        "required": true,
+        "width": "half",
+        "autocomplete": false,
+        "text_area": false,
+        "error_message": "Please answer the math question."
+      }
+    ]
   }
 ]

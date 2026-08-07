@@ -155,7 +155,15 @@
         "icon": "youtube"
       }
     ],
-    "add_border": false
+    "add_border": false,
+    "addl_links": [
+      {
+        "label": "Doctor Referrals",
+        "path": "/doctor-referrals-slips",
+        "hash": "",
+        "ext_link": false
+      }
+    ]
   },
   "enable_popup": false,
   "popup": {

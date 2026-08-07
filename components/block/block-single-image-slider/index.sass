@@ -94,6 +94,37 @@
       opacity: 1
       pointer-events: all
 
+  // "natural" variant: the carousel is sized by the current image instead of
+  // cropping every slide to 16/9, so portrait images show in full
+  &--natural
+    .block-single-image-slider__slider
+      display: flex
+      align-items: center
+      justify-content: center
+      overflow: hidden
+      aspect-ratio: auto
+
+    .block-single-image-slider__slide--current
+      position: relative
+      height: auto
+
+      .block-single-image-slider__image
+        display: flex
+        position: relative
+        justify-content: center
+        height: auto
+
+    .base-image__image
+      position: relative
+      margin: 0 auto
+      width: auto
+      max-width: 100%
+      height: auto
+      max-height: rem-calc(600)
+      object-fit: contain
+      @include tablet
+        max-height: 70vh
+
   &__control-btn
     @include hover-supported
       background: var(--siSliderTextColor)

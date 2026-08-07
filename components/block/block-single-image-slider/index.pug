@@ -1,4 +1,4 @@
-.block-single-image-slider(:class="props.background ? 'block-single-image-slider--' + props.background : null", :data-texture='props.add_texture', :style="{ '--siSliderTextColor': props.primary_color ? 'var(--primary)' : 'var(--secondary)'}")
+.block-single-image-slider(:class="[props.background ? 'block-single-image-slider--' + props.background : null, { 'block-single-image-slider--natural': props.natural_aspect_ratio }]", :data-texture='props.add_texture', :style="{ '--siSliderTextColor': props.primary_color ? 'var(--primary)' : 'var(--secondary)'}")
   BaseTexture(v-if='props.add_texture')
   .block-single-image-slider__gradient(v-if='props.linear_gradient', :style="{ background: props.linear_gradient }")  
   .block-single-image-slider__container
@@ -17,7 +17,7 @@
           role='group'
           :class="{ 'block-single-image-slider__slide--current': currIndex === i }"
           )
-          BaseImage.block-single-image-slider__image(v-bind='slide' imageBackground :aria-hidden=' currIndex === i ? null : true')
+          BaseImage.block-single-image-slider__image(v-bind='slide' :imageBackground='!props.natural_aspect_ratio' :aria-hidden=' currIndex === i ? null : true')
 
       button.block-single-image-slider__control-btn(v-if='props.slides.length > 1', aria-label='Next Slide' tabindex='0' @click='handleSlide("next")')
         BaseIcon.block-single-image-slider__icon.block-single-image-slider__icon--next(name='caret')
